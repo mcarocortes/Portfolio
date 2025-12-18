@@ -9,8 +9,7 @@ export default function Preloader({ animateOut }: PreloaderProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setBgVisible(false)
-    }, 3000) // 👈 3 segundos
-
+    }, 3000)
     return () => clearTimeout(timer)
   }, [])
   
@@ -24,10 +23,4 @@ export default function Preloader({ animateOut }: PreloaderProps) {
 
 interface PreloaderProps {
   animateOut: boolean;
-}
-
-{
-     /* <div className={preloaderClass}>
-      <div className="spinner" />
-    </div>*/
 }

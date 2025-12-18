@@ -11,7 +11,6 @@ export default function App() {
   const [showPreloader, setShowPreloader] = useState(true);
   const [animateOut, setAnimateOut] = useState(false);
 
-// Guardamos el momento exacto en que la página carga
   const [startTime] = useState(Date.now());
 
   useEffect(() => {
@@ -21,7 +20,7 @@ export default function App() {
       const remainingTime = Math.max(0, minDuration - timeElapsed);
 
       const timer = setTimeout(() => {
-        setAnimateOut(true); // Inicia desvanecimiento CSS (0.5s)
+        setAnimateOut(true);
 
         setTimeout(() => {
           setShowPreloader(false);

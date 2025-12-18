@@ -19,12 +19,10 @@
   opacity: 0; 
 }
 
-/* Fondo púrpura inicial */
 .preloader.bg-visible {
   background-color: #c0b6fc;
 }
 
-/* Fondo transparente después de 3s */
 .preloader.bg-hidden {
   background-color: transparent;
 }
