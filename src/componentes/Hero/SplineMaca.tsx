@@ -5,7 +5,6 @@ interface SplineMacaProps {
 }
         console.log("cargando spline")
 
-
 export default function SplineMaca({ onSceneLoad }: SplineMacaProps) {
   return (
     <>

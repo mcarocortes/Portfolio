@@ -1,0 +1,30 @@
+.preloader {
+  display: flex;
+  flex-flow: column;
+  justify-content:center;
+  align-items:center;
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: all;
+  transition: opacity 0.5s ease-out; 
+  opacity: 1;
+  height: 100vh; 
+  width: 100vw;
+}
+
+.preloader.hidden {
+  pointer-events: none;
+  opacity: 0; 
+}
+
+/* Fondo púrpura inicial */
+.preloader.bg-visible {
+  background-color: #c0b6fc;
+}
+
+/* Fondo transparente después de 3s */
+.preloader.bg-hidden {
+  background-color: transparent;
+}

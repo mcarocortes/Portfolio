@@ -342,181 +342,6 @@ label {
 
 
 
-/* ************************************************************* HERO ************************************************************** */
-
-.section {
-  flex-flow: column;
-  align-items: center;
-  width: 150%;
-  height: auto;
-  margin-top: 3vw;
-  margin-left: -20%;
-  display: block;
-  overflow: hidden;
-}
-
-.hero-wrapper {
-  z-index: 1;
-  background-color: var(--background2);
-  width: 100vw;
-  margin-bottom: -100vh;
-  display: block;
-  position: relative;
-  top: 0;
-  overflow: visible;
-}
-
-.hero-section {
-  background-image: url("../img/hero/bg_bubles.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  margin-top: 0;
-  padding: 0 0 0;
-  position: sticky;
-  top: 0;
-  overflow: visible;
-}
-
-.logomov {
-  z-index: 2;
-  flex-flow: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  margin-top: auto;
-  margin-bottom: auto;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
-
-
-/* DE MIMI INICIO*/
-#canvas3d {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  z-index: 1; /* Asegura que esté encima del loader cuando se muestre */
-}
-
-/* Tu loader sigue igual */
-#loader {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #ffffff;
-  z-index: 1000;
-  font-family: sans-serif;
-  color: #444;
-  font-size: 1.1rem;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* Cuando desaparece */
-#loader.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.spinner {
-  width: 32px;
-  height: 32px;
-  border: 3px solid #ccc;
-  border-top-color: #666;
-  border-radius: 50%;
-  animation: spin 0.9s linear infinite;
-  margin-bottom: 10px;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-/* FIN DE MIMI*/
-@media screen and (min-width: 1280px) {
-
-    .hero-wrapper {
-    width: 100%;
-    margin-bottom: -150vh;
-    display: block;
-    position: relative;
-    overflow: visible;
-  }
-  .hero-section {
-    background-image: url("../img/hero/bg_bubles.png");
-    background-position: 50%;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    margin-top: 0;
-    padding: 0 0 0;
-    display: block;
-    top: 0;
-  }
-
-}
-
-@media screen and (max-width: 991px) {
-    .hero-wrapper {
-    z-index: 1;
-    margin-top: 0;
-    top: 0;
-    overflow: visible;
-  }
-
-  .hero-section {
-    z-index: auto;
-    margin-top: 0;
-    padding: 0 0 0;
-    position: sticky;
-    overflow: visible;
-  }
-}
-
-@media screen and (max-width: 767px) {
-
-    .hero-wrapper {
-    margin-top: 0;
-    top: 0;
-  }
-
-  .hero-section {
-    margin-top: 0;
-    margin-bottom: -15px;
-    padding-top: 0;
-    top: 0;
-    overflow: hidden;
-  }
-}
-
-@media screen and (max-width: 479px) {
-    .hero-wrapper {
-    margin-top: 0;
-    position: relative;
-    top: 0;
-  }
-
-  .hero-section {
-    top: 0;
-    overflow: hidden;
-  }
-
-    .logomov {
-    object-fit: fill;
-    align-items: flex-start;
-    display: flex;
-  }
-}
-
-
-
-
 
 
 
@@ -2137,22 +1962,6 @@ textarea.w-input, textarea.w-select {
 */
 
 /*
-.hero-subtitle {
-  z-index: 3;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  flex-flow: column;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-columns: 1fr;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  margin-top: -131px;
-  margin-left: 0;
-  display: flex;
-  position: relative;
-}
 
 .logo {
   display: block;
@@ -2189,35 +1998,6 @@ textarea.w-input, textarea.w-select {
   display: none;
   overflow: visible;
 }
-
-
-
-
-.text-block {
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  background-color: var(--white);
-  color: var(--grayweb);
-  letter-spacing: -1px;
-  border-radius: 40px;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 20px;
-  font-family: Montserrat, sans-serif;
-  font-size: 12px;
-  font-weight: 800;
-  display: flex;
-}
-
-.web-developer {
-  border: 1px solid #fff;
-  border-radius: 40px;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-
 
 
 .grid {
@@ -2496,12 +2276,7 @@ textarea.w-input, textarea.w-select {
   font-family: Galano Grotesque, sans-serif;
 }
 
-.spacer {
-  width: 80%;
-  height: 100vh;
-  margin-top: -33px;
-  position: relative;
-}
+
 
 .spacer._2 {
   height: 200vh;
@@ -6159,14 +5934,7 @@ textarea.w-input, textarea.w-select {
   width: 50%;
 }
 
-.img_spline {
-  width: 100%;
-  height: 100vh;
-  margin-top: -394px;
-  display: none;
-  position: relative;
-  top: -51px;
-}
+
 
 .image-66 {
   object-fit: contain;
@@ -6405,12 +6173,6 @@ textarea.w-input, textarea.w-select {
 
   /*
 
-
-  .hero-subtitle {
-    width: 100%;
-    margin-top: -165px;
-  }
-
   .logo {
     margin-right: 0;
     padding-right: 0;
@@ -6434,19 +6196,6 @@ textarea.w-input, textarea.w-select {
     padding-bottom: 0;
     display: none;
   }
-
-
-
-  .text-block {
-    font-size: 14px;
-  }
-
-  .web-developer {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-
 
   .container {
     grid-column-gap: 23px;
@@ -6671,11 +6420,7 @@ textarea.w-input, textarea.w-select {
     line-height: 22px;
   }
 
-  .spacer {
-    width: 80vw;
-    height: 150vh;
-    margin-top: -71px;
-  }
+
 
   .projectos {
     width: 100%;
@@ -7556,10 +7301,7 @@ textarea.w-input, textarea.w-select {
     height: 140vw;
   }
 
-  .img_spline {
-    z-index: 99;
-    top: -220px;
-  }
+
 
 */
 }
@@ -7567,14 +7309,6 @@ textarea.w-input, textarea.w-select {
 @media screen and (max-width: 991px) {
 
   /*
-
-
-
-  .hero-subtitle {
-    margin-top: -136px;
-    position: relative;
-  }
-
   .logo {
     flex: 0 auto;
     width: 20vw;
@@ -7591,15 +7325,6 @@ textarea.w-input, textarea.w-select {
     margin-top: 0;
   }
 
-
-
-  .text-block {
-    letter-spacing: 0;
-  }
-
-  .web-developer {
-    margin-bottom: 0;
-  }
 
   .icon {
     color: #fff;
@@ -8341,14 +8066,6 @@ textarea.w-input, textarea.w-select {
 
   /*
   
-
-  .hero-subtitle {
-    align-items: flex-end;
-    margin-top: -166px;
-    margin-right: 0;
-    padding-right: 7vw;
-  }
-
   .logo {
     width: 30vw;
   }
@@ -8367,21 +8084,6 @@ textarea.w-input, textarea.w-select {
     height: 0;
     min-height: 620px;
     margin-top: 0;
-  }
-
-
-
-  .text-block {
-    letter-spacing: -1px;
-    font-size: 11px;
-  }
-
-  .web-developer {
-    object-fit: fill;
-    margin-top: 0;
-    margin-bottom: 0;
-    display: flex;
-    position: static;
   }
 
   .container {
@@ -8515,9 +8217,6 @@ textarea.w-input, textarea.w-select {
     margin-top: 6vw;
   }
 
-  .spacer {
-    margin-top: -68px;
-  }
 
   .projectos {
     flex-flow: column;
@@ -9459,19 +9158,6 @@ textarea.w-input, textarea.w-select {
     width: 100%;
   }
 
-  .img_spline {
-    z-index: 3;
-    background-image: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/677c3d0a98c34119901b0cef_Macarena3.png");
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 70px;
-    padding-top: 0;
-    display: block;
-    position: absolute;
-    top: 0;
-  }
-
   .image-66 {
     object-fit: cover;
     height: 100%;
@@ -9496,13 +9182,6 @@ textarea.w-input, textarea.w-select {
 @media screen and (max-width: 479px) {
 
  /* 
-
-  .hero-subtitle {
-    align-items: center;
-    margin-top: -204px;
-    padding-right: 0;
-  }
-
   .logo {
     width: auto;
     height: 30px;
@@ -9522,18 +9201,6 @@ textarea.w-input, textarea.w-select {
     min-height: 600px;
     margin-top: 0;
   }
-
-
-
-
-  .text-block {
-    letter-spacing: 0;
-  }
-
-  .web-developer {
-    margin-bottom: 0;
-  }
-
 
 
   .container {
@@ -9700,13 +9367,6 @@ textarea.w-input, textarea.w-select {
 
   .column-6 {
     display: none;
-  }
-
-
-
-  .spacer {
-    margin-top: -99px;
-    display: block;
   }
 
   .projectos {
@@ -10526,18 +10186,6 @@ textarea.w-input, textarea.w-select {
     display: flex;
   }
 
-  .img_spline {
-    object-fit: contain;
-    background-image: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/677c3d0a98c34119901b0cef_Macarena3.png");
-    background-position: 50% 75%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 130%;
-    margin-top: 10vw;
-    margin-left: -44px;
-    display: block;
-  }
-
   .heading-9 {
     font-size: 60px;
   }
@@ -10548,7 +10196,7 @@ textarea.w-input, textarea.w-select {
     background-size: 30%;
   }*/
 }
-
+/*
 #w-node-_4993d90e-f40d-219e-f516-5a8b77905029-10108c13 {
   grid-template-rows: auto auto;
   grid-template-columns: 0.75fr 1fr;
@@ -10767,7 +10415,7 @@ textarea.w-input, textarea.w-select {
   #w-node-cffb9ba3-0319-b89e-f543-805756f582db-10108c13 {
     grid-area: span 1 / span 1 / span 1 / span 1;
   }
-}
+}*/
 
 /***************** FONTS *************************************/
 @font-face {
