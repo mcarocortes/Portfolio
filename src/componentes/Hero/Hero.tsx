@@ -1,19 +1,23 @@
 import SplineMaca from './SplineMaca';
 import './Hero.css'
+import scroll from '../../assets/Scroll down.json';
+import Lottie from 'lottie-react';
 
 export default function Hero({ onSplineReady }: HeroProps) {
 
-  const handleSplineLoad = () => {setTimeout(() => {onSplineReady();}, 750); };
+  const handleSplineLoad = () => { setTimeout(() => { onSplineReady(); }, 750); };
 
   return (
     <section id="Home" className="hero-wrapper">
       <section className="hero-section">
-        <div id="canvas3d">   
+        <div id="canvas3d">
           <SplineMaca onSceneLoad={handleSplineLoad} />
-        </div>  
+        </div>
         <div className="hero-subtitle">
-          <div className="web-developer">
-            <div className="text-webDeveloper">FRONT-END DESIGNER</div>
+          <div className="outLineScroll">
+            <div className="scroll">
+              <Lottie animationData={scroll} loop={true} autoplay={true} style={{ height: '50px', width: '30px' }} rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }} />
+            </div>
           </div>
         </div>
 

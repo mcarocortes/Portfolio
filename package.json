@@ -14,8 +14,9 @@
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.17.10",
     "@splinetool/react-spline": "^4.1.0",
-    "@splinetool/runtime": "^1.12.16",
+    "@splinetool/runtime": "^1.12.27",
     "bootstrap": "^5.3.8",
+    "framer-motion": "^12.23.26",
     "lottie-react": "^2.4.1",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",

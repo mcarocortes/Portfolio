@@ -133,7 +133,7 @@
     color: var(--purpura);
     transform: scale(1.05); 
     text-decoration: none;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 0.5px 0.5px 2px var(--purpura);
   
   }
 
@@ -652,10 +652,6 @@
     padding: 5px 20px;
   }
 
-.menuLinktext{
-  font-size: 14px;
-  line-height: 30px;
-}
 
 .collapsado {
   margin-top: -5px;
