@@ -5,6 +5,7 @@
   margin-top: 3vw;
   display: block;
   overflow: hidden;
+
 }
 
 .hero-wrapper {
@@ -28,6 +29,7 @@
   position: sticky;
   top: 0;
   overflow: visible;
+  margin-bottom: -60px ; /*Subir el about*/
 }
 
 .hero-subtitle {
@@ -71,20 +73,6 @@
   z-index: 1; 
 }
 
-/* 1. Definición de la Animación de Pulsación */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(
-      1.1
-    ); /* Ajusta este valor (ej: 1.05 para algo más sutil) */
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
 
 /***************************************** FIN DE MIMI*********************/
@@ -150,10 +138,11 @@
 
   .hero-section {
     margin-top: 0;
-    margin-bottom: -15px;
     padding-top: 0;
     top: 0;
     overflow: hidden;
+    margin-bottom: -90px ; /*Subir el about*/
+
   }
 
   .hero-subtitle {

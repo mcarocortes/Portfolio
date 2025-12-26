@@ -47,14 +47,6 @@ summary {
   display: block;
 }
 
-.heading {
-  color: var(--text);
-  margin-bottom: 30px;
-  margin-left:0;
-  font-size: 50px;
-  font-weight: 600;
-}
-
 button{
     padding-left: 20px;
     padding-right: 20px;
@@ -63,7 +55,6 @@ button{
     border: none;
     border-radius: 20px !important;
     cursor: pointer;
-    font-size: 18px !important;
     transition: background-image 0.5s ease-in-out;
     transition: transform 0.3s ease; 
     transform-origin: center; 
@@ -6055,6 +6046,9 @@ textarea.w-input, textarea.w-select {
 */
 @media screen and (min-width: 1280px) {
 
+    .heading {
+    font-size: 45px !important;
+  }
   /*
 
   .logo {

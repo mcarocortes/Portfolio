@@ -23,8 +23,11 @@ export default function About() {
         type: null,
     });
 
-    const handleEnter = (type: CursorType) => () =>
-        setCursor((c) => ({ ...c, visible: true, type }));
+    const handleEnter = (type: CursorType) => () => {
+        if (window.innerWidth > 767) {
+            setCursor((c) => ({ ...c, visible: true, type }));
+        }
+    };
 
     const handleLeave = () =>
         setCursor((c) => ({ ...c, visible: false }));
@@ -35,17 +38,28 @@ export default function About() {
 
 
     //Background transitions left to rigth
-    const getFinalBackgroundX = () => {
-        const width = window.innerWidth;
-        if (width <= 767) return null; //mobile
-        if (width <= 1280) return -10;
-        return 60;
-    };
+const getStartBackgroundX = () => {
+    const width = window.innerWidth;
+    if (width <= 767) return null; // mobile
+    if (width <= 991) return -170; // -120 + -50 
+    if (width <= 1280) return -70; // -20 + -50 
+    if (width >= 1281) return 0; // 50 + (-50)
+    return 10; // 60 + (-50) = 10
+};
+
+const getFinalBackgroundX = () => {
+    const width = window.innerWidth;
+    if (width <= 767) return null; // mobile
+    if (width <= 991) return -120;
+    if (width <= 1280) return -20;
+    if (width >= 1281) return 50;
+    return 60;
+};
 
     const aboutRef = React.useRef<HTMLDivElement | null>(null);
 
     React.useEffect(() => {
-        const startX = -50;
+        const startX = getStartBackgroundX();
         const finalX = getFinalBackgroundX();
 
         if (finalX === null || !aboutRef.current) return;
@@ -105,8 +119,7 @@ export default function About() {
                         whileInView="visible"
                         exit="exit"
                         transition={{ duration: 0.3, ease: [0.22, 0, 0.36, 1] }}
-                        variants={containerVariants}
-                    >
+                        variants={containerVariants}>
                         {["A","B","C"].map((type, i) => (
                             <motion.div
                                 key={type}
@@ -120,7 +133,7 @@ export default function About() {
                                 variants={cardVariants}
                                 transition={{ duration: 0.6, delay: i*0.15 }}
                             >
-                                <div className='text'>
+                                <div className={`text ${i===1?"cinco":""}`}>
                                     {["Visual & Brand","Interaction","Enhanced Digital"][i]}<br />
                                     <span>{["Consistency","Design","Experiences"][i]}</span>
                                 </div>
