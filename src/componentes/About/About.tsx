@@ -38,23 +38,23 @@ export default function About() {
 
 
     //Background transitions left to rigth
-const getStartBackgroundX = () => {
-    const width = window.innerWidth;
-    if (width <= 767) return null; // mobile
-    if (width <= 991) return -170; // -120 + -50 
-    if (width <= 1280) return -70; // -20 + -50 
-    if (width >= 1281) return 0; // 50 + (-50)
-    return 10; // 60 + (-50) = 10
-};
+    const getStartBackgroundX = () => {
+        const width = window.innerWidth;
+        if (width <= 767) return null; // mobile
+        if (width <= 991) return -170; // -120 + -50 
+        if (width <= 1280) return -70; // -20 + -50 
+        if (width >= 1281) return 0; // 50 + (-50)
+        return 10; // 60 + (-50) = 10
+    };
 
-const getFinalBackgroundX = () => {
-    const width = window.innerWidth;
-    if (width <= 767) return null; // mobile
-    if (width <= 991) return -120;
-    if (width <= 1280) return -20;
-    if (width >= 1281) return 50;
-    return 60;
-};
+    const getFinalBackgroundX = () => {
+        const width = window.innerWidth;
+        if (width <= 767) return null; // mobile
+        if (width <= 991) return -120;
+        if (width <= 1280) return -20;
+        if (width >= 1281) return 50;
+        return 60;
+    };
 
     const aboutRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -63,7 +63,8 @@ const getFinalBackgroundX = () => {
         const finalX = getFinalBackgroundX();
 
         if (finalX === null || !aboutRef.current) return;
-        
+        if (startX === null || !aboutRef.current) return;
+
         const handleScroll = () => {
             if (!aboutRef.current) return;
 
@@ -120,10 +121,10 @@ const getFinalBackgroundX = () => {
                         exit="exit"
                         transition={{ duration: 0.3, ease: [0.22, 0, 0.36, 1] }}
                         variants={containerVariants}>
-                        {["A","B","C"].map((type, i) => (
+                        {["D", "B", "C"].map((type, i) => (
                             <motion.div
                                 key={type}
-                                className={`exterior ${["uno","dos","tres"][i]}`}
+                                className={`exterior ${["uno", "dos", "tres"][i]}`}
                                 onMouseEnter={handleEnter(type as CursorType)}
                                 onMouseLeave={handleLeave}
                                 onMouseMove={handleMove}
@@ -131,13 +132,13 @@ const getFinalBackgroundX = () => {
                                 whileInView="visible"
                                 exit="exit"
                                 variants={cardVariants}
-                                transition={{ duration: 0.6, delay: i*0.15 }}
+                                transition={{ duration: 0.6, delay: i * 0.15 }}
                             >
-                                <div className={`text ${i===1?"cinco":""}`}>
-                                    {["Visual & Brand","Interaction","Enhanced Digital"][i]}<br />
-                                    <span>{["Consistency","Design","Experiences"][i]}</span>
+                                <div className={`text ${i === 1 ? "cinco" : ""}`}>
+                                    {["Visual & Brand", "Interaction", "Enhanced Digital"][i]}<br />
+                                    <span>{["Consistency", "Design", "Experiences"][i]}</span>
                                 </div>
-                                <div className={`sombra ${i===1?"cinco":""}`}></div>
+                                <div className={`sombra ${i === 1 ? "cinco" : ""}`}></div>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -149,7 +150,7 @@ const getFinalBackgroundX = () => {
                         exit="exit"
                         viewport={{ once: false, amount: 0.3 }}
                         variants={containerVariants}
-                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15  }}
+                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
                     >
                         <h1 className="heading">About</h1>
                         <p className="pa">
@@ -170,12 +171,7 @@ const getFinalBackgroundX = () => {
                         </div>
                     </motion.div>
 
-                    {cursor.visible && (
-                        <div
-                            className={`follow-cursor ${cursor.type}`}
-                            style={{ left: cursor.x, top: cursor.y }}
-                        />
-                    )}
+                    {cursor.visible && (<div className={`follow-cursor ${cursor.type}`} style={{ left: cursor.x, top: cursor.y }}/>)}
 
                 </div>
 

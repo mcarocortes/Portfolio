@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
 import './Slider.css'
+import emoji from './../../assets/img/mFaceHandUp.png'
 
 export default function Slider() {
 //Contenedor que se va a mover
@@ -26,7 +27,7 @@ export default function Slider() {
                     {[1, 2, 3, 4, 5, 6].map((item) => (
                         <Fragment key={item}>
                             <img
-                                src="https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f98415835d36e46942e20b_emoji.webp"
+                                src= {emoji}
                                 loading="lazy"
                                 sizes="84.57500457763672px"
                                 className="image-67"

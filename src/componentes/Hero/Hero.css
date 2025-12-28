@@ -65,17 +65,12 @@
   position: relative;
 }
 
-/******************* DE MIMI INICIO*/
 #canvas3d {
   width: 100%;
   height: 100vh;
   position: relative;
   z-index: 1; 
 }
-
-
-
-/***************************************** FIN DE MIMI*********************/
 
 @media screen and (min-width: 1280px) {
   .hero-wrapper {
