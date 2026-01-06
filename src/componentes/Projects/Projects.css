@@ -40,6 +40,8 @@
 }
 
 .descriptionProjects {
+    height: 150px;
+
     margin-left: 60px;
     display: flex;
     flex-direction: column;
@@ -70,7 +72,7 @@
     gap: 20px;
     will-change: transform;
     transform: translateX(0);
-    height: 60vh;
+    height: 100%;
     padding-left: 60px;
     padding-right: 60px;
 
@@ -404,6 +406,8 @@
         padding: 0;
         align-items: center;
         margin-bottom: 20px;
+        height: 100px;
+
     }
 
     .figure {

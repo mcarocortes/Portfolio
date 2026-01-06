@@ -5,7 +5,7 @@ import Preloader from "../componentes/Preloader/Preloader";
 
 export default function PortfolioLayout() {
   const location = useLocation();
-  const isHome = location.pathname === "/" || location.pathname === "/Portfolio";
+  const isHome = location.pathname === "/";
 
   const [splineLoaded, setSplineLoaded] = useState(false);
   const [showPreloader, setShowPreloader] = useState(true);
