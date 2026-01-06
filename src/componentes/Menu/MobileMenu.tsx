@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom'
+
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   
   const menuClasses = `collapse collapsado ${isOpen ? 'show' : ''}`;
@@ -6,18 +8,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div className={menuClasses} id="navbarNav">
       <div className="navbar-nav">
-        <a href="#About" className="menuLinktext" onClick={onClose}>
-          About
-        </a>
-        <a href="#Projects" className="menuLinktext" onClick={onClose}>
-          Projects
-        </a>
-        <a href="#Testimonials" className="menuLinktext" onClick={onClose}>
-          Testimonials
-        </a>
-        <a href="#Contacto" className="menuLinktext" onClick={onClose}>
-          Contact
-        </a>
+        <Link to="/Portfolio#About"className="menuLinktext"onClick={onClose}>About</Link>
+        <Link to="/Portfolio#Projects"className="menuLinktext"onClick={onClose}>Projects</Link>
+        <Link to="/Portfolio#Testimonials"className="menuLinktext"onClick={onClose}>Testimonials</Link>
+        <Link to="/Portfolio#Contact"className="menuLinktext"onClick={onClose}>Contact</Link>
       </div>
     </div>
   );

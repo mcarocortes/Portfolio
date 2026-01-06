@@ -1,5 +1,6 @@
 section {
-  font-family: Galano Grotesque, sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
 }
 
 .sobremi {
@@ -46,17 +47,16 @@ section {
   top: 0;
   box-shadow: 0 2px 5px #0003;
   overflow: hidden;
-  background-image: url("/src/assets/img/ProfilePicture2.png");
+  background-image: url("/src/assets/img/About/ProfilePicture2.png");
   background-position: 20px bottom;
   background-repeat: no-repeat;
   background-size: auto 93%;
 }
 
-button {
+.btnAbout {
   background-image: linear-gradient(to top, #3333cc, var(--purpura), rgb(216, 168, 250));
   color: white;
   width: 250px;
-  font-size: 23px !important;
 }
 
 .w-col {
@@ -65,15 +65,15 @@ button {
 }
 
 .about-content {
-  padding: 20px;
   flex: 1;
   min-width: 0;
   padding-left: 30px;
-  padding-right: 50px;
+  padding-right: 60px;
   padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items:end;
 }
 
 .about-cards {
@@ -87,8 +87,9 @@ button {
   align-items: flex-start;
   justify-content: center;
 }
+
 .about-cards .uno {
-margin-left: 50px;
+  margin-left: 50px;
 }
 
 .about-cards .dos {
@@ -96,15 +97,15 @@ margin-left: 50px;
 }
 
 .about-cards .tres {
-    margin-top: 60px;
-    margin-left: 60px;
+  margin-top: 60px;
+  margin-left: 60px;
 
 }
 
 .about-cards .exterior .text {
   font-size: 22px;
   padding: auto;
-  padding-top: 8px;
+  padding-top: 16px;
   height: 90px;
   width: 300px;
   display: block;
@@ -120,6 +121,8 @@ margin-left: 50px;
   z-index: 2;
   transition: all .5s ease-in-out;
 
+
+
 }
 
 .about-cards .exterior .text:hover {
@@ -127,7 +130,12 @@ margin-left: 50px;
 }
 
 .about-cards div span {
-  color: var(--purpura)
+  color: var(--purpura);
+  font-family: "Platypi", serif;
+  font-optical-sizing: auto;
+  font-style: italic;  
+  font-weight: 600;
+  font-style: italic;
 }
 
 div .exterior .sombra {
@@ -166,13 +174,22 @@ div .exterior:hover {
   text-align: left;
   color: var(--text);
   font-size: 28px;
-  font-weight: 500;
-  line-height: 42px;
+  font-weight: 600;
+  line-height: 36px;
   margin-bottom: 35px;
+  text-align: justify;
 }
 
-.spabout {
+
+
+.spanDelicated{
   color: var(--purpura);
+  font-family: "Platypi", serif;
+  font-optical-sizing: auto;
+  font-style: italic;  
+  font-weight: 600;
+  font-style: italic;
+
 }
 
 .div-block-5 {
@@ -191,7 +208,7 @@ div .exterior:hover {
   color: var(--text);
   margin-left: 20px;
   font-size: 23px;
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
 }
 
@@ -211,21 +228,21 @@ div .exterior:hover {
 }
 
 .D {
-  background-image: url(/src/assets/img/iconCool.svg);
+  background-image: url(/src/assets/img/About/iconCool.svg);
 }
 
 .B {
-  background-image: url(/src/assets/img/iconHappy.svg);
+  background-image: url(/src/assets/img/About/iconHappy.svg);
 }
 
 .C {
-  background-image: url(/src/assets/img/iconStar.svg);
+  background-image: url(/src/assets/img/About/iconStar.svg);
 }
 
 @media screen and (max-width: 1280px) {
 
   .about {
-        height: 530px;
+    height: 530px;
     background-position: -20px bottom;
     background-size: auto 90%;
   }
@@ -234,30 +251,30 @@ div .exterior:hover {
     width: 52vw;
     flex-shrink: 0;
     padding-left: 20px;
-    padding-top: 80px;
+    padding-top: 60px;
   }
 
   .about-cards .exterior .text {
-  font-size: 20px;
-  height: 80px;
-  width: 200px;
-}
+    font-size: 20px;
+    height: 80px;
+    width: 200px;
+  }
 
-div .exterior .sombra {
-  height: 80px;
-  width: 200px;
-  margin-top: -90px;
-}
+  div .exterior .sombra {
+    height: 80px;
+    width: 200px;
+    margin-top: -90px;
+  }
 
-div .exterior {
-  padding-top: 10px;
-  height: 80px;
-  width: 200px;
-}
+  div .exterior {
+    padding-top: 10px;
+    height: 80px;
+    width: 200px;
+  }
 
   .pa {
-    font-size: 25px;
-    line-height: 35px;
+    font-size: 23px;
+    line-height: 30px;
   }
 
   .div-block-5 {
@@ -278,21 +295,23 @@ div .exterior {
 @media screen and (max-width: 991px) {
 
   .about {
-      height: 500px;
+    height: 500px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     flex-flow: row;
     padding-top: 0px;
     display: flex;
-    background-position: -85px bottom;
+    background-position: -90px bottom !important;
     background-size: auto 85%;
   }
 
-  .about-cards{
+  .about-cards {
     width: 48vw;
   }
 
-  .about-cards .dos, .about-cards .uno,.about-cards .tres  {
+  .about-cards .dos,
+  .about-cards .uno,
+  .about-cards .tres {
     display: none;
   }
 
@@ -321,13 +340,13 @@ div .exterior {
   }
 
   .about {
-      height: 700px;
+    height: 700px;
     padding: 20px;
     align-items: center;
     height: 100%;
     flex-direction: column;
     justify-content: center;
-    background-position: center bottom;
+    background-position: center bottom !important;
     background-size: auto 48%;
 
   }
@@ -337,11 +356,7 @@ div .exterior {
     margin-top: 10px;
   }
 
-    button{
-    font-size: 18px !important;
-
-  } 
-  .div-block-5{
+  .div-block-5 {
     display: none;
   }
 
@@ -380,7 +395,8 @@ div .exterior {
     padding: 40px;
   }
 
-  .about-cards .tres,  .about-cards .dos {
+  .about-cards .tres,
+  .about-cards .dos {
     display: block;
     margin: 0;
   }
@@ -434,7 +450,7 @@ div .exterior {
 @media screen and (max-width: 479px) {
   .sobremi {
     margin-top: 40px;
-}
+  }
 
   .about {
     height: 80vh;
@@ -454,17 +470,17 @@ div .exterior {
     display: none;
   }
 
-.about-cards{
-  display: none;
-}
+  .about-cards {
+    display: none;
+  }
 
   .text-block-2 {
     margin-top: -10px;
     font-size: 16px;
   }
 
-  .about-content{
+  .about-content {
     padding: 40px;
-    justify-content:flex-start;
+    justify-content: flex-start;
   }
 }

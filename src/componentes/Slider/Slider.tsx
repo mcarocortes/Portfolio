@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
 import './Slider.css'
-import emoji from './../../assets/img/mFaceHandUp.png'
+import emoji from './../../assets/img/About/mFaceHandUp.png'
 
 export default function Slider() {
 //Contenedor que se va a mover

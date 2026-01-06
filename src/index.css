@@ -2,25 +2,33 @@
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  font-family: sans-serif;
   scroll-behavior: smooth !important;
-
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
 }
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  overflow-x: hidden; /* Evita cualquier desborde lateral accidental */
+  overflow-x: hidden;
+  font-family: inherit;
+}
+
+.body {
+  cursor: default;
+  mix-blend-mode: normal;
+  background-color: #b7b9c1;
 }
 
 .heading {
-  font-family: Galano Grotesque, sans-serif !important;
+  font-family: "Be Vietnam Pro", sans-serif;
   color: var(--text);
   margin-bottom: 30px;
-  margin-left:0;
+  margin-left: 0;
   font-size: 60px !important;
-  font-weight: 600;
-} 
+  font-weight: 700;
+}
 
 :root {
   --white: whitesmoke;
@@ -30,7 +38,6 @@ body {
   --grayweb: #797979;
   --whitesomoke: #f5f5f5;
   --slider: #e7e7e7;
-  --grisclaro: #e7e7e7;
   --navbar: #ced1d7;
   --purpura: #837ae5;
   --pur: var(--smoke);
@@ -56,24 +63,30 @@ summary {
   display: block;
 }
 
-button{
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    border: none;
-    border-radius: 20px !important;
-    cursor: pointer;
-    transition: background-image 0.5s ease-in-out;
-    transition: transform 0.3s ease; 
-    transform-origin: center; 
+button,
+.btnLink {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 20px !important;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  font-size: 23px !important;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-button:hover {
-    transform: scale(1.1);
+button:hover,
+.btnLink:hover,
+.ProjectNameLink:hover {
+  transform: scale(1.1);
+  text-decoration: none;
 }
 
-audio,
+/*audio,
 canvas,
 progress,
 video {
@@ -89,7 +102,7 @@ audio:not([controls]) {
 [hidden],
 template {
   display: none;
-}
+}*/
 
 a {
   background-color: #0000;
@@ -117,11 +130,11 @@ h1 {
   margin: 0.67em 0;
   font-size: 2em;
 }
-
+/*
 mark {
   color: #000;
   background: #ff0;
-}
+}*/
 
 small {
   font-size: 80%;
@@ -183,7 +196,8 @@ button {
 }
 
 button,
-select {
+select,
+.btnLink {
   text-transform: none;
 }
 
@@ -253,30 +267,14 @@ body {
   color: #333;
   background-color: #fff;
   margin: 0;
-  font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
-
+/*
 img {
   vertical-align: middle;
   max-width: 100%;
   display: inline-block;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-h1 {
-  margin-top: 20px;
-  font-size: 38px;
-  line-height: 44px;
 }
 
 h2 {
@@ -312,8 +310,8 @@ h6 {
 p {
   margin-top: 0;
   margin-bottom: 10px;
-}
-
+}*/
+/*
 blockquote {
   border-left: 5px solid #e2e2e2;
   margin: 0 0 10px;
@@ -330,26 +328,21 @@ figcaption {
   text-align: center;
   margin-top: 5px;
 }
-
+*/
 ul,
 ol {
   margin-top: 0;
   margin-bottom: 10px;
   padding-left: 40px;
 }
+
 label {
   margin-bottom: 5px;
   font-weight: bold;
   display: block;
 }
 
-.body {
-  cursor: default;
-  mix-blend-mode: normal;
-  background-color: #b7b9c1;
-  font-family: Galano Grotesque Demo, sans-serif;
-}
-
+/*
 .cursor-wrapper {
   z-index: 8;
   justify-content: center;
@@ -367,7 +360,7 @@ label {
   width: 30px;
   height: 30px;
 }
-
+*/
 
 
 
@@ -981,6 +974,11 @@ textarea.w-input, textarea.w-select {
 }
 
 @media screen and (max-width: 767px) {
+
+  button {
+    font-size: 18px !important;
+  }
+
   /*.w-hidden-main, .w-hidden-medium {
     display: inherit !important;
   }
@@ -2129,7 +2127,7 @@ textarea.w-input, textarea.w-select {
 
 .myskills {
   z-index: 10;
-  background-color: var(--grisclaro);
+  background-color: var(--slider);
   border-radius: 20px 20px 0 0;
   flex-flow: column;
   justify-content: center;
@@ -5947,11 +5945,16 @@ textarea.w-input, textarea.w-select {
   inset: 0%;
 }
 */
+
+@media screen and (max-width: 1280px) {
+
+}
+
 @media screen and (min-width: 1280px) {
 
   .heading {
-  font-size: 55px !important;
-} 
+    font-size: 55px !important;
+  }
 
   /*
 
@@ -6935,10 +6938,10 @@ textarea.w-input, textarea.w-select {
 
 @media screen and (max-width: 991px) {
 
-    .heading {
-  font-size: 50px !important;
-} 
-  
+  .heading {
+    font-size: 50px !important;
+  }
+
   /*
   .logo {
     flex: 0 auto;
@@ -8659,14 +8662,14 @@ textarea.w-input, textarea.w-select {
 
 @media screen and (max-width: 479px) {
 
-    .heading {
+  .heading {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 2.3em;
   }
 
- /* 
+  /* 
   .logo {
     width: auto;
     height: 30px;
@@ -9633,6 +9636,7 @@ textarea.w-input, textarea.w-select {
     background-size: 30%;
   }*/
 }
+
 /*
 #w-node-_4993d90e-f40d-219e-f516-5a8b77905029-10108c13 {
   grid-template-rows: auto auto;
@@ -9853,97 +9857,3 @@ textarea.w-input, textarea.w-select {
     grid-area: span 1 / span 1 / span 1 / span 1;
   }
 }*/
-
-/***************** FONTS *************************************/
-@font-face {
-  font-family: "Galano Grotesque Demo";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c3d_Galano%20Grotesque%20DEMO%20Bold.otf")
-      format("opentype"),
-    url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c3d_Galano%20Grotesque%20DEMO%20Bold.otf")
-      format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque Alt Demo";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c3e_Galano%20Grotesque%20Alt%20DEMO%20Bold.otf")
-    format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c44_Galano%20Grotesque%20Black.otf")
-      format("opentype"),
-    url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c48_Galano%20Grotesque%20Heavy.otf")
-      format("opentype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque Extra";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c46_Galano%20Grotesque%20Extra%20Bold.otf")
-    format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c45_Galano%20Grotesque%20Bold.otf")
-    format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque Extra";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c47_Galano%20Grotesque%20Extra%20Light.otf")
-    format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c49_Galano%20Grotesque%20Light.otf")
-    format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c4a_Galano%20Grotesque%20Medium.otf")
-    format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c4d_Galano%20Grotesque%20Italic.otf")
-    format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c4c_Galano%20Grotesque%20Thin.otf")
-    format("opentype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Galano Grotesque Semi";
-  src: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108c4b_Galano%20Grotesque%20Semi%20Bold.otf")
-    format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}

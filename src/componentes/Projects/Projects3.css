@@ -1,0 +1,793 @@
+/*.projectosnew {
+    border: solid 2px red;
+    z-index: 3;
+    background-color: var(--whitesomoke);
+    flex-flow: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    margin-top: -25px;
+    padding-top: 5vw;
+    padding-bottom: 10vw;
+    padding-left: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.columns-20 {
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    display: block;
+}
+
+.w-row:before,
+.w-row:after {
+    content: " ";
+    grid-area: 1 / 1 / 2 / 2;
+    display: table;
+}
+
+.w-row:after {
+    clear: both;
+}
+
+.w-row .w-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.w-col-4 {
+    width: 33.3333%;
+}
+
+.year {
+    border: 0px solid var(--grayweb);
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100px;
+    margin-right: 10px;
+    padding: 10px 10px 10px 15px;
+    display: flex;
+    overflow: hidden;
+}
+
+.text-block-5 {
+    color: var(--text);
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    padding-top: 0;
+    font-family: Galano Grotesque Demo, sans-serif;
+    font-size: 20px;
+}
+
+.proyectelem {
+    z-index: 3;
+    font-family: Galano Grotesque, sans-serif;
+    font-size: 14px;
+    line-height: 12px;
+    position: relative;
+}
+
+.div-block-65 {
+    width: 150px;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+.industry {
+    border: 0px solid var(--grayweb);
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin-right: 10px;
+    padding: 10px 0 10px 15px;
+    display: flex;
+    overflow: hidden;
+}
+
+.div-block-66 {
+    width: 250px;
+    height: 100px;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.tools {
+    border: 0px solid var(--grayweb);
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0 0 15px;
+    display: flex;
+    overflow: hidden;
+}
+
+.div-block-68 {
+    width: 150px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 1280px) {
+
+    .projectosnew {
+        padding-bottom: 15vw;
+    }
+
+    .year {
+        border: 0px solid var(--grayweb);
+        background-color: #e8e8e8;
+        border-radius: 10px;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        padding: 10px 0 10px 20px;
+        overflow: hidden;
+    }
+
+    .text-block-5 {
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 25px;
+        line-height: 18px;
+        position: relative;
+    }
+
+    .proyectelem {
+        font-family: Galano Grotesque, sans-serif;
+        font-size: 16px;
+        line-height: 14px;
+    }
+
+    .div-block-65 {
+        width: 150px;
+        height: 100px;
+    }
+
+    .industry {
+        border: 0px solid var(--grayweb);
+        background-color: #e8e8e8;
+        border-radius: 10px;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-right: 0;
+        padding: 10px 20px;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .div-block-66 {
+        width: 280px;
+        height: 100px;
+        margin-top: 0;
+        margin-right: -33px;
+    }
+
+    .tools {
+        border: 0px solid var(--grayweb);
+        background-color: #e8e8e8;
+        border-radius: 10px;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        padding: 10px 0 10px 20px;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .div-block-68 {
+        width: 200px;
+        height: 100px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .year {
+        background-color: #e8e8e8;
+        border-width: 0;
+    }
+
+
+    .text-block-5 {
+        z-index: 3;
+        font-size: 19px;
+        line-height: 18px;
+        position: relative;
+    }
+
+    .proyectelem {
+        font-size: 12px;
+    }
+
+    .div-block-65 {
+        width: 150px;
+        height: 80px;
+        margin-top: 0;
+        margin-right: -8px;
+    }
+
+    .industry {
+        background-color: #e8e8e8;
+        border-width: 0;
+        flex-flow: column;
+        padding-bottom: 0;
+    }
+
+    .div-block-66 {
+        z-index: 1;
+        width: 120px;
+        height: 500px;
+        margin-top: -64px;
+        margin-right: -85px;
+        position: relative;
+    }
+
+    .tools {
+        background-color: #e8e8e8;
+        border-width: 0;
+        flex-flow: row;
+        justify-content: center;
+    }
+
+    .div-block-68 {
+        width: 150px;
+        height: 80px;
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .projectosnew {
+        padding-bottom: 15vw;
+    }
+
+    .w-col-small-4 {
+        width: 33.3333%;
+    }
+
+    .div-block-65,
+    .background-video-16,
+    .div-block-66,
+    .div-block-68 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 479px) {
+
+    .projectosnew {
+        padding-top: 20vw;
+        padding-bottom: 30vw;
+    }
+
+    .columns-20 {
+        display: none;
+    }
+
+    .w-col-tiny-4 {
+        width: 33.3333%;
+    }
+}
+*/
+/***************************PARA SCROOLL VERTICAL********************/
+/*
+.page-wrapper {
+    display: block;
+    position: sticky;
+
+    z-index: 4;
+    background-color: var(--slider);
+}
+
+.main-wrapper {
+    padding: 50px;
+    display: block;
+    position: static;
+    border-radius: 25px;
+    margin-top: -25px;
+    background-color: var(--whitesomoke);
+
+}
+
+.section_stack {
+    display: block;
+    position: static;
+}
+
+.padding-global {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.container-large {
+    margin-top: 80px;
+    width: 100%;
+    position: static;
+}
+
+.section_description {
+    top: 6rem;
+    position: sticky;
+}
+
+.stack_card {
+    border: solid 3px black;
+    border-radius: 20px;
+    min-height: 60vh;
+    position: sticky;
+    top: 6rem
+}
+
+
+.stack_component {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.one {
+    background-color: orange;
+    top: 13rem;
+}
+
+.two {
+    background-color: pink;
+    top: 15rem;
+}
+
+.three {
+    background-color: blue;
+    top: 17rem;
+}
+
+.four {
+    background-color: red;
+    top: 19rem;
+}
+
+.five {
+    background-color: transparent;
+    top: 21rem;
+}
+
+
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 991px) {}*/
+
+
+
+/*********************** PARA SCROLL HORIZONTAAAAL***************/
+
+/*images*/
+
+.page-wrapper {
+    display: block;
+    position: sticky;
+    z-index: 4;
+    background-color: var(--slider);
+}
+
+.main-wrapper {
+    padding: 0 60px 0 60px;
+    display: block;
+    position: static;
+    border-radius: 25px;
+    margin-top: -25px;
+    background-color: var(--whitesomoke);
+
+}
+
+.containers {
+    /*SPACER QUE HACE EL SCROLL*/
+    height: 400vh;
+    /*MODIFICAR SI EL ÚLTIMO ELEMENTO NO SE EXPANDE 100%*/
+    border: solid 3px pink;
+    view-timeline-name: --scroll;
+    view-timeline-axis: block;
+}
+
+.wrapperA {
+    padding-top: 90px;
+    padding-bottom: 50px;
+    border: solid 3px cyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.descriptionProjects {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.descriptionProjects p {
+    color: var(--purpura);
+    margin-top: 70px;
+    margin-left: 30px;
+    position: absolute;
+    font-size: 26px !important;
+}
+
+.wrapperB {
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    gap: 20px;
+}
+
+.figure {
+    border-radius: 20px;
+    width: 6vw;
+    height: 66vh;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: width .6s ease;
+    will-change: filter;
+
+    animation: expand linear forwards;
+    /* Nueva animación individual para expandirse */
+    animation-timeline: --scroll;
+    box-shadow: 2px 2px 5px #0003;
+    box-shadow: -2px 2px 5px #0003;
+}
+
+/*.figure:is(:hover) {
+    filter: brightness(1.05) saturate(1.1);
+}*/
+
+.ProyectA,
+.ProyectB,
+.ProyectC,
+.ProyectD,
+.ProyectE {
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+
+.ProyectA {
+    background-image: url(/src/assets/img/Projects/modulAR/modular_Fin.jpg);
+}
+
+.ProyectB {
+    background-image: url(/src/assets/img/Projects/VC/bgvcfin.jpg);
+}
+
+.ProyectC {
+    background-image: url(/src/assets/img/Projects/Bank/banco_fin.jpg);
+}
+
+.ProyectD {
+    background-image: url(/src/assets/img/Projects/Movies/1.CoficafeTotal.jpg);
+}
+
+.ProyectE {
+    background-image: url(/src/assets/img/Projects/Vinos/1.VinosNew.jpg);
+}
+
+.contentExterior {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 600px;/* ANCHO EN @keyframes expand*/
+}
+
+
+.titleSection { /*ancho de descripción*/
+    width: 19vw;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: solid 1px var(--blancotrans);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 100%;
+    /*padding: 30px;*/
+    box-shadow: 5px 0 5px #0003;
+}
+
+.ProjectName {
+    border-radius: 20px;
+    height: 100%;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    /* opcional, para leer de abajo hacia arriba */
+    letter-spacing: 0.1em;
+    font-size: 2.5vw;
+    padding-right: 0.3vw;
+    padding-left: 1vw;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.074);
+
+}
+
+.ProjectNameLink {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ProjectNameLink:hover {
+    text-decoration: none;
+    color: var(--purpura);
+}
+
+.Description {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleSection h2,
+.titleSection p {
+    color: var(--text);
+}
+
+.titleSection p {
+    text-align: justify;
+}
+
+.btnLink {
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.725);
+    font-size: 16px !important;
+    margin-top: 20px;
+    color: white;
+
+    transition: background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btnLink:hover {
+    color: white;
+    box-shadow: 2px 0 5px #0003;
+
+}
+
+.figure:nth-child(1) .titleSection,
+.figure:nth-child(1) .ProjectName {
+    background-color: #e0fbf1b7;
+}
+
+.figure:nth-child(2) .titleSection,
+.figure:nth-child(2) .ProjectName {
+    background-color: #f2ead3b7;
+}
+
+.figure:nth-child(3) .titleSection,
+.figure:nth-child(3) .ProjectName {
+    background-color: #e2fbffbe;
+}
+
+.figure:nth-child(4) .titleSection,
+.figure:nth-child(4) .ProjectName {
+    background-color: #f2ead3b7;
+}
+
+.figure:nth-child(5) .titleSection,
+.figure:nth-child(5) .ProjectName {
+    background-color: #f3cdd0c6;
+}
+
+@keyframes expand {
+    to {
+        width: 600px;
+        /* tamaño expandido del contenedor de proyecto*/
+    }
+}
+
+/* Cada una tiene su tramo del scroll */
+.figure:nth-child(1) {
+    animation-range: 30% 40%;
+}
+
+.figure:nth-child(2) {
+    animation-range: 40% 50%;
+}
+
+.figure:nth-child(3) {
+    animation-range: 50% 60%;
+}
+
+.figure:nth-child(4) {
+    animation-range: 60% 70%;
+}
+
+.figure:nth-child(5) {
+    animation-range: 70% 80%;
+}
+
+@media screen and (max-width: 1280px) {
+
+    .figure {
+        width: 6.5vw;/*Ancho del vertical de nombre*/
+    }
+
+    .contentExterior {
+        width: 600px;/* ANCHO EN @keyframes expand*//*SE MANTIENE*/
+    }
+
+
+    .titleSection {/*ancho de descripción*/
+            width: 260px; 
+    }
+
+    .ProjectName {
+        font-size: 2.5vw; /*SE MANTIENE*/
+        padding-right: 0.5vw; 
+        padding-left: 1.6vw; 
+    }
+
+    .Description {
+        padding: 20px; /*SE MANTIENE*/
+    }
+
+    .btnLink {
+        font-size: 16px !important; /*SE MANTIENE*/
+    }
+
+
+    @keyframes expand {
+        to {
+            width: 600px;/* tamaño expandido del contenedor de proyecto*/ /*SE MANTIENE*/
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .wrapperB {
+        gap: 10px;
+    }
+
+    .figure {
+        /*width: 6.5vw;Ancho del vertical de nombre*/
+    }
+
+    .contentExterior {
+        width: 500px;/* ANCHO EN @keyframes expand*/
+    }
+
+
+    .titleSection {/*ancho de descripción*/
+        width: 200px; 
+        font-size: 15px;
+    }
+
+    .ProjectName {
+        font-size: 2.8vw; 
+        /*padding-right: 0.5vw; 
+        padding-left: 1.6vw; */
+    }
+
+    .Description {
+        padding: 15px;
+    }
+
+    .btnLink {
+        line-height: 15px;
+        font-size: 15px !important; 
+    }
+
+
+    @keyframes expand {
+        to {
+            width: 500px;/* tamaño expandido del contenedor de proyecto*/ /*SE MANTIENE*/
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media (max-width: 479px) {
+
+    /* 1️⃣ Quitamos el scroll falso */
+    .containers {
+        height: auto;
+        view-timeline-name: none;
+    }
+
+    /* 2️⃣ Quitamos sticky */
+    .wrapperA {
+        position: static;
+        height: auto;
+        padding-top: 40px;
+    }
+
+    /* 3️⃣ Volvemos a layout vertical */
+    .wrapperB {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    /* 4️⃣ Cada proyecto ocupa ancho completo */
+    .figure {
+        width: 100%;
+        height: auto;
+        animation: none;
+    }
+
+    /* 5️⃣ El contenedor deja de expandirse */
+    .contentExterior {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    /* 6️⃣ Títulos horizontales normales */
+    .ProjectName {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 22px;
+        padding: 15px;
+        text-align: left;
+        height: auto;
+    }
+
+    /* 7️⃣ Caja de contenido normal */
+    .titleSection {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .Description {
+        padding: 20px;
+    }
+
+    /* 8️⃣ Ajuste de texto */
+    .descriptionProjects p {
+        position: static;
+        margin: 20px 0 0 0;
+        font-size: 18px !important;
+    }
+}

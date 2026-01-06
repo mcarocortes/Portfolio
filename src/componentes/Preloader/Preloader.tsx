@@ -1,6 +1,6 @@
 import './Preloader.css'
 import Lottie from 'lottie-react';
-import animationData from '../../assets/MacaPreolader Gradient.json'; 
+import animationData from '../../assets/json/Preloader/MacaPreolader Gradient.json'; 
 import { useEffect, useState } from 'react';
 
 export default function Preloader({ animateOut }: PreloaderProps) {

@@ -14,6 +14,8 @@
   padding: 2vw 8vw;
   display: grid;
   top: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
 }
 
 .navbar.newtype {
@@ -88,7 +90,6 @@
   margin-left: -23px;
   margin-right: -23px;
   padding: 2px 23px;
-  font-weight: 500;
 }
 .nav-link {
   color: var(--white);
@@ -96,23 +97,19 @@
   overflow-wrap: normal;
   font-family: Montserrat, sans-serif;
   font-size: 15px;
-  font-weight: 500;
   text-decoration: none;
 }
 
 .nav-link.new {
   color: var(--text);
-  font-family: Galano Grotesque, sans-serif;
-  font-weight: 400;
 }
 
 /* *********************************** NAVBAR TEXTO *******************************/
 .navbartext {
+  margin-top: 5px;
   color: var(--text);
   cursor: pointer;
-  font-family: Galano Grotesque, sans-serif;
   font-size: 18px;
-  font-weight: 500;
   line-height: 15px;
   text-decoration: none;
   transition: color 0.1s ease, transform 0.1s ease;
@@ -125,7 +122,6 @@
   cursor: pointer;
   margin-top: 0;
   padding-top: 0;
-  font-weight: 500;
   text-decoration: none;
 }
 
@@ -172,7 +168,7 @@
 
 
 .logoNavM {
-  background-image: url("/src/assets/img/MacarenaCaro.svg");
+  background-image: url("/src/assets/img/Navbar/MacarenaCaro.svg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -182,7 +178,7 @@
 }
 
 .logoNavM:hover {
-    background-image: url("/src/assets/img/MacarenaCaroPurple.svg");
+    background-image: url("/src/assets/img/Navbar/MacarenaCaroPurple.svg");
     transform: scale(1.05); 
 }
 
@@ -205,6 +201,8 @@
   display: flex;
   box-shadow: 1px 1px 3px #797979b3;
   z-index: 999;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
 }
 
 .collapse.collapsado {
@@ -364,13 +362,11 @@
   border-radius: 10px;
   color: var(--text);
   cursor: pointer;
-  font-family: Galano Grotesque, sans-serif;
   font-size: 18px;
   line-height: 40px;
   transition: color 0.2s ease, transform 0.2s ease;
   outline: none;
   cursor: pointer;
-  font-weight: 500;
   text-decoration: none;
   padding-left: 30px;
   padding-right: 30px;
@@ -382,7 +378,6 @@
   cursor: pointer;
   margin-top: 0;
   padding-top: 0;
-  font-weight: 500;
   text-decoration: none;
 }
 
@@ -482,7 +477,6 @@
     word-break: normal;
     font-family: Montserrat, sans-serif;
     font-size: 14px;
-    font-weight: 500;
     line-height: 20px;
     text-decoration: none;
   }

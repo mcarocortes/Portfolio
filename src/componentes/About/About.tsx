@@ -1,8 +1,8 @@
 import Slider from '../Slider/Slider'
 import './About.css'
-import latDer from './../../assets/img/latDer.svg'
-import latIzq from './../../assets/img/latIZQ.svg'
-import logo from './../../assets/img/mLogoPurple.svg'
+import latDer from './../../assets/img/About/latDer.svg'
+import latIzq from './../../assets/img/About/latIZQ.svg'
+import logo from './../../assets/img/About/mLogoPurple.svg'
 import React from 'react'
 import { motion } from 'framer-motion'
 
@@ -41,7 +41,7 @@ export default function About() {
     const getStartBackgroundX = () => {
         const width = window.innerWidth;
         if (width <= 767) return null; // mobile
-        if (width <= 991) return -170; // -120 + -50 
+        if (width <= 991) return 140; // -90 + -50
         if (width <= 1280) return -70; // -20 + -50 
         if (width >= 1281) return 0; // 50 + (-50)
         return 10; // 60 + (-50) = 10
@@ -50,7 +50,7 @@ export default function About() {
     const getFinalBackgroundX = () => {
         const width = window.innerWidth;
         if (width <= 767) return null; // mobile
-        if (width <= 991) return -120;
+        if (width <= 991) return -90; //
         if (width <= 1280) return -20;
         if (width >= 1281) return 50;
         return 60;
@@ -154,12 +154,11 @@ export default function About() {
                     >
                         <h1 className="heading">About</h1>
                         <p className="pa">
-                            I'm a <span className="spabout">Web developer</span> and
-                            <span className="spabout"> Industrial Designer </span>
-                            specialized in <span className="spabout">Artificial Intelligence</span> and
-                            <span className="spabout"> Big Data</span>, currently creating digital experiences at Resiplus from Madrid.
+                            I'm a Web developer and
+                            Industrial Designer
+                            specialized in Artificial Intelligence and Big Data, currently<span className='spanDelicated'> creating digital experiences</span> at Resiplus from Madrid.
                         </p>
-                        <button onClick={() =>
+                        <button className='btnAbout' onClick={() =>
                             window.location.href =
                             "mailto:m.caro.cortes2@gmail.com?subject=I%20want%20to%20connect!"
                         }>Let's connect</button>
