@@ -13,10 +13,10 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: inherit;
+  cursor: url("/cursor13.png") 16 16, auto;
 }
 
 .body {
-  cursor: default;
   mix-blend-mode: normal;
   background-color: #b7b9c1;
 }
@@ -71,12 +71,13 @@ button,
   padding-bottom: 10px;
   border: none;
   border-radius: 20px !important;
-  cursor: pointer;
   transition: transform 0.3s ease;
   transform-origin: center;
   font-size: 23px !important;
   text-decoration: none;
   font-weight: 600;
+
+  cursor: url("/pointer16.png") 16 16, pointer !important;
 }
 
 button:hover,
@@ -84,6 +85,10 @@ button:hover,
 .ProjectNameLink:hover {
   transform: scale(1.1);
   text-decoration: none;
+}
+
+.ProjectNameLink,.navbartext,.logoNavM, .ProjectNameHover{
+    cursor: url("/pointer16.png") 16 16, pointer !important;
 }
 
 /*audio,
@@ -201,10 +206,6 @@ select,
   text-transform: none;
 }
 
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {

@@ -106,20 +106,21 @@
 
 /* *********************************** NAVBAR TEXTO *******************************/
 .navbartext {
+  padding-top: 3px;
   margin-top: 5px;
   color: var(--text);
-  cursor: pointer;
   font-size: 18px;
-  line-height: 15px;
   text-decoration: none;
   transition: color 0.1s ease, transform 0.1s ease;
   outline: none;
+  height: 100%;
+  text-align: center;
+
 }
 
 .navbartext.is-current {
   color: var(--purpura);
   letter-spacing: 0;
-  cursor: pointer;
   margin-top: 0;
   padding-top: 0;
   text-decoration: none;
@@ -223,7 +224,6 @@
 .navbar-toggler.custom-toggler {
   background: transparent;
   border: none;
-  cursor: pointer;
   width: 40px;
   height: 40px;
   padding: 0;
@@ -324,7 +324,6 @@
   }
 
   .navbartext {
-    cursor: pointer;
     font-size: 18px;
   }
 
@@ -361,12 +360,10 @@
 .menuLinktext{
   border-radius: 10px;
   color: var(--text);
-  cursor: pointer;
   font-size: 18px;
   line-height: 40px;
   transition: color 0.2s ease, transform 0.2s ease;
   outline: none;
-  cursor: pointer;
   text-decoration: none;
   padding-left: 30px;
   padding-right: 30px;
@@ -375,7 +372,6 @@
 .menuLinktext.is-current {
   color: var(--purpura);
   letter-spacing: 0;
-  cursor: pointer;
   margin-top: 0;
   padding-top: 0;
   text-decoration: none;

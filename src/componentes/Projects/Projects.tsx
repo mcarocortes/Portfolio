@@ -30,7 +30,7 @@ export default function Projects() {
             title: "Valezka Cortés",
             subt: "A clean, professional website designed to build trust and make psychological and family mediation services easily accessible.",
             url: "/Vc",
-            build: ["Wordpress", "Brand Development", "Web Design", "Psicology"]
+            build: ["Wordpress", "Brand Development", "Web Design", "Psychologist"]
         },
         {
             id: 'ProyectC',
@@ -121,6 +121,7 @@ export default function Projects() {
 
                                 {projectsData.map((proj) => (
                                     <div key={proj.id} className={`figure ${proj.id}`}>
+                                        <Link to={proj.url} className='ProjectNameHover'></Link>
                                         <Link to={proj.url} className='ProjectNameLink'>{proj.title}</Link>
                                         <div className='descriptionSection'>
                                             <p className='projectDetails'>{proj.subt}</p>

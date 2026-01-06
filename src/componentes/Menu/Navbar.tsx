@@ -17,16 +17,16 @@ export default function Navbar() {
     <>
       <div className="navbar newtype">
         <div className="div-block-10">
-          <Link to="/Portfolio#Home" className="navbar-brand logoNavM" aria-label="Go to home">
+          <Link to="#Home" className="navbar-brand logoNavM" aria-label="Go to home">
           </Link>
 
           <div className="nav-menu-wrapper-right">
             <nav role="navigation" className="nav-menu new">
               <div className='nav-buttons-wrapper new' >
-                <Link to="/Portfolio#About" className="navbartext">About</Link>
-                <Link to="/Portfolio#Projects" className="navbartext">Projects</Link>
-                <Link to="/Portfolio#Testimonials" className="navbartext">Testimonials</Link>
-                <Link to="/Portfolio#Contact" className="navbartext">Contact</Link>
+                <Link to="/#About" className="navbartext">About</Link>
+                <Link to="/#Projects" className="navbartext">Projects</Link>
+                <Link to="/#Testimonials" className="navbartext">Testimonials</Link>
+                <Link to="/#Contact" className="navbartext">Contact</Link>
               </div>
             </nav>
 

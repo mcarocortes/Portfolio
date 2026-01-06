@@ -90,16 +90,19 @@ section {
 
 .about-cards .uno {
   margin-left: 50px;
+  cursor: none;
 }
 
 .about-cards .dos {
   margin-top: 60px;
+  cursor: none;
+
 }
 
 .about-cards .tres {
   margin-top: 60px;
   margin-left: 60px;
-
+  cursor: none;
 }
 
 .about-cards .exterior .text {

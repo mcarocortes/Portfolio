@@ -41,7 +41,6 @@
 
 .descriptionProjects {
     height: 150px;
-
     margin-left: 60px;
     display: flex;
     flex-direction: column;
@@ -75,7 +74,6 @@
     height: 100%;
     padding-left: 60px;
     padding-right: 60px;
-
 }
 
 .figure {
@@ -91,6 +89,14 @@
     position: relative;
     padding: 30px;
     text-align: right;
+}
+
+.ProjectNameHover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
 }
 
 .ProjectNameLink {
@@ -109,7 +115,7 @@
 
 .ProjectNameLink:hover {
     text-decoration: none;
-    color: black;
+    color: var(--text);
 }
 
 .figure:nth-child(2) .ProjectNameLink {
@@ -127,7 +133,6 @@
 .figure:nth-child(5) .ProjectNameLink {
     background-color: #f3cdd09f;
 }
-
 
 .descriptionSection {
     width: 100% !important;
@@ -209,9 +214,9 @@
 .buildItem {
     background-color: rgba(0, 0, 0, 0.725);
     color: white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 999px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
@@ -224,9 +229,11 @@
         transform 0.3s ease;
 }
 
-.figure:hover .buildList {
-    opacity: 0;
-    display: none;
+.figure:hover .buildItem {
+    /*opacity: 0;
+    display: none;*/
+    background-color: rgba(255, 255, 255, 0.496);
+    color: var(--text);
 }
 
 
