@@ -1,0 +1,130 @@
+.testimonials {
+  background-color: #fff;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 6vw 0;
+  display: flex;
+  position: fixed;
+  inset: auto 0% 0%;
+  overflow: hidden;
+}
+
+.div-block-100 {
+  z-index: -2;
+  background-image: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/678d741ee9623272df6779fd_dots2.avif");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.div-block-101 {
+  z-index: -1;
+  aspect-ratio: auto;
+  background-image: url("https://cdn.prod.website-files.com/66f53b4e20ea887a10108c17/66f53b4e20ea887a10108ca6_mouse.avif");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 10%;
+  flex: 0 auto;
+  order: 1;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.div-block-98 {
+  width: 100%;
+  height: auto;
+}
+
+.heading.testi {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 60px;
+  margin-left: 0;
+}
+
+.pa.testi {
+  text-align: center;
+}
+
+@media screen and (min-width: 1280px) {
+
+    .testimonials {
+    background-color: var(--whitesomoke);
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0 4vw 0;
+    overflow: hidden;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+
+    .testimonials {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 5vw 0;
+  }
+
+    .div-block-100 {
+    background-size: contain;
+  }
+
+    .div-block-101 {
+    background-size: 20%;
+  }
+
+    .heading.testi {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+    .div-block-101 {
+    background-size: 25%;
+  }
+
+    .heading.testi {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 40px;
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+
+    .testimonials {
+    background-image: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 8vw 0;
+    display: flex;
+  }
+  
+
+    .div-block-101 {
+    background-size: 30%;
+  }
+
+    .heading.testi {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-bottom: 40px;
+    font-size: 2.3em;
+  }
+}

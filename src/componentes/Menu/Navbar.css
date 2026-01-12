@@ -10,7 +10,6 @@
   place-items: center stretch;
   width: 100vw;
   height: 80px;
-  margin-top: 0;
   padding: 2vw 8vw;
   display: grid;
   top: 0;
@@ -115,6 +114,10 @@
   outline: none;
   height: 100%;
   text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border: solid 2px transparent;
 
 }
 
@@ -127,11 +130,11 @@
 }
 
 .navbartext:hover {
-    color: var(--purpura);
-    transform: scale(1.05); 
+    color: var(--text);
     text-decoration: none;
-    text-shadow: 0.5px 0.5px 2px var(--purpura);
-  
+    background-color: #ffffff67;
+      box-shadow: 1px 1px 3px #7979796b;
+
   }
 
 .navbartext:active {
@@ -650,12 +653,12 @@
 
   /* *********************************** NAVBAR LOGO *******************************/
   .logoNavM {
-    background-image: url("/src/assets/img/mLogoGrey.svg");
+    background-image: url("/src/assets/img/Navbar/mLogoGrey.svg");
     height: 40px;
   }
 
 .logoNavM:hover {
-    background-image: url("/src/assets/img/mLogoPurple.svg");
+    background-image: url("/src/assets/img/Navbar/mLogoPurple.svg");
     transform: scale(1.05); 
 }
 }

@@ -24,7 +24,7 @@ export default function Slider() {
             <aside className="purpose">
                 <div  ref={sliderRef} className="codewithstyle">
                     <div className="div-block-97">
-                    {[1, 2, 3, 4, 5, 6].map((item) => (
+                    {[1, 2, 3, 4, 5, 6,7,8].map((item) => (
                         <Fragment key={item}>
                             <img
                                 src= {emoji}

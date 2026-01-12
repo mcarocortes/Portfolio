@@ -420,7 +420,6 @@
     /*SPACER QUE HACE EL SCROLL*/
     height: 400vh;
     /*MODIFICAR SI EL ÚLTIMO ELEMENTO NO SE EXPANDE 100%*/
-    border: solid 3px pink;
     view-timeline-name: --scroll;
     view-timeline-axis: block;
 }
@@ -428,7 +427,6 @@
 .wrapperA {
     padding-top: 90px;
     padding-bottom: 50px;
-    border: solid 3px cyan;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

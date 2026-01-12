@@ -1,5 +1,7 @@
 import SplineMaca from './SplineMaca';
 import './Hero.css'
+import scroll from '../../assets/Scroll down.json';
+import Lottie from 'lottie-react';
 
 
 type HeroProps = {
@@ -19,7 +21,7 @@ export default function Hero({ onSplineReady }: HeroProps) {
           <SplineMaca onSceneLoad={handleSplineLoad} />
         </div>
       </section>
-      <div className="spacer"></div>
+      <div className='distance'></div>
     </section>
   );
 }

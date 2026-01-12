@@ -43,7 +43,9 @@
 }
 
 .outLineScroll {
-  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #fff !important;
   border-radius: 25px;
   margin-top: 0;
   margin-bottom: 0;
@@ -58,11 +60,12 @@
   padding: 5px;
 }
 
-.spacer {
+.distance {
+  color: white;
   width: 100%;
-  height: 100vh;
-  margin-top: -33px;
+  margin-top:  0px;
   position: relative;
+  height: 145vh;
 }
 
 #canvas3d {
@@ -71,7 +74,13 @@
   position: relative;
   z-index: 1; 
 }
+@media screen and (max-width: 1280px) {
+.distance {
+  margin-top: -81px;
+  height: 98vh;
+}
 
+}
 @media screen and (min-width: 1280px) {
   .hero-wrapper {
     width: 100%;
@@ -95,11 +104,6 @@
     margin-top: -165px;
   }
 
-
-  .spacer {
-    height: 150vh;
-    margin-top: -71px;
-  }
 }
 
 @media screen and (max-width: 991px) {
@@ -121,6 +125,11 @@
     margin-top: -136px;
     bottom: 25px !important;
   }
+
+  .distance {
+  margin-top: -150px;
+  height: 98vh;
+}
 
 }
 
@@ -146,8 +155,9 @@ justify-content: flex-start;
     padding-left: 7vw;
   }
 
-  .spacer {
+  .distance {
     margin-top: -68px;
+    height: 93vh;
   }
 }
 
@@ -178,7 +188,7 @@ justify-content: flex-start;
     padding: 3px;
     
   }
-  .spacer {
+  .distance {
     margin-top: -99px;
     display: block;
   }

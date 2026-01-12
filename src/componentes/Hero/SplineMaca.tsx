@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 interface SplineMacaProps {
   onSceneLoad?: () => void;
 }
-console.log("cargando spline")
 
 export default function SplineMaca({ onSceneLoad }: SplineMacaProps) {
   // 1. Estado para detectar si es mobile

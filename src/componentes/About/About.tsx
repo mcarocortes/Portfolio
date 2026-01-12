@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 export default function About() {
 
     //Hover divs icons
-    type CursorType = "A" | "B" | "C" | null;
+    type CursorType = "D" | "B" | "C" | null;
 
     const [cursor, setCursor] = React.useState<{
         visible: boolean;
@@ -151,7 +151,10 @@ export default function About() {
                         viewport={{ once: false, amount: 0.3 }}
                         variants={containerVariants}
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+
                     >
+
+                                                {/**/}
                         <h1 className="heading">About</h1>
                         <p className="pa">
                             I'm a Web developer and

@@ -37,7 +37,7 @@ export default function Projects() {
             title: "Bank App",
             subt: "An academic banking application developed in C# (.NET), featuring client and branch management with database integration.",
             url: "/Bank",
-            build: ["Illustration", ".NET", "WPF", "Web Development"]
+            build: ["Illustration", ".NET", "WPF", "Application Design"]
         },
         {
             id: 'ProyectD',
@@ -51,7 +51,7 @@ export default function Projects() {
             title: "Vinos",
             subt: "An elegant WordPress website for a wine bar, focused on minimalism, usability, and online menu exploration",
             url: "/Vinos",
-            build: ["Illustration", "Brand Development", "Web Design", "Web Development"]
+            build: ["Graphic Design", "Brand Development", "Restaurant", "Wordpress"]
         },
 
     ];
@@ -114,7 +114,7 @@ export default function Projects() {
 
                             <div className="descriptionProjects">
                                 <h1 className="heading">Projects</h1>
-                                <p>Work I'm Proud Of <span><FontAwesomeIcon icon={fas['faHeart']} /></span></p>
+                                <p>Work I'm <span>Proud Of <FontAwesomeIcon icon={fas['faHeart']} /></span></p>
                             </div>
 
                             <div className="wrapperB" ref={wrapperRef} >
@@ -148,9 +148,7 @@ export default function Projects() {
                 </div>
             </div>
 
-
-
-
+            <div id="Testimonials" className="spacer"></div>
 
         </>
     )

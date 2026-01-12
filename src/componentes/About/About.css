@@ -43,20 +43,27 @@ section {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   width: 100%;
-  height: 540px;
+  height: 600px;
   top: 0;
   box-shadow: 0 2px 5px #0003;
   overflow: hidden;
   background-image: url("/src/assets/img/About/ProfilePicture2.png");
   background-position: 20px bottom;
   background-repeat: no-repeat;
-  background-size: auto 93%;
+  background-size: auto 90%;
 }
 
 .btnAbout {
-  background-image: linear-gradient(to top, #3333cc, var(--purpura), rgb(216, 168, 250));
+  background-color: var(--purpura);/*linear-gradient(to top, #3333cc, var(--purpura), rgb(216, 168, 250));*/
+  box-shadow: 2px 2px 8px #0003;
   color: white;
   width: 250px;
+  transition: all .2s ease-in-out;
+}
+
+.btnAbout:hover {
+  background-color: var(--purpura);/*linear-gradient(to top, #3333cc, var(--purpura), rgb(216, 168, 250));*/
+  font-weight: 800;
 }
 
 .w-col {
@@ -67,8 +74,8 @@ section {
 .about-content {
   flex: 1;
   min-width: 0;
-  padding-left: 30px;
-  padding-right: 60px;
+  padding-left:80px !important;
+  padding-right: 60px !important;
   padding-bottom: 30px;
   display: flex;
   flex-direction: column;
@@ -77,7 +84,7 @@ section {
 }
 
 .about-cards {
-  width: 50vw;
+  width: 40vw !important;
   flex-shrink: 0;
   height: 100% !important;
   align-self: stretch;
@@ -123,9 +130,6 @@ section {
   position: relative;
   z-index: 2;
   transition: all .5s ease-in-out;
-
-
-
 }
 
 .about-cards .exterior .text:hover {
@@ -404,11 +408,15 @@ div .exterior:hover {
     margin: 0;
   }
 
+  .pa{ 
+    padding: 0;
+  }
   .about-cards .uno {
     display: none;
   }
 
   .about-cards {
+    width: 100% !important;
     padding: 40px;
     padding-top: 150px;
     flex-direction: row;
@@ -461,6 +469,7 @@ div .exterior:hover {
     border-top-left-radius: 20px;
     background-size: auto 70VW;
     padding: 0px;
+    padding-top: 40px;
   }
 
   .pa {
