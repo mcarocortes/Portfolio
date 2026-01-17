@@ -25,7 +25,7 @@ export default function Navbar() {
               <div className='nav-buttons-wrapper new' >
                 <Link to="/#About" className="navbartext">About</Link>
                 <Link to="/#Projects" className="navbartext">Projects</Link>
-                <Link to="/#Testimonials" className="navbartext">Testimonials</Link>
+                <Link to="/#WhatIDo" className="navbartext">What I Do</Link>
                 <Link to="/#Contact" className="navbartext">Contact</Link>
               </div>
             </nav>

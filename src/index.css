@@ -40,11 +40,13 @@ body {
   --slider: #e7e7e7;
   --navbar: #ced1d7;
   --purpura: #837ae5;
-  --pur: var(--smoke);
-  --purpura2: #d4cfe9;
+  --purpura2: #c7b5ed;
   --blancotrans: #ffffff36;
   --color: white;
   --black: black;
+  --skillsBg : #f2eeff;
+  --darkPurple:#300c46;
+  --ulSkills: #e0d6f1;
 }
 
 article,
@@ -87,7 +89,7 @@ button:hover,
   text-decoration: none;
 }
 
-.ProjectNameLink,.navbartext,.logoNavM, .ProjectNameHover{
+.ProjectNameLink,.navbartext,.logoNavM, .ProjectNameHover,.list,.back{
     cursor: url("/pointer16_2.png") 16 16, pointer !important;
 }
 

@@ -10,7 +10,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       <div className="navbar-nav">
         <Link to="/#About"className="menuLinktext"onClick={onClose}>About</Link>
         <Link to="/#Projects"className="menuLinktext"onClick={onClose}>Projects</Link>
-        <Link to="/#Testimonials"className="menuLinktext"onClick={onClose}>Testimonials</Link>
+        <Link to="/#WhatIDo" className="menuLinktext"onClick={onClose}>What I Do</Link>
         <Link to="/#Contact"className="menuLinktext"onClick={onClose}>Contact</Link>
       </div>
     </div>

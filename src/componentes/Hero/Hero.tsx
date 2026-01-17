@@ -1,8 +1,5 @@
 import SplineMaca from './SplineMaca';
 import './Hero.css'
-import scroll from '../../assets/Scroll down.json';
-import Lottie from 'lottie-react';
-
 
 type HeroProps = {
   onSplineReady: () => void;

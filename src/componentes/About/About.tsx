@@ -102,7 +102,7 @@ export default function About() {
 
     return (
         <>
-            <section className="sobremi">
+            <section className="sobremi" id="About">
                 <div className="columnas">
                     <div className="image-Izq">
                         <img src={latIzq} loading="lazy" alt="" />
@@ -113,7 +113,7 @@ export default function About() {
                     </div>
                 </div>
 
-                <div id="About" className="about" ref={aboutRef}>
+                <div  className="about" ref={aboutRef}>
                     <motion.div
                         className="w-col about-cards"
                         initial="hidden"

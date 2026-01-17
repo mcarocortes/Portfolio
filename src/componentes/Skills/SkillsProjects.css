@@ -1,0 +1,281 @@
+/***************************PARA SCROOLL VERTICAL********************/
+
+.page-wrapper-vertical {
+    color: var(--text);
+    display: block;
+    position: sticky;
+    z-index: 4;
+    border-radius: 25px;
+    box-shadow: 2px -2px 10px #0003;
+    margin-bottom: -30px;
+}
+
+.main-wrapper-vertical {
+    padding: 60px;
+    display: block;
+    position: static;
+    margin-top: -25px;
+
+}
+
+.section_stack {
+    display: block;
+    position: static;
+}
+
+.padding-global {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.container-large {
+    margin-top: 80px;
+    width: 100%;
+    position: static;
+}
+
+.stack_component {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.section_description {
+    top: 6rem;
+    position: sticky;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stack_card {
+    display: flex;
+    padding: 20px;
+    border: solid 3px var(--purpura);
+    background-color: var(--skillsBg);
+    border-radius: 20px;
+    min-height: 60vh;
+    position: sticky;
+    top: 6rem;
+    box-shadow: 3px -3px 10px #837ae530;
+    background-image: url("/src/assets/img/Skills/BgCiclesLigth.svg");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition:
+        background-color 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stack_card:hover {
+    background-color: var(--purpura);
+    box-shadow: 6px -6px 20px #837ae550;
+    /*transform: translateY(-4px);*/
+    background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
+
+}
+
+.stack_card:hover .card_description ul {
+    color: var(--ulSkills);
+}
+
+.stack_card:hover .card_description span {
+    color: #300c46;
+}
+
+.stack_card:hover .card_description h3,
+.stack_card:hover .card_description p {
+    color: white;
+}
+
+.ImgIcon {
+    height: auto;
+    width: 50%;
+}
+
+.card_description {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 50%;
+}
+
+.card_description h3 {
+    font-size: 50px;
+}
+
+.card_description span {
+    color: var(--purpura);
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+    font-weight: 400;
+    font-style: italic;
+
+    color: var(--purpura);
+}
+
+.card_description p,
+.card_description ul {
+    margin-top: 33px;
+    font-size: 23px;
+}
+
+.card_description ul {
+    color: var(--purpura);
+}
+
+.one {
+    top: 15rem;
+}
+
+.one .ImgIcon {
+    background-image: url("/src/assets/img/Skills/BlueWhite.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.stack_card.one:hover .ImgIcon {
+    background-image: url("/src/assets/img/Skills/BluePurple.svg");
+}
+
+.two {
+    top: 16rem;
+}
+
+.two .ImgIcon {
+    background-image: url("/src/assets/img/Skills/MacaBlue.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.three {
+    top: 17rem;
+}
+
+.three .ImgIcon {
+    background-image: url("/src/assets/img/Skills/Green.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.four {
+    opacity: 0;
+}
+
+.spacer2 {
+    width: 100%;
+    height: 400vh
+}
+
+
+@media screen and (max-width: 991px) {
+    .padding-global {
+        padding: 0;
+    }
+
+    .stack_card {
+        padding: 20px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+
+    .ImgIcon {
+        height: 300px;
+        width: auto;
+    }
+
+    .card_description {
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    .card_description h3 {
+        font-size: 40px;
+    }
+
+    .one {
+        top: 17rem;
+    }
+
+    .two {
+        top: 19rem;
+    }
+
+    .three {
+        top: 21rem;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .stack_card {
+        justify-content: center;
+    }
+
+    .card_description ul {
+        display: none;
+    }
+
+    .one {
+        top: 15rem;
+    }
+
+    .two {
+        top: 17rem;
+    }
+
+    .three {
+        top: 19rem;
+    }
+
+    .ImgIcon {
+        height: 260px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .main-wrapper-vertical {
+        padding: 40px;
+    }
+
+    .heading {
+        line-height: 45px;
+    }
+
+    .stack_card {
+        padding: 20px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .card_description {
+        margin: 0;
+    }
+
+    .card_description h3 {
+        font-size: 30px;
+    }
+
+    .card_description p {
+        font-size: 18px;
+    }
+
+    .ImgIcon {
+        height: 200px;
+        width: auto;
+    }
+}

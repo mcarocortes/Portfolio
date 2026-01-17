@@ -62,7 +62,6 @@ section {
 }
 
 .btnAbout:hover {
-  background-color: var(--purpura);/*linear-gradient(to top, #3333cc, var(--purpura), rgb(216, 168, 250));*/
   font-weight: 800;
 }
 
@@ -399,7 +398,7 @@ div .exterior:hover {
     height: 40%;
     flex-shrink: 1;
     align-items: center;
-    padding: 40px;
+    padding: 40px !important;
   }
 
   .about-cards .tres,
@@ -492,7 +491,7 @@ div .exterior:hover {
   }
 
   .about-content {
-    padding: 40px;
+    padding: 25px !important;
     justify-content: flex-start;
   }
 }

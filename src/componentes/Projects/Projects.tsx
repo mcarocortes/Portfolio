@@ -14,7 +14,7 @@ export default function Projects() {
     const containerVariants = {
         hidden: { opacity: 0, y: 80 },
         visible: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: 80 },
+        exit: { opacity: 0, y: 2 },
     };
 
     const projectsData = [
@@ -101,7 +101,7 @@ export default function Projects() {
 
     return (
         <>
-            <div id="Projects" className='page-wrapper'>
+            <section id="Projects" className='page-wrapper'>
                 <div className="main-wrapper">
 
                     <div className="containers">
@@ -146,10 +146,8 @@ export default function Projects() {
                     </div>
 
                 </div>
-            </div>
-
-            <div id="Testimonials" className="spacer"></div>
-
+                <div className="spacer_myskills"></div>
+            </section>
         </>
     )
 }
