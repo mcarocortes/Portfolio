@@ -59,7 +59,6 @@ export default function SkillsProjects() {
                                             <ul>
                                                 <li>Logo & identity design</li>
                                                 <li>Brand guidelines</li>
-                                                <li>Visual storytelling</li>
                                                 <li>Rebranding & refresh</li>
                                             </ul>
                                         </div>

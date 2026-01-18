@@ -10,11 +10,42 @@ background-color: var(--purpura);
   height: 100vh;
   position: relative;
   overflow: hidden;
-    background-image: url("/src/assets/img/Footer/macarenaFooter.svg");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: auto 18%;
+
 }
+.loop{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none; 
+    overflow: hidden;
+
+}
+
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite; /*scroll velocidad*/
+}
+
+.track img {
+  height: 20vh;      
+  margin-right: 60px;
+  object-fit: contain;
+}
+
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 
 .content{
   padding: 60px;
@@ -144,6 +175,15 @@ color: white;
 .figures{
   margin-bottom: -28vh;
 }
+
+
+.track {
+  animation: scroll 30s linear infinite; /*scroll velocidad*/
+}
+
+.track img {
+  height: 19vh;      
+}
 }
 
 @media screen and (max-width: 991px) {
@@ -163,9 +203,21 @@ color: white;
 }
 
 @media screen and (max-width: 767px) {
-  
+  .track {
+  animation: scroll 20s linear infinite; /*scroll velocidad*/
+}
+
+.track img {
+  height: 15vh;      
+}
   .message .title{
-    color: var(--darkPurple)
+    margin-top: 50px;
+}
+
+.btnAContacto{
+  margin-top: 20px;
+  margin-bottom: 10px;
+
 }
 .content{
   padding: 40px;
@@ -182,8 +234,9 @@ color: white;
   width: 100%;
 }
 
-.btnAContacto{
-  font-size: 21px !important;
+.items{
+  width: 50%;
+  height: 100%;
 }
 
 .items ul {
@@ -196,7 +249,8 @@ color: white;
 }
 
   .figures{
-  margin-bottom: -33vh;
+  margin-bottom: -25vh;
+  margin-left: 23vw;
 }
 
 .footerLine{
@@ -210,12 +264,18 @@ color: white;
   .title{
     font-size: 45px !important;
   }
+  .items{
+    padding: 0;
+  }
 
   .list{
 font-size: 20px;}
 
   .figures{
-  margin-bottom: -32vh;
+  margin-bottom: -23vh;
+}
+.back{
+  display: none;
 }
 
 }

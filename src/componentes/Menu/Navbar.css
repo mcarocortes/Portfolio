@@ -82,14 +82,6 @@
   position: relative;
 }
 
-.nav-link:focus {
-  color: var(--grayweb);
-  background-color: #fff;
-  border-radius: 20px;
-  margin-left: -23px;
-  margin-right: -23px;
-  padding: 2px 23px;
-}
 .nav-link {
   color: var(--white);
   -webkit-text-stroke-color: var(--text);

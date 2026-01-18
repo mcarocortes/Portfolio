@@ -7084,6 +7084,9 @@ textarea.w-input, textarea.w-select {
     font-size: 45px !important;
   }
 
+  button{
+  font-size: 21px !important
+}
   /*
   
   .logo {

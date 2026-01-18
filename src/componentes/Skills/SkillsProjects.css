@@ -43,7 +43,7 @@
 }
 
 .section_description {
-    top: 6rem;
+    top: 100px;
     position: sticky;
     height: 120px;
     display: flex;
@@ -54,10 +54,11 @@
 .stack_card {
     display: flex;
     padding: 20px;
-    border: solid 3px var(--purpura);
+    border: solid 1px var(--purpura);
     background-color: var(--skillsBg);
+    overflow: hidden;
     border-radius: 20px;
-    min-height: 60vh;
+    height: 55vh;
     position: sticky;
     top: 6rem;
     box-shadow: 3px -3px 10px #837ae530;
@@ -107,7 +108,7 @@
 }
 
 .card_description h3 {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .card_description span {
@@ -123,8 +124,9 @@
 
 .card_description p,
 .card_description ul {
-    margin-top: 33px;
-    font-size: 23px;
+    color: var(--grayweb);
+    margin-top: 20px;
+    font-size: 22px;
 }
 
 .card_description ul {
@@ -132,7 +134,7 @@
 }
 
 .one {
-    top: 15rem;
+    top: 220px;
 }
 
 .one .ImgIcon {
@@ -143,33 +145,42 @@
 }
 
 .stack_card.one:hover .ImgIcon {
-    background-image: url("/src/assets/img/Skills/BluePurple.svg");
+    background-image: url("/src/assets/img/Skills/BlueDark.svg");
 }
 
 .two {
-    top: 16rem;
+    top: 250px;
 }
 
 .two .ImgIcon {
-    background-image: url("/src/assets/img/Skills/MacaBlue.svg");
+    background-image: url("/src/assets/img/Skills/MacaWhite.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.stack_card.two:hover .ImgIcon {
+    background-image: url("/src/assets/img/Skills/MacaDark.svg");
 }
 
 .three {
-    top: 17rem;
+    top: 280px;
 }
 
 .three .ImgIcon {
-    background-image: url("/src/assets/img/Skills/Green.svg");
+    background-image: url("/src/assets/img/Skills/GreenWhite.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+.stack_card.three:hover .ImgIcon {
+    background-image: url("/src/assets/img/Skills/GreenDark.svg");
 }
 
 .four {
     opacity: 0;
+    top: 280px;
+    height: 40vh;
 }
 
 .spacer2 {
@@ -182,18 +193,41 @@
     .padding-global {
         padding: 0;
     }
+    .card_description h3 {
+    font-size: 35px;
+}
+.ImgIcon {
+    height: auto;
+    width: 40%;
+}
+.card_description p,
+.card_description ul {
+    font-size: 20px;
+}
+    .one {
+    top: 260px;
+    }
 
-    .stack_card {
+    
+    .two {
+    top: 275px;
+    }
+    
+    
+    .three {
+    top: 290px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    
+   .stack_card {
         padding: 20px;
         padding-top: 30px;
         display: flex;
         flex-direction: column-reverse;
-        justify-content: start;
-    }
-
-    .ImgIcon {
-        height: 300px;
-        width: auto;
+        justify-content: center;
     }
 
     .card_description {
@@ -202,47 +236,35 @@
     }
 
     .card_description h3 {
-        font-size: 40px;
-    }
-
-    .one {
-        top: 17rem;
-    }
-
-    .two {
-        top: 19rem;
-    }
-
-    .three {
-        top: 21rem;
-    }
-
-}
-
-@media screen and (max-width: 767px) {
-    .stack_card {
-        justify-content: center;
+        font-size: 35px;
     }
 
     .card_description ul {
         display: none;
     }
 
-    .one {
-        top: 15rem;
-    }
-
-    .two {
-        top: 17rem;
-    }
-
-    .three {
-        top: 19rem;
-    }
-
     .ImgIcon {
         height: 260px;
         width: auto;
+    }
+
+        .one {
+    top: 240px;
+    }
+
+    
+    .two {
+    top: 260px;
+    }
+    
+    
+    .three {
+    top: 280px;
+    }
+
+        .four{
+    top: 280px;
+    height: 30vh;
     }
 }
 
@@ -277,5 +299,24 @@
     .ImgIcon {
         height: 200px;
         width: auto;
+    }
+
+            .one {
+    top: 210px;
+    }
+
+    
+    .two {
+    top: 230px;
+    }
+    
+    
+    .three {
+    top: 250px;
+    }
+
+        .four{
+    top: 250px;
+    height: 10vh;
     }
 }

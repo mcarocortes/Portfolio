@@ -1,4 +1,5 @@
 import './Contact.css'
+import logoName from '../../assets/img/Footer/macarenaFooter.svg'
 import Spline from '@splinetool/react-spline';
 import { Link } from 'react-router-dom'
 
@@ -6,8 +7,19 @@ export default function Contact() {
   return (
     <>
       <footer id="Contact" >
+        <div className='loop'>
+          <div className="track">
+              <img src={logoName} alt="" />
+              <img src={logoName} alt="" />
+              <img src={logoName} alt="" />              
+              <img src={logoName} alt="" />
+              <img src={logoName} alt="" />
+              <img src={logoName} alt="" />
+              </div>
+        </div>
         <div className='content'>
           <div className='message'>
+            
             <p className='title'>Crafting <span>bold <br />design</span> experiences</p>
 
             <button className='btnAContacto' onClick={() =>
