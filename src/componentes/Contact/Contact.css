@@ -249,7 +249,7 @@ color: white;
 }
 
   .figures{
-  margin-bottom: -25vh;
+  margin-bottom: -27vh;
   margin-left: 23vw;
 }
 
@@ -272,7 +272,8 @@ color: white;
 font-size: 20px;}
 
   .figures{
-  margin-bottom: -23vh;
+  margin-bottom: -28vh;
+  width: 100% !important;
 }
 .back{
   display: none;
