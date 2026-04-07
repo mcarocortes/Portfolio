@@ -41,11 +41,10 @@
 
 .heading-9 {
   color: var(--purpura);
-  font-family: "Platypi", serif;
+  /*font-family: "Platypi", serif;*/
   font-optical-sizing: auto;
-  font-style: italic;  
+  /*font-style: italic;  */
   font-weight: 300;
-  font-style: italic;
 
   text-align: left;
   overflow-wrap: normal;

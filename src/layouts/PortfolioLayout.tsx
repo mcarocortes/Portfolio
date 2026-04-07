@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Hero from "../componentes/Hero/Hero";
 import Preloader from "../componentes/Preloader/Preloader";
+import HeroParticles from "../componentes/Hero/HeroParticles";
 
 export default function PortfolioLayout() {
   const location = useLocation();
@@ -29,11 +30,12 @@ export default function PortfolioLayout() {
 
   return (
     <>
-      {showPreloader && <Preloader animateOut={animateOut} />}
+      {/*{showPreloader && <Preloader animateOut={animateOut} />}*/}
 
       {/* Hero SOLO visible en Home */}
       <div style={{ display: isHome ? "block" : "none" }}>
         <Hero onSplineReady={() => setSplineLoaded(true)} />
+        {/*<HeroParticles />*/}
       </div>
 
       <Outlet />

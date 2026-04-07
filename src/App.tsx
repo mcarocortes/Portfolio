@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
-import Menu from "./componentes/Menu/Navbar";
+import Navbar from "./componentes/NavBar/Navbar";
+import AccessibilityPanel from "./componentes/Accessibility/Accessibility";
 import ScrollToHash from "./ScrollToHash";
 import Lenis from "lenis";
 import { useEffect } from "react";
@@ -26,8 +27,9 @@ export default function App() {
   return (
       <BrowserRouter basename="/Portfolio">
         <ScrollToHash />
-        <Menu />
+        <Navbar />
         <AppRoutes />
+        <AccessibilityPanel />     
       </BrowserRouter>
     );
 }

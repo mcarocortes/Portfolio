@@ -166,7 +166,7 @@
     color: var(--text);
     margin-top: 5px;
     margin-bottom: 5px;
-    font-family: Galano Grotesque Semi, sans-serif;
+    /*font-family: Galano Grotesque Semi, sans-serif;*/
     font-size: 16px;
     line-height: 20px;
 }
@@ -193,7 +193,7 @@
     margin-top: 10px;
     margin-right: 10px;
     padding: 2px 10px 5px;
-    font-family: Galano Grotesque, sans-serif;
+    /*font-family: Galano Grotesque, sans-serif;*/
     font-size: 15px;
     display: block;
     position: static;

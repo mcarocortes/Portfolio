@@ -1,5 +1,5 @@
 footer {
-    font-family: "Be Vietnam Pro", sans-serif;
+  /*font-family: "Be Vietnam Pro", sans-serif;*/
   font-weight: 600;
   font-style: normal;
   line-height: 1.5;
@@ -71,11 +71,10 @@ color: white;
 
 .message span {
     color: var(--darkPurple);
-    font-family: "Platypi", serif;
+    /*font-family: "Platypi", serif;*/
     font-optical-sizing: auto;
-    font-style: italic;
+    /*font-style: italic;*/
     font-weight: 400;
-    font-style: italic;
 }
 
 .message .madeWith{
@@ -83,18 +82,12 @@ color: white;
 }
 
 .btnAContacto{
-  background-color: white;
-  color: var(--purpura);
-  box-shadow: 2px 2px 8px #0003;
   width: 250px;
-  transition: all .2s ease-in-out;
   margin-top: 60px;
   margin-bottom:30px;
 }
 
-.btnAContacto:hover {
-  font-weight: 800;
-}
+
 .items{
   display: flex;
   flex-direction: column;

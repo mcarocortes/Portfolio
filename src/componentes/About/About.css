@@ -1,5 +1,5 @@
 section {
-  font-family: "Be Vietnam Pro", sans-serif;
+  /*font-family: "Be Vietnam Pro", sans-serif;*/
   font-weight: 600;
 }
 
@@ -12,25 +12,17 @@ section {
   top: 0px;
 }
 
-.columnas {
+.topAbout {
   display: flex;
   width: 100%;
   align-items: stretch;
   margin-bottom: -1px;
+  height: 50px;
+  background-color: var(--blancotrans);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.columnas>div,
-.columnas>.center {
-  flex: 1;
-  width: 33.333%;
-}
-
-.image-Izq,
-.image-Der {
-  width: 100%;
-  display: block;
-  object-fit: fill;
-}
 
 .center {
   background-color: transparent;
@@ -38,10 +30,9 @@ section {
 
 .about {
   display: flex;
-  background-color: var(--whitesomoke);
+  background-color: var(--white);
   text-align: left;
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-radius: 20px;
   width: 100%;
   height: 600px;
   top: 0;
@@ -54,15 +45,9 @@ section {
 }
 
 .btnAbout {
-  background-color: var(--purpura);/*linear-gradient(to top, #3333cc, var(--purpura), rgb(216, 168, 250));*/
   box-shadow: 2px 2px 8px #0003;
   color: white;
   width: 250px;
-  transition: all .2s ease-in-out;
-}
-
-.btnAbout:hover {
-  font-weight: 800;
 }
 
 .w-col {
@@ -123,7 +108,7 @@ section {
   text-align: center;
   line-height: normal;
   background-color: white;
-  border-radius: 60px;
+  border-radius: 15px;
   box-sizing: border-box;
   box-shadow: 2px 2px 8px #0003;
   position: relative;
@@ -137,11 +122,10 @@ section {
 
 .about-cards div span {
   color: var(--purpura);
-  font-family: "Platypi", serif;
+  /*font-family: "Platypi", serif;*/
   font-optical-sizing: auto;
-  font-style: italic;  
   font-weight: 600;
-  font-style: italic;
+  /*font-style: italic;*/
 }
 
 div .exterior .sombra {
@@ -151,7 +135,7 @@ div .exterior .sombra {
   position: relative;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.851);
-  border-radius: 60px;
+  border-radius: 15px;
   transition: all .5s ease-in-out;
 }
 
@@ -190,31 +174,30 @@ div .exterior:hover {
 
 .spanDelicated{
   color: var(--purpura);
-  font-family: "Platypi", serif;
+  /*font-family: "Platypi", serif;*/
   font-optical-sizing: auto;
-  font-style: italic;  
   font-weight: 600;
-  font-style: italic;
+  /*font-style: italic;*/
 
 }
 
-.div-block-5 {
+.signature {
   margin-top: 30px;
   align-items: center;
   display: flex;
 }
 
-.image-3 {
-  border-radius: 12px;
-  width: 45px;
-
+.logoSignature {
+  border-radius: 6px;
+  width: 50px;
+  border: solid 1px var(--purpura);
+  background-color: var(--white);
 }
 
-.text-block-2 {
+.signatureText {
   color: var(--text);
   margin-left: 20px;
   font-size: 23px;
-  font-weight: 800;
   display: flex;
 }
 
@@ -283,15 +266,15 @@ div .exterior:hover {
     line-height: 30px;
   }
 
-  .div-block-5 {
+  .signature {
     margin-top: 30px;
   }
 
-  .text-block-2 {
+  .signatureText {
     font-size: 22px;
   }
 
-  .image-3 {
+  .logoSignature {
     width: 50px;
   }
 
@@ -326,12 +309,12 @@ div .exterior:hover {
     line-height: 30px;
   }
 
-  .image-3 {
-    border-radius: 10px;
+  .logoSignature {
+    border-radius: 6px;
     width: 45px;
   }
 
-  .text-block-2 {
+  .signatureText {
     font-size: 20px;
   }
 
@@ -362,26 +345,16 @@ div .exterior:hover {
     margin-top: 10px;
   }
 
-  .div-block-5 {
+  .signature {
     display: none;
   }
 
-  .image-3 {
+  .logoSignature {
     width: 50px;
   }
 
   .image-Izq {
     display: none;
-  }
-
-  .columnas>.image-Izq,
-  .columnas>.center {
-    width: 50%;
-  }
-
-  .columnas>.image-Izq,
-  .columnas>.center {
-    width: 50%;
   }
 
   .about-cards {
@@ -429,7 +402,6 @@ div .exterior:hover {
     width: 150px;
     font-size: 15px;
     line-height: 20px;
-    border-radius: 20px !important;
   }
 
   .about-cards .cinco {
@@ -440,7 +412,6 @@ div .exterior:hover {
     height: 60px;
     width: 150px;
     margin-top: -70px;
-    border-radius: 20px !important;
   }
 
   div .exterior {
@@ -476,16 +447,11 @@ div .exterior:hover {
     line-height: 32px;
   }
 
-  .center,
-  .image-Der {
-    display: none;
-  }
-
   .about-cards {
     display: none;
   }
 
-  .text-block-2 {
+  .signatureText {
     margin-top: -10px;
     font-size: 16px;
   }

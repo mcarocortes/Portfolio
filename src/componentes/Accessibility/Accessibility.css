@@ -1,0 +1,139 @@
+.accessibility-button {
+  display: flex;
+  justify-content: center;
+  border-radius: 6px;
+  border: solid 1px var(--text);
+  background-color: var(--white-transparent);
+  height: 100%;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.accessibility-button:hover {
+  color: var(--white);
+  background-color: var(--text);
+}
+
+.accessibility-panel {
+  
+  position: fixed;
+  z-index: 1000;
+  border-radius: 6px;
+
+  top: 70px;
+  right: 40px;
+  width: auto;
+  padding: 1rem;
+  background: var(--white);
+  box-shadow: 1px 1px 3px var(--shadows); 
+  isolation: isolate;
+  
+}
+
+.accessibility-panel label{
+  font-weight: var(--font-weight-base);
+  margin-bottom: 2px;
+}
+
+.accessibility-panel p{
+  margin-bottom: -20px !important;
+}
+
+.accessibility-panel .btn{
+  color: var(--text);
+  background-color: var(--white-transparent);
+}
+
+.defaultText{
+  border: none;
+  padding: 0;
+  margin-left: 5px;
+  background-color: transparent;
+  color: var(--purpura);
+}
+
+@media screen and (max-width: 991px) {
+  .accessibilityMobile{
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: var(--white-transparent);
+    border: solid 1px var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    text-align: center;
+}
+
+.accessibilityMobile .form-check{
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.accessibilityMobile .btn{
+  margin-top: -10px;
+  border: solid 1px var(--text);
+  background-color: var(--white-transparent);
+  transition: transform 0.2s ease;
+}
+
+.accessibilityMobile .btn:hover{
+  transform: scale(1.05);
+  border: solid 1px var(--text);
+  background-color: var(--white-transparent);
+}
+}
+
+
+
+
+/****************************  DARK-MODE CONFIGURATION **************************/
+.dark-mode {
+  --text: var(--white);
+  --white-transparent: var(--black-transparent);
+
+}
+
+.dark-mode .logoNavM {
+  background-image: url("/src/assets/img/Navbar/mLogo_B.svg");
+}
+
+
+
+.dark-mode .accessibility-panel{
+  color: var(--text);
+  background-color: var(--black);
+}
+
+.dark-mode .accessibility-panel .btn{
+  color: var(--text);
+}
+
+.dark-mode .accessibility-button:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border: solid 1px var(--black);
+}
+
+.dark-mode .accessibility-panel .btn-close{
+  background-color: var(--text);
+}
+
+.dark-mode .accessibility-panel .btn{
+  border: solid 1px var(--text);
+  color: var(--text);
+  background-color: var(--white-transparent);
+}
+
+.dark-mode .defaultText{
+  color: var(--purpura3);
+}
+
+.dark-mode .accessibilityMobile, .dark-mode .accessibilityMobile .btn {
+  color: var(--text);
+}
+
+.dark-mode .accessibilityMobile{
+  background-color: var(--black);
+}
+

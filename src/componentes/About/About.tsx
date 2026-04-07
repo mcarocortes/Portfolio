@@ -2,7 +2,7 @@ import Slider from '../Slider/Slider'
 import './About.css'
 import latDer from './../../assets/img/About/latDer.svg'
 import latIzq from './../../assets/img/About/latIZQ.svg'
-import logo from './../../assets/img/About/mLogoPurple.svg'
+import logo from './../../assets/img/Navbar/mLogo.svg'
 import React from 'react'
 import { motion } from 'framer-motion'
 
@@ -103,16 +103,8 @@ export default function About() {
     return (
         <>
             <section className="sobremi" id="About">
-                <div className="columnas">
-                    <div className="image-Izq">
-                        <img src={latIzq} loading="lazy" alt="" />
-                    </div>
-                    <div className="center"></div>
-                    <div className="image-Der">
-                        <img src={latDer} loading="lazy" alt="" />
-                    </div>
+                <div className="topAbout">
                 </div>
-
                 <div  className="about" ref={aboutRef}>
                     <motion.div
                         className="w-col about-cards"
@@ -165,9 +157,9 @@ export default function About() {
                             window.location.href =
                             "mailto:m.caro.cortes2@gmail.com?subject=I%20want%20to%20connect!"
                         }>Let's connect</button>
-                        <div className="div-block-5">
-                            <img src={logo} loading="lazy" alt="" className="image-3" />
-                            <div className="text-block-2">
+                        <div className="signature">
+                            <img src={logo} loading="lazy" alt="" className="logoSignature" />
+                            <div className="signatureText">
                                 Macarena Caro Cortés<br />
                             </div>
                         </div>
