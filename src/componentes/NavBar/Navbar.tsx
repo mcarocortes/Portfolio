@@ -1,19 +1,21 @@
-import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 import AccessibilityPanel from "../Accessibility/AccessibilityPanel";
 import "./Navbar.css";
+
+import useNavbarScroll from "../../hooks/useNavbarScroll";
+import useActiveSection from "../../hooks/useActiveSection";
+import useCloseOnRouteChange from "../../hooks/useOnRouterChange";
 
 export default function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false); //hamburger open or close
   const [accessibilityOpen, setAccessibilityOpen] = useState(false);
-  const [hidden, setHidden] = useState(false); //navbar hidden or visible
 
-  /* Hooks de navegación */
-  const location = useLocation();//URL actual
-  const lastScroll = useRef(0);//last scroll position
-  const ticking = useRef(false);//Optimización de performance,evita que el scroll se ejecute demasiadas veces.
+  /* Hooks*/
+  const hidden = useNavbarScroll(); //Desaparecer navbar con scroll
+  const activeSection = useActiveSection(); // Destacar currentLink
 
   /* FUNCTIONS */
   //si estaba abierto: ciérralo, si estaba cerrado: ábrelo
@@ -21,56 +23,17 @@ export default function Navbar() {
     setMenuOpen(prev => !prev);
   };
 
-  //Close
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-
   //si estaba abierto: ciérralo, si estaba cerrado: ábrelo
   const toggleAccessibility = () => {
     setAccessibilityOpen(prev => !prev);
   };
 
-  //cuando el componente se monte, ejecuta esto
-  useEffect(() => {
+  //Close
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
-    /* Hide or Show navbar. */
-    const updateScroll = () => {
-
-      const currentScroll = window.scrollY;
-
-      if (Math.abs(currentScroll - lastScroll.current) < 10) {
-        ticking.current = false;
-        return;
-      }
-
-      if (currentScroll > lastScroll.current && currentScroll > 80) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
-
-      lastScroll.current = currentScroll;
-      ticking.current = false;
-    };
-
-    const handleScroll = () => {
-      if (!ticking.current) {
-        window.requestAnimationFrame(updateScroll);
-        ticking.current = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll); //Cada vez que se hace scroll,ejecuta handleScroll.
-
-    return () => window.removeEventListener("scroll", handleScroll);//cuando el componente desaparezca quitar el listener
-  }, []);
-
-  /*Close menu, everytime the pageChange */
-  useEffect(() => {
-    closeMenu();
-  }, [location]);
-
+  useCloseOnRouteChange(closeMenu); //Hook: Close menu, everytime the pageChange 
 
   /* Si se esconde el NavBar, los desplegables se cierran */
   useEffect(() => {
@@ -79,6 +42,7 @@ export default function Navbar() {
       setAccessibilityOpen(false);
     }
   }, [hidden]);
+
 
   return (
     <>
@@ -92,10 +56,10 @@ export default function Navbar() {
             <nav className="nav-menu new">
               <div className="nav-buttons-wrapper new">
 
-                <Link to="/#About" className="navbartext">ABOUT</Link>
-                <Link to="/#Projects" className="navbartext">PROJECTS</Link>
-                <Link to="/#WhatIDo" className="navbartext">WHAT I DO</Link>
-                <Link to="/#Contact" className="navbartext btnContact">CONTACT</Link>
+                <Link to="/#About" className={`navbartext ${activeSection === "About" ? "active" : ""}`}>ABOUT</Link>
+                <Link to="/#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}>PROJECTS</Link>
+                <Link to="/#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}>WHAT I DO</Link>
+                <Link to="/#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}>CONTACT</Link>
 
                 <button
                   className="navbartext accessibility-button"

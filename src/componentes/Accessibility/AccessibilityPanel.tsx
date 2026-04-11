@@ -1,5 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import "./AccessibilityPanel.css";
+
+import useClickOutside from "../../hooks/useClickOutside"
+import useDarkMode from "../../hooks/useDarkMode";
 
 interface Props {
   open: boolean
@@ -11,31 +14,10 @@ interface Props {
 export default function AccessibilityPanel({ open, setOpen, variant = "desktop", hidden }: Props) {
 
   const panelRef = useRef<HTMLDivElement>(null);
-  const [darkMode, setDarkMode] = useState(false);
 
-  /* Set DarkMode */
-  const toggleDarkMode = () => {
-
-    const newMode = !darkMode;
-
-    setDarkMode(newMode);
-
-    document.body.classList.toggle("dark-mode");
-
-    localStorage.setItem("darkMode", String(newMode));
-  };
-
-
-  useEffect(() => {
-
-    const saved = localStorage.getItem("darkMode");
-
-    if (saved === "true") {
-      setDarkMode(true);
-      document.body.classList.add("dark-mode");
-    }
-
-  }, []);
+  /*Hooks */
+  useClickOutside(panelRef, () => setOpen(false), open);
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
 
   /* Increase/Decrease Size-font */
@@ -51,34 +33,10 @@ export default function AccessibilityPanel({ open, setOpen, variant = "desktop",
     document.documentElement.style.fontSize = "18px";
   };
 
-
-  /* Handle Click Outside Menu */
-  useEffect(() => {
-    if (!open) return;
-
-    const handleClickOutside = (event: MouseEvent) => {
-
-      if (!panelRef.current) return;
-
-      const target = event.target as Node;
-
-      if (panelRef.current.contains(target)) return;
-
-      setOpen(false);
-
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [open, setOpen]);
-
-
   if (!open) return null;
 
   return (
     <div
-      ref={panelRef}
       className={`accessibility-panel ${variant} ${hidden ? "navbar-hidden" : ""}`}
       onClick={(e) => e.stopPropagation()}
     >

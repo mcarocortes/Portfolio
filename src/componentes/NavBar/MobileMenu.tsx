@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"; //Navegar sin recargar la página.
 import AccessibilityPanel from "../Accessibility/AccessibilityPanel";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import "./Navbar.css";
+
+import useClickOutside from "../../hooks/useClickOutside"
 
 /* Propiedades recibe el componente*/
 interface MobileMenuProps {
@@ -12,32 +14,13 @@ interface MobileMenuProps {
   hidden: boolean;
 }
 
-export default function MobileMenu({ isOpen, onClose, accessibilityOpen, setAccessibilityOpen,hidden }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose, accessibilityOpen, setAccessibilityOpen, hidden }: MobileMenuProps) {
 
   const menuRef = useRef<HTMLDivElement>(null);
   const menuClasses = `collapse collapsado ${isOpen ? "show" : ""}`; //clase dinámica.
 
   /* Handle Click Outside Menu */
-  useEffect(() => {
-
-    if (!isOpen) return;
-
-    /* Función que detecta clics */
-    const handleClickOutside = (event: MouseEvent) => {
-
-      if (!menuRef.current) return;
-
-      if (!menuRef.current.contains(event.target as Node)) {//¿el click fue fuera del menú?
-        onClose();
-      }
-
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => document.removeEventListener("click", handleClickOutside);//Cuando el componente se desmonta o cambia
-
-  }, [isOpen, onClose]);
+  useClickOutside(menuRef, onClose, isOpen);
 
 
   return (
@@ -45,7 +28,7 @@ export default function MobileMenu({ isOpen, onClose, accessibilityOpen, setAcce
 
       <div className="navbar-nav">
 
-        <Link to="/#About" className="menuLinktext" onClick={onClose}>About</Link> 
+        <Link to="/#About" className="menuLinktext" onClick={onClose}>About</Link>
         <hr />
 
         <Link to="/#Projects" className="menuLinktext" onClick={onClose}>Projects</Link>
