@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 import Navbar from "./componentes/NavBar/Navbar";
-import AccessibilityPanel from "./componentes/Accessibility/Accessibility";
+import AccessibilityPanel from "./componentes/Accessibility/AccessibilityPanel";
 import ScrollToHash from "./ScrollToHash";
 import Lenis from "lenis";
 import { useEffect } from "react";

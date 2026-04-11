@@ -14,17 +14,20 @@
   background-color: var(--text);
 }
 
-.accessibility-panel {
+.accessibility-panel.desktop {
   
   position: fixed;
   z-index: 1000;
   border-radius: 6px;
 
-  top: 70px;
-  right: 40px;
+  top: 110px;
+  right: 80px;
   width: auto;
   padding: 1rem;
-  background: var(--white);
+  background-color: var(--white-transparent);
+  border: 1px solid var(--white-transparent);
+  backdrop-filter: blur(12px);
+  mix-blend-mode: normal;
   box-shadow: 1px 1px 3px var(--shadows); 
   isolation: isolate;
   
@@ -53,7 +56,10 @@
 }
 
 @media screen and (max-width: 991px) {
-  .accessibilityMobile{
+  .accessibility-panel.desktop{
+    display: none;
+  }
+  .accessibility-panel.mobile{
     border-radius: 6px;
     padding: 10px;
     margin-top: 5px;
@@ -65,19 +71,19 @@
     text-align: center;
 }
 
-.accessibilityMobile .form-check{
+.accessibility-panel.mobile .form-check{
   margin-top: -10px;
   margin-bottom: 10px;
 }
 
-.accessibilityMobile .btn{
+.accessibility-panel.mobile .btn{
   margin-top: -10px;
   border: solid 1px var(--text);
   background-color: var(--white-transparent);
   transition: transform 0.2s ease;
 }
 
-.accessibilityMobile .btn:hover{
+.accessibility-panel.mobile .btn:hover{
   transform: scale(1.05);
   border: solid 1px var(--text);
   background-color: var(--white-transparent);
@@ -91,7 +97,6 @@
 .dark-mode {
   --text: var(--white);
   --white-transparent: var(--black-transparent);
-
 }
 
 .dark-mode .logoNavM {
@@ -102,7 +107,7 @@
 
 .dark-mode .accessibility-panel{
   color: var(--text);
-  background-color: var(--black);
+
 }
 
 .dark-mode .accessibility-panel .btn{

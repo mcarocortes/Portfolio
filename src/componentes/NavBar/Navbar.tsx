@@ -1,28 +1,42 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
+import AccessibilityPanel from "../Accessibility/AccessibilityPanel";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
-import Accessibility from "../Accessibility/Accessibility";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [hidden, setHidden] = useState<boolean>(false);
-  const location = useLocation();
 
-  const lastScroll = useRef<number>(0);
-  const ticking = useRef<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState(false); //hamburger open or close
+  const [accessibilityOpen, setAccessibilityOpen] = useState(false);
+  const [hidden, setHidden] = useState(false); //navbar hidden or visible
 
-const toggleMenu = () => {
-  setIsMenuOpen(prev => !prev);
-};
+  /* Hooks de navegación */
+  const location = useLocation();//URL actual
+  const lastScroll = useRef(0);//last scroll position
+  const ticking = useRef(false);//Optimización de performance,evita que el scroll se ejecute demasiadas veces.
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
+  /* FUNCTIONS */
+  //si estaba abierto: ciérralo, si estaba cerrado: ábrelo
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
   };
 
+  //Close
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  //si estaba abierto: ciérralo, si estaba cerrado: ábrelo
+  const toggleAccessibility = () => {
+    setAccessibilityOpen(prev => !prev);
+  };
+
+  //cuando el componente se monte, ejecuta esto
   useEffect(() => {
+
+    /* Hide or Show navbar. */
     const updateScroll = () => {
+
       const currentScroll = window.scrollY;
 
       if (Math.abs(currentScroll - lastScroll.current) < 10) {
@@ -47,54 +61,90 @@ const toggleMenu = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll); //Cada vez que se hace scroll,ejecuta handleScroll.
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);//cuando el componente desaparezca quitar el listener
   }, []);
 
+  /*Close menu, everytime the pageChange */
+  useEffect(() => {
+    closeMenu();
+  }, [location]);
 
-useEffect(() => {
-  closeMenu();
-}, [location]);
+
+  /* Si se esconde el NavBar, los desplegables se cierran */
+  useEffect(() => {
+    if (hidden) {
+      setMenuOpen(false);
+      setAccessibilityOpen(false);
+    }
+  }, [hidden]);
 
   return (
     <>
       <div className={`navbar ${hidden ? "navbar-hidden" : ""}`}>
         <div className="bg-navbar">
+
           <Link to="#Home" className="navbar-brand logoNavM" />
-          
 
           <div className="nav-menu-wrapper-right">
+
             <nav className="nav-menu new">
               <div className="nav-buttons-wrapper new">
+
                 <Link to="/#About" className="navbartext">ABOUT</Link>
                 <Link to="/#Projects" className="navbartext">PROJECTS</Link>
                 <Link to="/#WhatIDo" className="navbartext">WHAT I DO</Link>
                 <Link to="/#Contact" className="navbartext btnContact">CONTACT</Link>
-                <Accessibility />
+
+                <button
+                  className="navbartext accessibility-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleAccessibility();
+                  }}
+                >
+                  <i className="bi bi-universal-access"></i>
+                </button>
               </div>
             </nav>
 
-<button
-  className={`navbar-toggler custom-toggler ${isMenuOpen ? "open" : ""}`}
-  onClick={(e) => {
-    e.stopPropagation();
-    toggleMenu();
-  }}
-  aria-expanded={isMenuOpen}
-  aria-label="Toggle navigation"
->
+            <button
+              className={`navbar-toggler custom-toggler ${menuOpen ? "open" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation();//evita que el click se propague al documento
+                toggleMenu();
+              }}
+              aria-expanded={menuOpen}//Le dice a screen readers si está abierto.
+              aria-label="Toggle navigation"
+            >
               <div className="hamburger-icon">
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
             </button>
+
           </div>
         </div>
       </div>
 
-      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
+      <MobileMenu
+        isOpen={menuOpen} //estado
+        onClose={closeMenu} //funcion
+        accessibilityOpen={accessibilityOpen}
+        setAccessibilityOpen={setAccessibilityOpen}
+        hidden={hidden}
+      />
+
+      {!menuOpen && ( //solo muestra el panel si el menú mobile está cerrado
+        <AccessibilityPanel
+          open={accessibilityOpen}
+          setOpen={setAccessibilityOpen}
+          variant="desktop"
+          hidden={hidden}
+        />
+      )}
     </>
   );
 }
