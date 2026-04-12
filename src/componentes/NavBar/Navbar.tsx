@@ -75,10 +75,11 @@ export default function Navbar() {
 
             <button
               className={`navbar-toggler custom-toggler ${menuOpen ? "open" : ""}`}
-              onClick={(e) => {
-                e.stopPropagation();//evita que el click se propague al documento
-                toggleMenu();
-              }}
+
+              onMouseDown={(e) => {
+  e.stopPropagation();//evita que el click se propague al documento
+}}
+onClick={toggleMenu}
               aria-expanded={menuOpen}//Le dice a screen readers si está abierto.
               aria-label="Toggle navigation"
             >

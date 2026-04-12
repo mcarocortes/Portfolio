@@ -30,7 +30,13 @@ export default function AccessibilityPanel({ open, setOpen, variant = "desktop",
   };
 
   const defaultText = () => {
-    document.documentElement.style.fontSize = "18px";
+
+    const rootStyles = getComputedStyle(document.documentElement);
+
+    const baseFontSize = rootStyles.getPropertyValue("--font-size-base");
+
+    document.documentElement.style.fontSize = baseFontSize;
+
   };
 
   if (!open) return null;
@@ -52,14 +58,14 @@ export default function AccessibilityPanel({ open, setOpen, variant = "desktop",
         )}
       </div>
 
-      <div className="mb-3">
+      <div>
 
-        <label>Dark mode</label>
+        <label className=" mt-2" >Dark mode</label>
 
         <div className="form-check form-switch">
 
           <input
-            className="form-check-input"
+            className="form-check-input "
             type="checkbox"
             checked={darkMode}
             onChange={toggleDarkMode}
@@ -71,7 +77,7 @@ export default function AccessibilityPanel({ open, setOpen, variant = "desktop",
 
       <div>
 
-        <div className="d-flex">
+        <div className="d-flex mt-2">
           <label>Text size |</label>
           <button className="defaultText" onClick={defaultText}>
             Default text
@@ -81,14 +87,14 @@ export default function AccessibilityPanel({ open, setOpen, variant = "desktop",
         <div>
 
           <button
-            className="btn btn-outline-secondary me-2"
+            className="btn btn-outline-secondary me-2 pb-2 mt-2"
             onClick={decreaseText}
           >
             A−
           </button>
 
           <button
-            className="btn btn-outline-secondary"
+            className="btn btn-outline-secondary pb-2 mt-2"
             onClick={increaseText}
           >
             A+

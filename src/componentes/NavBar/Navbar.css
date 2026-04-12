@@ -185,7 +185,6 @@
 }
 
 .navbartext:active {
-  /********************** NO ME FUNCIONAAAAAAAAAA*********************/
   color: var(--purpura);
   transform: scale(0.98);
   text-decoration: none;
@@ -198,7 +197,7 @@
   display: none !important;
 }
 
-/**********************************************BOTON TOGGLER**********************************************/
+/****************** BOTON TOGGLER ******************/
 .navbar-toggler,
 .navbar-toggler.custom-toggler .navbar-toggler-icon {
   display: none !important;
@@ -207,7 +206,7 @@
 
 @media screen and (max-width: 991px) {
 
-  /**********************************************BOTON TOGGLER**********************************************/
+  /******************BOTON TOGGLER******************/
   /*Boton*/
   .navbar-toggler {
     display: flex !important;
@@ -297,7 +296,7 @@
   }
 
 
-  /*Panel-MobileMenu*/
+  /******************Panel-MobileMenu******************/
   .collapsado {
     display: flex;
     position: fixed;
@@ -305,7 +304,7 @@
     right: 40px;
     padding: 10px 20px;
     z-index: 1000;
-    min-width: 235px;
+    min-width: 252px;
     /*grid-column-gap: 38px;
   grid-row-gap: 38px;*/
 
