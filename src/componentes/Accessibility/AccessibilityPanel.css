@@ -12,10 +12,15 @@
 .accessibility-button:hover {
   color: var(--white);
   background-color: var(--text);
+  cursor: none;
 }
 
 .accessibility-panel{
   font-family: var(--font-family-base);
+}
+
+.accessibility-panel.desktop button, .accessibility-panel.desktop input, .accessibility-panel.desktop label{
+  cursor: none;
 }
 .accessibility-panel.desktop {
 
@@ -103,12 +108,15 @@
   --text: var(--white);
   --white-transparent: var(--black-transparent);
 }
+/****** CURSOR ******/
+.dark-mode .custom-cursor{
+  background: url("/public/cursor_darkmode.svg") center/contain no-repeat;
+}
 
+/****** NAVBAR ******/
 .dark-mode .logoNavM {
   background-image: url("/src/assets/img/Navbar/mLogo_B.svg");
 }
-
-
 
 .dark-mode .accessibility-panel {
   color: var(--text);

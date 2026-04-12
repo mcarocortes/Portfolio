@@ -116,7 +116,7 @@ export default function About() {
                         {["D", "B", "C"].map((type, i) => (
                             <motion.div
                                 key={type}
-                                className={`exterior ${["uno", "dos", "tres"][i]}`}
+                                className={`no-cursor exterior ${["uno", "dos", "tres"][i]}`}
                                 onMouseEnter={handleEnter(type as CursorType)}
                                 onMouseLeave={handleLeave}
                                 onMouseMove={handleMove}

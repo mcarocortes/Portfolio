@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function Contact() {
   return (
     <>
-      <section id="Contact" >
+      <section id="Contact" className='cursor-contact' >
         <div className='loop'>
           <div className="track">
               <img src={logoName} alt="" />

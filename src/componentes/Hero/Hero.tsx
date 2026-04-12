@@ -1,17 +1,9 @@
-import SplineMaca from './SplineMaca';
 import './Hero.css'
 import logo from './../../assets/img/Hero/MacarenaCaroLogo.svg'
 import HeroParticles from './HeroParticles';
 
-type HeroProps = {
-  onSplineReady: () => void;
-};
 
-export default function Hero({ onSplineReady }: HeroProps) {
-
-  const handleSplineLoad = () => {
-    setTimeout(() => { onSplineReady(); }, 750);
-  };
+export default function Hero() {
 
   return (
     <section id="Home" className="hero-wrapper">

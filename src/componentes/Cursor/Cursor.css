@@ -1,0 +1,41 @@
+.custom-cursor {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  background: url("/cursor.svg") center/contain no-repeat;
+  pointer-events: none;
+  z-index: 999999;
+  transition: transform .15s ease;
+}
+
+.custom-cursor.pointer {
+  background: url("/pointer.svg") center/contain no-repeat;
+  transform: scale(1.2);
+}
+
+/* cursor especial contacto */
+
+.custom-cursor.contact {
+  background: url("/cursor_darkmode.svg") center/contain no-repeat;
+  transform: scale(1.4);
+}
+
+/* cursor para proyectos NO EXISTE AUN*/
+
+.custom-cursor.project {
+  background: url("/cursor-project.svg") center/contain no-repeat;
+  transform: scale(1.4);
+}
+
+/* cursor para proyectos*/
+
+.custom-cursor.hidden {
+  opacity: 0;
+}
+
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
