@@ -43,7 +43,6 @@ export default function Navbar() {
     }
   }, [hidden]);
 
-
   return (
     <>
       <div className={`navbar ${hidden ? "navbar-hidden" : ""}`}>
@@ -56,10 +55,10 @@ export default function Navbar() {
             <nav className="nav-menu new">
               <div className="nav-buttons-wrapper new">
 
-                <Link to="/#About" className={`navbartext ${activeSection === "About" ? "active" : ""}`}>ABOUT</Link>
-                <Link to="/#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}>PROJECTS</Link>
-                <Link to="/#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}>WHAT I DO</Link>
-                <Link to="/#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}>CONTACT</Link>
+                <Link to="#About" className={`navbartext ${activeSection === "About" ? "active" : ""}`}>ABOUT</Link>
+                <Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}>PROJECTS</Link>
+                <Link to="#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}>WHAT I DO</Link>
+                <Link to="#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}>CONTACT</Link>
 
                 <button
                   className="navbartext accessibility-button"
@@ -77,9 +76,9 @@ export default function Navbar() {
               className={`navbar-toggler custom-toggler ${menuOpen ? "open" : ""}`}
 
               onMouseDown={(e) => {
-  e.stopPropagation();//evita que el click se propague al documento
-}}
-onClick={toggleMenu}
+                e.stopPropagation();//evita que el click se propague al documento
+              }}
+              onClick={toggleMenu}
               aria-expanded={menuOpen}//Le dice a screen readers si está abierto.
               aria-label="Toggle navigation"
             >

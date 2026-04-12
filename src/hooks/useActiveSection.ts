@@ -2,30 +2,41 @@ import { useEffect, useState } from "react";
 
 export default function useActiveSection() {
 
-  const [activeSection, setActiveSection] = useState(""); //Link Activo
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
 
     const sections = document.querySelectorAll("section[id]");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
+    const handleScroll = () => {
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
+      let currentSection = "";
 
-      },
-      {
-        rootMargin: "-40% 0px -40% 0px"
+      sections.forEach((section) => {
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 120) {
+          currentSection = section.id;
+        }
+
+      });
+
+      if (currentSection) {
+
+        setActiveSection(currentSection);
+
+        window.history.replaceState(null, "", `#${currentSection}`);
+
       }
-    );
 
-    sections.forEach((section) => observer.observe(section));
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
 
   }, []);
 

@@ -135,9 +135,9 @@
   background-color: var(--white-transparent);
 }
 
-.dark-mode .defaultText {
+/*.dark-mode .defaultText {
   color: var(--purpura3);
-}
+}*/
 
 .dark-mode .accessibilityMobile,
 .dark-mode .accessibilityMobile .btn {

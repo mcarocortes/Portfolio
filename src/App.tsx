@@ -29,7 +29,6 @@ export default function App() {
         <ScrollToHash />
         <Navbar />
         <AppRoutes />
-        <AccessibilityPanel />     
       </BrowserRouter>
     );
 }

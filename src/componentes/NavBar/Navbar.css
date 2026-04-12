@@ -176,18 +176,12 @@
   color: white;
 }*/
 
-.navbartext:hover {
+.navbartext:hover, .navbartext.active  {
   color: var(--purpura);
   text-decoration: none;
   background-color: var(--white-transparent);
   box-shadow: 1px 1px 3px var(--shadows);
   transform: scale(1.05);
-}
-
-.navbartext:active {
-  color: var(--purpura);
-  transform: scale(0.98);
-  text-decoration: none;
 }
 
 

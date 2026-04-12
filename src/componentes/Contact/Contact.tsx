@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function Contact() {
   return (
     <>
-      <footer id="Contact" >
+      <section id="Contact" >
         <div className='loop'>
           <div className="track">
               <img src={logoName} alt="" />
@@ -72,7 +72,7 @@ export default function Contact() {
         <div className='figures'>
           <Spline scene="https://prod.spline.design/H3rK74CKvZRSLX4n/scene.splinecode" />
         </div>
-      </footer>
+      </section>
 
 
     </>
