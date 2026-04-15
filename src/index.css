@@ -6,6 +6,7 @@
     --white: #f4f4f4;
     --purpura: #5a12fa;
     --purpura3: #8c8ef2;
+    --purpura4: #bfc1fc;
     --bg-Navbar-border: #d7d1e9; /*BORDE NAVBAR COLLAPS*/
     --gradient-purple: linear-gradient(135deg, var(--purpura) 0%, var(--purpura3) 50%, var(--purpura) 100%);
     --shadows: #797979b3;
@@ -14,26 +15,32 @@
 
 
   /*FONT-FAMILY*/
+  --font-scale: 1;
+  --font-size-base: calc(18px * var(--font-scale));
+  --font-size-h1: calc(50px * var(--font-scale));
+  --font-size-h2: calc(36px * var(--font-scale));
+  --font-size-h3: calc(25px * var(--font-scale));
 
    --font-family-base: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
-   --font-size-base: 18px;
    --font-weight-base: 400;
    --font-line-height-base: 1.5;
 
+  /*MARGIN/PADDING GENERALES*/
+  --margin-left-rigth-general: 4rem; 
+
+
+
+
 
  --purpura2: #5a12fa;
-
-   --purpura4: #bfc1fc;
-    --purpura5: #e0e1ff;
+--purpura5: #e0e1ff;
   --smoke: #0000; /*CAMBIANDO POR TRANSPARENT*/
-
   --grayweb: #797979;
   --whitesomoke: #f5f5f5;
   --slider: #e7e7e7;
   --navbar: #ced1d7;
   --skillsBg : #f2eeff;
   --ulSkills: #e0d6f1;
-
   --gradientBlack: linear-gradient(135deg, var(--text) 0%, var(--grayweb) 50%, var(--text) 100%);
 }
 
@@ -75,10 +82,17 @@ html, body {
   color: var(--text);
   margin-bottom: 30px;
   margin-left: 0;
-  font-size: 60px !important;
-  font-weight: 600;
+  font-size: var(--font-size-h1);
+  
 }
 
+h1 {
+  font-size: var(--font-size-h1) !important;
+}
+
+h3{
+  font-size: var(--font-size-h3) !important;
+}
 /*article,
 aside,
 details,
@@ -154,10 +168,7 @@ dfn {
   font-style: italic;
 }*/
 
-h1 {
-  margin: 0.67em 0;
-  font-size: 2em;
-}
+
 
 /*
 small {
@@ -308,12 +319,18 @@ label {
 
 @media screen and (max-width: 991px) {
 
+  :root{
+    --margin-left-rigth-general: 2.5rem;
+  }
   .heading {
     font-size: 50px !important;
   }
 }
 
 @media screen and (max-width: 767px) {
+    :root{
+    --margin-left-rigth-general: 2rem;
+  }
 
   .heading {
     text-align: center;

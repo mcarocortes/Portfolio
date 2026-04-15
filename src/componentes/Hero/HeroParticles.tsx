@@ -5,19 +5,15 @@ import { useMemo, useRef } from "react"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
 
 
-/* =========================================================
-   VARIABLE GLOBAL
-   Guarda la posición del cursor en mundo 3D
-========================================================= */
+/**VARIABLE GLOBAL**/
+//Guarda la posición del cursor en mundo 3D
 const cursorWorldPosition = new THREE.Vector3()
 
 
 
 
-/* =========================================================
-   CURSOR WAVE VISUAL
-   Solo muestra el círculo y guarda la posición del cursor
-========================================================= */
+/**    CURSOR WAVE VISUAL **/ 
+//Solo muestra el círculo y guarda la posición del cursor
 function CursorWave() {
 
   const ref = useRef<THREE.Mesh>(null!)
@@ -49,10 +45,8 @@ function CursorWave() {
 }
 
 
-/* =========================================================
-   FACE PARTICLES
-   Convierte face.glb en partículas con glow dinámico
-========================================================= */
+/*** FACE PARTICLES ***/
+//Convierte face.glb en partículas con glow dinámico
 function FaceParticles() {
 
   const pivotRef = useRef<THREE.Group>(null!)
@@ -60,9 +54,8 @@ function FaceParticles() {
   const { scene } = useGLTF("/Portfolio/face.glb")
 
 
-  /* =========================================================
-   TEXTURA DE PARTICULA SUAVE
-========================================================= */
+/***TEXTURA DE PARTICULA SUAVE ***/
+
   const particleTexture = useMemo(() => {
 
     const loader = new THREE.TextureLoader()
@@ -82,10 +75,9 @@ function FaceParticles() {
   const isMobile = size.width < 768
 
 
-  /* =========================================================
-     CREAR GEOMETRIA
-     Incluye posiciones y colores
-  ========================================================= */
+/*** CREAR GEOMETRIA ***/
+//Incluye posiciones y colores
+
   const particlesGeometry = useMemo(() => {
 
     //const density = 2
@@ -171,16 +163,16 @@ function FaceParticles() {
 
     const radius = geometry.boundingSphere!.radius
 
-    let scaleFactor = 1 / radius ;
+    let scaleFactor = 1.3 / radius ;
 
       if(size.width < 768){
-        scaleFactor = 0.8 / radius;
+        scaleFactor = 0.9 / radius;
       }else if(size.width < 1024){
-        scaleFactor = 0.8 / radius;
+        scaleFactor = 1 / radius;
       }else if(size.width < 1280){
-        scaleFactor = 1 / radius;
+        scaleFactor = 1.2 / radius;
       }else if(size.width < 1536){
-        scaleFactor = 1 / radius;
+        scaleFactor = 1.3 / radius;
       }
 
 
@@ -197,10 +189,8 @@ function FaceParticles() {
 
 
 
-  /* =========================================================
-     FRAME LOOP
-     Aquí ocurre el GLOW REAL
-  ========================================================= */
+/***** FRAME LOOP ***/
+//Aquí ocurre el GLOW REAL
   useFrame((state) => {
 
     if (!pivotRef.current) return
@@ -239,9 +229,8 @@ function FaceParticles() {
       const influence = Math.max(0, 1 - dist * 2.5)
 
       /* glow fuerte */
-      /* =========================================================
-         GLOW CON VARIACION NATURAL + MOVIMIENTO ORGANICO
-      ========================================================= */
+
+      /****** GLOW CON VARIACION NATURAL + MOVIMIENTO ORGANICO *****/
       const organic =
         Math.sin(time * 4.0 + i * 0.1) * 0.25
 
@@ -307,9 +296,7 @@ function FaceParticles() {
 
       <points geometry={particlesGeometry} position={[0, -0.35, 0]}> {/*-0.35 DEBE SER EL MISMO DEL CURSOR */}
 
-        {/* =========================================================
-   MATERIAL SOFT PARTICLES
-========================================================= */}
+        {/***  MATERIAL SOFT PARTICLES *****/}
         <pointsMaterial
           map={particleTexture}
           vertexColors
@@ -332,9 +319,7 @@ function FaceParticles() {
 
 
 
-/* =========================================================
-   HERO PRINCIPAL
-========================================================= */
+/********  HERO PRINCIPAL *******/
 export default function HeroParticles() {
 
   return (

@@ -29,7 +29,7 @@
   border-radius: 6px;
 
   top: 110px;
-  right: 80px;
+  right: var(--margin-left-rigth-general);
   width: auto;
   padding: 1rem;
   background-color: var(--white-transparent);
@@ -41,7 +41,7 @@
 
 }
 
-.accessibility-panel label {
+.accessibility-panel label{
   font-weight: var(--font-weight-base);
   margin-bottom: 2px;
 }
@@ -56,11 +56,13 @@
 }
 
 .defaultText {
+  font-size: var(--font-size-base);
   border: none;
   padding: 0;
   margin-left: 5px;
   background-color: transparent;
   color: var(--purpura);
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 991px) {
@@ -69,6 +71,7 @@
   }
 
   .accessibility-panel.mobile {
+    
     border-radius: 6px;
     padding: 10px;
     margin-top: 5px;
@@ -90,12 +93,17 @@
     border: solid 1px var(--text);
     background-color: var(--white-transparent);
     transition: transform 0.2s ease;
+    
   }
 
   .accessibility-panel.mobile .btn:hover {
     transform: scale(1.05);
     border: solid 1px var(--text);
     background-color: var(--white-transparent);
+  }
+
+  .accessibility-panel.mobile .defaultText{
+    font-size: var(--font-size-base) !important;
   }
 
 }
@@ -123,6 +131,10 @@
 
 }
 
+.dark-mode .defaultText {
+  color: var(--purpura4);
+}
+
 .dark-mode .accessibility-panel .btn {
   color: var(--text);
 }
@@ -143,10 +155,6 @@
   background-color: var(--white-transparent);
 }
 
-/*.dark-mode .defaultText {
-  color: var(--purpura3);
-}*/
-
 .dark-mode .accessibilityMobile,
 .dark-mode .accessibilityMobile .btn {
   color: var(--text);
@@ -154,4 +162,16 @@
 
 .dark-mode .accessibilityMobile {
   background-color: var(--black);
+}
+
+
+
+/********************* HERO   ***************************/ 
+.dark-mode .hero-wrapper {
+    background: url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,
+  linear-gradient(to bottom, var(--purpura) 0%, var(--black) 35%);
+}
+
+.dark-mode .content-hero h3{
+  color: var(--text);
 }

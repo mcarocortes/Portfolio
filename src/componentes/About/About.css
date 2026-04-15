@@ -1,7 +1,6 @@
-section {
-  /*font-family: "Be Vietnam Pro", sans-serif;*/
+/*section {
   font-weight: 600;
-}
+}*/
 
 .sobremi {
   z-index: 2;
@@ -9,7 +8,7 @@ section {
   position: relative;
   bottom: 65px;
   width: 100%;
-  top: 0px;
+  top: 90vh;
 }
 
 .topAbout {

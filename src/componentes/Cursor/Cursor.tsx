@@ -31,7 +31,7 @@ export default function Cursor() {
             }*/
 
             // elementos interactivos tienen prioridad
-            if (target.closest("a, button, input, label")) {
+            if (target.closest("a, button, input")) {
                 setIsPointer(true);
                 setVariant(""); // cancelar variantes
             } else {

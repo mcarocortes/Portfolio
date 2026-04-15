@@ -3,6 +3,7 @@ import "./AccessibilityPanel.css";
 
 import useClickOutside from "../../hooks/useClickOutside"
 import useDarkMode from "../../hooks/useDarkMode";
+import useFontScale from "../../hooks/useFontScale";
 
 interface Props {
   open: boolean
@@ -18,26 +19,7 @@ export default function AccessibilityPanel({ open, setOpen, variant = "desktop",
   /*Hooks */
   useClickOutside(panelRef, () => setOpen(false), open);
   const { darkMode, toggleDarkMode } = useDarkMode();
-
-
-  /* Increase/Decrease Size-font */
-  const increaseText = () => {
-    document.documentElement.style.fontSize = "20px";
-  };
-
-  const decreaseText = () => {
-    document.documentElement.style.fontSize = "14px";
-  };
-
-  const defaultText = () => {
-
-    const rootStyles = getComputedStyle(document.documentElement);
-
-    const baseFontSize = rootStyles.getPropertyValue("--font-size-base");
-
-    document.documentElement.style.fontSize = baseFontSize;
-
-  };
+  const { increaseText, decreaseText, defaultText } = useFontScale();
 
   if (!open) return null;
 
