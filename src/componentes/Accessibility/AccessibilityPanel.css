@@ -111,7 +111,7 @@
 
 
 
-/****************************  DARK-MODE CONFIGURATION **************************/
+/*************************************  DARK-MODE CONFIGURATION **************************/
 .dark-mode {
   --text: var(--white);
   --white-transparent: var(--black-transparent);
@@ -174,4 +174,8 @@
 
 .dark-mode .content-hero h3{
   color: var(--text);
+}
+
+.dark-mode .arc-line {
+  filter: drop-shadow(0 0 20px var(--purpura));
 }

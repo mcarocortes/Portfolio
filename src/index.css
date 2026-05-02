@@ -17,7 +17,7 @@
   /*FONT-FAMILY*/
   --font-scale: 1;
   --font-size-base: calc(18px * var(--font-scale));
-  --font-size-h1: calc(50px * var(--font-scale));
+  --font-size-h1: calc(46px * var(--font-scale));
   --font-size-h2: calc(36px * var(--font-scale));
   --font-size-h3: calc(25px * var(--font-scale));
 
@@ -305,12 +305,8 @@ label {
   display: block;
 }
 
-
-@media screen and (min-width: 1280px) {
-
-  .heading {
-    font-size: 55px !important;
-  }
+.heading {
+  font-size: 55px !important;
 }
 
 @media screen and (max-width: 1280px) {
@@ -321,6 +317,8 @@ label {
 
   :root{
     --margin-left-rigth-general: 2.5rem;
+    --font-size-h1: calc(36px * var(--font-scale));
+    --font-size-h3: calc(23px * var(--font-scale)); 
   }
   .heading {
     font-size: 50px !important;
@@ -330,6 +328,8 @@ label {
 @media screen and (max-width: 767px) {
     :root{
     --margin-left-rigth-general: 2rem;
+    --font-size-h1: calc(32px * var(--font-scale));
+    --font-size-h3: calc(20px * var(--font-scale)); 
   }
 
   .heading {

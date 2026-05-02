@@ -8,11 +8,9 @@ import { EffectComposer, Bloom } from "@react-three/postprocessing"
 /**VARIABLE GLOBAL**/
 //Guarda la posición del cursor en mundo 3D
 const cursorWorldPosition = new THREE.Vector3()
+const FACE_Y_OFFSET = -0.35
 
-
-
-
-/**    CURSOR WAVE VISUAL **/ 
+/**    CURSOR WAVE VISUAL **/
 //Solo muestra el círculo y guarda la posición del cursor
 function CursorWave() {
 
@@ -20,7 +18,7 @@ function CursorWave() {
 
   const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
   // compensación manual correcta DE BRILLO CON LA POSICION DEL POINTS
-  const FACE_Y_OFFSET = -0.35
+
   const intersection = new THREE.Vector3()
 
   useFrame((state) => {
@@ -54,7 +52,7 @@ function FaceParticles() {
   const { scene } = useGLTF("/Portfolio/face.glb")
 
 
-/***TEXTURA DE PARTICULA SUAVE ***/
+  /***TEXTURA DE PARTICULA SUAVE ***/
 
   const particleTexture = useMemo(() => {
 
@@ -72,11 +70,32 @@ function FaceParticles() {
 
   const { size } = useThree()
 
+  const modelPosition = useMemo<[number, number, number]>(() => {
+
+   if (size.width < 768) {
+      return [0.02, 0, 0]
+    } else if (size.width < 991) {
+          return [0.5, 0, 0]
+    } else if (size.width < 1024) {
+          return [0.6, 0, 0]
+
+    } else if (size.width < 1280) {
+          return [0.7, 0, 0]
+
+    } else if (size.width < 1536) {
+          return [1.0, 0, 0]
+
+    }
+
+    return [0.8, 0, 0]
+
+  }, [size.width])
+
   const isMobile = size.width < 768
 
 
-/*** CREAR GEOMETRIA ***/
-//Incluye posiciones y colores
+  /*** CREAR GEOMETRIA ***/
+  //Incluye posiciones y colores
 
   const particlesGeometry = useMemo(() => {
 
@@ -130,6 +149,7 @@ function FaceParticles() {
 
     })
 
+
     const geometry = new THREE.BufferGeometry()
 
     geometry.setAttribute(
@@ -163,17 +183,21 @@ function FaceParticles() {
 
     const radius = geometry.boundingSphere!.radius
 
-    let scaleFactor = 1.3 / radius ;
+    let scaleFactor = 1.3 / radius;
 
-      if(size.width < 768){
-        scaleFactor = 0.9 / radius;
-      }else if(size.width < 1024){
-        scaleFactor = 1 / radius;
-      }else if(size.width < 1280){
-        scaleFactor = 1.2 / radius;
-      }else if(size.width < 1536){
-        scaleFactor = 1.3 / radius;
-      }
+    if (size.width < 479) {
+      scaleFactor = 0.91 / radius;
+    }else if (size.width < 768) {
+      scaleFactor = 0.97 / radius;
+    }else if (size.width < 991) {
+      scaleFactor = 1 / radius;
+    } else if (size.width < 1024) {
+      scaleFactor = 1.1 / radius;
+    } else if (size.width < 1280) {
+      scaleFactor = 1.2 / radius;
+    } else if (size.width < 1536) {
+      scaleFactor = 1.3 / radius;
+    }
 
 
 
@@ -189,8 +213,8 @@ function FaceParticles() {
 
 
 
-/***** FRAME LOOP ***/
-//Aquí ocurre el GLOW REAL
+  /***** FRAME LOOP ***/
+  //Aquí ocurre el GLOW REAL
   useFrame((state) => {
 
     if (!pivotRef.current) return
@@ -208,8 +232,8 @@ function FaceParticles() {
     const originalColors =
       geometry.userData.originalColors as Float32Array
 
-    const cursor =
-      cursorWorldPosition
+    const cursor = cursorWorldPosition.clone()
+    pivotRef.current.worldToLocal(cursor)
 
 
 
@@ -269,15 +293,15 @@ function FaceParticles() {
     /* rotación rostro */
     if (isMobile) {
 
-  pivotRef.current.rotation.x = 0
-  pivotRef.current.rotation.y = 0
+      pivotRef.current.rotation.x = 0
+      pivotRef.current.rotation.y = 0
 
     } else {
-      const targetY =
-        state.pointer.x * 0.6
+      const cursor = cursorWorldPosition.clone() /* CENTRALIZAR PIVOT DE ACUERDO A LA POSICION DEL 3D */
+      pivotRef.current.worldToLocal(cursor)
 
-      const targetX =
-        -state.pointer.y * 0.4
+      const targetY = cursor.x * 0.8
+      const targetX = (cursor.y * FACE_Y_OFFSET) * 0.3
 
       pivotRef.current.rotation.y +=
         (targetY - pivotRef.current.rotation.y) * 0.08
@@ -292,15 +316,15 @@ function FaceParticles() {
 
   return (
 
-    <group ref={pivotRef}>
+    <group ref={pivotRef} position={modelPosition}> {/* ESTE POSITION MUEVE TODO EL 3D */}
 
-      <points geometry={particlesGeometry} position={[0, -0.35, 0]}> {/*-0.35 DEBE SER EL MISMO DEL CURSOR */}
+      <points geometry={particlesGeometry} position={[0, FACE_Y_OFFSET, 0]}> {/*-0.35 DEBE SER EL MISMO DEL CURSOR */}
 
         {/***  MATERIAL SOFT PARTICLES *****/}
         <pointsMaterial
           map={particleTexture}
           vertexColors
-          size={0.010}
+          size={0.013}
           transparent
           opacity={0.95}
           blending={THREE.AdditiveBlending}

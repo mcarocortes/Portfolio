@@ -128,7 +128,7 @@
     margin-left: auto;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {  /*OMITIR!*/
 
     .projectosnew {
         padding-bottom: 15vw;

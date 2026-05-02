@@ -3,6 +3,7 @@ import './Hero.css'
 import logoLigth from './../../assets/img/Hero/MacarenaCaroLogo.svg'
 import logoDarkmode from './../../assets/img/Hero/MacarenaCaroLogo_darkmode.svg'
 import HeroParticles from './HeroParticles';
+import HeroArcs from './HeroArcs';
 
 export default function Hero() {
 
@@ -30,7 +31,7 @@ export default function Hero() {
   return (
     <section id="Home" className="hero-wrapper">
       <div className="hero-section">
-
+        <HeroArcs />
         <div className='hero-particles'>
           <HeroParticles />
         </div>
@@ -40,9 +41,7 @@ export default function Hero() {
           <h1>Creative Designer and Developer</h1>
           <h3>I build designs that solve problems, inspire actions, and drive success</h3>
         </div>
-
       </div>
-
       <div className='distance'></div>
     </section>
   );

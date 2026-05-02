@@ -233,7 +233,7 @@
     height: 130vh;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) { /*OMITIR!*/
 
     .myskills {
         height: auto;
