@@ -1,7 +1,5 @@
 import Slider from '../Slider/Slider'
 import './About.css'
-import latDer from './../../assets/img/About/latDer.svg'
-import latIzq from './../../assets/img/About/latIZQ.svg'
 import logo from './../../assets/img/Navbar/mLogo.svg'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -103,8 +101,6 @@ export default function About() {
     return (
         <>
             <section className="sobremi" id="About">
-                <div className="topAbout">
-                </div>
                 <div  className="about" ref={aboutRef}>
                     <motion.div
                         className="w-col about-cards"

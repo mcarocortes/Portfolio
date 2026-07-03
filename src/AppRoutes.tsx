@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import PortfolioLayout from "./layouts/PortfolioLayout";
-import LandingPage from "./componentes/Home/LandingPage";
+import LandingPage from "./componentes/LandingPage/LandingPage";
 import Modular from "./pages/Modular/Modular";
 import Vc from "./pages/VC/Vc";
 import Vinos from "./pages/Vinos/Vinos";

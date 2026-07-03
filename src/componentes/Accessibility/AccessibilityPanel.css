@@ -179,3 +179,9 @@
 .dark-mode .arc-line {
   filter: drop-shadow(0 0 20px var(--purpura));
 }
+
+/********************* ABOUT   ***************************/ 
+
+.dark-mode .about  {
+  background-color: var(--black);
+}
