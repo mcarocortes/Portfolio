@@ -123,7 +123,9 @@
 
 /****** NAVBAR ******/
 .dark-mode .logoNavM {
-  background-image: url("/src/assets/img/Navbar/mLogo_B.svg");
+  background-image: url("/src/assets/img/Navbar/mLogo_B2.svg");
+  border: solid 1px var(--purpura3);
+
 }
 
 .dark-mode .accessibility-panel {
@@ -184,4 +186,30 @@
 
 .dark-mode .about  {
   background-color: var(--black);
+  background-image: url("/src/assets/img/About/ProfilePicture_darkmode.png");
+}
+
+.dark-mode .about-cards .exterior .text  {
+  background-color: var(--black);
+  border: solid 1px var(--purpura);
+  color:var(--white);
+}
+
+.dark-mode .about-cards div span {
+  color: var(--purpura3);
+}
+
+.dark-mode .spanDelicated{
+  color: var(--purpura3);
+}
+
+.dark-mode .btnAbout {
+  box-shadow: 2px 2px 8px rgba(65, 52, 183, 0.949);
+  color: var(--black);
+  background: var(--gradientWhite);
+}
+
+.dark-mode .logoSignature {
+    border: solid 1px var(--purpura3);
+  background-image: url("/src/assets/img/Navbar/mLogo_B2.svg");
 }

@@ -22,7 +22,7 @@
   top: 0;
   box-shadow: 0 2px 5px #0003;
   overflow: hidden;
-  background-image: url("/src/assets/img/About/ProfilePicture2.png");
+  background-image: url("/src/assets/img/About/ProfilePicture.png");
   background-position: 20px bottom;
   background-repeat: no-repeat;
   background-size: auto 90%;
@@ -32,11 +32,9 @@
   background-color: transparent;
 }
 
-
-
 .btnAbout {
   box-shadow: 2px 2px 8px #0003;
-  color: white;
+  color: var(--white);
   width: 250px;
 }
 
@@ -55,10 +53,13 @@
   flex-direction: column;
   justify-content: center;
   align-items:end;
+  font-family: var(--font-family-base);
 }
 
 .about-cards {
-  width: 40vw !important;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-h3);
+  width: 50vw !important;
   flex-shrink: 0;
   height: 100% !important;
   align-self: stretch;
@@ -87,17 +88,18 @@
 }
 
 .about-cards .exterior .text {
-  font-size: 22px;
+  background-color: var(--white);
+  border: solid 1px var(--purpura4);
+
   padding: auto;
   padding-top: 16px;
   height: 90px;
-  width: 300px;
+  width: 280px;
   display: block;
   align-items: center;
   justify-content: center;
   text-align: center;
   line-height: normal;
-  background-color: white;
   border-radius: 15px;
   box-sizing: border-box;
   box-shadow: 2px 2px 8px #0003;
@@ -107,24 +109,20 @@
 }
 
 .about-cards .exterior .text:hover {
-  box-shadow: 2px 2px 8px #3333cc;
+  box-shadow: 2px 2px 8px var(--purpura);
 }
 
 .about-cards div span {
   color: var(--purpura);
-  /*font-family: "Platypi", serif;*/
-  font-optical-sizing: auto;
-  font-weight: 600;
-  /*font-style: italic;*/
 }
 
 div .exterior .sombra {
   height: 90px;
-  width: 300px;
+  width: 280px;
   margin-top: -100px;
   position: relative;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.851);
+  background-color: var(--white-transparent);
   border-radius: 15px;
   transition: all .5s ease-in-out;
 }
@@ -153,41 +151,37 @@ div .exterior:hover {
 .pa {
   text-align: left;
   color: var(--text);
-  font-size: 28px;
-  font-weight: 600;
   line-height: 36px;
   margin-bottom: 35px;
   text-align: justify;
 }
 
-
-
 .spanDelicated{
   color: var(--purpura);
-  /*font-family: "Platypi", serif;*/
-  font-optical-sizing: auto;
-  font-weight: 600;
-  /*font-style: italic;*/
-
 }
 
 .signature {
   margin-top: 30px;
   align-items: center;
   display: flex;
+  
 }
 
 .logoSignature {
+  height: 45px;
+  width: 35px;
   border-radius: 6px;
   width: 50px;
   border: solid 1px var(--purpura);
-  background-color: var(--white);
+  background-image: url("/src/assets/img/Navbar/mLogo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .signatureText {
   color: var(--text);
   margin-left: 20px;
-  font-size: 23px;
   display: flex;
 }
 
@@ -252,7 +246,6 @@ div .exterior:hover {
   }
 
   .pa {
-    font-size: 23px;
     line-height: 30px;
   }
 
@@ -295,7 +288,6 @@ div .exterior:hover {
   }
 
   .pa {
-    font-size: 22px;
     line-height: 30px;
   }
 
@@ -433,7 +425,6 @@ div .exterior:hover {
   }
 
   .pa {
-    font-size: 20px;
     line-height: 32px;
   }
 

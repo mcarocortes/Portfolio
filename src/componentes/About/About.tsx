@@ -101,7 +101,7 @@ export default function About() {
     return (
         <>
             <section className="sobremi" id="About">
-                <div  className="about" ref={aboutRef}>
+                <div className="about" ref={aboutRef}>
                     <motion.div
                         className="w-col about-cards"
                         initial="hidden"
@@ -142,26 +142,25 @@ export default function About() {
 
                     >
 
-                                                {/**/}
+                        {/**/}
                         <h1 className="heading">About</h1>
                         <p className="pa">
-                            I'm a Web developer and
-                            Industrial Designer
-                            specialized in Artificial Intelligence and Big Data, currently<span className='spanDelicated'> creating digital experiences</span> at Resiplus from Madrid.
+                            Front-end Developer with a background in Industrial Design, creating modern, responsive, and user-centered web experiences.
+                            <span className='spanDelicated'> Passionate about AI-driven development, clean code, and intuitive interfaces.</span>
                         </p>
                         <button className='btnAbout' onClick={() =>
                             window.location.href =
                             "mailto:m.caro.cortes2@gmail.com?subject=I%20want%20to%20connect!"
                         }>Let's connect</button>
                         <div className="signature">
-                            <img src={logo} loading="lazy" alt="" className="logoSignature" />
+                            <div className="logoSignature"></div>
                             <div className="signatureText">
                                 Macarena Caro Cortés<br />
                             </div>
                         </div>
                     </motion.div>
 
-                    {cursor.visible && (<div className={`follow-cursor ${cursor.type}`} style={{ left: cursor.x, top: cursor.y }}/>)}
+                    {cursor.visible && (<div className={`follow-cursor ${cursor.type}`} style={{ left: cursor.x, top: cursor.y }} />)}
 
                 </div>
 
