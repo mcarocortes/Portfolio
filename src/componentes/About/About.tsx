@@ -1,10 +1,13 @@
 import Slider from '../Slider/Slider'
 import './About.css'
-import logo from './../../assets/img/Navbar/mLogo.svg'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from "react-i18next";
+
 
 export default function About() {
+
+    const { t } = useTranslation();
 
     //Hover divs icons
     type CursorType = "D" | "B" | "C" | null;
@@ -123,8 +126,8 @@ export default function About() {
                                 transition={{ duration: 0.6, delay: i * 0.15 }}
                             >
                                 <div className={`text ${i === 1 ? "cinco" : ""}`}>
-                                    {["Visual & Brand", "Interaction", "Enhanced Digital"][i]}<br />
-                                    <span>{["Consistency", "Design", "Experiences"][i]}</span>
+                                    {[t("aboutSection.identity") ,  t("aboutSection.focus"), t("aboutSection.development")][i]}<br />
+                                    <span>{[t("aboutSection.visualbrand"),t("aboutSection.interaction"),t("aboutSection.digitalexperiences")][i]}</span>
                                 </div>
                                 <div className={`sombra ${i === 1 ? "cinco" : ""}`}></div>
                             </motion.div>
@@ -143,15 +146,15 @@ export default function About() {
                     >
 
                         {/**/}
-                        <h1 className="heading">About</h1>
+                        <h1 className="heading">{t("about")}</h1>
                         <p className="pa">
-                            Front-end Developer with a background in Industrial Design, creating modern, responsive, and user-centered web experiences.
-                            <span className='spanDelicated'> Passionate about AI-driven development, clean code, and intuitive interfaces.</span>
+                            {t("aboutSection.description")}
+                            <span className='spanDelicated'> {t("aboutSection.highlight")}</span>
                         </p>
                         <button className='btnAbout' onClick={() =>
                             window.location.href =
                             "mailto:m.caro.cortes2@gmail.com?subject=I%20want%20to%20connect!"
-                        }>Let's connect</button>
+                        }> {t("aboutSection.letsTalk")} </button>
                         <div className="signature">
                             <div className="logoSignature"></div>
                             <div className="signatureText">

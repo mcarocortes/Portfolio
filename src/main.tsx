@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import "./i18n";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

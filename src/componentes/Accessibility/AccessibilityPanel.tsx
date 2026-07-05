@@ -4,35 +4,39 @@ import "./AccessibilityPanel.css";
 import useClickOutside from "../../hooks/useClickOutside"
 import useDarkMode from "../../hooks/useDarkMode";
 import useFontScale from "../../hooks/useFontScale";
+import useLanguage from "../../hooks/useLanguage";
+import Switch from "../Switch/Switch";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   open: boolean
   setOpen: (value: boolean) => void
-  variant?: "desktop" | "mobile",
+  //variant?: "desktop" | "mobile",
   hidden?: boolean
 }
 
-export default function AccessibilityPanel({ open, setOpen, variant = "desktop", hidden }: Props) {
+export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
 
   const panelRef = useRef<HTMLDivElement>(null);
 
   /*Hooks */
   useClickOutside(panelRef, () => setOpen(false), open);
   const { darkMode, toggleDarkMode } = useDarkMode();
-  const { increaseText, decreaseText, defaultText } = useFontScale();
-
+  const { language, setLanguage } = useLanguage();
+  const { fontScale, setFontScale } = useFontScale();
+  const { t } = useTranslation();
   if (!open) return null;
 
   return (
     <div
-      className={`accessibility-panel ${variant} ${hidden ? "navbar-hidden" : ""}`}
+      className={`accessibility-panel ${hidden ? "navbar-hidden" : ""}`}
       onClick={(e) => e.stopPropagation()}
     >
 
       <div className="d-flex justify-content-between mb-3">
-        <p>ACCESSIBILITY</p>
+        <p className="uppercase">{t("accessibility")}</p>
 
-        {variant === "desktop" && (
+        {(
           <button
             className="btn-close"
             onClick={() => setOpen(false)}
@@ -41,50 +45,60 @@ export default function AccessibilityPanel({ open, setOpen, variant = "desktop",
       </div>
 
       <div>
+        <label className="mt-2" >{t("language")}</label>
+        <Switch
 
-        <label className=" mt-2" >Dark mode</label>
+          options={[
+            { label: "ES", value: "es" },
+            { label: "EN", value: "en" }
+          ]}
 
-        <div className="form-check form-switch">
+          value={language}
 
-          <input
-            className="form-check-input "
-            type="checkbox"
-            checked={darkMode}
-            onChange={toggleDarkMode}
-          />
+          onChange={setLanguage}
 
-        </div>
+        />
 
-      </div>
+        <label className=" mt-2" >{t("interface")}</label>
 
-      <div>
+        <Switch
 
-        <div className="d-flex mt-2">
-          <label>Text size |</label>
-          <button className="defaultText" onClick={defaultText}>
-            Default text
-          </button>
-        </div>
+          options={[
+            { label: `☀ ${t("bright")}`, value: "light" },
+            { label: `☾ ${t("dark")}`, value: "dark" }
+          ]}
+          value={darkMode ? "dark" : "light"}
 
-        <div>
+          onChange={(value) => {
 
-          <button
-            className="btn btn-outline-secondary me-2 pb-2 mt-2"
-            onClick={decreaseText}
-          >
-            A−
-          </button>
+            if (
+              value === "dark" && !darkMode ||
+              value === "light" && darkMode
+            ) {
+              toggleDarkMode();
+            }
 
-          <button
-            className="btn btn-outline-secondary pb-2 mt-2"
-            onClick={increaseText}
-          >
-            A+
-          </button>
+          }}
 
-        </div>
+        />
 
       </div>
+      <label className="mt-2" >{t("fontSize")}</label>
+
+
+      <Switch
+
+        options={[
+          { label: "A-", value: "small" },
+          { label: "A", value: "normal" },
+          { label: "A+", value: "large" }
+        ]}
+
+        value={fontScale}
+
+        onChange={setFontScale}
+
+      />
 
     </div>
   );

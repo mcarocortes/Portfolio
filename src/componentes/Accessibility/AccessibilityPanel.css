@@ -7,22 +7,24 @@
   height: 100%;
   padding-left: 7px;
   padding-right: 7px;
+  margin-left: 20px;
 }
 
 .accessibility-button:hover {
   color: var(--white);
-  background-color: var(--text);
+  background-color: var(--purpura);
   cursor: none;
+  border: solid 1px var(--white);
 }
 
 .accessibility-panel{
   font-family: var(--font-family-base);
 }
 
-.accessibility-panel.desktop button, .accessibility-panel.desktop input, .accessibility-panel.desktop label{
+.accessibility-panel button, .accessibility-panel input, .accessibility-panel label{
   cursor: none;
 }
-.accessibility-panel.desktop {
+.accessibility-panel{
 
   position: fixed;
   z-index: 1000;
@@ -66,11 +68,11 @@
 }
 
 @media screen and (max-width: 991px) {
-  .accessibility-panel.desktop {
+  /*.accessibility-panel {
     display: none;
-  }
+  }*/
 
-  .accessibility-panel.mobile {
+  /*.accessibility-panel.mobile {
     
     border-radius: 6px;
     padding: 10px;
@@ -81,37 +83,37 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
+  }*/
 
-  .accessibility-panel.mobile .form-check {
+  /*.accessibility-panel.mobile .form-check {
     margin-top: -10px;
     margin-bottom: 10px;
-  }
+  }*/
 
-  .accessibility-panel.mobile .btn {
+  /*.accessibility-panel.mobile .btn {
     margin-top: -10px;
     border: solid 1px var(--text);
     background-color: var(--white-transparent);
     transition: transform 0.2s ease;
     
-  }
+  }*/
 
-  .accessibility-panel.mobile .btn:hover {
+  /*.accessibility-panel.mobile .btn:hover {
     transform: scale(1.05);
     border: solid 1px var(--text);
     background-color: var(--white-transparent);
-  }
+  }*/
 
-  .accessibility-panel.mobile .defaultText{
+  /*.accessibility-panel.mobile .defaultText{
     font-size: var(--font-size-base) !important;
-  }
+  }*/
 
 }
 
 
 
 
-/*************************************  DARK-MODE CONFIGURATION **************************/
+/*************************************  INTERFACE CONFIGURATION **************************/
 .dark-mode {
   --text: var(--white);
   --white-transparent: var(--black-transparent);
@@ -128,9 +130,9 @@
 
 }
 
+/*********************ACCESIBILITY PANEL****************/
 .dark-mode .accessibility-panel {
   color: var(--text);
-
 }
 
 .dark-mode .defaultText {
@@ -141,13 +143,7 @@
   color: var(--text);
 }
 
-.dark-mode .accessibility-button:hover {
-  background-color: var(--white);
-  color: var(--black);
-  border: solid 1px var(--black);
-}
-
-.dark-mode .accessibility-panel .btn-close {
+.dark-mode .accessibility-panel .btn-close{
   background-color: var(--text);
 }
 
@@ -166,7 +162,9 @@
   background-color: var(--black);
 }
 
-
+.dark-mode .switch.active{
+  background-color: var(--black-transparent2);
+}
 
 /********************* HERO   ***************************/ 
 .dark-mode .hero-wrapper {

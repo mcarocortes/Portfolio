@@ -167,6 +167,9 @@ div .exterior:hover {
   
 }
 
+.swich{
+  display: flex;
+}
 .logoSignature {
   height: 45px;
   width: 35px;

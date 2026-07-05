@@ -1,0 +1,32 @@
+{ 
+
+    "about": "Sobre mi",
+    "projects": "Proyectos",
+    "whatido": "Que ofrezco",
+    "contact": "Contacto",
+
+    "designingIntelligent":"Diseño de Experiencias Digitales Inteligentes",
+    "combiningCreativity": "Fusión de creatividad, código e IA para el desarrollo de productos digitales de alto impacto.",
+
+    "accessibility": "Accesibilidad",
+    "language": "Idioma",
+    "interface": "Interfaz",
+    "fontSize": "Tamaño del texto",
+    "bright": "Claro",
+    "dark": "Oscuro",
+
+    
+  "aboutSection": {
+    "description": "Desarrolladora Front-end con mentalidad de Diseñadora Industrial, uniendo el código limpio con experiencias web centradas en el usuario.",
+    "highlight": "Apasionada por el desarrollo impulsado por IA, las interacciones fluidas y las interfaces intuitivas.",
+    "letsTalk":"Hablemos",
+    "identity": "Identidad", 
+      "visualbrand": "Visual y de Marca", 
+      "focus": "Enfoque en",
+      "interaction": "Interacción", 
+      "development":"Desarrollo de",
+      "digitalexperiences":"Experiencia Digitales"
+
+  }
+
+}

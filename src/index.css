@@ -1,19 +1,22 @@
 /* ****************************************************** GENERALS ************************************************************** */
 :root {
   /* COLORS*/
-    --text: #292b29;
-    --black: #292b29;
-    --white: #f4f4f4;
-    --purpura: #5a12fa;
-    --purpura3: #8c8ef2;
-    --purpura4: #bfc1fc;
-    --bg-Navbar-border: #d7d1e9; /*BORDE NAVBAR COLLAPS*/
-    --gradient-purple: linear-gradient(135deg, var(--purpura) 0%, var(--purpura3) 50%, var(--purpura) 100%);
-    --gradientBlack: linear-gradient(135deg, var(--text) 0%, var(--grayweb) 50%, var(--text) 100%);
-    --gradientWhite: linear-gradient(135deg, var(--white) 0%, var(--purpura4) 50%, var(--white) 100%);
-    --shadows: #797979b3;
-    --white-transparent: #ffffff36;
-    --black-transparent: #292b2938;
+  --text: #292b29;
+  --black: #292b29;
+  --white: #f4f4f4;
+  --purpura: #5a12fa;
+  --purpura3: #8c8ef2;
+  --purpura4: #bfc1fc;
+  --bg-Navbar-border: #d7d1e9;
+  /*BORDE NAVBAR COLLAPS*/
+  --gradient-purple: linear-gradient(135deg, var(--purpura) 0%, var(--purpura3) 50%, var(--purpura) 100%);
+  --gradientBlack: linear-gradient(135deg, var(--text) 0%, var(--grayweb) 50%, var(--text) 100%);
+  --gradientWhite: linear-gradient(135deg, var(--white) 0%, var(--purpura4) 50%, var(--white) 100%);
+  --shadows: #797979b3;
+  --white-transparent: #ffffff36;
+  --white-transparent2: rgba(255, 255, 255, 0.471);
+  --black-transparent: #292b2938;
+  --black-transparent2: #292b296a;
 
 
   /*FONT-FAMILY*/
@@ -23,25 +26,26 @@
   --font-size-h2: calc(36px * var(--font-scale));
   --font-size-h3: calc(25px * var(--font-scale));
 
-   --font-family-base: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
-   --font-weight-base: 400;
-   --font-line-height-base: 1.5;
+  --font-family-base: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
+  --font-weight-base: 400;
+  --font-line-height-base: 1.5;
 
   /*MARGIN/PADDING GENERALES*/
-  --margin-left-rigth-general: 4rem; 
+  --margin-left-rigth-general: 4rem;
 
 
 
 
 
- --purpura2: #5a12fa;
---purpura5: #e0e1ff;
-  --smoke: #0000; /*CAMBIANDO POR TRANSPARENT*/
+  --purpura2: #5a12fa;
+  --purpura5: #e0e1ff;
+  --smoke: #0000;
+  /*CAMBIANDO POR TRANSPARENT*/
   --grayweb: #797979;
   --whitesomoke: #f5f5f5;
   --slider: #e7e7e7;
   --navbar: #ced1d7;
-  --skillsBg : #f2eeff;
+  --skillsBg: #f2eeff;
   --ulSkills: #e0d6f1;
 }
 
@@ -61,7 +65,8 @@ body {
   background-color: var(--white);
 }
 
-html, body {
+html,
+body {
   cursor: none;
 }
 
@@ -72,23 +77,30 @@ html, body {
   margin-bottom: 30px;
   margin-left: 0;
   font-size: var(--font-size-h1);
-  
+
 }
 
 h1 {
   font-size: var(--font-size-h1) !important;
 }
 
-h3{
+h3 {
   font-size: var(--font-size-h3) !important;
 }
 
-p{
-  font-size: var(  --font-size-base);
+p {
+  font-size: var(--font-size-base);
 }
-.btnLink, .btnAbout, .btnAContacto {
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.btnLink,
+.btnAbout,
+.btnAContacto {
   font-family: var(--font-family-base);
-  font-size: var(  --font-size-base);
+  font-size: var(--font-size-base);
   font-weight: 600;
   letter-spacing: 2px;
 
@@ -107,7 +119,9 @@ p{
   box-shadow: 2px 2px 8px #0003;
 }
 
-.btnLink:hover, .btnAbout:hover, .btnAContacto:hover {
+.btnLink:hover,
+.btnAbout:hover,
+.btnAContacto:hover {
   font-weight: 700;
   transform: scale(1.1);
   text-decoration: none;
@@ -121,8 +135,13 @@ p{
   text-decoration: none;
 }
 
-.ProjectNameLink,.navbartext,.logoNavM, .ProjectNameHover,.list,.back{
-   cursor: none;
+.ProjectNameLink,
+.navbartext,
+.logoNavM,
+.ProjectNameHover,
+.list,
+.back {
+  cursor: none;
 }
 
 a {
@@ -153,27 +172,26 @@ label {
   font-size: 55px !important;
 }
 
-@media screen and (max-width: 1280px) {
-
-}
+@media screen and (max-width: 1280px) {}
 
 @media screen and (max-width: 991px) {
 
-  :root{
+  :root {
     --margin-left-rigth-general: 2.5rem;
     --font-size-h1: calc(36px * var(--font-scale));
-    --font-size-h3: calc(23px * var(--font-scale)); 
+    --font-size-h3: calc(23px * var(--font-scale));
   }
+
   .heading {
     font-size: 50px !important;
   }
 }
 
 @media screen and (max-width: 767px) {
-    :root{
+  :root {
     --margin-left-rigth-general: 2rem;
     --font-size-h1: calc(32px * var(--font-scale));
-    --font-size-h3: calc(20px * var(--font-scale)); 
+    --font-size-h3: calc(20px * var(--font-scale));
   }
 
   .heading {
@@ -185,8 +203,8 @@ label {
     font-size: 45px !important;
   }
 
-  button{
-  font-size: 21px !important;
+  button {
+    font-size: 21px !important;
   }
 
 }
@@ -203,28 +221,28 @@ label {
 
 /** FONTS  **/
 @font-face {
-    font-family: 'DIN Next LT Pro Bold';
-    src: url('./assets/fonts/DINNextLTPro-Bold.woff2') format('woff2'),
-        url('./assets/fonts/DINNextLTPro-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'DIN Next LT Pro Bold';
+  src: url('./assets/fonts/DINNextLTPro-Bold.woff2') format('woff2'),
+    url('./assets/fonts/DINNextLTPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'DIN Next LT Pro Light';
-    src: url('./assets/fonts/DINNextLTPro-Light.woff2') format('woff2'),
-        url('./assets/fonts/DINNextLTPro-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'DIN Next LT Pro Light';
+  src: url('./assets/fonts/DINNextLTPro-Light.woff2') format('woff2'),
+    url('./assets/fonts/DINNextLTPro-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'DIN Next LT Pro';
-    src: url('./assets/fonts/DINNextLTPro-Regular.woff2') format('woff2'),
-        url('./assets/fonts/DINNextLTPro-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'DIN Next LT Pro';
+  src: url('./assets/fonts/DINNextLTPro-Regular.woff2') format('woff2'),
+    url('./assets/fonts/DINNextLTPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

@@ -7,6 +7,7 @@ import "./Navbar.css";
 import useNavbarScroll from "../../hooks/useNavbarScroll";
 import useActiveSection from "../../hooks/useActiveSection";
 import useCloseOnRouteChange from "../../hooks/useOnRouterChange";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
 
@@ -16,6 +17,7 @@ export default function Navbar() {
   /* Hooks*/
   const hidden = useNavbarScroll(); //Desaparecer navbar con scroll
   const activeSection = useActiveSection(); // Destacar currentLink
+  const { t } = useTranslation();
 
   /* FUNCTIONS */
   //si estaba abierto: ciérralo, si estaba cerrado: ábrelo
@@ -55,20 +57,10 @@ export default function Navbar() {
             <nav className="nav-menu new">
               <div className="nav-buttons-wrapper new">
 
-                <Link to="#About" className={`navbartext ${activeSection === "About" ? "active" : ""}`}>ABOUT</Link>
-                <Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}>PROJECTS</Link>
-                <Link to="#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}>WHAT I DO</Link>
-                <Link to="#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}>CONTACT</Link>
-
-                <button
-                  className="navbartext accessibility-button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleAccessibility();
-                  }}
-                >
-                  <i className="bi bi-universal-access"></i>
-                </button>
+                <Link to="#About" className={`navbartext ${activeSection === "About" ? "active" : ""}`}>{t("about")}</Link>
+                <Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}>{t("projects")}</Link>
+                <Link to="#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}>{t("whatido")}</Link>
+                <Link to="#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}>{t("contact")}</Link>
               </div>
             </nav>
 
@@ -88,7 +80,15 @@ export default function Navbar() {
                 <span></span>
               </div>
             </button>
-
+                <button
+                  className="navbartext accessibility-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleAccessibility();
+                  }}
+                >
+                  <i className="bi bi-universal-access"></i>
+                </button>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ export default function Navbar() {
         <AccessibilityPanel
           open={accessibilityOpen}
           setOpen={setAccessibilityOpen}
-          variant="desktop"
+          //variant="desktop"
           hidden={hidden}
         />
       )}

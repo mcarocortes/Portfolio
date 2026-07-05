@@ -1,35 +1,47 @@
 import { useEffect, useState } from "react";
 
+export type FontScale = "small" | "normal" | "large";
+
+const scaleValues = {
+    small: 0.9,
+    normal: 1,
+    large: 1.2
+};
+
 export default function useFontScale() {
 
-  const [scale, setScale] = useState(1);
+    const [fontScale, setFontScale] = useState<FontScale>("normal");
 
-  useEffect(() => {
+    useEffect(() => {
 
-    const saved = localStorage.getItem("fontScale");
+        const saved =
+            (localStorage.getItem("fontScale") as FontScale) || "normal";
 
-    if (saved) {
-      const value = Number(saved);
-      setScale(value);
-      document.documentElement.style.setProperty("--font-scale", saved);
-    }
+        setFontScale(saved);
 
-  }, []);
+        document.documentElement.style.setProperty(
+            "--font-scale",
+            String(scaleValues[saved])
+        );
 
-  const changeScale = (value: number) => {
+    }, []);
 
-    setScale(value);
+    const changeFontScale = (value: FontScale) => {
 
-    document.documentElement.style.setProperty("--font-scale", String(value));
+        setFontScale(value);
 
-    localStorage.setItem("fontScale", String(value));
+        document.documentElement.style.setProperty(
+            "--font-scale",
+            String(scaleValues[value])
+        );
 
-  };
+        localStorage.setItem("fontScale", value);
 
-  const increaseText = () => changeScale(1.2);
-  const decreaseText = () => changeScale(0.9);
-  const defaultText = () => changeScale(1);
+    };
 
-  return { scale, increaseText, decreaseText, defaultText };
+    return {
+        fontScale,
+        setFontScale: changeFontScale
+    };
 
 }

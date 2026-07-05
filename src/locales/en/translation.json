@@ -1,0 +1,31 @@
+{
+    "about": "About",
+    "projects": "Projects",
+    "whatido": "What I Do",
+    "contact": "Contact",
+
+    "designingIntelligent":"Designing Intelligent Digital Experiences",
+    "combiningCreativity": "Combining creativity, code, and AI to build high-impact digital products.",
+
+    "accessibility": "Accessibility",
+    "language": "Language",
+    "interface": "Interface",
+    "fontSize": "Font Size",
+    "bright": "Bright",
+    "dark": "Dark",
+    
+
+   "aboutSection": {
+    "description": "Front-end Developer with an Industrial Design mindset, bridging the gap between clean code and user-centered web experiences.",
+    "highlight": "Passionate about AI-driven development, fluid interactions, and intuitive interfaces.",
+      "letsTalk":"Let's Talk",
+      "identity": "Identity",
+      "visualbrand": "Visual & Brand", 
+      "focus": "Focus on",
+      "interaction": "Interaction", 
+      "development":"Development of",
+      "digitalexperiences":"Digital Experiences"
+
+}
+
+}

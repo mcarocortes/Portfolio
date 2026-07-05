@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"; //Navegar sin recargar la página.
-import AccessibilityPanel from "../Accessibility/AccessibilityPanel";
+//import AccessibilityPanel from "../Accessibility/AccessibilityPanel";
 import { useRef } from "react";
 import "./Navbar.css";
 
@@ -14,7 +14,7 @@ interface MobileMenuProps {
   hidden: boolean;
 }
 
-export default function MobileMenu({ isOpen, onClose, accessibilityOpen, setAccessibilityOpen, hidden }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose, /*accessibilityOpen, setAccessibilityOpen,*/ hidden }: MobileMenuProps) {
 
   const menuRef = useRef<HTMLDivElement>(null);
   const menuClasses = `collapse collapsado ${isOpen ? "show" : ""}`; //clase dinámica.
@@ -37,7 +37,8 @@ export default function MobileMenu({ isOpen, onClose, accessibilityOpen, setAcce
         <Link to="/#WhatIDo" className="menuLinktext" onClick={onClose}>What I Do</Link>
 
         <Link to="/#Contact" className="menuLinktext btnContact" onClick={onClose}>Contact</Link>
-
+</div>
+{/*
         <button
           className="menuLinktext accessibility-button"
           onClick={(e) => {
@@ -48,9 +49,9 @@ export default function MobileMenu({ isOpen, onClose, accessibilityOpen, setAcce
           <i className="bi bi-universal-access"></i>
         </button>
 
-      </div>
+      
       <AccessibilityPanel open={accessibilityOpen} setOpen={setAccessibilityOpen} variant="mobile" />
-
+*/}
     </div>
   );
 }
