@@ -1,22 +1,24 @@
 .switch-control{
     display:flex;
-    border:1px solid var(--purpura2);
+    border:1px solid var(--purpura4);
     border-radius:999px;
     overflow:hidden;
     width:max-content;
 }
 
 .switch{
-    border:none;
+    border: 1px solid transparent; /* ← SIEMPRE tiene borde, invisible si no está activo */
     background:transparent;
     padding:8px 22px;
     transition:.25s;
     color:var(--text);
+    border-radius: 999px;          /* ← redondo SIEMPRE, no solo cuando está activo */
+
 }
 
 .switch.active{
     background:var(--white-transparent2);
     border-radius:999px;
     box-shadow:0 0 5px rgba(0,0,0,.15);
-    border:1px solid var(--text);
+    border:1px solid var(--purpura4);
 }

@@ -1,37 +1,45 @@
 .custom-cursor {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 28px;
   height: 28px;
-  background: url("/cursor.svg") center/contain no-repeat;
   pointer-events: none;
   z-index: 999999;
-  transition: transform .15s ease;
+  /* SIN background aquí — solo el inner dibuja el icono */
 }
 
-.custom-cursor.pointer {
+.custom-cursor-inner {
+  width: 100%;
+  height: 100%;
+  background: url("/cursor.svg") center/contain no-repeat;
+}
+
+.custom-cursor-inner.pointer {
   background: url("/pointer.svg") center/contain no-repeat;
   transform: scale(1.2);
 }
 
 /* cursor especial contacto */
 
-.custom-cursor.contact {
+.custom-cursor-inner.contact {
   background: url("/cursor_darkmode.svg") center/contain no-repeat;
   transform: scale(1.4);
 }
 
 /* cursor para proyectos NO EXISTE AUN*/
 
-.custom-cursor.project {
+.custom-cursor-inner.project {
   background: url("/cursor-project.svg") center/contain no-repeat;
   transform: scale(1.4);
 }
 
 /* cursor para proyectos*/
 
-.custom-cursor.hidden {
+.custom-cursor-inner.hidden {
   opacity: 0;
 }
+
 
 
 @media (pointer: coarse) {

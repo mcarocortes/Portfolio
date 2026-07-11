@@ -62,8 +62,8 @@ export default function Cursor() {
 
         const animate = () => {
 
-            pos.current.x += (mouse.current.x - pos.current.x) * 0.6;
-            pos.current.y += (mouse.current.y - pos.current.y) * 0.6;
+            pos.current.x += (mouse.current.x - pos.current.x) * 0.85;
+            pos.current.y += (mouse.current.y - pos.current.y) * 0.85;
 
             if (cursorRef.current) {
                 cursorRef.current.style.transform =
@@ -79,10 +79,9 @@ export default function Cursor() {
 
     //if (hidden) return null;
 
-    return (
-        <div
-            ref={cursorRef}
-            className={`custom-cursor ${isPointer ? "pointer" : ""} ${variant}`}
-        />
-    );
+return (
+  <div ref={cursorRef} className="custom-cursor">
+    <div className={`custom-cursor-inner ${isPointer ? "pointer" : ""} ${variant}`} />
+  </div>
+);
 }

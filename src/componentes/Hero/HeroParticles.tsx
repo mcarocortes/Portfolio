@@ -3,6 +3,7 @@ import { useGLTF } from "@react-three/drei"
 import * as THREE from "three"
 import { useMemo, useRef } from "react"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
+import { memo } from "react"
 
 
 /**VARIABLE GLOBAL**/
@@ -114,7 +115,7 @@ function FaceParticles() {
         const arr =
           mesh.geometry.attributes.position.array as ArrayLike<number>
 
-        for (let i = 0; i < arr.length; i += 3 * 2) { //controlar cantidad de puntos 3*2 
+        for (let i = 0; i < arr.length; i += 3 * 4) { //controlar cantidad de puntos 3*4 
 
           const x = arr[i]
           const y = arr[i + 1]
@@ -344,7 +345,7 @@ function FaceParticles() {
 
 
 /********  HERO PRINCIPAL *******/
-export default function HeroParticles() {
+function HeroParticles() {
 
   return (
 
@@ -380,3 +381,5 @@ export default function HeroParticles() {
   )
 
 }
+
+export default memo(HeroParticles)

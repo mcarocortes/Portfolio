@@ -2,7 +2,7 @@
 .navbar {
   padding: 0;
   position: fixed !important;
-  z-index: 1000;
+  z-index: 1100;
   top: 30px;
   font-family: var(--font-family-base);
   font-size: 1rem;
@@ -237,7 +237,7 @@
     top: 110px;
     right: var(--margin-left-rigth-general);
     padding: 10px 20px;
-    z-index: 1000;
+    z-index: auto;
     min-width: 252px;
     background-color: var(--white-transparent);
     backdrop-filter: blur(12px) !important;

@@ -27,7 +27,7 @@
 .accessibility-panel{
 
   position: fixed;
-  z-index: 1000;
+  z-index: 1050;
   border-radius: 6px;
 
   top: 110px;
@@ -119,7 +119,7 @@
   --white-transparent: var(--black-transparent);
 }
 /****** CURSOR ******/
-.dark-mode .custom-cursor{
+.dark-mode .custom-cursor-inner{
   background: url("/public/cursor_darkmode.svg") center/contain no-repeat;
 }
 
@@ -128,6 +128,10 @@
   background-image: url("/src/assets/img/Navbar/mLogo_B2.svg");
   border: solid 1px var(--purpura3);
 
+}
+
+.navbartext:hover, .navbartext.active  {
+  color: var(--purpura4);
 }
 
 /*********************ACCESIBILITY PANEL****************/

@@ -34,7 +34,7 @@ export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
       onClick={(e) => e.stopPropagation()}
     >
 
-      <div className="d-flex justify-content-between mb-3">
+      <div className="d-flex justify-content-between mb-1">
         <p className="uppercase">{t("accessibility")}</p>
 
         {(
