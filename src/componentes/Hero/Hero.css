@@ -11,7 +11,7 @@
   z-index: 1;
   top: 0;
   width: 100%;
-  margin-bottom: -150vh;
+  margin-bottom: -180vh;
   display: block;
   position: fixed;
   background: url("../../assets/img/Hero/DotsHero.svg") center/cover no-repeat,
@@ -98,7 +98,7 @@
   width: 100%;
   margin-top: 0px;
   position: relative;
-  height: 180vh;
+  height: 280vh;
 }
 
 /* ── Transición Hero → About ── */

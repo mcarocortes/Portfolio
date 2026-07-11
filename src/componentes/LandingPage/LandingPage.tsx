@@ -8,8 +8,8 @@ import Webs  from "../Webs/Webs";
 export default function LandingPage() {
   return (
     <>        
-        <About />
-        {/*<Projects />*/}
+        {/*<About />
+        <Projects />*/}
         <Projects3 />
         <Webs />
         <SkillsProjects/>

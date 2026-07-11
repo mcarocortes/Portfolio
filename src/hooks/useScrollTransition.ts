@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { scrollTransition } from "../lib/scrollTransitionState";
 
-function easeOutCubic(t: number) {
-  return 1 - Math.pow(1 - t, 3);
-}
+/** Cuántas pantallas de scroll dura la transición completa (0 → 1) */
+export const SCROLL_VIEWPORTS = 2.8;
 
 function clamp(value: number, min = 0, max = 1) {
   return Math.min(Math.max(value, min), max);
+}
+
+/** Curva suave sin acelerón brusco al final */
+function smoothstep(t: number) {
+  return t * t * (3 - 2 * t);
 }
 
 export default function useScrollTransition() {
@@ -18,8 +22,8 @@ export default function useScrollTransition() {
     const update = () => {
       const scrollY = window.scrollY;
       const viewport = window.innerHeight;
-      const raw = scrollY / (viewport * 1.2);
-      setProgress(easeOutCubic(clamp(raw)));
+      const raw = scrollY / (viewport * SCROLL_VIEWPORTS);
+      setProgress(clamp(raw));
       ticking = false;
     };
 
@@ -36,10 +40,11 @@ export default function useScrollTransition() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const act1 = easeOutCubic(clamp(progress / 0.3));
-  const act2 = easeOutCubic(clamp((progress - 0.25) / 0.3));
-  const act3 = easeOutCubic(clamp((progress - 0.5) / 0.3));
-  const act4 = easeOutCubic(clamp((progress - 0.75) / 0.25));
+  /* Fases más separadas y solapadas para transición prolongada */
+  const act1 = smoothstep(clamp(progress / 0.28));
+  const act2 = smoothstep(clamp((progress - 0.18) / 0.28));
+  const act3 = smoothstep(clamp((progress - 0.42) / 0.32));
+  const act4 = smoothstep(clamp((progress - 0.68) / 0.32));
 
   scrollTransition.act1 = act1;
   scrollTransition.act2 = act2;

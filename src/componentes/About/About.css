@@ -1,68 +1,81 @@
 #About {
-  margin-bottom: 600px; /***************************************AÑADIDO*/
+  margin-bottom: 600px;
   margin-top: 5vh;
 }
 
 .sobremi {
-  z-index: 3;
-  display: block;
   position: relative;
-  bottom: 65px;
+  z-index: 5;
+  display: block;
   width: 100%;
-  top: 120vh;
+  min-height: calc(100vh + 240px);
+  padding-bottom: 8vh;
+  isolation: isolate;
 }
 
 .about-intro {
   position: fixed;
   inset: 0;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: clamp(2rem, 5vw, 5rem);
+  min-height: 100vh;
   padding: 0 var(--margin-left-rigth-general);
   pointer-events: none;
   will-change: transform, opacity;
 }
 
 .about-intro-photo {
-  height: 55vh;
+  height: min(78vh, 860px);
   width: auto;
-  max-width: 42vw;
+  max-width: 46vw;
   object-fit: contain;
-  object-position: bottom;
+  object-position: bottom center;
 }
 
 .about-intro-text {
-  max-width: 520px;
+  max-width: 560px;
+  flex: 1;
 }
 
 .about-intro-text .heading {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .about-intro-text .pa {
   margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
 }
 
 .about--revealed {
   will-change: transform, opacity;
 }
 
+.about.about--settled {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 .about {
+  position: relative;
+  z-index: 2;
   display: flex;
   background-color: var(--white);
   text-align: left;
   border-radius: 20px;
   width: 100%;
-  height: 600px;
+  min-height: min(100vh, 720px);
+  height: min(100vh, 720px);
   top: 0;
   box-shadow: 0 2px 5px #0003;
   overflow: hidden;
   background-image: url("/src/assets/img/About/ProfilePicture.png");
   background-position: 20px bottom;
   background-repeat: no-repeat;
-  background-size: auto 90%;
+  background-size: auto 92%;
 }
 
 .center {
