@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Hero from "../componentes/Hero/Hero";
-import Preloader from "../componentes/Preloader/Preloader";
+import { ScrollTransitionProvider } from "../context/ScrollTransitionContext";
 
 export default function PortfolioLayout() {
   const location = useLocation();
@@ -26,16 +26,15 @@ export default function PortfolioLayout() {
   }, [startTime]);
 
   return (
-    <>
+    <ScrollTransitionProvider>
       {/*{showPreloader && <Preloader animateOut={animateOut} />}*/}
 
       {/* Hero SOLO visible en Home */}
       <div style={{ display: isHome ? "block" : "none" }}>
-        <Hero/>
-        {/*<HeroParticles />*/}
+        <Hero />
       </div>
 
       <Outlet />
-    </>
+    </ScrollTransitionProvider>
   );
 }

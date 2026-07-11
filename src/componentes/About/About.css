@@ -4,12 +4,49 @@
 }
 
 .sobremi {
-  z-index: 2;
+  z-index: 3;
   display: block;
   position: relative;
   bottom: 65px;
   width: 100%;
-  top: 90vh;
+  top: 120vh;
+}
+
+.about-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 0 var(--margin-left-rigth-general);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.about-intro-photo {
+  height: 55vh;
+  width: auto;
+  max-width: 42vw;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.about-intro-text {
+  max-width: 520px;
+}
+
+.about-intro-text .heading {
+  margin-bottom: 20px;
+}
+
+.about-intro-text .pa {
+  margin: 0;
+}
+
+.about--revealed {
+  will-change: transform, opacity;
 }
 
 .about {
@@ -411,6 +448,25 @@ div .exterior:hover {
     pointer-events: none;
   }
 
+}
+
+@media screen and (max-width: 767px) {
+  .about-intro {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 12vh;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-intro-photo {
+    height: 42vh;
+    max-width: 75vw;
+  }
+
+  .about-intro-text {
+    max-width: 90vw;
+  }
 }
 
 @media screen and (max-width: 479px) {

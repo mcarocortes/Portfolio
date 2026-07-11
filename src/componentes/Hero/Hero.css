@@ -54,6 +54,7 @@
   right: 0;
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   z-index: 6;
   overflow: hidden;
 }
@@ -97,7 +98,14 @@
   width: 100%;
   margin-top: 0px;
   position: relative;
-  height: 145vh;
+  height: 180vh;
+}
+
+/* ── Transición Hero → About ── */
+.arc-top,
+.arc-bottom {
+  opacity: calc(1 - var(--act1, 0));
+  transition: none;
 }
 
 #canvas3d {
@@ -114,7 +122,13 @@
   background-color: transparent;
   width: 100%;
   height: 100%;
-  /*margin-left: 25vw;*/
+  min-height: 100vh;
+}
+
+.heroParticles canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 /*.dotSpace-hero{
@@ -147,6 +161,9 @@
   align-items: flex-start;
   padding-left: var(--margin-left-rigth-general);
 
+  opacity: calc(1 - var(--act1, 0));
+  transform: translateY(calc(var(--act1, 0) * 30px));
+  transition: none;
 }
 
 .content-hero h1 {

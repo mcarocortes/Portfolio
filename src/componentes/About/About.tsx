@@ -3,11 +3,36 @@ import './About.css'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from "react-i18next";
+import { useScrollTransitionContext } from "../../context/ScrollTransitionContext";
+import profileLight from '../../assets/img/About/ProfilePicture.png'
+import profileDark from '../../assets/img/About/ProfilePicture_darkmode.png'
 
 
 export default function About() {
 
     const { t } = useTranslation();
+    const { act3, act4 } = useScrollTransitionContext();
+
+    const [darkMode, setDarkMode] = React.useState(
+        localStorage.getItem("darkMode") === "true"
+    );
+
+    React.useEffect(() => {
+        const observer = new MutationObserver(() => {
+            setDarkMode(document.body.classList.contains("dark-mode"));
+        });
+
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["class"]
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    const profilePhoto = darkMode ? profileDark : profileLight;
+    const introOpacity = act3 * (1 - act4 * 0.85);
+    const showIntro = act3 > 0.02 && act4 < 0.98;
 
     //Hover divs icons
     type CursorType = "D" | "B" | "C" | null;
@@ -72,7 +97,6 @@ export default function About() {
             const rect = aboutRef.current.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            //Slower transition
             const progress = Math.min(Math.max((windowHeight - rect.top) / windowHeight, 0), 1);
             const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
             const eased = easeOutCubic(progress);
@@ -82,17 +106,16 @@ export default function About() {
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll(); // initial position
+        handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
 
-    //Opacity useEffect onComponent
     const containerVariants = {
-        hidden: { opacity: 0, y: 80 },
+        hidden: { opacity: 0, y: 40 },
         visible: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: 80 },
+        exit: { opacity: 0, y: 40 },
     };
 
     const cardVariants = {
@@ -104,13 +127,47 @@ export default function About() {
     return (
         <>
             <section className="sobremi" id="About">
-                <div className="about" ref={aboutRef}>
+
+                {showIntro && (
+                    <div
+                        className="about-intro"
+                        style={{
+                            opacity: introOpacity,
+                            transform: `translateY(${(1 - act3) * 60}px)`,
+                        }}
+                        aria-hidden={act4 > 0.5}
+                    >
+                        <img
+                            src={profilePhoto}
+                            alt="Macarena Caro"
+                            className="about-intro-photo"
+                        />
+                        <div className="about-intro-text">
+                            <h1 className="heading">{t("about")}</h1>
+                            <p className="pa">
+                                {t("aboutSection.description")}
+                                <span className="spanDelicated"> {t("aboutSection.highlight")}</span>
+                            </p>
+                        </div>
+                    </div>
+                )}
+
+                <div
+                    className="about about--revealed"
+                    ref={aboutRef}
+                    style={{
+                        opacity: act4,
+                        transform: `translateY(${(1 - act4) * 40}px)`,
+                        pointerEvents: act4 > 0.3 ? "auto" : "none",
+                    }}
+                >
                     <motion.div
                         className="w-col about-cards"
                         initial="hidden"
                         whileInView="visible"
                         exit="exit"
-                        transition={{ duration: 0.3, ease: [0.22, 0, 0.36, 1] }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.4, ease: [0.22, 0, 0.36, 1] }}
                         variants={containerVariants}>
                         {["D", "B", "C"].map((type, i) => (
                             <motion.div
@@ -139,18 +196,10 @@ export default function About() {
                         initial="hidden"
                         whileInView="visible"
                         exit="exit"
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         variants={containerVariants}
-                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                     >
-
-                        {/**/}
-                        <h1 className="heading">{t("about")}</h1>
-                        <p className="pa">
-                            {t("aboutSection.description")}
-                            <span className='spanDelicated'> {t("aboutSection.highlight")}</span>
-                        </p>
                         <button className='btnAbout' onClick={() =>
                             window.location.href =
                             "mailto:m.caro.cortes2@gmail.com?subject=I%20want%20to%20connect!"
