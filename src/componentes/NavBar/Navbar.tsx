@@ -20,14 +20,15 @@ export default function Navbar() {
   const { t } = useTranslation();
 
   /* FUNCTIONS */
-  //si estaba abierto: ciérralo, si estaba cerrado: ábrelo
   const toggleMenu = () => {
     setMenuOpen(prev => !prev);
+    setAccessibilityOpen(false); // al abrir/cerrar menú, accesibilidad off
   };
+  
 
-  //si estaba abierto: ciérralo, si estaba cerrado: ábrelo
   const toggleAccessibility = () => {
     setAccessibilityOpen(prev => !prev);
+    setMenuOpen(false); // al abrir/cerrar accesibilidad, menú off
   };
 
   //Close
@@ -82,6 +83,9 @@ export default function Navbar() {
             </button>
                 <button
                   className="navbartext accessibility-button"
+                  onMouseDown={(e) => {
+                    e.stopPropagation();
+                  }}
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleAccessibility();
@@ -101,14 +105,12 @@ export default function Navbar() {
         hidden={hidden}
       />
 
-      {!menuOpen && ( //solo muestra el panel si el menú mobile está cerrado
         <AccessibilityPanel
           open={accessibilityOpen}
           setOpen={setAccessibilityOpen}
           //variant="desktop"
           hidden={hidden}
         />
-      )}
     </>
   );
 }

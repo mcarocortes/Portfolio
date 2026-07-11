@@ -2,8 +2,9 @@ import { Link } from "react-router-dom"; //Navegar sin recargar la página.
 //import AccessibilityPanel from "../Accessibility/AccessibilityPanel";
 import { useRef } from "react";
 import "./Navbar.css";
-
 import useClickOutside from "../../hooks/useClickOutside"
+import { useTranslation } from "react-i18next";
+
 
 /* Propiedades recibe el componente*/
 interface MobileMenuProps {
@@ -19,6 +20,10 @@ export default function MobileMenu({ isOpen, onClose, /*accessibilityOpen, setAc
   const menuRef = useRef<HTMLDivElement>(null);
   const menuClasses = `collapse collapsado ${isOpen ? "show" : ""}`; //clase dinámica.
 
+  /* HOOKS*/
+  const { t } = useTranslation();
+
+
   /* Handle Click Outside Menu */
   useClickOutside(menuRef, onClose, isOpen);
 
@@ -28,30 +33,16 @@ export default function MobileMenu({ isOpen, onClose, /*accessibilityOpen, setAc
 
       <div className="navbar-nav">
 
-        <Link to="/#About" className="menuLinktext" onClick={onClose}>About</Link>
+        <Link to="/#About" className="menuLinktext" onClick={onClose}>{t("about")}</Link>
         <hr />
 
-        <Link to="/#Projects" className="menuLinktext" onClick={onClose}>Projects</Link>
+        <Link to="/#Projects" className="menuLinktext" onClick={onClose}>{t("projects")}</Link>
         <hr />
 
-        <Link to="/#WhatIDo" className="menuLinktext" onClick={onClose}>What I Do</Link>
+        <Link to="/#WhatIDo" className="menuLinktext" onClick={onClose}>{t("whatido")}</Link>
 
-        <Link to="/#Contact" className="menuLinktext btnContact" onClick={onClose}>Contact</Link>
-</div>
-{/*
-        <button
-          className="menuLinktext accessibility-button"
-          onClick={(e) => {
-            e.stopPropagation();
-            setAccessibilityOpen(!accessibilityOpen);
-          }}
-        >
-          <i className="bi bi-universal-access"></i>
-        </button>
-
-      
-      <AccessibilityPanel open={accessibilityOpen} setOpen={setAccessibilityOpen} variant="mobile" />
-*/}
+        <Link to="/#Contact" className="menuLinktext btnContact" onClick={onClose}>{t("contact")}</Link>
+      </div>
     </div>
   );
 }

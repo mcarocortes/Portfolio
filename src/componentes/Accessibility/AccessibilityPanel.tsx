@@ -29,6 +29,7 @@ export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
 
   return (
     <div
+     ref={panelRef}
       className={`accessibility-panel ${hidden ? "navbar-hidden" : ""}`}
       onClick={(e) => e.stopPropagation()}
     >

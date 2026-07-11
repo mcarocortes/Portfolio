@@ -252,7 +252,12 @@
     display: block !important;
     overflow: hidden;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.4s ease-in-out;
+  }
+  
+  .collapse.collapsado.show {
+    pointer-events: auto;
   }
 
   .collapse.collapsado.show {
@@ -369,19 +374,6 @@
 }
 
 @media screen and (max-width: 479px) {
-  .navbar {
-    /*grid-column-gap: 0px;
-    grid-row-gap: 16px;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    display: flex;
-    position: sticky;*/
-  }
 
   .nav-buttons-wrapper {
     grid-column-gap: 40px;
