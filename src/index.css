@@ -17,6 +17,12 @@
   --white-transparent2: rgba(255, 255, 255, 0.471);
   --black-transparent: #292b2938;
   --black-transparent2: #292b296a;
+  /*ICONS DE ABOUT*/
+
+  --icon-glow-soft: rgba(161, 128, 210, 0.35);
+  --icon-glow-strong: rgba(161, 128, 210, 0.55);
+  --icon-glow-halo: rgba(196, 168, 224, 0.35);
+
 
 
   /*FONT-FAMILY*/
@@ -25,6 +31,8 @@
   --font-size-h1: calc(46px * var(--font-scale));
   --font-size-h2: calc(36px * var(--font-scale));
   --font-size-h3: calc(25px * var(--font-scale));
+  --font-size-h4: calc(22px * var(--font-scale));
+
 
   --font-family-base: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
   --font-weight-base: 400;
@@ -32,6 +40,7 @@
 
   /*MARGIN/PADDING GENERALES*/
   --margin-left-rigth-general: 4rem;
+  --margin-top-general: 12vh;
 
 
 
@@ -76,12 +85,10 @@ body {
   color: var(--text);
   margin-bottom: 30px;
   margin-left: 0;
-  font-size: var(--font-size-h1);
-
 }
 
 h1 {
-  font-size: var(--font-size-h1) !important;
+  font-size: var(--font-size-h1);
 }
 
 h3 {
@@ -168,12 +175,6 @@ label {
   display: block;
 }
 
-.heading {
-  font-size: 55px !important;
-}
-
-@media screen and (max-width: 1280px) {}
-
 @media screen and (max-width: 991px) {
 
   :root {
@@ -189,14 +190,15 @@ label {
 
 @media screen and (max-width: 767px) {
   :root {
-    --margin-left-rigth-general: 2rem;
+    --margin-left-rigth-general: 3rem;
+    --margin-top-general: 15vh;
     --font-size-h1: calc(32px * var(--font-scale));
     --font-size-h3: calc(20px * var(--font-scale));
   }
 
   .heading {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 0;
     margin-bottom: 40px;
     margin-left: 0;
     line-height: .8em;

@@ -15,7 +15,7 @@
 
 }
 
-.navbartext:hover, .navbartext.active  {
+.dark-mode .navbartext:hover, .dark-mode .navbartext.active  {
   color: var(--purpura4);
 }
 
@@ -76,31 +76,42 @@
   background-image: url("/src/assets/img/About/ProfilePicture_darkmode.png");
 }
 
-.dark-mode .about-cards .exterior .text  {
-  background-color: var(--black);
-  border: solid 1px var(--purpura);
+.dark-mode .about-cards .exterior, .dark-mode .underAbout{
+  background-color: var(--black-transparent);
   color:var(--white);
+  border: transparent;
+  box-shadow: 1px 1px 3px var(--shadows);
+  border-right: solid 2px var(--purpura);
 }
 
-.dark-mode .about-cards div span {
+.dark-mode .spanDelicated, .dark-mode .underAbout span,.dark-mode .about-cards div span{
   color: var(--purpura3);
 }
 
-.dark-mode .spanDelicated{
-  color: var(--purpura3);
-}
-
-.dark-mode .btnAbout {
-  box-shadow: 2px 2px 8px rgba(65, 52, 183, 0.949);
-  color: var(--black);
-  background: var(--gradientWhite);
-}
 
 .dark-mode .logoSignature {
     border: solid 1px var(--purpura3);
   background-image: url("/src/assets/img/Navbar/mLogo_B2.svg");
 }
+.dark-mode .signatureText span{
+  color: var(--purpura3);
+}
 
+.dark-mode .underAbout{
+  background-color: var(--black-transparent2);
+}
+
+.dark-mode div .exterior .icon{
+    background: linear-gradient(145deg, var(--purpura), var(--black));
+    box-shadow: 0 4px 14px var(--purpura);
+    filter: drop-shadow(0 1px 1px var(--black));
+
+}
+.dark-mode {
+  --icon-glow-soft: var(--shadows);
+  --icon-glow-strong: var(--purpura);
+  --icon-glow-halo: var(--black);
+}
 
 /********************* WEBS ***************************/ 
 /*FONDO DE TODO EL HTML*/

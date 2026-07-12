@@ -261,50 +261,19 @@
 }
 
 @media screen and (max-width: 767px) {
-/*
-  .hero-wrapper {
-    margin-top: 0;
-    top: 0;
-  }
-
-  .hero-section {
-    margin-top: 0;
-    padding-top: 0;
-    top: 0;
-    overflow: hidden;
-    margin-bottom: -90px;
-  //Subir el about
-
-  }
-
-  .hero-subtitle {
-    justify-content: flex-start;
-    margin-top: -166px;
-    padding-left: 7vw;
-  }
-
-  .distance {
-    margin-top: -68px;
-    height: 93vh;
-  }*/
 
 .content-hero {
-  /*position: relative;
-    display: flex;
-  flex-direction: colum;
-*/
-  z-index: 7;
-
+  padding-left: var(--margin-left-rigth-general);
+  padding-right: var(--margin-left-rigth-general);
+  padding-top: var(--margin-top-general);
   width: 100%;
   justify-content:flex-start;
   align-items: center;
-  padding-right: 0;
-  padding-left: 0;
 }
 
 .content-hero img{
-  width: 70%;
-  padding: 10px;
+  margin: 0;
+  width: auto;
 }
 
 .content-hero h3, .content-hero h1{
@@ -313,46 +282,5 @@
 }
 
 @media screen and (max-width: 479px) {
-
-  .content-hero{
-      padding-left: var(--margin-left-rigth-general);
-      padding-right: var(--margin-left-rigth-general);
-  }
-    .content-hero img{
-      margin-top: 120px;
-    width: 100%;
-  }
-  /*.hero-wrapper {
-    margin-top: 0;
-    position: relative;
-    top: 0;
-  }
-
-  .hero-section {
-    top: 0;
-    overflow: hidden;
-  }
-
-  .hero-subtitle {
-    justify-content: right;
-    margin-top: -204px;
-    bottom: 5px !important;
-  }
-
-  .outLineScroll {
-    margin-right: 7vw;
-    border: solid 1px transparent;
-  }
-
-  .scroll {
-    padding: 3px;
-
-  }
-
-  .distance {
-    margin-top: -99px;
-    display: block;
-  }*/
-
 
 }

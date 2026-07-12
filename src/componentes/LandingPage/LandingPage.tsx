@@ -8,6 +8,7 @@ export default function LandingPage() {
   return (
     <>        
         <About2 />
+        <div className="about-scroll-runway" aria-hidden="true" />
         <Projects3 />
         <Webs />
         <SkillsProjects/>
