@@ -6,6 +6,7 @@ import Vc from "./pages/VC/Vc";
 import Vinos from "./pages/Vinos/Vinos";
 import Bank from "./pages/BankApp/Bank";
 import Movies from "./pages/Movies/Movies";
+import NotFound from "./componentes/NotFound/NotFound";
 
 export default function AppRoutes() {
   return (
@@ -20,6 +21,8 @@ export default function AppRoutes() {
         <Route path="/Movies" element={<Movies />} />
         <Route path="/Vinos" element={<Vinos />} />
       </Route>
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
