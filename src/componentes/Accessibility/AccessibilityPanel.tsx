@@ -4,7 +4,7 @@ import "./InterfaceChanges.css"
 
 import useClickOutside from "../../hooks/useClickOutside"
 import useDarkMode from "../../hooks/useDarkMode";
-import useFontScale from "../../hooks/useFontScale";
+import useFontScale, { type FontScale } from "../../hooks/useFontScale";
 import useLanguage from "../../hooks/useLanguage";
 import Switch from "../Switch/Switch";
 import { useTranslation } from "react-i18next";
@@ -57,7 +57,7 @@ export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
 
           value={language}
 
-          onChange={setLanguage}
+          onChange={(value) => setLanguage(value as "es" | "en")}
 
         />
 
@@ -98,7 +98,7 @@ export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
 
         value={fontScale}
 
-        onChange={setFontScale}
+        onChange={(value) => setFontScale(value as FontScale)}
 
       />
 

@@ -1,5 +1,3 @@
-import Slider from '../Slider/Slider'
-
 import './About.css'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -49,24 +47,6 @@ React.useEffect(() => {
     const introOpacity = Math.min(1, act3 * 1.3);
     const finalOpacity = introOpacity * (1.2 - projectsFade);
     const introEnterY = (1 - act3) * 48;
-
-
-    //Hover divs icons
-
-    type CursorType = "D" | "B" | "C" | null;
-
-
-    const [cursor, setCursor] = React.useState<{
-        visible: boolean;
-        x: number;
-        y: number;
-        type: CursorType;}>
-        
-        ({ visible: false,
-        x: 0,
-        y: 0,
-        type: null,});
-
 
     const containerVariants = {
         hidden: { opacity: 0, y: 40 },

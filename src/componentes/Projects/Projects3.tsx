@@ -3,8 +3,6 @@ import './Projects3.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Projects3() {
