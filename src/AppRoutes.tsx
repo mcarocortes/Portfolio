@@ -7,10 +7,14 @@ import Vinos from "./pages/Vinos/Vinos";
 import Bank from "./pages/BankApp/Bank";
 import Movies from "./pages/Movies/Movies";
 import NotFound from "./componentes/NotFound/NotFound";
+import UnderConstruction from "./componentes/UnderConstruction/UnderConstruction";
 
 export default function AppRoutes() {
   return (
     <Routes>
+      {/* Página standalone: sin navbar, sin links al portfolio */}
+      <Route path="/en-construccion" element={<UnderConstruction />} />
+
       {/* TODO el portfolio vive bajo el mismo layout, así no se desmonta el Hero ni el Preloader*/}
       <Route element={<PortfolioLayout />}>
         <Route index element={<LandingPage />} />
