@@ -24,7 +24,7 @@ export default function Navbar() {
     setMenuOpen(prev => !prev);
     setAccessibilityOpen(false); // al abrir/cerrar menú, accesibilidad off
   };
-  
+
 
   const toggleAccessibility = () => {
     setAccessibilityOpen(prev => !prev);
@@ -51,17 +51,36 @@ export default function Navbar() {
       <div className={`navbar ${hidden ? "navbar-hidden" : ""}`}>
         <div className="bg-navbar">
 
-          <Link to="#Home" className="navbar-brand logoNavM" />
-
+          <Link to="#Home" className="navbar-brand logoNavM" onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.history.replaceState(null, "", "#Home");}}
+          />
           <div className="nav-menu-wrapper-right">
 
             <nav className="nav-menu new">
               <div className="nav-buttons-wrapper new">
 
-                <Link to="#About" className={`navbartext ${activeSection === "About" ? "active" : ""}`}>{t("about")}</Link>
-                <Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}>{t("projects")}</Link>
-                <Link to="#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}>{t("whatido")}</Link>
-                <Link to="#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}>{t("contact")}</Link>
+<Link
+  to="#About"
+  className={`navbartext ${activeSection === "About" ? "active" : ""}`}
+  onClick={() => {
+    document.getElementById("About")?.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState(null, "", "#About");
+  }}
+>
+  {t("about")}
+</Link>                <Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`} onClick={() => {
+  document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
+  window.history.replaceState(null, "", "#Projects");
+}}>{t("projects")}</Link>
+                <Link to="#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`} onClick={() => {
+  document.getElementById("WhatIDo")?.scrollIntoView({ behavior: "smooth" });
+  window.history.replaceState(null, "", "#WhatIDo");
+}}>{t("whatido")}</Link>
+                <Link to="#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}onClick={() => {
+  document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" });
+  window.history.replaceState(null, "", "#Contact");
+}}>{t("contact")}</Link>
               </div>
             </nav>
 
@@ -81,18 +100,18 @@ export default function Navbar() {
                 <span></span>
               </div>
             </button>
-                <button
-                  className="navbartext accessibility-button"
-                  onMouseDown={(e) => {
-                    e.stopPropagation();
-                  }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleAccessibility();
-                  }}
-                >
-                  <i className="bi bi-universal-access"></i>
-                </button>
+            <button
+              className="navbartext accessibility-button"
+              onMouseDown={(e) => {
+                e.stopPropagation();
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleAccessibility();
+              }}
+            >
+              <i className="bi bi-universal-access"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -105,12 +124,12 @@ export default function Navbar() {
         hidden={hidden}
       />
 
-        <AccessibilityPanel
-          open={accessibilityOpen}
-          setOpen={setAccessibilityOpen}
-          //variant="desktop"
-          hidden={hidden}
-        />
+      <AccessibilityPanel
+        open={accessibilityOpen}
+        setOpen={setAccessibilityOpen}
+        //variant="desktop"
+        hidden={hidden}
+      />
     </>
   );
 }

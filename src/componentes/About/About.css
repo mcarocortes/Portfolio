@@ -1,22 +1,28 @@
-#About {
-  margin-bottom: 600px;
-  margin-top: 5vh;
-}
-
 .sobremi {
+  margin-top: 0;
   position: relative;
-  z-index: 5;
+  z-index: 1;
   display: block;
   width: 100%;
-  min-height: calc(100vh + 240px);
-  padding-bottom: 8vh;
+  min-height: 100vh;
+  /*min-height: calc(100vh + 240px);*/
+  /*padding-bottom: 8vh;*/
   isolation: isolate;
 }
+
+.about-anchor {
+  z-index: 0;
+  height: 130vh !important;
+  width: 100%;
+  pointer-events: none;
+  scroll-margin-top: 100px; /* altura navbar — ajusta */
+  margin-top: 200vh;        /* scroll donde About se ve bien — ajusta */
+} 
 
 .about-intro {
   position: fixed;
   inset: 0;
-  z-index: 4;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,14 +31,12 @@
   padding: 0 var(--margin-left-rigth-general);
   pointer-events: none;
   will-change: transform, opacity;
-}
-
-.about-intro-photo {
-  height: min(78vh, 860px);
-  width: auto;
-  max-width: 46vw;
-  object-fit: contain;
-  object-position: bottom center;
+  background-image: url("/src/assets/img/About/ProfilePicture.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: auto 80%;
+  transition: transform 0.35s ease;  
+/*background-color: var(--white);*/
 }
 
 .about-intro-text {
@@ -57,25 +61,6 @@
 .about.about--settled {
   opacity: 1 !important;
   transform: none !important;
-}
-
-.about {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  background-color: var(--white);
-  text-align: left;
-  border-radius: 20px;
-  width: 100%;
-  min-height: min(100vh, 720px);
-  height: min(100vh, 720px);
-  top: 0;
-  box-shadow: 0 2px 5px #0003;
-  overflow: hidden;
-  background-image: url("/src/assets/img/About/ProfilePicture.png");
-  background-position: 20px bottom;
-  background-repeat: no-repeat;
-  background-size: auto 92%;
 }
 
 .center {
@@ -470,11 +455,6 @@ div .exterior:hover {
     padding-top: 12vh;
     align-items: center;
     text-align: center;
-  }
-
-  .about-intro-photo {
-    height: 42vh;
-    max-width: 75vw;
   }
 
   .about-intro-text {

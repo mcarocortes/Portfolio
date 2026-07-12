@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import "./AccessibilityPanel.css";
+import "./InterfaceChanges.css"
 
 import useClickOutside from "../../hooks/useClickOutside"
 import useDarkMode from "../../hooks/useDarkMode";

@@ -33,15 +33,37 @@ export default function MobileMenu({ isOpen, onClose, /*accessibilityOpen, setAc
 
       <div className="navbar-nav">
 
-        <Link to="/#About" className="menuLinktext" onClick={onClose}>{t("about")}</Link>
+<Link
+  to="/#About"
+  className="menuLinktext"
+  onClick={() => {
+    onClose();
+    document.getElementById("About")?.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState(null, "", "#About");
+  }}
+>
+  {t("about")}
+</Link>
         <hr />
 
-        <Link to="/#Projects" className="menuLinktext" onClick={onClose}>{t("projects")}</Link>
+        <Link to="/#Projects" className="menuLinktext"   onClick={() => {
+    onClose();
+    document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState(null, "", "#Projects");
+  }}>{t("projects")}</Link>
         <hr />
 
-        <Link to="/#WhatIDo" className="menuLinktext" onClick={onClose}>{t("whatido")}</Link>
+        <Link to="/#WhatIDo" className="menuLinktext"   onClick={() => {
+    onClose();
+    document.getElementById("WhatIDo")?.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState(null, "", "#WhatIDo");
+  }}>{t("whatido")}</Link>
 
-        <Link to="/#Contact" className="menuLinktext btnContact" onClick={onClose}>{t("contact")}</Link>
+        <Link to="/#Contact" className="menuLinktext btnContact"   onClick={() => {
+    onClose();
+    document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState(null, "", "#Contact");
+  }}>{t("contact")}</Link>
       </div>
     </div>
   );

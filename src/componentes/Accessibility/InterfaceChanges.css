@@ -1,0 +1,109 @@
+/*************************************  INTERFACE CONFIGURATION **************************/
+.dark-mode {
+  --text: var(--white);
+  --white-transparent: var(--black-transparent);
+}
+/****** CURSOR ******/
+.dark-mode .custom-cursor-inner{
+  background: url("/public/cursor_darkmode.svg") center/contain no-repeat;
+}
+
+/****** NAVBAR ******/
+.dark-mode .logoNavM {
+  background-image: url("/src/assets/img/Navbar/mLogo_B2.svg");
+  border: solid 1px var(--purpura3);
+
+}
+
+.navbartext:hover, .navbartext.active  {
+  color: var(--purpura4);
+}
+
+/*********************ACCESIBILITY PANEL****************/
+.dark-mode .accessibility-panel {
+  color: var(--text);
+}
+
+.dark-mode .defaultText {
+  color: var(--purpura4);
+}
+
+.dark-mode .accessibility-panel .btn {
+  color: var(--text);
+}
+
+.dark-mode .accessibility-panel .btn-close{
+  background-color: var(--text);
+}
+
+.dark-mode .accessibility-panel .btn {
+  border: solid 1px var(--text);
+  color: var(--text);
+  background-color: var(--white-transparent);
+}
+
+.dark-mode .accessibilityMobile,
+.dark-mode .accessibilityMobile .btn {
+  color: var(--text);
+}
+
+.dark-mode .accessibilityMobile {
+  background-color: var(--black);
+}
+
+.dark-mode .switch.active{
+  background-color: var(--black-transparent2);
+}
+
+/********************* HERO   ***************************/ 
+.dark-mode .hero-wrapper {
+    background: url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,
+  linear-gradient(to bottom, var(--purpura) 0%, var(--black) 35%);
+}
+
+.dark-mode .content-hero h3{
+  color: var(--text);
+}
+
+.dark-mode .arc-line {
+  filter: drop-shadow(0 0 20px var(--purpura));
+}
+
+/********************* ABOUT   ***************************/ 
+
+.dark-mode .about-intro  {
+  /*background-color: var(--black);*/
+  background-image: url("/src/assets/img/About/ProfilePicture_darkmode.png");
+}
+
+.dark-mode .about-cards .exterior .text  {
+  background-color: var(--black);
+  border: solid 1px var(--purpura);
+  color:var(--white);
+}
+
+.dark-mode .about-cards div span {
+  color: var(--purpura3);
+}
+
+.dark-mode .spanDelicated{
+  color: var(--purpura3);
+}
+
+.dark-mode .btnAbout {
+  box-shadow: 2px 2px 8px rgba(65, 52, 183, 0.949);
+  color: var(--black);
+  background: var(--gradientWhite);
+}
+
+.dark-mode .logoSignature {
+    border: solid 1px var(--purpura3);
+  background-image: url("/src/assets/img/Navbar/mLogo_B2.svg");
+}
+
+
+/********************* WEBS ***************************/ 
+/*FONDO DE TODO EL HTML*/
+.dark-mode .webs {
+  background-color: var(--black);
+}

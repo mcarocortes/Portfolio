@@ -1,4 +1,5 @@
 .webs {
+  z-index: 0;
   background-color: var(--slider);
   flex-flow: column;
   height: 100vh;
@@ -6,7 +7,8 @@
   position: fixed;
   inset: auto 0% 0%;
   overflow: hidden;
-  background-image: url("/src/assets/img/Webs/PointsSkills.svg");
+  background-color: var(--white);
+  /*background-image: url("/src/assets/img/Webs/PointsSkills.svg");*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 120%;
