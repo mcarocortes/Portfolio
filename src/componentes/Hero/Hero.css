@@ -101,22 +101,13 @@
   height: 280vh;
 }
 
-/* ── Transición Hero → About ── */
+   ── Transición Hero → About ──
 .arc-top,
 .arc-bottom {
   opacity: calc(1 - var(--act1, 0));
   transition: none;
 }
-
-#canvas3d {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  z-index: 6;
-  display: flex;
-  flex-direction: row;
-  border: solid 2px red;
-}*/
+*/
 
 .heroParticles {
   background-color: transparent;
