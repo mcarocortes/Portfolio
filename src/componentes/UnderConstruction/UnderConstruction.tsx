@@ -75,9 +75,9 @@ export default function UnderConstruction() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.32, duration: 0.5 }}
         >
-          Estamos preparando algo especial en{" "}
-          <span className="under-construction__domain">macarenacaro.es</span>.
-          Muy pronto podrás verlo aquí.
+          Estoy dando los últimos detalles a mi nuevo portafolio. Muy pronto
+          podrás conocer mis proyectos, experiencia y la forma en que construyo
+          interfaces web.
         </motion.p>
 
         <motion.div
