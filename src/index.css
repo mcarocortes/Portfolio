@@ -27,6 +27,7 @@
 
   /*FONT-FAMILY*/
   --font-scale: 1;
+  --font-size-underBase: calc(15px * var(--font-scale));
   --font-size-base: calc(20px * var(--font-scale));
   --font-size-h1: calc(46px * var(--font-scale));
   --font-size-h2: calc(36px * var(--font-scale));
@@ -36,19 +37,20 @@
 
   --font-family-base: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
   --font-weight-base: 400;
+  --font-weight-600: 600;
   --font-line-height-base: 1.5;
 
+  
   /*MARGIN/PADDING GENERALES*/
   --margin-left-rigth-general: 4rem;
   --margin-top-general: 12vh;
 
 
-
-
-
   --purpura2: #5a12fa;
   --purpura5: #e0e1ff;
   --smoke: #0000;
+
+
   /*CAMBIANDO POR TRANSPARENT*/
   --grayweb: #797979;
   --whitesomoke: #f5f5f5;
@@ -146,6 +148,7 @@ p {
 .navbartext,
 .logoNavM,
 .ProjectNameHover,
+.btnArrow,
 .list,
 .back {
   cursor: none;

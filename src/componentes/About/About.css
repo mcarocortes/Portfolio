@@ -157,7 +157,7 @@ div .exterior .icon img {
   border-radius: 6px;
   width: 50px;
   border: solid 1px var(--purpura);
-  background-color: var(--white-transparent);
+  background-color: var(--white-transparent2);
   background-image: url("/src/assets/img/Navbar/mLogo.svg");
   background-position: center;
   background-repeat: no-repeat;

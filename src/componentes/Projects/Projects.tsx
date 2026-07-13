@@ -3,14 +3,13 @@ import './Projects.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from "react-i18next";
 
 
 export default function Projects() {
 
     const isMobile = window.innerWidth <= 479;
-
+    const { t } = useTranslation();
     const containerVariants = {
         hidden: { opacity: 0, y: 80 },
         visible: { opacity: 1, y: 0 },
@@ -23,7 +22,7 @@ export default function Projects() {
             title: "modulAR",
             subt: "modulAR is a platform for creatives that connects talent, projects, and clients through Augmented Reality, increasing engagement and sales.",
             url: "/modulAR",
-            build: [".NET", "Augmented Reality", "MVC", "Web Development"]
+            build: [".NET", (t("augmentedreality")), "MVC", "Web Development"]
         },
         {
             id: 'ProyectB',
@@ -48,6 +47,13 @@ export default function Projects() {
         },
         {
             id: 'ProyectE',
+            title: "Vinos",
+            subt: "An elegant WordPress website for a wine bar, focused on minimalism, usability, and online menu exploration",
+            url: "/Vinos",
+            build: ["Graphic Design", "Brand Development", "Restaurant", "Wordpress"]
+        },
+        {
+            id: 'ProyectF',
             title: "Vinos",
             subt: "An elegant WordPress website for a wine bar, focused on minimalism, usability, and online menu exploration",
             url: "/Vinos",
@@ -113,21 +119,23 @@ export default function Projects() {
                             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: isMobile ? 0 : 0.15 }}>
 
                             <div className="descriptionProjects">
-                                <h1 className="heading">Projects</h1>
-                                <p>Work I'm <span>Proud Of <FontAwesomeIcon icon={fas['faHeart']} /></span></p>
+                                <h1 className="heading">{t("projects")}</h1>
                             </div>
 
                             <div className="wrapperB" ref={wrapperRef} >
 
                                 {projectsData.map((proj) => (
                                     <div key={proj.id} className={`figure ${proj.id}`}>
+                                        <div className={`figureMedia ${proj.id}`}></div>
                                         <Link to={proj.url} className='ProjectNameHover'></Link>
                                         <Link to={proj.url} className='ProjectNameLink'>{proj.title}</Link>
                                         <div className='descriptionSection'>
                                             <p className='projectDetails'>{proj.subt}</p>
-                                            <Link to={proj.url} className="btnLink">
+                                            {/*<Link to={proj.url} className="btnLink">
                                                 Learn more
-                                            </Link>
+
+                                            </Link>*/}
+                                            
                                             <div className="buildList">
                                                 {proj.build.map((item, index) => (
                                                     <span key={index} className="buildItem">
@@ -135,6 +143,9 @@ export default function Projects() {
                                                     </span>
                                                 ))}
                                             </div>
+
+                                            <Link to={proj.url} className="btnArrow">
+→</Link>
 
                                         </div>
 
@@ -144,9 +155,9 @@ export default function Projects() {
                             </div>
                         </motion.div>
                     </div>
+                <div className="spacer_myskills"></div>
 
                 </div>
-                <div className="spacer_myskills"></div>
             </section>
         </>
     )

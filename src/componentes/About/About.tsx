@@ -3,9 +3,9 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from "react-i18next";
 import { useScrollTransitionContext } from "../../context/ScrollTransitionContext";
-import iconIdentity from '../../assets/img/About/iconCool.svg'
-import iconFocus from '../../assets/img/About/iconHappy.svg'
-import iconDev from '../../assets/img/About/iconStar.svg'
+import iconIdentity from '../../assets/img/About/iconBrand.png'
+import iconFocus from '../../assets/img/About/iconDesign.png'
+import iconDev from '../../assets/img/About/iconInteraction.png'
 
 
 export default function About() {
@@ -15,29 +15,29 @@ export default function About() {
 
 
 
-React.useEffect(() => {
-  const projects = document.getElementById("Projects");
-  if (!projects) return;
+    React.useEffect(() => {
+        const projects = document.getElementById("Projects");
+        if (!projects) return;
 
-  const update = () => {
-    const top = projects.getBoundingClientRect().top;
-    const vh = window.innerHeight;
+        const update = () => {
+            const top = projects.getBoundingClientRect().top;
+            const vh = window.innerHeight;
 
-    // ── Zona de fade (ajústala probando) ──
-    const fadeStart = vh * 2; // Projects asoma por abajo → fade 0
-    const fadeEnd   = vh * 0.52; // Projects más arriba → fade 1 (About oculto)
+            // ── Zona de fade (ajústala probando) ──
+            const fadeStart = vh * 2; // Projects asoma por abajo → fade 0
+            const fadeEnd = vh * 0.52; // Projects más arriba → fade 1 (About oculto)
 
-    const t = (fadeStart - top) / (fadeStart - fadeEnd);
-    const fade = Math.min(1, Math.max(0, t));
+            const t = (fadeStart - top) / (fadeStart - fadeEnd);
+            const fade = Math.min(1, Math.max(0, t));
 
-    setProjectsFade(fade);
-  };
+            setProjectsFade(fade);
+        };
 
-  window.addEventListener("scroll", update, { passive: true });
-  update();
+        window.addEventListener("scroll", update, { passive: true });
+        update();
 
-  return () => window.removeEventListener("scroll", update);
-}, []);
+        return () => window.removeEventListener("scroll", update);
+    }, []);
 
 
 
@@ -59,7 +59,7 @@ React.useEffect(() => {
         <>
             <section className="sobremi">
                 <div id="About" className="about-anchor" aria-hidden="true" />
-                
+
                 <div className="about-intro"
                     style={{
                         opacity: finalOpacity,
@@ -67,22 +67,22 @@ React.useEffect(() => {
                         pointerEvents: finalOpacity < 0.02 ? "none" : "auto",
                         transform: `translateY(${introEnterY + projectsFade * 24}px)`,
                     }}
-                    >
+                >
 
                     <div className="w-col about-cards">
 
                         <motion.div
-  className="exterior"
-  animate={
-    introOpacity > 0.25
-      ? {  x: 0 }
-      : {  x: -28 }
-  }
-  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0 }}
->
-                              <div className='icon icon--identity'>
-    <img src={iconIdentity} alt="" aria-hidden="true" />
-  </div>
+                            className="exterior"
+                            animate={
+                                introOpacity > 0.25
+                                    ? { x: 0 }
+                                    : { x: -28 }
+                            }
+                            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+                        >
+                            <div className='icon icon--identity'>
+                                <img src={iconIdentity} alt="" aria-hidden="true" />
+                            </div>
                             <div className='text'>
                                 {t("aboutSection.identity")} <br />
                                 <span>{t("aboutSection.visualbrand")}</span>
@@ -90,17 +90,17 @@ React.useEffect(() => {
                         </motion.div>
 
                         <motion.div
-  className="exterior"
-  animate={
-    introOpacity > 0.25
-      ? {  x: 0 }
-      : {  x: -28 }
-  }
-  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0 }}
->
+                            className="exterior"
+                            animate={
+                                introOpacity > 0.25
+                                    ? { x: 0 }
+                                    : { x: -28 }
+                            }
+                            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+                        >
                             <div className='icon icon--focus'>
-    <img src={iconFocus} alt="" aria-hidden="true" />
-  </div>
+                                <img src={iconFocus} alt="" aria-hidden="true" />
+                            </div>
                             <div className='text'>
                                 {t("aboutSection.focus")} <br />
                                 <span>{t("aboutSection.interaction")}</span>
@@ -108,17 +108,17 @@ React.useEffect(() => {
                         </motion.div>
 
                         <motion.div
-  className="exterior"
-  animate={
-    introOpacity > 0.25
-      ? {  x: 0 }
-      : {  x: -28 }
-  }
-  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0 }}
->
+                            className="exterior"
+                            animate={
+                                introOpacity > 0.25
+                                    ? { x: 0 }
+                                    : { x: -28 }
+                            }
+                            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+                        >
                             <div className='icon icon--dev'>
-    <img src={iconDev} alt="" aria-hidden="true" />
-  </div>
+                                <img src={iconDev} alt="" aria-hidden="true" />
+                            </div>
                             <div className='text'>
                                 {t("aboutSection.development")} <br />
                                 <span>{t("aboutSection.digitalexperiences")}</span>
@@ -150,36 +150,36 @@ React.useEffect(() => {
                         <div className="signature">
                             <div className="logoSignature"></div>
                             <div className="signatureText">
-                                 Macarena Caro Cortés<br />
-                                 <span>Front-end Developer</span>
+                                Macarena Caro Cortés<br />
+                                <span>Front-end Developer</span>
                             </div>
                         </div>
                     </motion.div>
 
 
-                <div className='underAbout'>
-                    <div className='one'>
-                        <p>JavaScript
-                            <span> • </span>HTML
-                            <span> • </span>React
-                        </p>
-                    </div>
+                    <div className='underAbout'>
+                        <div className='one'>
+                            <p>JavaScript
+                                <span> • </span>HTML
+                                <span> • </span>React
+                            </p>
+                        </div>
 
-                    <div className='two'>
-                        <p>UI/UX
-                            <span> • </span>Figma
-                            <span> • </span>Design System
-                        </p>
-                    </div>
-                    
-                    <div className='three'>
-                        <p>AI
-                            <span> • </span>Big Data
-                            <span> • </span>Innovation
-                        </p>
-                    </div>
+                        <div className='two'>
+                            <p>UI/UX
+                                <span> • </span>Figma
+                                <span> • </span>Design System
+                            </p>
+                        </div>
 
-                </div>
+                        <div className='three'>
+                            <p>AI
+                                <span> • </span>Big Data
+                                <span> • </span>Innovation
+                            </p>
+                        </div>
+
+                    </div>
 
 
                 </div>

@@ -1,38 +1,32 @@
 .page-wrapper {
     display: block;
     position: sticky;
-    z-index: 4;
-}
-
-.spacer_myskills {
-    height: 130vh;
-    background-image: url("/src/assets/img/Webs/Webs.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-
+    z-index: 3;
 }
 
 .main-wrapper {
-    padding: 0 0 60px 0;
+    border: solid 3px yellow;
+    padding:0;
     display: block;
     position: static;
+    border-radius: 25px;
+    background-color: var(--white);
+    box-shadow: -2px 2px 10px var(--shadows);
 
-    margin-top: -25px;
-    background-color: var(--whitesomoke);
-    box-shadow: -2px 2px 10px #0003;
 }
 
+/* ajustas según nº de proyectos */
 .containers {
-    /*MODIFICADO*/
     height: 400vh;
-    /* ajustas según nº de proyectos */
     position: relative;
 }
 
 
 .wrapperA {
-    padding-top: 90px;
+        z-index: 8;
+        background-color: var(--white);
+    border: solid 3px black;
+    padding-top:var(--margin-top-general);
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -41,50 +35,36 @@
     top: 0;
     height: 100vh;
     overflow: hidden;
+    border-radius: 25px;
 }
 
 .descriptionProjects {
-    height: 150px;
+    border: solid 2px green;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.descriptionProjects p , .section_description p{
-    color: var(--grayweb);
-    margin-top: 70px;
-    margin-left: 20px;
-    position: absolute;
-    font-size: 25px !important;
-}
-
-.descriptionProjects p span, .section_description span {
-    /*font-family: "Platypi", serif;*/
-    font-optical-sizing: auto;
-    /*font-style: italic;*/
-    font-weight: 400;    
-    color: var(--purpura);
-}
-
-
 
 .wrapperB {
+    border: solid 2px red;
     display: flex;
     align-items: flex-end;
-    gap: 20px;
+    gap: 30px;
     will-change: transform;
     transform: translateX(0);
     height: 100%;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: var(--margin-left-rigth-general);
+    padding-right: var(--margin-left-rigth-general);
 }
 
 .figure {
-    width: 40vw;
+    border: solid 2px cyan;
+    width: 50vw;
     flex-shrink: 0;
-    border-radius: 50px;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: -2px 2px 10px #0003;
+    box-shadow: -2px 2px 10px var(--shadows);
 
     display: flex;
     flex-direction: column;
@@ -92,6 +72,32 @@
     position: relative;
     padding: 30px;
     text-align: right;
+}
+
+.figure:hover{
+        box-shadow: -5px 5px 10px var(--purpura3);
+}
+
+
+/* ===== CAPA DE IMAGEN EXPANDIBLE ===== */
+
+.figureMedia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+    transform-origin: center center;
+    z-index: 0;
+}
+
+/* Al hover en TODA la figure, solo la imagen crece */
+.figure:hover .figureMedia {
+    transform: scale(1.1);
 }
 
 .ProjectNameHover{
@@ -103,22 +109,68 @@
 }
 
 .ProjectNameLink {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h2);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 5px 15px;
-    font-size: 1.8vw;
     line-height: 2.4vw;
-    font-weight: 600;
-    color: #303030;
+    font-weight: var(--font-weight-600);
+    color: var(--text);
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    box-shadow: -2px 2px 5px #0003;
+    box-shadow: -2px 2px 5px var(--shadows);
 }
 
 .ProjectNameLink:hover {
     text-decoration: none;
-    color: var(--text);
+    color: var(--purpura);
+}
+
+
+/* ===== FLECHA DE REDIRECCIÓN ===== */
+.btnArrow:hover{
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--purpura);
+
+}
+.btnArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    border-radius: 50%;
+    color: var(--white);
+    background-color: var(--text);
+    text-decoration: none;
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.btnArrow svg {
+    font-size:100px;
+}
+
+/* Animación del giro */
+@keyframes spinArrow {
+    from {
+        transform: rotate(-45deg);
+    }
+    to {
+        transform: rotate(315deg);  /* -45° + 360° */
+    }
+}
+
+/* Gira cuando haces hover en descriptionSection O en la flecha */
+.descriptionSection:hover .btnArrow,
+.btnArrow:hover {
+    animation: spinArrow 0.5s ease-in-out;
 }
 
 .figure:nth-child(2) .ProjectNameLink {
@@ -143,12 +195,12 @@
     bottom: 0;
     left: 0;
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+    font-family: var(--font-family-base);
     transition: background-color 0.3s ease,
         box-shadow 0.3s ease,
         color 0.3s ease,
@@ -164,13 +216,12 @@
 }
 
 .descriptionSection .projectDetails {
-    font-size: 20px;
+    font-size: var(--font-size-base);
     line-height: 26px;
     font-weight: 400;
-
     text-align: justify;
     opacity: 0;
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--white-transparent);
     transition: opacity 0.3s ease, color 0.3s ease;
 }
 
@@ -180,33 +231,6 @@
 }
 
 
-.btnLink {
-    margin-bottom: 15px;
-    line-height: 20px;
-    opacity: 0.3;
-    width: 50%;
-    overflow: hidden;
-    color: transparent;
-    transition: background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        color 0.3s ease,
-        opacity 0.3s ease,
-        transform 0.3s ease;
-}
-
-.btnLink:hover {
-    color: white;
-    box-shadow: 2px 0 5px #0003;
-
-}
-
-.figure:hover .btnLink {
-    opacity: 1;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.725);
-
-}
-
 .buildList {
     display: flex;
     flex-wrap: wrap;
@@ -215,12 +239,11 @@
 }
 
 .buildItem {
-    background-color: rgba(0, 0, 0, 0.725);
-    color: white;
+    background-color: var(--white);
+    color: var(--text);
     padding: 10px;
     border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--font-size-underBase);
     line-height: 1;
     white-space: nowrap;
     backdrop-filter: blur(5px);
@@ -235,7 +258,7 @@
 .figure:hover .buildItem {
     /*opacity: 0;
     display: none;*/
-    background-color: rgba(255, 255, 255, 0.496);
+    background-color:var(--white-transparent);
     color: var(--text);
 }
 
@@ -250,25 +273,26 @@
     background-size: cover;
 }
 
-.ProyectA {
+.figureMedia.ProyectA {
     background-image: url(/src/assets/img/Projects/modulAR/modular_Fin.jpg);
 }
 
-.ProyectB {
+.figureMedia.ProyectB {
     background-image: url(/src/assets/img/Projects/VC/bgvcfin.jpg);
 }
 
-.ProyectC {
+.figureMedia.ProyectC {
     background-image: url(/src/assets/img/Projects/Bank/banco_fin.jpg);
 }
 
-.ProyectD {
+.figureMedia.ProyectD {
     background-image: url(/src/assets/img/Projects/Movies/1.CoficafeTotal.jpg);
 }
 
-.ProyectE {
+.figureMedia.ProyectE {
     background-image: url(/src/assets/img/Projects/Vinos/1.VinosNew.jpg);
 }
+
 
 .figure:nth-child(1):hover .descriptionSection {
     background-color: rgba(255, 255, 255, 0.733);
@@ -290,34 +314,21 @@
     background-color: #f3cdd0c6;
 }
 
-.borderBottom{
-    z-index: 3;
-    position: absolute;
-    height: 50px !important;
-    width: 100% !important;
-    background-color: var(--whitesomoke);
-    margin-top: 0x !important;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    box-shadow: 2px 2px 10px #0003;
-}
 
-.espacio {
-    height: 120vh;
-    width: 100%;
-    margin-top: 0px;
-    border: solid 3px green;
-    z-index: 99999;
+.spacer_myskills {
+    z-index: 0;
+    margin-top: -30px;
+    height: 130vh;
+    background-image: url("/src/assets/img/Webs/Webs.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-color: var(--white);
 }
-
 
 @media screen and (max-width: 1280px) {
     .figure {
-        width: 52vw;
-    }
-
-    .ProjectNameLink {
-        font-size: 3vw;
+        width: 70vw;
     }
 
     .spacer_myskills {
@@ -329,11 +340,8 @@
 @media screen and (max-width: 991px) {
 
     .figure {
-        width: 60vw;
-    }
+        width: 75vw;
 
-    .ProjectNameLink {
-        font-size: 3vw;
     }
 
         .spacer_myskills {
@@ -360,13 +368,29 @@
         overflow: visible;
     }
 
+    .figureMedia{
+        border-radius: 25px;
+    }
+
+    .figure:hover .figureMedia {
+        transform: none;
+    }
     .ProjectNameLink {
-        font-size: 3.6vw;
+        font-size: var(--font-size-h1);
     }
 
     .descriptionSection {
-        bottom: -160px;
+        bottom: -110px;        
         padding: 25px;
+        min-height: 150px;
+    }
+
+    .btnArrow{
+        height: 35px;
+        width: 35px;
+        font-size: 30px;
+        bottom:15px;
+        right:15px;
     }
 
 
@@ -381,12 +405,9 @@
         display: none;
     }
 
-    .btnLink {
-        font-size: 18px !important;
-    }
 
     .figure .descriptionSection {
-        box-shadow: 5px 0 5px #0003;
+        box-shadow: 5px 0 5px var(--black-transparent);
         border: solid 1px var(--blancotrans);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -418,12 +439,7 @@
         background-color: rgba(0, 0, 0, 0.725);
 
     }
-
-    .espacio {
-        height: 95vh;
-    }
-
-            .spacer_myskills {
+    .spacer_myskills {
     height: 80vh;
 }
 
@@ -463,21 +479,9 @@
     }
 
     .ProjectNameLink {
-        font-size: 5vw;
+        font-size: var(--font-size-base);
     }
 
-    .descriptionSection .projectDetails,
-    .btnLink {
-        font-size: 15px !important;
-        line-height: 19px;
-    }
-
-
-    .btnLink {
-        padding: 6px;
-        border-radius: 7px !important;
-        margin: 0;
-    }
 
     .descriptionSection {
         padding: 18px;
@@ -492,7 +496,7 @@
         height: auto !important;
     }
 
-            .spacer_myskills {
+    .spacer_myskills {
     height: 70vh;
         background-size: cover;
 
