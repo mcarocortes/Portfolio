@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import PortfolioLayout from "./layouts/PortfolioLayout";
 import LandingPage from "./componentes/LandingPage/LandingPage";
+import Healthcare from "./pages/Healthcare/Healthcare";
 import Modular from "./pages/Modular/Modular";
 import Vc from "./pages/VC/Vc";
 import Vinos from "./pages/Vinos/Vinos";
@@ -19,6 +20,7 @@ export default function AppRoutes() {
       <Route element={<PortfolioLayout />}>
         <Route index element={<LandingPage />} />
 
+        <Route path="/healthcare" element={<Healthcare />} />
         <Route path="/modulAR" element={<Modular />} />
         <Route path="/Vc" element={<Vc />} />
         <Route path="/Bank" element={<Bank />} />

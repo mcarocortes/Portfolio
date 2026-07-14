@@ -151,7 +151,7 @@ export default function About() {
                             <div className="logoSignature"></div>
                             <div className="signatureText">
                                 Macarena Caro Cortés<br />
-                                <span>Front-end Developer</span>
+                                <span>{t("aboutSection.frontEndDeveloper")}</span>
                             </div>
                         </div>
                     </motion.div>
@@ -168,14 +168,14 @@ export default function About() {
                         <div className='two'>
                             <p>UI/UX
                                 <span> • </span>Figma
-                                <span> • </span>Design System
+                                <span> • </span>{t("aboutSection.designSystem")}
                             </p>
                         </div>
 
                         <div className='three'>
                             <p>AI
                                 <span> • </span>Big Data
-                                <span> • </span>Innovation
+                                <span> • </span>{t("aboutSection.innovation")}
                             </p>
                         </div>
 

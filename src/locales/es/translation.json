@@ -25,10 +25,17 @@
       "focus": "Enfoque en",
       "interaction": "Interacción", 
       "development":"Desarrollo de",
-      "digitalexperiences":"Experiencia Digitales"
-
+      "digitalexperiences":"Experiencia Digitales",
+      "frontEndDeveloper":"Desarrolladora Front-End",
+      "designSystem":"Sistema de Diseño",
+      "innovation":"Innovación"
   },
 
-  "augmentedreality": "Realidad Aumentada"
+      "projectsSection":{
+      "augmentedreality": "Realidad Aumentada",
+      "webDevelopment": "Desarrollo Web",
+      "brandDevelopment": "Desarrollo de Marca"
+
+    }
 
 }

@@ -39,7 +39,6 @@
 }
 
 .descriptionProjects {
-    border: solid 2px green;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +46,6 @@
 
 
 .wrapperB {
-    border: solid 2px red;
     display: flex;
     align-items: flex-end;
     gap: 30px;
@@ -59,7 +57,6 @@
 }
 
 .figure {
-    border: solid 2px cyan;
     width: 50vw;
     flex-shrink: 0;
     border-radius: 25px;
@@ -173,22 +170,6 @@
     animation: spinArrow 0.5s ease-in-out;
 }
 
-.figure:nth-child(2) .ProjectNameLink {
-    background-color: #f2ead370;
-}
-
-.figure:nth-child(3) .ProjectNameLink {
-    background-color: #e2fbff91;
-}
-
-.figure:nth-child(4) .ProjectNameLink {
-    background-color: #f2ead370;
-}
-
-.figure:nth-child(5) .ProjectNameLink {
-    background-color: #f3cdd09f;
-}
-
 .descriptionSection {
     width: 100% !important;
     position: absolute;
@@ -209,13 +190,15 @@
 }
 
 .figure:hover .descriptionSection {
-    box-shadow: 5px 0 5px #0003;
+    box-shadow: 5px 0 5px var(--shadows);
     border: solid 1px var(--blancotrans);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
 
 .descriptionSection .projectDetails {
+    padding: 10px;
+    width: 100%;
     font-size: var(--font-size-base);
     line-height: 26px;
     font-weight: 400;
@@ -239,8 +222,9 @@
 }
 
 .buildItem {
-    background-color: var(--white);
-    color: var(--text);
+    background-color: var(--black);
+    border: 1px solid var(--white-transparent);
+    color: var(--white);
     padding: 10px;
     border-radius: 999px;
     font-size: var(--font-size-underBase);
@@ -267,63 +251,97 @@
 .ProyectB,
 .ProyectC,
 .ProyectD,
-.ProyectE {
+.ProyectE,
+.ProyectF  {
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
 }
 
+
 .figureMedia.ProyectA {
-    background-image: url(/src/assets/img/Projects/modulAR/modular_Fin.jpg);
 }
 
 .figureMedia.ProyectB {
+    background-image: url(/src/assets/img/Projects/modulAR/modular_Fin.jpg);
+}
+
+.figureMedia.ProyectC {
     background-image: url(/src/assets/img/Projects/VC/bgvcfin.jpg);
 }
 
 .figureMedia.ProyectC {
-    background-image: url(/src/assets/img/Projects/Bank/banco_fin.jpg);
 }
 
 .figureMedia.ProyectD {
-    background-image: url(/src/assets/img/Projects/Movies/1.CoficafeTotal.jpg);
 }
 
-.figureMedia.ProyectE {
+.figureMedia.ProyectF {
     background-image: url(/src/assets/img/Projects/Vinos/1.VinosNew.jpg);
 }
 
+.figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection{
+    background-color: red;
+}
 
-.figure:nth-child(1):hover .descriptionSection {
+.figure:nth-child(2) .ProjectNameLink, .figure:nth-child(2):hover .descriptionSection {
     background-color: rgba(255, 255, 255, 0.733);
 }
 
-.figure:nth-child(2):hover .descriptionSection {
-    background-color: #f2ead3b7;
+.figure:nth-child(3) .ProjectNameLink , .figure:nth-child(3):hover .descriptionSection{
+       background-color: #f2ead3b7;
 }
 
-.figure:nth-child(3):hover .descriptionSection {
-    background-color: #e2fbffbe;
+.figure:nth-child(4) .ProjectNameLink , .figure:nth-child(4):hover .descriptionSection{
+       background-color: purple;
 }
 
-.figure:nth-child(4):hover .descriptionSection {
-    background-color: #f2ead3b7;
+.figure:nth-child(5) .ProjectNameLink , .figure:nth-child(5):hover .descriptionSection{
+       background-color: greenyellow;
 }
 
-.figure:nth-child(5):hover .descriptionSection {
+.figure:nth-child(6) .ProjectNameLink, .figure:nth-child(6):hover .descriptionSection {
     background-color: #f3cdd0c6;
 }
 
 
-.spacer_myskills {
+.beyondCode {
+    font-family: var(--font-family-base);
+    padding-top: var(--margin-top-general);
+    padding-left: var(--margin-left-rigth-general);
+    padding-right: var(--margin-left-rigth-general);
     z-index: 0;
-    margin-top: -30px;
-    height: 130vh;
-    background-image: url("/src/assets/img/Webs/Webs.png");
+    height: 110vh;
+    border: solid 1px orange;
+    overflow: hidden;
+   /*background-image: url("/src/assets/img/Webs/Webs.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 100%;
-    background-color: var(--white);
+    background-color: var(--white);*/
+}
+.beyondSection{
+    display: flex;
+    flex-direction: column;
+}
+
+.beyondSection p{
+    width: 50vw;
+text-align: justify;
+}
+
+.beyondProjects{
+    width: 100%;
+    border: solid yellowgreen;
+    height: 55vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.beyondProjects .figure{
+    height: 100%;
+    width: 48%;
 }
 
 @media screen and (max-width: 1280px) {
@@ -331,8 +349,12 @@
         width: 70vw;
     }
 
-    .spacer_myskills {
-    height: 100vh;
+    .beyondCode {
+    height: 115vh;
+}
+
+.beyondCode .buildList{
+/*RELLENAR AQUI PARA QUE EN BEYOND CODE QUEDE ALINEADO A LA IZQUIERDA :D*/
 }
 
 }
@@ -344,7 +366,7 @@
 
     }
 
-        .spacer_myskills {
+        .beyondCode {
     height: 90vh;
 }
 
@@ -376,7 +398,7 @@
         transform: none;
     }
     .ProjectNameLink {
-        font-size: var(--font-size-h1);
+        font-size: var(--font-size-h2);
     }
 
     .descriptionSection {
@@ -417,30 +439,32 @@
         background-color: rgba(255, 255, 255, 0.733);
     }
 
-    .figure:nth-child(2) .descriptionSection {
-        background-color: #f2ead3b7;
-    }
+.figure:nth-child(1) .descriptionSection{
+    background-color: red;
+}
 
-    .figure:nth-child(3) .descriptionSection {
-        background-color: #e2fbffbe;
-    }
+.figure:nth-child(2) .descriptionSection {
+    background-color: var(--white-transparent2);
+}
 
-    .figure:nth-child(4) .descriptionSection {
-        background-color: #f2ead3b7;
-    }
+.figure:nth-child(3) .descriptionSection{
+       background-color: #f2ead3b7;
+}
 
-    .figure:nth-child(5) .descriptionSection {
-        background-color: #f3cdd0c6;
-    }
+.figure:nth-child(4) .descriptionSection{
+       background-color: purple;
+}
 
-    .figure .btnLink {
-        opacity: 1;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.725);
+.figure:nth-child(5) .descriptionSection{
+       background-color: greenyellow;
+}
 
-    }
-    .spacer_myskills {
-    height: 80vh;
+.figure:nth-child(6) .descriptionSection {
+    background-color: #f3cdd0c6;
+}
+
+    .beyondCode {
+    height: 130vh;
 }
 
 }
@@ -496,7 +520,7 @@
         height: auto !important;
     }
 
-    .spacer_myskills {
+    .beyondCode {
     height: 70vh;
         background-size: cover;
 

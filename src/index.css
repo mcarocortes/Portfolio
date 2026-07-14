@@ -87,6 +87,16 @@ body {
   color: var(--text);
   margin-bottom: 30px;
   margin-left: 0;
+  line-height: 40px;
+}
+
+.heading span{
+  text-transform: capitalize;
+    font-family: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
+  font-size: var(--font-size-h3);
+  color: var(--purpura);
+  margin-bottom: 30px;
+  margin-left: 0;
 }
 
 h1 {
@@ -183,7 +193,9 @@ label {
   :root {
     --margin-left-rigth-general: 2.5rem;
     --font-size-h1: calc(36px * var(--font-scale));
-    --font-size-h3: calc(23px * var(--font-scale));
+    --font-size-h2: calc(25px * var(--font-scale));
+    --font-size-h3: calc(22px * var(--font-scale));
+    --font-size-h4: calc(18px * var(--font-scale));
   }
 
   .heading {
@@ -196,7 +208,11 @@ label {
     --margin-left-rigth-general: 3rem;
     --margin-top-general: 15vh;
     --font-size-h1: calc(32px * var(--font-scale));
+    --font-size-h2: calc(22px * var(--font-scale));
     --font-size-h3: calc(20px * var(--font-scale));
+    --font-size-h4: calc(16px * var(--font-scale));
+    --font-size-underBase: calc(14px * var(--font-scale));
+
   }
 
   .heading {
