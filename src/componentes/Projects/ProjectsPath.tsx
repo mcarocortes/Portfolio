@@ -25,7 +25,7 @@ export const ProjectsPathHorizontal = forwardRef<SVGPathElement>(
                         M -30 100
                         C 160 25, 320 175, 480 100
                         S 800 25, 1120 100
-                        S 1320 175, 1420 100
+                        C 1220 110, 1320 100, 1420 50
                     "
                     stroke="url(#projectsPathGradientH)"
                 />
@@ -52,10 +52,10 @@ export const ProjectsPathBeyond = forwardRef<SVGCircleElement>(
                         y2="0%"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset="0%" stopColor="var(--purpura)" stopOpacity="1" />
-                        <stop offset="18%" stopColor="var(--purpura)" stopOpacity="1" />
-                        <stop offset="42%" stopColor="var(--purpura3)" stopOpacity="0.5" />
-                        <stop offset="58%" stopColor="var(--white-transparent)" stopOpacity="0" />
+                        <stop offset="0%" stopColor="var(--white-transparent)" stopOpacity="0.5" />
+                        <stop offset="18%" stopColor="var(--purpura3)" stopOpacity="0.5" />
+                        <stop offset="42%" stopColor="var(--purpura)" stopOpacity="10" />
+                        <stop offset="58%" stopColor="var(--purpura)" stopOpacity="1" />
                     </linearGradient>
                 </defs>
 
