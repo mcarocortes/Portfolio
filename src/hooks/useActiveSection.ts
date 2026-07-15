@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const NAV_IDS = ["Home", "About", "Projects", "WhatIDo", "Contact"];
+const NAV_IDS = ["Home", "About", "Projects", "Experience", "WhatIDo", "Contact"];
 
 export default function useActiveSection() {
   const [activeSection, setActiveSection] = useState("Home");
@@ -46,9 +46,13 @@ export default function useActiveSection() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("lenis-scroll", handleScroll as EventListener);
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("lenis-scroll", handleScroll as EventListener);
+    };
   }, []);
 
   return activeSection;

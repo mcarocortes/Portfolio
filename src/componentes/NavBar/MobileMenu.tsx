@@ -51,8 +51,16 @@ export default function MobileMenu({ isOpen, onClose, /*accessibilityOpen, setAc
     document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
     window.history.replaceState(null, "", "#Projects");
   }}>{t("projects")}</Link>
+
         <hr />
 
+        <Link to="/#Experience" className="menuLinktext"   onClick={() => {
+    onClose();
+    document.getElementById("Experience")?.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState(null, "", "#Experience");
+  }}>{t("experience")}</Link>
+   <hr />
+   
         <Link to="/#WhatIDo" className="menuLinktext"   onClick={() => {
     onClose();
     document.getElementById("WhatIDo")?.scrollIntoView({ behavior: "smooth" });
