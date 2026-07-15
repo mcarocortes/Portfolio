@@ -1,20 +1,14 @@
 
 import './Projects.css'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { ProjectsPathHorizontal, ProjectsPathBeyond } from './ProjectsPath';
 
 
 export default function Projects() {
 
-    const isMobile = window.innerWidth <= 479;
     const { t } = useTranslation();
-    const containerVariants = {
-        hidden: { opacity: 0, y: 80 },
-        visible: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: 2 },
-    };
 
     const projectsData = [
         {
@@ -79,15 +73,48 @@ export default function Projects() {
     ];
 
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const beyondRef = useRef<HTMLDivElement>(null);
+    const horizontalPathRef = useRef<SVGPathElement>(null);
+    const beyondPathRef = useRef<SVGCircleElement>(null);
+    const horizontalLengthRef = useRef(0);
+    const beyondLengthRef = useRef(0);
+
     const START_AT = 0.3;
     const END_MARGIN = 60;
 
+    const setupPath = (path: SVGPathElement | SVGCircleElement | null, lengthRef: { current: number }) => {
+        if (!path) return;
+        const length = path.getTotalLength();
+        lengthRef.current = length;
+        path.style.strokeDasharray = `${length}`;
+        path.style.strokeDashoffset = `${length}`;
+    };
+
+    const drawPath = (
+        path: SVGPathElement | SVGCircleElement | null,
+        lengthRef: { current: number },
+        progress: number
+    ) => {
+        if (!path || lengthRef.current === 0) return;
+        const clamped = Math.min(Math.max(progress, 0), 1);
+        path.style.strokeDashoffset = `${lengthRef.current * (1 - clamped)}`;
+    };
+
     useEffect(() => {
-        if (window.innerWidth <= 479) return;
         const container = document.querySelector('.containers') as HTMLElement;
+        const isDesktop = () => window.innerWidth > 479;
+
+        const initPaths = () => {
+            if (!isDesktop()) return;
+            setupPath(horizontalPathRef.current, horizontalLengthRef);
+            setupPath(beyondPathRef.current, beyondLengthRef);
+        };
+
+        initPaths();
+        window.addEventListener("resize", initPaths);
 
         const onScroll = () => {
-            if (!wrapperRef.current || !container) return;
+            if (!isDesktop() || !wrapperRef.current || !container) return;
 
             const rect = container.getBoundingClientRect();
             const scrollable = container.offsetHeight - window.innerHeight;
@@ -103,7 +130,6 @@ export default function Projects() {
                 progress = (progress - START_AT) / (1 - START_AT);
             }
 
-
             const viewportWidth =
                 wrapperRef.current.parentElement!.offsetWidth;
 
@@ -112,12 +138,35 @@ export default function Projects() {
 
             wrapperRef.current.style.transform =
                 `translateX(${-progress * maxTranslate}px)`;
+
+            // Fase 1: línea de tiempo horizontal — sincronizada con el scroll de proyectos
+            drawPath(horizontalPathRef.current, horizontalLengthRef, progress);
+
+            // Fase 2: arco Beyond — solo dibujo del trazo, sin fade de opacidad
+            const beyondEl = beyondRef.current;
+            let beyondProgress = 0;
+
+            if (beyondEl) {
+                const beyondRect = beyondEl.getBoundingClientRect();
+                const vh = window.innerHeight;
+                const travel = Math.max(beyondEl.offsetHeight * 0.88, vh * 0.55);
+
+                beyondProgress = Math.min(
+                    Math.max((vh * 0.72 - beyondRect.top) / travel, 0),
+                    1
+                );
+            }
+
+            drawPath(beyondPathRef.current, beyondLengthRef, beyondProgress);
         };
 
-        window.addEventListener("scroll", onScroll);
+        window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
 
-        return () => window.removeEventListener("scroll", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", initPaths);
+        };
     }, []);
 
 
@@ -127,12 +176,9 @@ export default function Projects() {
                 <div className="main-wrapper">
 
                     <div className="containers">
-                        <motion.div className='wrapperA' initial="hidden"
-                            whileInView="visible"
-                            exit="exit"
-                            viewport={{ once: false, amount: isMobile ? 0.05 : 0.3 }}
-                            variants={containerVariants}
-                            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: isMobile ? 0 : 0.15 }}>
+                        <div className='wrapperA'>
+
+                            <ProjectsPathHorizontal ref={horizontalPathRef} />
 
                             <div className="descriptionProjects">
                                 <h1 className="heading">{t("projects")}</h1>
@@ -147,26 +193,25 @@ export default function Projects() {
                                         <Link to={proj.url} className='ProjectNameLink'>{proj.title}</Link>
                                         <div className='descriptionSection'>
                                             <p className='projectDetails'>{proj.subt}</p>
-    <div className="buildList">
-    <div className="buildList-tags">
-        {proj.build.map((item, index) => (
-            <span key={index} className="buildItem">
-                {item}
-            </span>
-        ))}
-    </div>
-
-    <Link to={proj.url} className="btnArrow">→</Link>
-</div>
-                                            
+                                            <div className="buildList">
+                                                <div className="buildList-tags">
+                                                    {proj.build.map((item, index) => (
+                                                        <span key={index} className="buildItem">
+                                                            {item}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                                <Link to={proj.url} className="btnArrow">→</Link>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
 
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
-                    <div className="beyondCode">
+                    <div className="beyondCode" ref={beyondRef}>
+                        <ProjectsPathBeyond ref={beyondPathRef} />
                         <h1 className='heading'>Beyond Code<br></br><span>Design · Branding · Products</span></h1>
                         <div className='beyondSection'>
                             <p>
@@ -181,17 +226,15 @@ export default function Projects() {
                                     <div className='descriptionSection'>
                                         <p className='projectDetails'>{proj.subt}</p>
                                         <div className="buildList">
-    <div className="buildList-tags">
-        {proj.build.map((item, index) => (
-            <span key={index} className="buildItem">
-                {item}
-            </span>
-        ))}
-    </div>
-
-    <Link to={proj.url} className="btnArrow">→</Link>
-</div>
-
+                                            <div className="buildList-tags">
+                                                {proj.build.map((item, index) => (
+                                                    <span key={index} className="buildItem">
+                                                        {item}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <Link to={proj.url} className="btnArrow">→</Link>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

@@ -7,19 +7,57 @@
 .main-wrapper {
     padding:0;
     display: block;
-    position: static;
+    position: relative;
     border-radius: 25px;
     border-end-start-radius: 0;
     border-end-end-radius: 0;
     background-color: var(--white);
     box-shadow: -2px 2px 10px var(--shadows);
+}
 
+/* ===== TRAZO DECORATIVO (estilo arcos Hero) ===== */
+
+.projects-path-svg {
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Línea de tiempo — zona alta, onda amplia (como línea verde de referencia) */
+.projects-path-svg--horizontal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 16%;
+    width: 100%;
+    height: clamp(140px, 18vh, 220px);
+}
+
+/* Arco esquina superior derecha — estilo Hero arc-top */
+.projects-path-svg--beyond {
+    position: absolute;
+    width: clamp(560px, 52vw, 820px);
+    height: clamp(560px, 52vw, 820px);
+    right: clamp(-320px, -28vw, -420px);
+    top: clamp(-380px, -34vw, -520px);
+    overflow: visible;
+}
+
+.projects-path-line {
+    fill: none;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 20px var(--purpura4));
+}
+
+.projects-path-line--primary {
+    stroke-width: 50;
+    opacity: 0.9;
 }
 
 /* ajustas según nº de proyectos */
 .containers {
     height: 400vh;
     position: relative;
+    z-index: 2;
 }
 
 
@@ -36,12 +74,15 @@
     height: 100vh;
     overflow: hidden;
     border-radius: 25px;
+    will-change: transform;
 }
 
 .descriptionProjects {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -54,6 +95,8 @@
     height: 100%;
     padding-left: var(--margin-left-rigth-general);
     padding-right: var(--margin-left-rigth-general);
+    position: relative;
+    z-index: 2;
 }
 
 .figure {
@@ -137,6 +180,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    align-self: center;
     width: 50px;
     height: 50px;
     font-size: 40px;
@@ -341,7 +386,9 @@
     padding-top: var(--margin-top-general);
     padding-left: var(--margin-left-rigth-general);
     padding-right: var(--margin-left-rigth-general);
-    z-index: 0;
+    z-index: 2;
+    position: relative;
+    overflow: visible;
 
     display: flex;
     flex-direction: column;
@@ -350,10 +397,16 @@
     padding-bottom: 70px;
 }
 .beyondSection{
-
     display: flex;
     flex-direction: column;
     height: 100% !important;
+    position: relative;
+    z-index: 2;
+}
+
+.beyondCode > .heading {
+    position: relative;
+    z-index: 2;
 }
 
 .beyondSection p{
@@ -536,6 +589,11 @@
 }
 
 @media (max-width: 479px) {
+    .projects-path-svg--horizontal,
+    .projects-path-svg--beyond {
+        display: none;
+    }
+
     .main-wrapper{
         padding-top: var(--margin-top-general);
     }
@@ -544,6 +602,7 @@
         position: static;
         height: auto;
         overflow: visible;
+        background-color: transparent;
     }
 
     .wrapperB {
