@@ -1,8 +1,8 @@
 import './About.css'
-import React from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from "react-i18next";
 import { useScrollTransitionContext } from "../../context/ScrollTransitionContext";
+import useProjectsEntranceFade from "../../hooks/useProjectsEntranceFade";
 import iconIdentity from '../../assets/img/About/iconBrand.png'
 import iconFocus from '../../assets/img/About/iconDesign.png'
 import iconDev from '../../assets/img/About/iconInteraction.png'
@@ -10,42 +10,13 @@ import iconDev from '../../assets/img/About/iconInteraction.png'
 
 export default function About() {
     const { t } = useTranslation();
-    const [projectsFade, setProjectsFade] = React.useState(0);
-
-
-
-
-    React.useEffect(() => {
-        const projects = document.getElementById("Projects");
-        if (!projects) return;
-
-        const update = () => {
-            const top = projects.getBoundingClientRect().top;
-            const vh = window.innerHeight;
-
-            // ── Zona de fade (ajústala probando) ──
-            const fadeStart = vh * 2; // Projects asoma por abajo → fade 0
-            const fadeEnd = vh * 0.52; // Projects más arriba → fade 1 (About oculto)
-
-            const t = (fadeStart - top) / (fadeStart - fadeEnd);
-            const fade = Math.min(1, Math.max(0, t));
-
-            setProjectsFade(fade);
-        };
-
-        window.addEventListener("scroll", update, { passive: true });
-        update();
-
-        return () => window.removeEventListener("scroll", update);
-    }, []);
-
-
+    const projectsFade = useProjectsEntranceFade();
 
 
     /* Intro: visible durante act3, se desvanece al entrar el bloque About */
     const { act3 } = useScrollTransitionContext(); // act4 y progress ya no hacen falta aquí
     const introOpacity = Math.min(1, act3 * 1.3);
-    const finalOpacity = introOpacity * (1.2 - projectsFade);
+    const finalOpacity = introOpacity * (1 - projectsFade);
     const introEnterY = (1 - act3) * 48;
 
     const containerVariants = {

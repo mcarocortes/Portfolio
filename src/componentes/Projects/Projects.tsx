@@ -3,12 +3,15 @@ import './Projects.css'
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import useProjectsEntranceFade from "../../hooks/useProjectsEntranceFade";
 import { ProjectsPathHorizontal, ProjectsPathBeyond } from './ProjectsPath';
 
 
 export default function Projects() {
 
     const { t } = useTranslation();
+    const projectsFade = useProjectsEntranceFade();
+    const enterY = (1 - projectsFade) * 48;
 
     const projectsData = [
         {
@@ -173,7 +176,15 @@ export default function Projects() {
     return (
         <>
             <section id="Projects" className='page-wrapper'>
-                <div className="main-wrapper">
+                <div
+                    className="main-wrapper projects-enter"
+                    style={{
+                        opacity: projectsFade,
+                        transform: `translateY(${enterY}px)`,
+                        visibility: projectsFade < 0.02 ? "hidden" : "visible",
+                        pointerEvents: projectsFade < 0.02 ? "none" : "auto",
+                    }}
+                >
 
                     <div className="containers">
                         <div className='wrapperA'>

@@ -34,6 +34,10 @@ function AppContent() {
       smoothWheel: true,
     });
 
+    lenis.on("scroll", () => {
+      window.dispatchEvent(new Event("lenis-scroll"));
+    });
+
     const raf = (time: number) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
