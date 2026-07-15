@@ -1,0 +1,254 @@
+.experience {
+    position: relative;
+    z-index: 3;
+    background-color: rgb(244, 238, 255);
+    padding: 0 var(--margin-left-rigth-general);
+    margin-top: -25px;
+    color: var(--black);
+    border-radius: 25px;
+    box-shadow: 2px -2px 10px var(--shadows);
+    height: auto;
+    padding-bottom: 5vh;
+}
+
+.experience-inner {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+}
+
+.section_description-exp {
+    background-color: rgb(244, 238, 255);
+    top: 0;
+    left: 0;
+    padding-top: var(--margin-top-general);
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 2;
+    box-shadow: 0px 10px 10px -11px var(--purpura3);
+}
+
+.experience-timeline {
+    --experience-axis-width: 4rem;
+    height: 130vh;
+    margin-top: 130px;
+    margin-bottom: 100px;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--experience-axis-width) minmax(0, 1fr);
+}
+
+/* Línea en columna central — mismo eje que .experience-axis */
+.experience-line {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    align-self: stretch;
+    width: 4px;
+    justify-self: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.experience-line-track {
+    position: absolute;
+    inset: 0;
+    background: var(--purpura4);
+    opacity: 0.4;
+    border-radius: 999px;
+}
+
+.experience-line-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--purpura);
+    border-radius: 999px;
+    transform: scaleY(0);
+    transform-origin: top center;
+    box-shadow: 0 0 12px var(--purpura4);
+    will-change: transform;
+}
+
+.experience-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--experience-axis-width) minmax(0, 1fr);
+    align-items: center;
+    width: 100%;
+    min-height: clamp(120px, 18vh, 180px);
+}
+
+.experience-item > .experience-side--content,
+.experience-item > .experience-axis {
+    grid-row: 1;
+    align-self: center;
+}
+
+.experience-side {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.experience-item--left .experience-side--content {
+    grid-column: 1;
+    justify-content: flex-end;
+    padding-right: 1.25rem;
+}
+
+.experience-item--right .experience-side--content {
+    grid-column: 3;
+    justify-content: flex-start;
+    padding-left: 1.25rem;
+}
+
+.experience-axis {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.experience-node {
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--purpura4);
+    transform-origin: center center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.experience-item.is-active .experience-node {
+    background: var(--purpura3);
+    border-color: var(--purpura);
+}
+
+.experience-item.is-current .experience-node {
+    transform: scale(1.65);
+    background: var(--purpura);
+    border-color: var(--purpura);
+    box-shadow:
+        0 0 0 6px rgba(90, 18, 250, 0.15),
+        0 0 28px var(--purpura4);
+}
+
+.experience-card {
+    width: min(100%, 380px);
+    padding: 1.35rem 1.6rem;
+    border-radius: 20px;
+    background: var(--white);
+    border: 1px solid rgba(191, 193, 252, 0.7);
+    box-shadow: -2px 2px 12px var(--shadows);
+    opacity: 0.55;
+    transition:
+        opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.experience-item.is-active .experience-card {
+    opacity: 1;
+}
+
+.experience-item.is-current .experience-card {
+    border-color: var(--purpura3);
+    box-shadow: -4px 4px 18px rgba(90, 18, 250, 0.18);
+}
+
+.experience-index {
+    display: block;
+    font-size: var(--font-size-underBase);
+    font-weight: var(--font-weight-600);
+    letter-spacing: 0.12em;
+    color: var(--purpura);
+    margin-bottom: 0.35rem;
+}
+
+.experience-title {
+    margin: 0;
+    font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+    font-size: var(--font-size-h3);
+    line-height: 1.25;
+    color: var(--text);
+    text-transform: none;
+}
+
+@media screen and (max-width: 767px) {
+    .experience {
+        padding-bottom: 4rem;
+    }
+
+    .experience-timeline {
+        --experience-axis-width: 2rem;
+        height: auto;
+        min-height: 110vh;
+        grid-template-columns: var(--experience-axis-width) minmax(0, 1fr);
+        padding-left: 2.5rem;
+        padding-right: 1rem;
+    }
+
+    .experience-line {
+        grid-column: 1;
+    }
+
+    .experience-list {
+        gap: clamp(3rem, 10vh, 5rem);
+        justify-content: flex-start;
+        height: auto;
+        padding-left: 0;
+    }
+
+    .experience-item {
+        grid-template-columns: var(--experience-axis-width) minmax(0, 1fr);
+    }
+
+    .experience-item > .experience-side--content,
+    .experience-item > .experience-axis {
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .experience-item--left .experience-side--content,
+    .experience-item--right .experience-side--content {
+        grid-column: 2;
+        justify-content: flex-start;
+        padding: 0 0 0 1rem;
+    }
+
+    .experience-item--left .experience-axis,
+    .experience-item--right .experience-axis {
+        grid-column: 1;
+    }
+
+    .experience-card {
+        width: 100%;
+    }
+}

@@ -1,6 +1,7 @@
 {
     "about": "About",
     "projects": "Projects",
+    "experience": "Experience",
     "whatido": "What I Do",
     "contact": "Contact",
 
@@ -36,6 +37,28 @@
       "webDevelopment": "Web Development",
       "brandDevelopment": "Brand Development"
 
+    },
+
+    "experienceSection": {
+      "subtitle": "From Design to Web Development",
+      "steps": {
+        "industrial": {
+          "title": "Industrial Designer",
+          "period": "2016–2021"
+        },
+        "web": {
+          "title": "Web Development",
+          "period": "2022–2024"
+        },
+        "ai": {
+          "title": "AI & Big Data Specialization",
+          "period": "2025"
+        },
+        "lead": {
+          "title": "Team Leader Front-End Developer",
+          "period": "2025–Present"
+        }
+      }
     }
 
 

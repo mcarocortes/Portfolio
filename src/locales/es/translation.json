@@ -2,6 +2,7 @@
 
     "about": "Sobre mi",
     "projects": "Proyectos",
+    "experience": "Experiencia",
     "whatido": "Que ofrezco",
     "contact": "Contacto",
 
@@ -36,6 +37,28 @@
       "webDevelopment": "Desarrollo Web",
       "brandDevelopment": "Desarrollo de Marca"
 
+    },
+
+    "experienceSection": {
+      "subtitle": "Del diseño al Desarrollo Web",
+      "steps": {
+        "industrial": {
+          "title": "Diseñadora Industrial",
+          "period": "2016–2021"
+        },
+        "web": {
+          "title": "Desarrollo Web",
+          "period": "2022–2024"
+        },
+        "ai": {
+          "title": "Especialización en IA y Big Data",
+          "period": "2025"
+        },
+        "lead": {
+          "title": "Team Leader Front-End Developer",
+          "period": "2025–Actualidad"
+        }
+      }
     }
 
 }
