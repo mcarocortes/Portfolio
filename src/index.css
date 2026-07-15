@@ -232,6 +232,11 @@ label {
 
 @media screen and (max-width: 479px) {
 
+    :root {
+    --margin-left-rigth-general: 40px;
+    --font-size-base: calc(16px * var(--font-scale));
+  }
+
   .heading {
     text-align: center;
     margin-top: 0;

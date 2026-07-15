@@ -3,6 +3,11 @@
   --text: var(--white);
   --white-transparent: var(--black-transparent);
 }
+
+.dark-mode  .heading span{
+  color: var(--purpura3);
+}
+
 /****** CURSOR ******/
 .dark-mode .custom-cursor-inner{
   background: url("/public/cursor_darkmode.svg") center/contain no-repeat;
@@ -111,6 +116,56 @@
   --icon-glow-soft: var(--shadows);
   --icon-glow-strong: var(--purpura);
   --icon-glow-halo: var(--black);
+}
+
+
+
+
+/*************************** PROJECTS ***************************/
+.dark-mode  .main-wrapper {
+    box-shadow: -2px 2px 20px var(--purpura);
+    background-color: var(--black);
+
+}
+
+.dark-mode  .wrapperA {
+    background-color: var(--black);
+}
+
+.dark-mode  .figure {
+  box-shadow: -2px 2px 10px var(--purpura);
+
+}
+
+.dark-mode .figure:hover{
+        box-shadow: -5px 5px 10px var(--purpura3);
+}
+
+.dark-mode .ProjectNameLink {
+  color: var(--black);
+}
+
+.dark-mode .ProjectNameLink:hover {
+    color: var(--purpura);
+}
+
+.dark-mode .btnArrow:hover{
+    color: var(--white);
+    background-color: var(--purpura);
+
+}
+
+.dark-mode .btnArrow {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.dark-mode .beyondSection p{
+  color: var(--white);
+}
+
+.dark-mode .beyondSection p span{
+    color: var(--purpura3);
 }
 
 /********************* WEBS ***************************/ 

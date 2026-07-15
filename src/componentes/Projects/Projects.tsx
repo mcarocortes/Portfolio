@@ -64,7 +64,7 @@ export default function Projects() {
     const beyond = [
         {
             id: 'ProyectG',
-            title: "Designs Collection",
+            title: "Packaging Design Collection",
             subt: "Designed commercial packaging for food products, creating cohesive visual identities focused on shelf impact and brand recognition.",
             url: "/Design",
             build: ["Packaging", "Print Design", "Illustrator"]
@@ -147,15 +147,18 @@ export default function Projects() {
                                         <Link to={proj.url} className='ProjectNameLink'>{proj.title}</Link>
                                         <div className='descriptionSection'>
                                             <p className='projectDetails'>{proj.subt}</p>
-                                            <div className="buildList">
-                                                {proj.build.map((item, index) => (
-                                                    <span key={index} className="buildItem">
-                                                        {item}
-                                                    </span>
-                                                ))}
-                                            </div>
+    <div className="buildList">
+    <div className="buildList-tags">
+        {proj.build.map((item, index) => (
+            <span key={index} className="buildItem">
+                {item}
+            </span>
+        ))}
+    </div>
 
-                                            <Link to={proj.url} className="btnArrow">→</Link>
+    <Link to={proj.url} className="btnArrow">→</Link>
+</div>
+                                            
                                         </div>
                                     </div>
                                 ))}
@@ -167,7 +170,7 @@ export default function Projects() {
                         <h1 className='heading'>Beyond Code<br></br><span>Design · Branding · Products</span></h1>
                         <div className='beyondSection'>
                             <p>
-                                Before transitioning into Front-End development, I worked in product design, branding, and graphic design. This background allows me to approach interfaces not only from a technical perspective but also through user experience, visual communication, and problem-solving.
+                                Before transitioning into Front-End development, I worked in <span>product design, branding, and graphic design.</span> This background allows me to approach interfaces not only from a technical perspective but also through user experience, visual communication, and problem-solving.
                             </p>
                         <div className='beyondProjects'>
                             {beyond.map((proj) => (
@@ -178,14 +181,17 @@ export default function Projects() {
                                     <div className='descriptionSection'>
                                         <p className='projectDetails'>{proj.subt}</p>
                                         <div className="buildList">
-                                            {proj.build.map((item, index) => (
-                                                <span key={index} className="buildItem">
-                                                    {item}
-                                                </span>
-                                            ))}
-                                        </div>
+    <div className="buildList-tags">
+        {proj.build.map((item, index) => (
+            <span key={index} className="buildItem">
+                {item}
+            </span>
+        ))}
+    </div>
 
-                                        <Link to={proj.url} className="btnArrow">→</Link>
+    <Link to={proj.url} className="btnArrow">→</Link>
+</div>
+
                                     </div>
                                 </div>
                             ))}
