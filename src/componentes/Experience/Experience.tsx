@@ -7,6 +7,27 @@ function clamp(value: number, min = 0, max = 1) {
     return Math.min(Math.max(value, min), max);
 }
 
+/** Opacidad secuencial: el anterior sale en la 1ª mitad, el nuevo entra en la 2ª — sin solapamiento. */
+function getSequentialSlideOpacity(index: number, stepFloat: number): number {
+    if (stepFloat <= index - 1) {
+        return index === 0 && stepFloat >= 0 ? 1 : 0;
+    }
+
+    if (stepFloat <= index) {
+        const t = stepFloat - (index - 1);
+        if (t <= 0.5) return 0;
+        return clamp((t - 0.5) * 2);
+    }
+
+    if (stepFloat <= index + 1) {
+        const t = stepFloat - index;
+        if (t >= 0.5) return 0;
+        return clamp(1 - t * 2);
+    }
+
+    return 0;
+}
+
 const YEAR_SUFFIXES = ["21", "22", "24", "26"] as const;
 const STEP_COUNT = YEAR_SUFFIXES.length;
 const SCROLL_VH_PER_STEP = 155;
@@ -175,13 +196,8 @@ export default function Experience() {
                         <div className="experience-right">
                             <div className="experience-slides">
                                 {steps.map((step, index) => {
-                                    const distance = Math.abs(stepFloat - index);
-                                    const opacity =
-                                        distance >= 0.72
-                                            ? 0
-                                            : clamp(1 - distance * 1.35);
-
-                                    const parallax = (stepFloat - index) * 36;
+                                    const opacity = getSequentialSlideOpacity(index, stepFloat);
+                                    const parallax = (stepFloat - index) * 36 * opacity;
 
                                     return (
                                         <article
@@ -192,8 +208,8 @@ export default function Experience() {
                                             ].join(" ")}
                                             style={{
                                                 opacity,
-                                                visibility: opacity < 0.04 ? "hidden" : "visible",
-                                                zIndex: index === activeIndex ? 3 : 1,
+                                                visibility: opacity < 0.01 ? "hidden" : "visible",
+                                                zIndex: opacity > 0 ? 2 : 0,
                                             }}
                                             aria-hidden={index !== activeIndex}
                                         >

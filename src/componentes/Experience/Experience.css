@@ -114,7 +114,6 @@
     display: grid;
     grid-template-rows: auto 1fr;
     gap: clamp(1rem, 3vh, 2rem);
-    transition: opacity 0.35s ease;
 }
 
 .experience-slide-copy {
