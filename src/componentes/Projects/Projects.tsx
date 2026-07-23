@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import useProjectsEntranceFade from "../../hooks/useProjectsEntranceFade";
-import { ProjectsPathHorizontal, ProjectsPathBeyond } from './ProjectsPath';
+import { ProjectsPathBeyond } from './ProjectsPath';
 
 
 export default function Projects() {
@@ -77,9 +77,7 @@ export default function Projects() {
 
     const wrapperRef = useRef<HTMLDivElement>(null);
     const beyondRef = useRef<HTMLDivElement>(null);
-    const horizontalPathRef = useRef<SVGPathElement>(null);
     const beyondPathRef = useRef<SVGCircleElement>(null);
-    const horizontalLengthRef = useRef(0);
     const beyondLengthRef = useRef(0);
 
     const START_AT = 0.3;
@@ -109,7 +107,6 @@ export default function Projects() {
 
         const initPaths = () => {
             if (!isDesktop()) return;
-            setupPath(horizontalPathRef.current, horizontalLengthRef);
             setupPath(beyondPathRef.current, beyondLengthRef);
         };
 
@@ -142,10 +139,6 @@ export default function Projects() {
             wrapperRef.current.style.transform =
                 `translateX(${-progress * maxTranslate}px)`;
 
-            // Fase 1: línea de tiempo horizontal — sincronizada con el scroll de proyectos
-            drawPath(horizontalPathRef.current, horizontalLengthRef, progress);
-
-            // Fase 2: arco Beyond — solo dibujo del trazo, sin fade de opacidad
             const beyondEl = beyondRef.current;
             let beyondProgress = 0;
 
@@ -188,9 +181,6 @@ export default function Projects() {
 
                     <div className="containers">
                         <div className='wrapperA'>
-
-                            <ProjectsPathHorizontal ref={horizontalPathRef} />
-
                             <div className="descriptionProjects">
                                 <h1 className="heading">{t("projects")}</h1>
                             </div>

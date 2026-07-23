@@ -5,7 +5,7 @@ export const ExperiencePath = forwardRef<SVGPathElement>(
         return (
             <svg
                 className="experience-path-svg"
-                viewBox="0 0 1440 900"
+                viewBox="0 0 1600 100vw"
                 preserveAspectRatio="none"
                 aria-hidden="true"
             >
@@ -19,10 +19,10 @@ export const ExperiencePath = forwardRef<SVGPathElement>(
                         gradientUnits="userSpaceOnUse"
                     >
                         <stop offset="0%" stopColor="var(--purpura)" stopOpacity="1" />
-                        <stop offset="25%" stopColor="var(--purpura3)" stopOpacity="1" />
-                        <stop offset="50%" stopColor="var(--white)" stopOpacity="1" />
+                        <stop offset="25%" stopColor="var(--purpura)" stopOpacity="1" />
+                        <stop offset="50%" stopColor="var(--purpura3)" stopOpacity="1" />
                         <stop offset="60%" stopColor="var(--purpura3)" stopOpacity="0.75" />
-                        <stop offset="100%" stopColor="var(--purpura)" stopOpacity="1" />
+                        <stop offset="100%" stopColor="var(--white)" stopOpacity="1" />
                     </linearGradient>
                 </defs>
 

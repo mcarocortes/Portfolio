@@ -27,16 +27,6 @@
     z-index: 1;
 }
 
-/* Línea de tiempo — zona alta, onda amplia (como línea verde de referencia) */
-.projects-path-svg--horizontal {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 16%;
-    width: 100%;
-    height: clamp(140px, 18vh, 220px);
-}
-
 /* Arco esquina superior derecha — estilo Hero arc-top */
 .projects-path-svg--beyond {
     position: absolute;
@@ -50,6 +40,7 @@
 .projects-path-line {
     fill: none;
     stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
     filter: drop-shadow(0 0 20px var(--purpura4));
 }
 
@@ -596,7 +587,6 @@
 }
 
 @media (max-width: 479px) {
-    .projects-path-svg--horizontal,
     .projects-path-svg--beyond {
         display: none;
     }
