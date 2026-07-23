@@ -16,8 +16,7 @@ export const ExperiencePath = forwardRef<SVGPathElement>(
                         y1="0%"
                         x2="20%"
                         y2="130%"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0%" stopColor="var(--purpura)" stopOpacity="1" />
                         <stop offset="25%" stopColor="var(--purpura)" stopOpacity="1" />
                         <stop offset="50%" stopColor="var(--purpura3)" stopOpacity="1" />

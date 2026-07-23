@@ -93,7 +93,6 @@
   color: var(--purpura3);
 }
 
-
 .dark-mode .logoSignature {
     border: solid 1px var(--purpura3);
   background-image: url("/src/assets/img/Navbar/mLogo_B2.svg");
@@ -112,13 +111,17 @@
     filter: drop-shadow(0 1px 1px var(--black));
 
 }
+
 .dark-mode {
   --icon-glow-soft: var(--shadows);
   --icon-glow-strong: var(--purpura);
   --icon-glow-halo: var(--black);
 }
 
+.dark-mode .logoSignature{
+  background-color: var(--black-transparent);
 
+}
 
 
 /*************************** PROJECTS ***************************/
@@ -167,6 +170,20 @@
 .dark-mode .beyondSection p span{
     color: var(--purpura3);
 }
+
+.dark-mode .projects-path-line {
+  filter: drop-shadow(0 0 20px var(--purpura));
+}
+/********************* EXPERIENCES ***************************/ 
+.dark-mode .experience2{
+  background-color: var(--black);
+
+}
+
+.dark-mode .experience-path-line--progress {
+  filter: drop-shadow(0 0 20px var(--purpura));
+}
+
 
 /********************* WEBS ***************************/ 
 /*FONDO DE TODO EL HTML*/
