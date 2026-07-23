@@ -4,6 +4,7 @@
   --text: #292b29;
   --black: #292b29;
   --white: #f4f4f4;
+  --graybg: #ececec;
   --purpura: #5a12fa;
   --purpura3: #8c8ef2;
   --purpura4: #bfc1fc;
@@ -31,7 +32,7 @@
   --font-size-base: calc(20px * var(--font-scale));
   --font-size-h1: calc(46px * var(--font-scale));
   --font-size-h2: calc(36px * var(--font-scale));
-  --font-size-h3: calc(25px * var(--font-scale));
+  --font-size-h3: calc(26px * var(--font-scale));
   --font-size-h4: calc(22px * var(--font-scale));
 
 
@@ -100,11 +101,19 @@ body {
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-h1)!important;
+}
+
+h2 {
+  font-size: var(--font-size-h2) !important;
 }
 
 h3 {
   font-size: var(--font-size-h3) !important;
+}
+
+h4 {
+  font-size: var(--font-size-h4) !important;
 }
 
 p {

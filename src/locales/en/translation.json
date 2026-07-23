@@ -40,23 +40,27 @@
     },
 
     "experienceSection": {
-      "subtitle": "From Design to Web Development",
+      "subtitleLine": "From Design to Web Development",
       "steps": {
         "industrial": {
           "title": "Industrial Designer",
-          "period": "2016–2021"
+          "period": "2016–2021",
+          "description": "Product design, packaging, and user-centered solutions. Training in creative thinking and complex problem solving."
         },
         "web": {
           "title": "Web Development",
-          "period": "2022–2024"
+          "period": "2022–2024",
+          "description": "Websites and apps that are easy to love, hard to ignore. We design digital experiences that convert and delight."
         },
         "ai": {
-          "title": "AI & Big Data Specialization",
-          "period": "2025"
+          "title": "AI & Big Data\nSpecialization",
+          "period": "2025",
+          "description": "Integrating artificial intelligence and data analytics to build smarter, more personalized digital products."
         },
         "lead": {
-          "title": "Team Leader Front-End Developer",
-          "period": "2025–Present"
+          "title": "Front-End\nTeam Leader",
+          "period": "2025–Present",
+          "description": "Leading front-end teams, interface architecture, and delivering scalable products with a focus on quality and UX."
         }
       }
     }

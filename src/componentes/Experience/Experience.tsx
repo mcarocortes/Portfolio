@@ -1,187 +1,272 @@
 import "./Experience.css";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { ExperiencePath } from "./ExperiencePath";
 
 function clamp(value: number, min = 0, max = 1) {
     return Math.min(Math.max(value, min), max);
 }
 
+const YEAR_SUFFIXES = ["21", "22", "24", "26"] as const;
+const STEP_COUNT = YEAR_SUFFIXES.length;
+const SCROLL_VH_PER_STEP = 155;
+
+function renderMultilineTitle(title: string) {
+    const lines = title.split("\n");
+    return lines.map((line, index) => (
+        <span key={`${line}-${index}`}>
+            {index > 0 && <br />}
+            {line}
+        </span>
+    ));
+}
+
 export default function Experience() {
     const { t } = useTranslation();
-    const timelineRef = useRef<HTMLDivElement>(null);
-    const progressRef = useRef<HTMLDivElement>(null);
-    const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
-    const nodeRatiosRef = useRef<number[]>([]);
-    const [activeStep, setActiveStep] = useState(-1);
+    const sectionRef = useRef<HTMLElement>(null);
+    const pathRef = useRef<SVGPathElement>(null);
+    const pathLengthRef = useRef(0);
+    const suffixTrackRef = useRef<HTMLDivElement>(null);
+    const [scrollProgress, setScrollProgress] = useState(0);
 
     const steps = [
         {
             key: "industrial",
+            suffix: YEAR_SUFFIXES[0],
             title: t("experienceSection.steps.industrial.title"),
-            period: t("experienceSection.steps.industrial.period"),
-            side: "left" as const,
+            description: t("experienceSection.steps.industrial.description"),
+            bgClass: "experience-visual-bg--industrial",
+            fgClass: "experience-visual-fg--industrial",
         },
         {
             key: "web",
+            suffix: YEAR_SUFFIXES[1],
             title: t("experienceSection.steps.web.title"),
-            period: t("experienceSection.steps.web.period"),
-            side: "right" as const,
+            description: t("experienceSection.steps.web.description"),
+            bgClass: "experience-visual-bg--web",
+            fgClass: "experience-visual-fg--web",
         },
         {
             key: "ai",
+            suffix: YEAR_SUFFIXES[2],
             title: t("experienceSection.steps.ai.title"),
-            period: t("experienceSection.steps.ai.period"),
-            side: "left" as const,
+            description: t("experienceSection.steps.ai.description"),
+            bgClass: "experience-visual-bg--ai",
+            fgClass: "experience-visual-fg--ai",
         },
         {
             key: "lead",
+            suffix: YEAR_SUFFIXES[3],
             title: t("experienceSection.steps.lead.title"),
-            period: t("experienceSection.steps.lead.period"),
-            side: "right" as const,
+            description: t("experienceSection.steps.lead.description"),
+            bgClass: "experience-visual-bg--lead",
+            fgClass: "experience-visual-fg--lead",
         },
     ];
 
-    const measureNodeRatios = useCallback(() => {
-        const timeline = timelineRef.current;
-        const items = itemRefs.current.filter(Boolean) as HTMLLIElement[];
-        if (!timeline || items.length === 0) return;
+    const setupPath = useCallback(() => {
+        const path = pathRef.current;
+        if (!path || window.innerWidth <= 767) return;
 
-        const timelineRect = timeline.getBoundingClientRect();
-        const height = timelineRect.height || 1;
+        const length = path.getTotalLength();
+        pathLengthRef.current = length;
+        path.style.strokeDasharray = `${length}`;
+        path.style.strokeDashoffset = `${length}`;
+    }, []);
 
-        nodeRatiosRef.current = items.map((item) => {
-            const node = item.querySelector(".experience-node");
-            if (!node) return 0;
+    const drawPath = useCallback((progress: number) => {
+        const path = pathRef.current;
+        if (!path || pathLengthRef.current === 0) return;
 
-            const nodeRect = node.getBoundingClientRect();
-            const centerY = nodeRect.top + nodeRect.height / 2 - timelineRect.top;
-            return clamp(centerY / height, 0, 1);
-        });
+        path.style.strokeDashoffset = `${pathLengthRef.current * (1 - clamp(progress))}`;
     }, []);
 
     const update = useCallback(() => {
-        const timeline = timelineRef.current;
-        const progressEl = progressRef.current;
-        if (!timeline || !progressEl) return;
+        const section = sectionRef.current;
+        if (!section) return;
 
-        const timelineRect = timeline.getBoundingClientRect();
-        const vh = window.innerHeight;
-        const triggerY = vh * 0.52;
-
-        const start = timelineRect.top - triggerY;
-        const end = timelineRect.bottom - triggerY;
-        const range = Math.max(end - start, 1);
-        const progress = clamp(-start / range);
-
-        progressEl.style.transform = `scaleY(${progress})`;
-
-        const ratios = nodeRatiosRef.current;
-        let nextActive = -1;
-
-        for (let i = ratios.length - 1; i >= 0; i--) {
-            if (progress >= ratios[i] - 0.02) {
-                nextActive = i;
-                break;
+        if (window.innerWidth <= 767) {
+            setScrollProgress(0);
+            if (suffixTrackRef.current) {
+                suffixTrackRef.current.style.transform = "translate3d(0, 0, 0)";
             }
+            return;
         }
 
-        setActiveStep((prev) => (prev === nextActive ? prev : nextActive));
-    }, []);
+        const rect = section.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const scrollable = Math.max(section.offsetHeight - vh, 1);
+        const progress = clamp(-rect.top / scrollable);
+        const stepFloat = progress * (STEP_COUNT - 1);
+
+        setScrollProgress((prev) => (Math.abs(prev - progress) < 0.0005 ? prev : progress));
+        drawPath(progress);
+
+        if (suffixTrackRef.current) {
+            suffixTrackRef.current.style.transform = `translate3d(0, calc(${-stepFloat} * var(--year-slot-height)), 0)`;
+        }
+    }, [drawPath]);
 
     useLayoutEffect(() => {
-        measureNodeRatios();
+        setupPath();
         update();
-    }, [measureNodeRatios, update]);
+    }, [setupPath, update]);
 
     useEffect(() => {
-        const timeline = timelineRef.current;
-        if (!timeline) return;
+        const section = sectionRef.current;
+        if (!section) return;
 
         let resizeTimer: ReturnType<typeof setTimeout>;
 
         const onResize = () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
-                measureNodeRatios();
+                setupPath();
                 update();
             }, 80);
         };
 
-        const observer = new ResizeObserver(onResize);
-        observer.observe(timeline);
-
         window.addEventListener("scroll", update, { passive: true });
         window.addEventListener("lenis-scroll", update as EventListener);
+        window.addEventListener("resize", onResize);
+
+        const observer = new ResizeObserver(onResize);
+        observer.observe(section);
 
         return () => {
             clearTimeout(resizeTimer);
             observer.disconnect();
             window.removeEventListener("scroll", update);
             window.removeEventListener("lenis-scroll", update as EventListener);
+            window.removeEventListener("resize", onResize);
         };
-    }, [measureNodeRatios, update]);
+    }, [setupPath, update]);
+
+    const stepFloat = scrollProgress * (STEP_COUNT - 1);
+    const activeIndex = Math.min(Math.round(stepFloat), STEP_COUNT - 1);
 
     return (
-        <section id="Experience" className="experience">
-            <div className="experience-inner">
-                <div className="section_description-exp">
-                    <h1 className="heading">
-                        {t("experience")}
-                        <br />
-                        <span>{t("experienceSection.subtitle")}</span>
-                    </h1>
-                </div>
+        <section
+            id="Experience"
+            className="experience2"
+            ref={sectionRef}
+            style={{
+                ["--exp-steps" as string]: STEP_COUNT,
+                ["--exp-step-vh" as string]: SCROLL_VH_PER_STEP,
+            }}
+        >
+            <div className="experience-scroll-space">
+                <div className="experience-viewport">
+                    <ExperiencePath ref={pathRef} />
 
-                <div className="experience-timeline" ref={timelineRef}>
-                    <div className="experience-line" aria-hidden="true">
-                        <div className="experience-line-track" />
-                        <div className="experience-line-progress" ref={progressRef} />
+                    <div className="experience-layout">
+                        <aside className="experience-left">
+                            <header className="experience-heading">
+                                <h1 className="heading experience-section-heading">
+                                    {t("experience")}
+                                    <br />
+                                    <span>
+                                        {t("experienceSection.subtitleLine")} 
+                                    </span>
+                                </h1>
+                            </header>
+                        </aside>
+
+                        <div className="experience-right">
+                            <div className="experience-slides">
+                                {steps.map((step, index) => {
+                                    const distance = Math.abs(stepFloat - index);
+                                    const opacity =
+                                        distance >= 0.72
+                                            ? 0
+                                            : clamp(1 - distance * 1.35);
+
+                                    const parallax = (stepFloat - index) * 36;
+
+                                    return (
+                                        <article
+                                            key={step.key}
+                                            className={[
+                                                "experience-slide",
+                                                index === activeIndex ? "is-current" : "",
+                                            ].join(" ")}
+                                            style={{
+                                                opacity,
+                                                visibility: opacity < 0.04 ? "hidden" : "visible",
+                                                zIndex: index === activeIndex ? 3 : 1,
+                                            }}
+                                            aria-hidden={index !== activeIndex}
+                                        >
+                                            <div
+                                                className="experience-slide-copy"
+                                                style={{
+                                                    transform: `translate3d(0, ${parallax * 0.25}px, 0)`,
+                                                }}
+                                            >
+                                                <h2 className="experience-slide-title">
+                                                    {renderMultilineTitle(step.title)}
+                                                </h2>
+                                                <p className="experience-slide-description">
+                                                    {step.description}
+                                                </p>
+                                            </div>
+
+                                            <div className="experience-visual">
+                                                <div
+                                                    className={`experience-visual-bg ${step.bgClass}`}
+                                                    style={{
+                                                        transform: `translate3d(0, ${parallax * 0.45}px, 0) scale(1.02)`,
+                                                    }}
+                                                />
+                                                <div
+                                                    className={`experience-visual-fg ${step.fgClass}`}
+                                                    style={{
+                                                        transform: `translate3d(0, ${parallax * -0.35}px, 0)`,
+                                                    }}
+                                                />
+                                            </div>
+                                        </article>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
 
-                    <ol className="experience-list">
-                        {steps.map((step, index) => (
-                            <li
-                                key={step.key}
-                                ref={(el) => {
-                                    itemRefs.current[index] = el;
-                                }}
-                                className={[
-                                    "experience-item",
-                                    `experience-item--${step.side}`,
-                                    index <= activeStep ? "is-active" : "",
-                                    index === activeStep ? "is-current" : "",
-                                ].join(" ")}
-                            >
-                                {step.side === "left" ? (
-                                    <>
-                                        <div className="experience-side experience-side--content">
-                                            <article className="experience-card">
-                                                <span className="experience-index">{step.period}</span>
-                                                <h2 className="experience-title">{step.title}</h2>
-                                            </article>
-                                        </div>
-                                        <div className="experience-axis">
-                                            <span className="experience-node" aria-hidden="true" />
-                                        </div>
-                                    </>
-                                ) : (
-                                    <>
-                                        <div className="experience-axis">
-                                            <span className="experience-node" aria-hidden="true" />
-                                        </div>
-                                        <div className="experience-side experience-side--content">
-                                            <article className="experience-card">
-                                                <span className="experience-index">{step.period}</span>
-                                                <h2 className="experience-title">{step.title}</h2>
-                                            </article>
-                                        </div>
-                                    </>
-                                )}
-                            </li>
-                        ))}
-                    </ol>
+                    <div className="experience-year-bar" aria-live="polite">
+                        <span className="experience-year-prefix">20</span>
+                        <div className="experience-year-suffix-window">
+                            <div className="experience-year-suffix-track" ref={suffixTrackRef}>
+                                {YEAR_SUFFIXES.map((suffix) => (
+                                    <span key={suffix} className="experience-year-suffix">
+                                        {suffix}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <ol className="experience-mobile-list">
+                <h1 className="heading">
+                    {t("experience")}
+                    <br />
+                    <span>{t("experienceSection.subtitleLine")}</span>
+                </h1>
+                {steps.map((step) => (
+                    <li key={step.key} className="experience-mobile-item">
+                        <span className="experience-mobile-year">20{step.suffix}</span>
+                        <h2 className="experience-mobile-title">
+                            {renderMultilineTitle(step.title)}
+                        </h2>
+                        <p className="experience-mobile-description">{step.description}</p>
+                        <div className="experience-mobile-visual">
+                            <div className={`experience-visual-bg ${step.bgClass}`} />
+                            <div className={`experience-visual-fg ${step.fgClass}`} />
+                        </div>
+                    </li>
+                ))}
+            </ol>
         </section>
     );
 }

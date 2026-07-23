@@ -40,23 +40,27 @@
     },
 
     "experienceSection": {
-      "subtitle": "Del diseño al Desarrollo Web",
+      "subtitleLine": "Del diseño al desarrollo web",
       "steps": {
         "industrial": {
           "title": "Diseñadora Industrial",
-          "period": "2016–2021"
+          "period": "2016–2021",
+          "description": "Diseño de producto, packaging y soluciones centradas en el usuario. Formación en pensamiento creativo y resolución de problemas complejos."
         },
         "web": {
           "title": "Desarrollo Web",
-          "period": "2022–2024"
+          "period": "2022–2024",
+          "description": "Webs y apps fáciles de amar y difíciles de ignorar. Experiencias digitales que convierten y deleitan."
         },
         "ai": {
-          "title": "Especialización en IA y Big Data",
-          "period": "2025"
+          "title": "Especialización en\nIA y Big Data",
+          "period": "2025",
+          "description": "Integración de inteligencia artificial y análisis de datos para crear productos digitales más inteligentes y personalizados."
         },
         "lead": {
-          "title": "Team Leader Front-End Developer",
-          "period": "2025–Actualidad"
+          "title": "Líder de Equipo\nFront-End",
+          "period": "2025–Actualidad",
+          "description": "Liderazgo de equipos front-end, arquitectura de interfaces y entrega de productos escalables con foco en calidad y UX."
         }
       }
     }

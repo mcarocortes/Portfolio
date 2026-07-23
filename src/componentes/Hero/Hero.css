@@ -193,7 +193,7 @@
 /*Gradient, thickness & animation*/
 .arc-line {
   fill: none;
-  stroke-width: 50;
+  stroke-width: 40;
   opacity: 0.9;
 
   stroke-linecap: round;

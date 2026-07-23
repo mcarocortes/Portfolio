@@ -1,254 +1,350 @@
-.experience {
+.experience2 {
+  font-family: var(--font-family-base);
+    --year-slot-height: clamp(5.5rem, 12vw, 9.5rem);
     position: relative;
     z-index: 3;
-    background-color: rgb(244, 238, 255);
-    padding: 0 var(--margin-left-rigth-general);
+    background-color: var(--graybg);
     margin-top: -25px;
     color: var(--black);
     border-radius: 25px;
     box-shadow: 2px -2px 10px var(--shadows);
-    height: auto;
-    padding-bottom: 5vh;
+    padding-bottom: 100px;
 }
 
-.experience-inner {
-    width: 100%;
-    margin: 0 auto;
-    height: auto;
+.experience-scroll-space {
+    height: calc(var(--exp-steps, 4) * var(--exp-step-vh, 155) * 1vh);
+    position: relative;
 }
 
-.section_description-exp {
-    background-color: rgb(244, 238, 255);
-    top: 0;
-    left: 0;
-    padding-top: var(--margin-top-general);
+.experience-viewport {
     position: sticky;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    z-index: 2;
-    box-shadow: 0px 10px 10px -11px var(--purpura3);
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    isolation: isolate;
 }
 
-.experience-timeline {
-    --experience-axis-width: 4rem;
-    height: 130vh;
-    margin-top: 130px;
-    margin-bottom: 100px;
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) var(--experience-axis-width) minmax(0, 1fr);
-}
+/* ===== TRAZO (dentro del viewport sticky) ===== */
 
-/* Línea en columna central — mismo eje que .experience-axis */
-.experience-line {
-    grid-column: 2;
-    grid-row: 1;
-    position: relative;
-    align-self: stretch;
-    width: 4px;
-    justify-self: center;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.experience-line-track {
+.experience-path-svg {
     position: absolute;
     inset: 0;
-    background: var(--purpura4);
-    opacity: 0.4;
-    border-radius: 999px;
-}
-
-.experience-line-progress {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: var(--purpura);
-    border-radius: 999px;
-    transform: scaleY(0);
-    transform-origin: top center;
-    box-shadow: 0 0 12px var(--purpura4);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.experience-path-line {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 40;
+    vector-effect: non-scaling-stroke;
+}
+
+.experience-path-line--track {
+    opacity: 0.12;
+    filter: none;
+}
+
+.experience-path-line--progress {
+    opacity: 0.92;
+  filter: drop-shadow(0 0 20px var(--purpura4));
+}
+
+/* ===== LAYOUT 2 COLUMNAS ===== */
+
+.experience-layout {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
+    height: 100%;
+    width: 100%;
+}
+
+.experience-left {
+    display: flex;
+    flex-direction: column;
+    padding:
+        var(--margin-top-general)
+        var(--margin-left-rigth-general)
+        calc(var(--year-slot-height) + clamp(2rem, 5vh, 3.5rem))
+        var(--margin-left-rigth-general);
+}
+
+.experience-heading .heading {
+    margin: 0;
+    text-align: left;
+    line-height: 1.05;
+    max-width: 100%;
+}
+
+.experience-section-heading {
+    font-size: clamp(2rem, 4.2vw, var(--font-size-h1));
+    overflow-wrap: break-word;
+}
+
+.experience-heading .heading span {
+    display: inline-block;
+    margin-top: 0.35rem;
+    line-height: 1.2;
+}
+
+.experience-right {
+    position: relative;
+    padding:
+        var(--margin-top-general)
+        var(--margin-left-rigth-general)
+        calc(var(--year-slot-height) + clamp(1.5rem, 4vh, 2.5rem))
+        clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* ===== SLIDES DERECHA ===== */
+
+.experience-slides {
+    position: relative;
+    height: 100%;
+}
+
+.experience-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: clamp(1rem, 3vh, 2rem);
+    transition: opacity 0.35s ease;
+}
+
+.experience-slide-copy {
+    max-width: min(36rem, 94%);
+    z-index: 3;
     will-change: transform;
 }
 
-.experience-list {
-    list-style: none;
+.experience-slide-title {
+    text-transform: uppercase;
+    color: var(--purpura);
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.experience-slide-description {
     margin: 0;
-    padding: 0;
-    grid-column: 1 / -1;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    max-width: 100%;
+    font-size: clamp(0.95rem, 1.2vw, var(--font-size-base));
+    line-height: 1.55;
+    color: var(--text);
+}
+
+/* ===== PARALLAX VISUAL ===== */
+
+.experience-visual {
     position: relative;
+    align-self: end;
+    justify-self: end;
+    width: min(100%, clamp(280px, 42vw, 560px));
+    min-height: clamp(240px, 46vh, 460px);
+    margin-top: auto;
+}
+
+.experience-visual-bg,
+.experience-visual-fg {
+    position: absolute;
+    border-radius: 22px;
+    will-change: transform;
+}
+
+.experience-visual-bg {
+    inset: 10% 0 0 8%;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.55), rgba(236, 236, 236, 0.95));
+    opacity: 0.72;
     z-index: 1;
+    box-shadow: 0 18px 40px rgba(41, 43, 41, 0.08);
 }
 
-.experience-item {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) var(--experience-axis-width) minmax(0, 1fr);
-    align-items: center;
-    width: 100%;
-    min-height: clamp(120px, 18vh, 180px);
-}
-
-.experience-item > .experience-side--content,
-.experience-item > .experience-axis {
-    grid-row: 1;
-    align-self: center;
-}
-
-.experience-side {
-    min-width: 0;
-    display: flex;
-    align-items: center;
-}
-
-.experience-item--left .experience-side--content {
-    grid-column: 1;
-    justify-content: flex-end;
-    padding-right: 1.25rem;
-}
-
-.experience-item--right .experience-side--content {
-    grid-column: 3;
-    justify-content: flex-start;
-    padding-left: 1.25rem;
-}
-
-.experience-axis {
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.experience-visual-fg {
+    width: clamp(150px, 36%, 240px);
+    height: clamp(150px, 36%, 240px);
+    right: clamp(0.5rem, 6%, 1.75rem);
+    bottom: clamp(0.25rem, 3%, 1rem);
+    background: var(--gradient-purple);
+    box-shadow:
+        -10px 14px 36px rgba(90, 18, 250, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.35) inset;
     z-index: 2;
 }
 
-.experience-node {
-    box-sizing: border-box;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 3px solid var(--purpura4);
-    transform-origin: center center;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.45s ease,
-        border-color 0.45s ease,
-        box-shadow 0.45s ease;
+.experience-visual-bg--industrial {
+    background-image:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(236, 236, 236, 0.88)),
+        url("/src/assets/img/About/iconDesign.png");
+    background-size: cover, 58%;
+    background-position: center, 88% 78%;
+    background-repeat: no-repeat;
 }
 
-.experience-item.is-active .experience-node {
-    background: var(--purpura3);
-    border-color: var(--purpura);
+.experience-visual-fg--industrial {
+    background:
+        linear-gradient(135deg, var(--purpura) 0%, var(--purpura3) 100%),
+        url("/src/assets/img/About/iconBrand.png");
+    background-size: cover, 72%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.experience-item.is-current .experience-node {
-    transform: scale(1.65);
-    background: var(--purpura);
-    border-color: var(--purpura);
-    box-shadow:
-        0 0 0 6px rgba(90, 18, 250, 0.15),
-        0 0 28px var(--purpura4);
+.experience-visual-bg--web {
+    background-image:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(236, 236, 236, 0.88)),
+        url("/src/assets/img/About/iconInteraction.png");
+    background-size: cover, 52%;
+    background-position: center, 82% 72%;
+    background-repeat: no-repeat;
 }
 
-.experience-card {
-    width: min(100%, 380px);
-    padding: 1.35rem 1.6rem;
-    border-radius: 20px;
-    background: var(--white);
-    border: 1px solid rgba(191, 193, 252, 0.7);
-    box-shadow: -2px 2px 12px var(--shadows);
-    opacity: 0.55;
-    transition:
-        opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.5s ease,
-        border-color 0.5s ease;
+.experience-visual-fg--web {
+    background: linear-gradient(135deg, var(--purpura3) 0%, var(--purpura) 100%);
 }
 
-.experience-item.is-active .experience-card {
-    opacity: 1;
+.experience-visual-bg--ai,
+.experience-visual-bg--lead {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(236, 236, 236, 0.92));
 }
 
-.experience-item.is-current .experience-card {
-    border-color: var(--purpura3);
-    box-shadow: -4px 4px 18px rgba(90, 18, 250, 0.18);
+.experience-visual-fg--ai,
+.experience-visual-fg--lead {
+    background: var(--gradient-purple);
 }
 
-.experience-index {
-    display: block;
-    font-size: var(--font-size-underBase);
-    font-weight: var(--font-weight-600);
-    letter-spacing: 0.12em;
-    color: var(--purpura);
-    margin-bottom: 0.35rem;
+/* ===== AÑO 20 + SUFIJO ROTATIVO ===== */
+
+.experience-year-bar {
+    position: absolute;
+    left: var(--margin-left-rigth-general);
+    right: var(--margin-left-rigth-general);
+    bottom: clamp(1.5rem, 4vh, 3rem);
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    z-index: 4;
+    pointer-events: none;
 }
 
-.experience-title {
-    margin: 0;
+.experience-year-prefix {
     font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
-    font-size: var(--font-size-h3);
-    line-height: 1.25;
+    font-size: var(--year-slot-height);
+    line-height: 0.82;
+    letter-spacing: -0.045em;
     color: var(--text);
-    text-transform: none;
+}
+
+.experience-year-suffix-window {
+    height: var(--year-slot-height);
+    overflow: hidden;
+}
+
+.experience-year-suffix-track {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+}
+
+.experience-year-suffix {
+    display: block;
+    height: var(--year-slot-height);
+    font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+    font-size: var(--year-slot-height);
+    line-height: var(--year-slot-height);
+    letter-spacing: -0.045em;
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== MOBILE ===== */
+
+.experience-mobile-list {
+    display: none;
 }
 
 @media screen and (max-width: 767px) {
-    .experience {
-        padding-bottom: 4rem;
+    .experience2 {
+        background-color: var(--white);
     }
 
-    .experience-timeline {
-        --experience-axis-width: 2rem;
-        height: auto;
-        min-height: 110vh;
-        grid-template-columns: var(--experience-axis-width) minmax(0, 1fr);
-        padding-left: 2.5rem;
-        padding-right: 1rem;
+    .experience-scroll-space {
+        display: none;
     }
 
-    .experience-line {
-        grid-column: 1;
+    .experience-mobile-list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3rem, 10vh, 4.5rem);
+        list-style: none;
+        margin: 0;
+        padding:
+            var(--margin-top-general)
+            1.5rem
+            2rem;
     }
 
-    .experience-list {
-        gap: clamp(3rem, 10vh, 5rem);
-        justify-content: flex-start;
-        height: auto;
-        padding-left: 0;
+    .experience-mobile-list .heading{
+        margin-bottom: 0;
+
     }
 
-    .experience-item {
-        grid-template-columns: var(--experience-axis-width) minmax(0, 1fr);
+    .experience-mobile-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
-    .experience-item > .experience-side--content,
-    .experience-item > .experience-axis {
-        grid-row: 1;
-        align-self: center;
+    .experience-mobile-year {
+        font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+        font-size: clamp(2.5rem, 12vw, 3.5rem);
+        line-height: 1;
+        color: var(--purpura3);
     }
 
-    .experience-item--left .experience-side--content,
-    .experience-item--right .experience-side--content {
-        grid-column: 2;
-        justify-content: flex-start;
-        padding: 0 0 0 1rem;
+    .experience-mobile-title {
+        margin: 0;
+        font-size: var(--font-size-h3);
+        text-transform: uppercase;
+        color: var(--purpura);
     }
 
-    .experience-item--left .experience-axis,
-    .experience-item--right .experience-axis {
-        grid-column: 1;
+    .experience-mobile-description {
+        margin: 0;
+        line-height: 1.55;
     }
 
-    .experience-card {
-        width: 100%;
+    .experience-mobile-visual {
+        position: relative;
+        min-height: 220px;
+        margin-top: 0.5rem;
+    }
+
+    .experience-mobile-visual .experience-visual-bg {
+        inset: 12% 0 0 0;
+    }
+
+    .experience-mobile-visual .experience-visual-fg {
+        right: 1rem;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+    .experience-layout {
+        grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+    }
+
+    .experience-slide-copy {
+        max-width: 100%;
     }
 }
