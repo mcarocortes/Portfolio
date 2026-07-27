@@ -73,10 +73,10 @@ export default function Navbar() {
   document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
   window.history.replaceState(null, "", "#Projects");
 }}>{t("projects")}</Link>
-                <Link to="#Experience" className={`navbartext ${activeSection === "Experience" ? "active" : ""}`} onClick={() => {
-  document.getElementById("Experience")?.scrollIntoView({ behavior: "smooth" });
-  window.history.replaceState(null, "", "#Experience");
-}}>{t("experience")}</Link>
+                <Link to="#Evolution" className={`navbartext ${activeSection === "Evolution" ? "active" : ""}`} onClick={() => {
+  document.getElementById("Evolution")?.scrollIntoView({ behavior: "smooth" });
+  window.history.replaceState(null, "", "#Evolution");
+}}>{t("evolution")}</Link>
                 <Link to="#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`} onClick={() => {
   document.getElementById("WhatIDo")?.scrollIntoView({ behavior: "smooth" });
   window.history.replaceState(null, "", "#WhatIDo");

@@ -70,8 +70,10 @@
     height: 100vh;
     overflow: hidden;
     border-radius: 25px;
+    background:linear-gradient(to top, var(--purpura4) -40%, var(--white) 50%);
+    margin-bottom: -25px;
     will-change: transform;
-        box-shadow: -2px 2px 10px var(--shadows);
+        box-shadow: -2px 2px 10px var(--purpura4);
 
 }
 
@@ -384,15 +386,17 @@
     padding-top: var(--margin-top-general);
     padding-left: var(--margin-left-rigth-general);
     padding-right: var(--margin-left-rigth-general);
-    z-index: 2;
+    z-index: 1;
     position: relative;
     overflow: visible;
 
+    
     display: flex;
     flex-direction: column;
     height: auto;
     overflow: hidden;
     padding-bottom: 70px;
+    background:linear-gradient(to bottom, var(--purpura4) -40%, var(--white) 50%);
 }
 .beyondSection{
     display: flex;

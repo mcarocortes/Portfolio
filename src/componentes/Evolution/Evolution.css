@@ -117,24 +117,34 @@
 }
 
 .experience-slide-copy {
-    max-width: min(36rem, 94%);
+    max-width: 100%;
     z-index: 3;
     will-change: transform;
 }
 
 .experience-slide-title {
     text-transform: uppercase;
-    color: var(--purpura);
+    color: var(--black);
     max-width: 100%;
     overflow-wrap: break-word;
 }
 
+.experience-slide-period {
+    color: var(--purpura3);
+    max-width: 100%;
+}
+.experience-slide-subti {
+    color: var(--purpura);
+    max-width: 100%;
+    margin-bottom: 30px;
+}
 .experience-slide-description {
     margin: 0;
     max-width: 100%;
     font-size: clamp(0.95rem, 1.2vw, var(--font-size-base));
     line-height: 1.55;
     color: var(--text);
+    text-align: justify;
 }
 
 /* ===== PARALLAX VISUAL ===== */

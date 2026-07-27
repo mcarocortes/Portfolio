@@ -2,7 +2,7 @@
 
     "about": "Sobre mi",
     "projects": "Proyectos",
-    "experience": "Experiencia",
+    "evolution": "Evolución",
     "whatido": "Que ofrezco",
     "contact": "Contacto",
 
@@ -39,28 +39,32 @@
 
     },
 
-    "experienceSection": {
+    "evolutionSection": {
       "subtitleLine": "Del diseño al desarrollo web",
       "steps": {
         "industrial": {
           "title": "Diseñadora Industrial",
-          "period": "2016–2021",
-          "description": "Diseño de producto, packaging y soluciones centradas en el usuario. Formación en pensamiento creativo y resolución de problemas complejos."
+          "subtitle": "Transformar ideas, diseñar productos y  gestionar proyectos",
+          "period": "2016-2021",
+          "description": "Mi carrera comenzó diseñando productos físicos. Aprendí a investigar, prototipar y resolver problemas pensando siempre en las personas. Esa forma de entender el diseño sigue guiando cada interfaz que desarrollo hoy."
         },
         "web": {
           "title": "Desarrollo Web",
-          "period": "2022–2024",
-          "description": "Webs y apps fáciles de amar y difíciles de ignorar. Experiencias digitales que convierten y deleitan."
+          "period": "2022-2024",
+          "subtitle": "Transformando ideas en productos digitales",
+          "description": "El desarrollo web me permitió convertir el diseño en experiencias reales e interactivas. Desde entonces he construido aplicaciones web y móviles, resolviendo problemas, diseñando soluciones y construyendo funcionalidades que aporten valor."
         },
         "ai": {
-          "title": "Especialización en\nIA y Big Data",
+          "title": "Especialización en IA y Big Data",
           "period": "2025",
-          "description": "Integración de inteligencia artificial y análisis de datos para crear productos digitales más inteligentes y personalizados."
+          "subtitle": "Aprender a pensar más allá de la interfaz",
+          "description": "La IA amplió mi forma de resolver problemas. Aprendí a trabajar con datos, automatización y nuevas tecnologías para crear soluciones más inteligentes y eficientes."
         },
         "lead": {
-          "title": "Líder de Equipo\nFront-End",
-          "period": "2025–Actualidad",
-          "description": "Liderazgo de equipos front-end, arquitectura de interfaces y entrega de productos escalables con foco en calidad y UX."
+          "title": "Líder de Equipo Front-End",
+          "period": "2026-Actualidad",
+          "subtitle": "Impulsar la evolución del producto a través de la colaboración",
+          "description": "Actualmente lidero el desarrollo Front-End de una aplicación en producción, colaborando en decisiones técnicas, nuevas funcionalidades y la evolución continua del producto con foco en calidad y UX."
         }
       }
     }

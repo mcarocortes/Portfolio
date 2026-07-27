@@ -1,7 +1,7 @@
-import "./Experience.css";
+import "./Evolution.css";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ExperiencePath } from "./ExperiencePath";
+import { EvolutionPath } from "./EvolutionPath";
 
 function clamp(value: number, min = 0, max = 1) {
     return Math.min(Math.max(value, min), max);
@@ -28,21 +28,11 @@ function getSequentialSlideOpacity(index: number, stepFloat: number): number {
     return 0;
 }
 
-const YEAR_SUFFIXES = ["21", "22", "24", "26"] as const;
+const YEAR_SUFFIXES = ["21", "24", "25", "26"] as const;
 const STEP_COUNT = YEAR_SUFFIXES.length;
 const SCROLL_VH_PER_STEP = 155;
 
-function renderMultilineTitle(title: string) {
-    const lines = title.split("\n");
-    return lines.map((line, index) => (
-        <span key={`${line}-${index}`}>
-            {index > 0 && <br />}
-            {line}
-        </span>
-    ));
-}
-
-export default function Experience() {
+export default function Evolution() {
     const { t } = useTranslation();
     const sectionRef = useRef<HTMLElement>(null);
     const pathRef = useRef<SVGPathElement>(null);
@@ -53,33 +43,41 @@ export default function Experience() {
     const steps = [
         {
             key: "industrial",
-            suffix: YEAR_SUFFIXES[0],
-            title: t("experienceSection.steps.industrial.title"),
-            description: t("experienceSection.steps.industrial.description"),
+            suffix: YEAR_SUFFIXES[0],           
+            title: t("evolutionSection.steps.industrial.title"),
+            subtitle: t("evolutionSection.steps.industrial.subtitle"),
+            period:  t("evolutionSection.steps.industrial.period"),
+            description: t("evolutionSection.steps.industrial.description"),
             bgClass: "experience-visual-bg--industrial",
             fgClass: "experience-visual-fg--industrial",
         },
         {
             key: "web",
             suffix: YEAR_SUFFIXES[1],
-            title: t("experienceSection.steps.web.title"),
-            description: t("experienceSection.steps.web.description"),
+            title: t("evolutionSection.steps.web.title"),
+            subtitle: t("evolutionSection.steps.web.subtitle"),
+            period:  t("evolutionSection.steps.web.period"),
+            description: t("evolutionSection.steps.web.description"),
             bgClass: "experience-visual-bg--web",
             fgClass: "experience-visual-fg--web",
         },
         {
             key: "ai",
             suffix: YEAR_SUFFIXES[2],
-            title: t("experienceSection.steps.ai.title"),
-            description: t("experienceSection.steps.ai.description"),
+            title: t("evolutionSection.steps.ai.title"),
+            subtitle: t("evolutionSection.steps.ai.subtitle"),
+            period: t("evolutionSection.steps.ai.period"),
+            description: t("evolutionSection.steps.ai.description"),
             bgClass: "experience-visual-bg--ai",
             fgClass: "experience-visual-fg--ai",
         },
         {
             key: "lead",
             suffix: YEAR_SUFFIXES[3],
-            title: t("experienceSection.steps.lead.title"),
-            description: t("experienceSection.steps.lead.description"),
+            title: t("evolutionSection.steps.lead.title"),
+            subtitle: t("evolutionSection.steps.lead.subtitle"),
+            period:  t("evolutionSection.steps.lead.period"),
+            description: t("evolutionSection.steps.lead.description"),
             bgClass: "experience-visual-bg--lead",
             fgClass: "experience-visual-fg--lead",
         },
@@ -168,7 +166,7 @@ export default function Experience() {
 
     return (
         <section
-            id="Experience"
+            id="Evolution"
             className="experience2"
             ref={sectionRef}
             style={{
@@ -178,16 +176,16 @@ export default function Experience() {
         >
             <div className="experience-scroll-space">
                 <div className="experience-viewport">
-                    <ExperiencePath ref={pathRef} />
+                    <EvolutionPath ref={pathRef} />
 
                     <div className="experience-layout">
                         <aside className="experience-left">
                             <header className="experience-heading">
                                 <h1 className="heading experience-section-heading">
-                                    {t("experience")}
+                                    {t("evolution")}
                                     <br />
                                     <span>
-                                        {t("experienceSection.subtitleLine")} 
+                                        {t("evolutionSection.subtitleLine")}
                                     </span>
                                 </h1>
                             </header>
@@ -218,10 +216,15 @@ export default function Experience() {
                                                 style={{
                                                     transform: `translate3d(0, ${parallax * 0.25}px, 0)`,
                                                 }}
-                                            >
+                                            >  <h3 className="experience-slide-period">
+                                                    {t(step.period)}
+                                                </h3>
                                                 <h2 className="experience-slide-title">
-                                                    {renderMultilineTitle(step.title)}
+                                                    {t(step.title)}
                                                 </h2>
+                                                <h3 className="experience-slide-subti">
+                                                    {t(step.subtitle)}
+                                                </h3>
                                                 <p className="experience-slide-description">
                                                     {step.description}
                                                 </p>
@@ -265,16 +268,19 @@ export default function Experience() {
 
             <ol className="experience-mobile-list">
                 <h1 className="heading">
-                    {t("experience")}
+                    {t("evolution")}
                     <br />
-                    <span>{t("experienceSection.subtitleLine")}</span>
+                    <span>{t("evolutionSection.subtitleLine")}</span>
                 </h1>
                 {steps.map((step) => (
                     <li key={step.key} className="experience-mobile-item">
                         <span className="experience-mobile-year">20{step.suffix}</span>
                         <h2 className="experience-mobile-title">
-                            {renderMultilineTitle(step.title)}
+                            {t(step.title)}
                         </h2>
+                        <h3 className="experience-slide-period">
+                            {t(step.period)}
+                        </h3>
                         <p className="experience-mobile-description">{step.description}</p>
                         <div className="experience-mobile-visual">
                             <div className={`experience-visual-bg ${step.bgClass}`} />

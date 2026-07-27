@@ -132,7 +132,9 @@
 }
 
 .dark-mode  .wrapperA {
-    background-color: var(--black);
+    background:linear-gradient(to top, var(--purpura) -60%, var(--black) 40%);
+            box-shadow: -2px 2px 10px var(--black);
+
 }
 
 .dark-mode  .figure {
@@ -163,6 +165,10 @@
     background-color: var(--black);
 }
 
+.dark-mode .beyondCode{
+      background:linear-gradient(to bottom, var(--purpura) -60%, var(--black) 40%);
+}
+
 .dark-mode .beyondSection p{
   color: var(--white);
 }
@@ -174,7 +180,9 @@
 .dark-mode .projects-path-line {
   filter: drop-shadow(0 0 20px var(--purpura));
 }
-/********************* EXPERIENCES ***************************/ 
+
+
+/********************* EVOLUTION ***************************/ 
 .dark-mode .experience2{
   background-color: var(--black);
 
@@ -184,6 +192,17 @@
   filter: drop-shadow(0 0 20px var(--purpura));
 }
 
+.dark-mode .experience-slide-title{
+  color: var(--white);
+}
+
+
+.dark-mode  .experience-slide-period {
+    color: var(--purpura);
+}
+.dark-mode  .experience-slide-subti {
+    color: var(--purpura3);
+}
 
 /********************* WEBS ***************************/ 
 /*FONDO DE TODO EL HTML*/

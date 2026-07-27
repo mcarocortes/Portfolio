@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
-export const ExperiencePath = forwardRef<SVGPathElement>(
-    function ExperiencePath(_, ref) {
+export const EvolutionPath = forwardRef<SVGPathElement>(
+    function EvolutionPath(_, ref) {
         return (
             <svg
                 className="experience-path-svg"

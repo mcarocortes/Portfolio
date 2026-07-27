@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const NAV_IDS = ["Home", "About", "Projects", "Experience", "WhatIDo", "Contact"];
+const NAV_IDS = ["Home", "About", "Projects", "Evolution", "WhatIDo", "Contact"];
 
 export default function useActiveSection() {
   const [activeSection, setActiveSection] = useState("Home");

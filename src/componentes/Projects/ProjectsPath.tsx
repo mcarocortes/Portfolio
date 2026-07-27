@@ -18,9 +18,9 @@ export const ProjectsPathBeyond = forwardRef<SVGCircleElement>(
                         y2="0%"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop offset="0%" stopColor="var(--purpura3)" stopOpacity="0.65" />
-                        <stop offset="22%" stopColor="var(--purpura)" stopOpacity="0.85" />
-                        <stop offset="48%" stopColor="var(--purpura)" stopOpacity="1" />
+                        <stop offset="0%" stopColor="var(--white-transparent)" stopOpacity="1" />
+                        <stop offset="15%" stopColor="var(--purpura3)" stopOpacity="0.85" />
+                        <stop offset="30%" stopColor="var(--purpura)" stopOpacity="1" />
                         <stop offset="72%" stopColor="var(--purpura)" stopOpacity="1" />
                     </linearGradient>
                 </defs>
