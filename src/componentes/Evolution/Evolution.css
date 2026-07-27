@@ -106,6 +106,7 @@
 .experience-slides {
     position: relative;
     height: 100%;
+    
 }
 
 .experience-slide {
@@ -297,8 +298,8 @@
         margin: 0;
         padding:
             var(--margin-top-general)
-            1.5rem
-            2rem;
+            var(--margin-left-rigth-general)
+            var(--margin-top-general);
     }
 
     .experience-mobile-list .heading{
@@ -313,8 +314,9 @@
     }
 
     .experience-mobile-year {
+        text-transform: uppercase;
         font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
-        font-size: clamp(2.5rem, 12vw, 3.5rem);
+        font-size: 5vw;
         line-height: 1;
         color: var(--purpura3);
     }
@@ -324,6 +326,7 @@
         font-size: var(--font-size-h3);
         text-transform: uppercase;
         color: var(--purpura);
+        font-weight: 600;
     }
 
     .experience-mobile-description {

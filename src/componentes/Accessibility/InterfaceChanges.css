@@ -192,16 +192,19 @@
   filter: drop-shadow(0 0 20px var(--purpura));
 }
 
-.dark-mode .experience-slide-title{
+.dark-mode .experience-slide-title, .dark-mode .experience-mobile-description{
   color: var(--white);
 }
-
 
 .dark-mode  .experience-slide-period {
     color: var(--purpura);
 }
-.dark-mode  .experience-slide-subti {
+.dark-mode  .experience-slide-subti, .dark-mode .experience-slide-period {
     color: var(--purpura3);
+}
+
+.dark-mode .experience-mobile-title{
+  color: var(--white);
 }
 
 /********************* WEBS ***************************/ 

@@ -274,12 +274,12 @@ export default function Evolution() {
                 </h1>
                 {steps.map((step) => (
                     <li key={step.key} className="experience-mobile-item">
-                        <span className="experience-mobile-year">20{step.suffix}</span>
+                        <span className="experience-mobile-year">{t(step.period)}</span>
                         <h2 className="experience-mobile-title">
                             {t(step.title)}
                         </h2>
                         <h3 className="experience-slide-period">
-                            {t(step.period)}
+                           {t(step.subtitle)}
                         </h3>
                         <p className="experience-mobile-description">{step.description}</p>
                         <div className="experience-mobile-visual">
