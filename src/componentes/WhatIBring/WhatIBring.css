@@ -6,16 +6,15 @@
     position: sticky;
     z-index: 4;
     border-radius: 25px;
-    box-shadow: 2px -2px 10px #0003;
+    box-shadow: 2px -2px 10px var(--shadows);
     margin-bottom: -30px;
 }
 
 .main-wrapper-vertical {
-    padding: 60px;
+    padding: var(--margin-left-rigth-general);
     display: block;
     position: static;
     margin-top: -25px;
-
 }
 
 .section_stack {
@@ -43,9 +42,8 @@
 }
 
 .section_description {
-    top: 100px;
+    top: var(--margin-top-general);
     position: sticky;
-    height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,10 +56,11 @@
     background-color: var(--skillsBg);
     overflow: hidden;
     border-radius: 20px;
-    height: 55vh;
+    min-height: 45vh;
+    height: auto;
     position: sticky;
     top: 6rem;
-    box-shadow: 3px -3px 10px #837ae530;
+    box-shadow: 3px -3px 10px var(--purpura4);
     background-image: url("/src/assets/img/Skills/BgCiclesLigth.svg");
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -74,23 +73,23 @@
 
 .stack_card:hover {
     background-color: var(--purpura);
-    box-shadow: 6px -6px 20px #837ae550;
-    /*transform: translateY(-4px);*/
+    box-shadow: 6px -6px 20px var(--purpura3);
     background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
 
 }
 
-.stack_card:hover .card_description ul {
-    color: var(--ulSkills);
-}
-
-.stack_card:hover .card_description span {
-    color: #300c46;
-}
 
 .stack_card:hover .card_description h3,
-.stack_card:hover .card_description p {
-    color: white;
+.stack_card:hover .card_description p,
+.stack_card:hover .card_subtitle {
+    color: var(--white);
+}
+.stack_card:hover .card_description h4 {
+    color: var(--black);
+}
+
+.stack_card:hover .card_subtitle {
+    opacity: 0.92;
 }
 
 .ImgIcon {
@@ -99,6 +98,7 @@
 }
 
 .card_description {
+    font-family: var(--font-family-base);
     margin-left: 20px;
     display: flex;
     flex-direction: column;
@@ -108,32 +108,28 @@
 }
 
 .card_description h3 {
-    font-size: 40px;
+    margin: 0;
+    font-weight: var(--font-weight-600);
+}
+
+.card_subtitle {
+    margin-bottom: 10px;
+    font-size: var(--font-size-h4);
+    color: var(--purpura3);
 }
 
 .card_description span {
     color: var(--purpura);
-    /*font-family: "Platypi", serif;*/
-    font-optical-sizing: auto;
-    /*font-style: italic;*/
-    font-weight: 400;
-
     color: var(--purpura);
 }
 
-.card_description p,
-.card_description ul {
+.card_description p {
+    font-size: var(--font-size-base);
     color: var(--grayweb);
-    margin-top: 20px;
-    font-size: 22px;
-}
-
-.card_description ul {
-    color: var(--purpura);
 }
 
 .one {
-    top: 220px;
+    top: 170px;
 }
 
 .one .ImgIcon {
@@ -148,7 +144,7 @@
 }
 
 .two {
-    top: 250px;
+    top: 200px;
 }
 
 .two .ImgIcon {
@@ -163,7 +159,7 @@
 }
 
 .three {
-    top: 280px;
+    top: 230px;
 }
 
 .three .ImgIcon {
@@ -177,8 +173,38 @@
 }
 
 .four {
+    top: 260px;
+}
+
+.four .ImgIcon {
+    background-image: url("/src/assets/img/Skills/BlueWhite.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.stack_card.four:hover .ImgIcon {
+    background-image: url("/src/assets/img/Skills/BlueDark.svg");
+}
+
+.five {
+    top: 290px;
+}
+
+.five .ImgIcon {
+    background-image: url("/src/assets/img/Skills/MacaWhite.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.stack_card.five:hover .ImgIcon {
+    background-image: url("/src/assets/img/Skills/MacaDark.svg");
+}
+
+.six {
     opacity: 0;
-    top: 280px;
+    top: 320px;
     height: 40vh;
 }
 
@@ -203,7 +229,7 @@
 .card_description ul {
     font-size: 20px;
 }
-    .one {
+   /* .one {
     top: 260px;
     }
 
@@ -215,7 +241,7 @@
     
     .three {
     top: 290px;
-    }
+    }*/
 
 }
 
@@ -247,7 +273,7 @@
         width: auto;
     }
 
-        .one {
+       /* .one {
     top: 240px;
     }
 
@@ -261,10 +287,10 @@
     top: 280px;
     }
 
-        .four{
+    .five{
     top: 280px;
     height: 30vh;
-    }
+    }*/
 }
 
 @media screen and (max-width: 479px) {
@@ -297,7 +323,7 @@
         width: auto;
     }
 
-            .one {
+          /*  .one {
     top: 210px;
     }
 
@@ -311,8 +337,8 @@
     top: 250px;
     }
 
-        .four{
+        .five{
     top: 250px;
     height: 10vh;
-    }
+    }*/
 }

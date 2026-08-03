@@ -2,7 +2,7 @@
     "about": "About",
     "projects": "Projects",
     "evolution": "evolution",
-    "whatido": "What I Do",
+    "whatido": "What I Bring",
     "contact": "Contact",
 
     "designingIntelligent":"Designing Intelligent Digital Experiences",
@@ -37,6 +37,37 @@
       "webDevelopment": "Web Development",
       "brandDevelopment": "Brand Development"
 
+    },
+
+    "whatIBringSection": {
+      "title": "What I Bring",
+      "cards": {
+        "productThinking": {
+          "title": "Product Thinking",
+          "subtitle": "Real problems, real impact",
+          "description": "Every feature should solve a real problem. I focus on creating experiences that bring value to both users and the business."
+        },
+        "designDevelopment": {
+          "title": "Design × Development",
+          "subtitle": "Where creativity meets code",
+          "description": "With a background in industrial design and front-end engineering, I bridge creativity and technology to build intuitive digital products."
+        },
+        "collaborativeMindset": {
+          "title": "Collaborative Mindset",
+          "subtitle": "From idea to production",
+          "description": "I enjoy working across teams, contributing to technical decisions and helping transform ideas into reliable, production-ready solutions."
+        },
+        "aiImprovement": {
+          "title": "AI & Continuous Improvement",
+          "subtitle": "Smarter every day",
+          "description": "I embrace AI and emerging technologies to optimize workflows, automate repetitive tasks and keep learning every day."
+        },
+        "qualityFirst": {
+          "title": "Quality First",
+          "subtitle": "Built to last",
+          "description": "From clean code to thoughtful interactions, I care about performance, usability and maintainable solutions that last."
+        }
+      }
     },
 
     "evolutionSection": {

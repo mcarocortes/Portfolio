@@ -1,4 +1,6 @@
 /*************************************  INTERFACE CONFIGURATION **************************/
+
+
 .dark-mode {
   --text: var(--white);
   --white-transparent: var(--black-transparent);
@@ -77,7 +79,7 @@
 /********************* ABOUT   ***************************/ 
 
 .dark-mode .about-intro  {
-  /*background-color: var(--black);*/
+  background-color: var(--black);
   background-image: url("/src/assets/img/About/ProfilePicture_darkmode.png");
 }
 
@@ -207,6 +209,22 @@
   color: var(--white);
 }
 
+/*************************WHAT I BRING ***************/
+.dark-mode .page-wrapper-vertical {
+  box-shadow: 2px -2px 10px var(--purpura3);
+}
+
+.dark-mode .stack_card {
+    border: solid 1px var(--purpura4);
+    background-color: var(--black);
+    box-shadow: 3px -3px 10px var(--purpura3);
+    background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
+  }
+
+.dark-mode .stack_card:hover {
+  background-color: var(--purpura);
+  box-shadow: 6px -6px 20px var(--purpura3);
+}
 /********************* WEBS ***************************/ 
 /*FONDO DE TODO EL HTML*/
 .dark-mode .webs {
