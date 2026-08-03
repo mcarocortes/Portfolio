@@ -7,13 +7,12 @@ import Webs  from "../Webs/Webs";
 
 export default function LandingPage() {
   return (
-    <>        
+    <>               
+    <div className="about-scroll-runway" aria-hidden="true" />
         <About2 />
-        <div className="about-scroll-runway" aria-hidden="true" />
-        <Projects />
         <Evolution />
-        <Webs />
         <SkillsProjects/>
+        <Projects />
         <Contact />
 
     </>

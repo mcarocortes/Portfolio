@@ -43,10 +43,10 @@ export default function Evolution() {
     const steps = [
         {
             key: "industrial",
-            suffix: YEAR_SUFFIXES[0],           
+            suffix: YEAR_SUFFIXES[0],
             title: t("evolutionSection.steps.industrial.title"),
             subtitle: t("evolutionSection.steps.industrial.subtitle"),
-            period:  t("evolutionSection.steps.industrial.period"),
+            period: t("evolutionSection.steps.industrial.period"),
             description: t("evolutionSection.steps.industrial.description"),
             bgClass: "experience-visual-bg--industrial",
             fgClass: "experience-visual-fg--industrial",
@@ -56,7 +56,7 @@ export default function Evolution() {
             suffix: YEAR_SUFFIXES[1],
             title: t("evolutionSection.steps.web.title"),
             subtitle: t("evolutionSection.steps.web.subtitle"),
-            period:  t("evolutionSection.steps.web.period"),
+            period: t("evolutionSection.steps.web.period"),
             description: t("evolutionSection.steps.web.description"),
             bgClass: "experience-visual-bg--web",
             fgClass: "experience-visual-fg--web",
@@ -76,7 +76,7 @@ export default function Evolution() {
             suffix: YEAR_SUFFIXES[3],
             title: t("evolutionSection.steps.lead.title"),
             subtitle: t("evolutionSection.steps.lead.subtitle"),
-            period:  t("evolutionSection.steps.lead.period"),
+            period: t("evolutionSection.steps.lead.period"),
             description: t("evolutionSection.steps.lead.description"),
             bgClass: "experience-visual-bg--lead",
             fgClass: "experience-visual-fg--lead",
@@ -192,62 +192,60 @@ export default function Evolution() {
                         </aside>
 
                         <div className="experience-right">
-                            <div className="experience-slides">
-                                {steps.map((step, index) => {
-                                    const opacity = getSequentialSlideOpacity(index, stepFloat);
-                                    const parallax = (stepFloat - index) * 36 * opacity;
+                            {steps.map((step, index) => {
+                                const opacity = getSequentialSlideOpacity(index, stepFloat);
+                                const parallax = (stepFloat - index) * 36 * opacity;
 
-                                    return (
-                                        <article
-                                            key={step.key}
-                                            className={[
-                                                "experience-slide",
-                                                index === activeIndex ? "is-current" : "",
-                                            ].join(" ")}
+                                return (
+                                    <article
+                                        key={step.key}
+                                        className={[
+                                            "experience-slide",
+                                            index === activeIndex ? "is-current" : "",
+                                        ].join(" ")}
+                                        style={{
+                                            opacity,
+                                            visibility: opacity < 0.01 ? "hidden" : "visible",
+                                            zIndex: opacity > 0 ? 2 : 0,
+                                        }}
+                                        aria-hidden={index !== activeIndex}
+                                    >
+                                        <div
+                                            className="experience-slide-copy"
                                             style={{
-                                                opacity,
-                                                visibility: opacity < 0.01 ? "hidden" : "visible",
-                                                zIndex: opacity > 0 ? 2 : 0,
+                                                transform: `translate3d(0, ${parallax * 0.25}px, 0)`,
                                             }}
-                                            aria-hidden={index !== activeIndex}
-                                        >
-                                            <div
-                                                className="experience-slide-copy"
-                                                style={{
-                                                    transform: `translate3d(0, ${parallax * 0.25}px, 0)`,
-                                                }}
-                                            >  <h3 className="experience-slide-period">
-                                                    {t(step.period)}
-                                                </h3>
-                                                <h2 className="experience-slide-title">
-                                                    {t(step.title)}
-                                                </h2>
-                                                <h3 className="experience-slide-subti">
-                                                    {t(step.subtitle)}
-                                                </h3>
-                                                <p className="experience-slide-description">
-                                                    {step.description}
-                                                </p>
-                                            </div>
+                                        >  <h4 className="experience-slide-period">
+                                                {t(step.period)}
+                                            </h4>
+                                            <h2 className="experience-slide-title">
+                                                {t(step.title)}
+                                            </h2>
+                                            <h3 className="experience-slide-subti">
+                                                {t(step.subtitle)}
+                                            </h3>
+                                            <p className="experience-slide-description">
+                                                {step.description}
+                                            </p>
+                                        </div>
 
-                                            <div className="experience-visual">
-                                                <div
-                                                    className={`experience-visual-bg ${step.bgClass}`}
-                                                    style={{
-                                                        transform: `translate3d(0, ${parallax * 0.45}px, 0) scale(1.02)`,
-                                                    }}
-                                                />
-                                                <div
-                                                    className={`experience-visual-fg ${step.fgClass}`}
-                                                    style={{
-                                                        transform: `translate3d(0, ${parallax * -0.35}px, 0)`,
-                                                    }}
-                                                />
-                                            </div>
-                                        </article>
-                                    );
-                                })}
-                            </div>
+                                        <div className="experience-visual">
+                                            <div
+                                                className={`experience-visual-bg ${step.bgClass}`}
+                                                style={{
+                                                    transform: `translate3d(0, ${parallax * 0.45}px, 0) scale(1.02)`,
+                                                }}
+                                            />
+                                            <div
+                                                className={`experience-visual-fg ${step.fgClass}`}
+                                                style={{
+                                                    transform: `translate3d(0, ${parallax * -0.35}px, 0)`,
+                                                }}
+                                            />
+                                        </div>
+                                    </article>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -279,7 +277,7 @@ export default function Evolution() {
                             {t(step.title)}
                         </h2>
                         <h3 className="experience-slide-period">
-                           {t(step.subtitle)}
+                            {t(step.subtitle)}
                         </h3>
                         <p className="experience-mobile-description">{step.description}</p>
                         <div className="experience-mobile-visual">

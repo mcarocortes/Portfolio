@@ -67,11 +67,9 @@
 .experience-left {
     display: flex;
     flex-direction: column;
-    padding:
-        var(--margin-top-general)
-        var(--margin-left-rigth-general)
-        calc(var(--year-slot-height) + clamp(2rem, 5vh, 3.5rem))
-        var(--margin-left-rigth-general);
+    padding-top: var(--margin-top-general);
+    padding-left:        var(--margin-left-rigth-general);
+
 }
 
 .experience-heading .heading {
@@ -93,23 +91,16 @@
 }
 
 .experience-right {
+    margin-right: var(--margin-left-rigth-general);
+    height: 100vh;
     position: relative;
-    padding:
-        var(--margin-top-general)
-        var(--margin-left-rigth-general)
-        calc(var(--year-slot-height) + clamp(1.5rem, 4vh, 2.5rem))
-        clamp(0.5rem, 2vw, 1.5rem);
+
 }
 
 /* ===== SLIDES DERECHA ===== */
 
-.experience-slides {
-    position: relative;
-    height: 100%;
-    
-}
-
 .experience-slide {
+    padding-top: var(--margin-top-general);
     position: absolute;
     inset: 0;
     display: grid;
@@ -133,6 +124,7 @@
 .experience-slide-period {
     color: var(--purpura3);
     max-width: 100%;
+    margin: 0;
 }
 .experience-slide-subti {
     color: var(--purpura);
@@ -142,8 +134,7 @@
 .experience-slide-description {
     margin: 0;
     max-width: 100%;
-    font-size: clamp(0.95rem, 1.2vw, var(--font-size-base));
-    line-height: 1.55;
+    font-size: var(--font-size-base);
     color: var(--text);
     text-align: justify;
 }
@@ -154,9 +145,8 @@
     position: relative;
     align-self: end;
     justify-self: end;
-    width: min(100%, clamp(280px, 42vw, 560px));
-    min-height: clamp(240px, 46vh, 460px);
-    margin-top: auto;
+    width: 100%;
+    min-height: 100%;
 }
 
 .experience-visual-bg,
@@ -167,7 +157,8 @@
 }
 
 .experience-visual-bg {
-    inset: 10% 0 0 8%;
+    height: 95%;
+    width: 100%;
     background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.55), rgba(236, 236, 236, 0.95));
     opacity: 0.72;
@@ -176,10 +167,11 @@
 }
 
 .experience-visual-fg {
+    
     width: clamp(150px, 36%, 240px);
     height: clamp(150px, 36%, 240px);
     right: clamp(0.5rem, 6%, 1.75rem);
-    bottom: clamp(0.25rem, 3%, 1rem);
+    bottom: var(--margin-top-general);
     background: var(--gradient-purple);
     box-shadow:
         -10px 14px 36px rgba(90, 18, 250, 0.28),

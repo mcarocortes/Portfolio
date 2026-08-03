@@ -69,10 +69,7 @@ export default function Navbar() {
   }}
 >
   {t("about")}
-</Link>                <Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`} onClick={() => {
-  document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
-  window.history.replaceState(null, "", "#Projects");
-}}>{t("projects")}</Link>
+</Link>                
                 <Link to="#Evolution" className={`navbartext ${activeSection === "Evolution" ? "active" : ""}`} onClick={() => {
   document.getElementById("Evolution")?.scrollIntoView({ behavior: "smooth" });
   window.history.replaceState(null, "", "#Evolution");
@@ -81,6 +78,11 @@ export default function Navbar() {
   document.getElementById("WhatIDo")?.scrollIntoView({ behavior: "smooth" });
   window.history.replaceState(null, "", "#WhatIDo");
 }}>{t("whatido")}</Link>
+<Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`} onClick={() => {
+  document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
+  window.history.replaceState(null, "", "#Projects");
+}}>{t("projects")}</Link>
+
                 <Link to="#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}onClick={() => {
   document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" });
   window.history.replaceState(null, "", "#Contact");

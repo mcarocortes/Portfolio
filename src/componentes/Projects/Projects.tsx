@@ -172,9 +172,9 @@ export default function Projects() {
                 <div
                     className="main-wrapper projects-enter"
                     style={{
-                        opacity: projectsFade,
                         transform: `translateY(${enterY}px)`,
-                        visibility: projectsFade < 0.02 ? "hidden" : "visible",
+                        opacity: 1,
+                        visibility:  "visible",
                         pointerEvents: projectsFade < 0.02 ? "none" : "auto",
                     }}
                 >

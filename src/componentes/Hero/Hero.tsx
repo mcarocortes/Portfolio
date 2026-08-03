@@ -119,9 +119,6 @@ export default function Hero() {
         </div>
 
       </div>
-
-      <div className='distance'></div>
-
     </section>
 
   );

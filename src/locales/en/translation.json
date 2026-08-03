@@ -42,31 +42,31 @@
     "evolutionSection": {
       "subtitleLine": "Del diseño al desarrollo web",
       "steps": {
-        "industrial": {
-          "title": "Diseñadora Industrial",
-          "subtitle": "Transformar ideas, diseñar productos y  gestionar proyectos",
-          "period": "2016-2021",
-          "description": "Mi carrera comenzó diseñando productos físicos. Aprendí a investigar, prototipar y resolver problemas pensando siempre en las personas. Esa forma de entender el diseño sigue guiando cada interfaz que desarrollo hoy."
-        },
-        "web": {
-          "title": "Desarrollo Web",
-          "period": "2022-2024",
-          "subtitle": "Transformando ideas en productos digitales",
-          "description": "El desarrollo web me permitió convertir el diseño en experiencias reales e interactivas. Desde entonces he construido aplicaciones web y móviles, resolviendo problemas, diseñando soluciones y construyendo funcionalidades que aporten valor."
-        },
-        "ai": {
-          "title": "Especialización en IA y Big Data",
-          "period": "2025",
-          "subtitle": "Aprender a pensar más allá de la interfaz",
-          "description": "La IA amplió mi forma de resolver problemas. Aprendí a trabajar con datos, automatización y nuevas tecnologías para crear soluciones más inteligentes y eficientes."
-        },
-        "lead": {
-          "title": "Líder de Equipo Front-End",
-          "period": "2026-Actualidad",
-          "subtitle": "Impulsar la evolución del producto a través de la colaboración",
-          "description": "Actualmente lidero el desarrollo Front-End de una aplicación en producción, colaborando en decisiones técnicas, nuevas funcionalidades y la evolución continua del producto con foco en calidad y UX."
-        }
-      }
+  "industrial": {
+    "title": "Industrial Designer",
+    "period": "2016–2021",
+    "subtitle": "Human-centered design",
+    "description": "My career began designing physical products through research, prototyping, and project management. This user-centered approach continues to shape how I design and build digital products today."
+  },
+  "web": {
+    "title": "Web Development",
+    "period": "2022–2024",
+    "subtitle": "From design to code",
+    "description": "I transitioned into web development to turn ideas into digital experiences. Since then, I've built web and mobile applications with a strong focus on usability, performance, and user value."
+  },
+  "ai": {
+    "title": "AI & Big Data Specialization",
+    "period": "2025",
+    "subtitle": "Data, AI & automation",
+    "description": "I expanded my perspective by exploring artificial intelligence, data, and automation to create smarter, more efficient, and future-oriented solutions."
+  },
+  "lead": {
+    "title": "Front-End Team Lead",
+    "period": "2026–Present",
+    "subtitle": "Product, leadership & collaboration",
+    "description": "Today I lead the Front-End development of a production application, contributing to technical decisions, new features, and the product's continuous evolution with a strong focus on quality and user experience."
+  }
+}
     }
 
 

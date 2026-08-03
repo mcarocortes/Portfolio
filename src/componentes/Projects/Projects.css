@@ -8,9 +8,6 @@
     padding:0;
     display: block;
     position: relative;
-    border-radius: 25px;
-    border-end-start-radius: 0;
-    border-end-end-radius: 0;
     background-color: var(--white);
     box-shadow: -2px 2px 10px var(--shadows);
     will-change: opacity, transform;
@@ -54,6 +51,8 @@
     height: 400vh;
     position: relative;
     z-index: 2;
+            margin-top: -50px;
+
 }
 
 
@@ -69,7 +68,8 @@
     top: 0;
     height: 100vh;
     overflow: hidden;
-    border-radius: 25px;
+    border-end-end-radius: 25px;
+    border-end-start-radius: 25px;
     background:linear-gradient(to top, var(--purpura4) -40%, var(--white) 50%);
     margin-bottom: -25px;
     will-change: transform;
@@ -390,7 +390,9 @@
     position: relative;
     overflow: visible;
 
-    
+    border-end-end-radius: 25px;
+        border-end-start-radius: 25px;
+
     display: flex;
     flex-direction: column;
     height: auto;
