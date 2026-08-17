@@ -11,10 +11,16 @@ type Particle = {
     phase: number;
 };
 
-const PARTICLE_COUNT = 48;
+const DEFAULT_PARTICLE_COUNT = 90;
 const PURPLE = { r: 161, g: 128, b: 210 };
 
-export default function WhatIBringParticles({ pointer }: { pointer: Pointer }) {
+export default function WhatIBringParticles({
+    pointer,
+    count = DEFAULT_PARTICLE_COUNT,
+}: {
+    pointer: Pointer;
+    count?: number;
+}) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const pointerRef = useRef(pointer);
     pointerRef.current = pointer;
@@ -41,7 +47,7 @@ export default function WhatIBringParticles({ pointer }: { pointer: Pointer }) {
         };
 
         const initParticles = () => {
-            particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+            particles = Array.from({ length: count }, () => ({
                 x: Math.random() * width,
                 y: Math.random() * height,
                 vx: (Math.random() - 0.5) * 0.35,
@@ -100,7 +106,14 @@ export default function WhatIBringParticles({ pointer }: { pointer: Pointer }) {
             cancelAnimationFrame(frame);
             observer.disconnect();
         };
-    }, []);
+    }, [count]);
 
-    return <canvas className="what-i-bring__particles" ref={canvasRef} aria-hidden="true" />;
+    return (
+        <canvas
+            className="what-i-bring__particles"
+            ref={canvasRef}
+            aria-hidden="true"
+            style={{ pointerEvents: "none" }}
+        />
+    );
 }

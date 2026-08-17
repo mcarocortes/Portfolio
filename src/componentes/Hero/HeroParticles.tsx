@@ -1,7 +1,7 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { useGLTF } from "@react-three/drei"
 import * as THREE from "three"
-import { memo, useMemo, useRef } from "react"
+import { memo, useMemo, useRef, type RefObject } from "react"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
 import { scrollTransition } from "../../lib/scrollTransitionState"
 
@@ -228,16 +228,26 @@ function FaceParticles() {
   )
 }
 
-function HeroParticles() {
+function HeroParticles({
+  eventSource,
+}: {
+  eventSource?: RefObject<HTMLElement | null>;
+}) {
   return (
     <div className="heroParticles">
       <Canvas
+        eventSource={eventSource}
         camera={{
           position: [0, -0.2, 3.2],
           fov: 32
         }}
         dpr={[1, 2]}
-        style={{ width: "100vw", height: "100vh", display: "block" }}
+        style={{
+          width: "100vw",
+          height: "100vh",
+          display: "block",
+          pointerEvents: "none",
+        }}
       >
         <CursorWave />
         <FaceParticles />

@@ -1,6 +1,6 @@
 import "./WhatIBring.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import WhatIBringParticles from "./WhatIBringParticles";
 
@@ -11,6 +11,9 @@ const CARDS = [
     { key: "aiImprovement", span: 4, icon: "blue" },
     { key: "qualityFirst", span: 4, icon: "maca" },
 ] as const;
+
+const PARTICLE_COUNT_DESKTOP = 180;
+const PARTICLE_COUNT_MOBILE = 90;
 
 const cardReveal = {
     hidden: { opacity: 0, y: 28 },
@@ -59,7 +62,18 @@ export default function WhatIBring() {
     const { t } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
     const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null);
+    const [particleCount, setParticleCount] = useState(PARTICLE_COUNT_MOBILE);
     const explorerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const media = window.matchMedia("(min-width: 992px)");
+        const updateCount = () =>
+            setParticleCount(media.matches ? PARTICLE_COUNT_DESKTOP : PARTICLE_COUNT_MOBILE);
+
+        updateCount();
+        media.addEventListener("change", updateCount);
+        return () => media.removeEventListener("change", updateCount);
+    }, []);
 
     const activeCard = CARDS[activeIndex];
 
@@ -75,7 +89,16 @@ export default function WhatIBring() {
     };
 
     return (
-        <section id="WhatIDo" className="what-i-bring">
+        <section
+            id="WhatIDo"
+            className="what-i-bring"
+            onPointerMove={(e) => trackPointer(e.clientX, e.clientY)}
+            onPointerLeave={() => setPointer(null)}
+        >
+            <div className="what-i-bring__backdrop" aria-hidden="true">
+                <WhatIBringParticles pointer={pointer} count={particleCount} />
+            </div>
+
             <motion.header
                 className="what-i-bring__header"
                 initial={{ opacity: 0, y: 24 }}
@@ -104,14 +127,7 @@ export default function WhatIBring() {
             </div>
 
             {/* Tablet / mobile: explorador interactivo + partículas */}
-            <div
-                ref={explorerRef}
-                className="what-i-bring__explorer"
-                onPointerMove={(e) => trackPointer(e.clientX, e.clientY)}
-                onPointerLeave={() => setPointer(null)}
-            >
-                <WhatIBringParticles pointer={pointer} />
-
+            <div ref={explorerRef} className="what-i-bring__explorer">
                 <div
                     className="what-i-bring__chips"
                     role="tablist"

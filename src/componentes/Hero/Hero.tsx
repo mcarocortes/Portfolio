@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import './Hero.css'
 
@@ -33,8 +33,7 @@ export default function Hero() {
   const { t } = useTranslation();
 
   const { act1, act2 } = useScrollTransitionContext();
-
-
+  const heroSectionRef = useRef<HTMLDivElement>(null);
 
   const heroFadeOut = act2 > 0.92 ? Math.min((act2 - 0.92) / 0.08, 1) : 0;
 
@@ -96,13 +95,13 @@ export default function Hero() {
 
     >
 
-      <div className="hero-section">
+      <div ref={heroSectionRef} className="hero-section">
 
         <HeroArcs />
 
         <div className='hero-particles'>
 
-          <HeroParticles />
+          <HeroParticles eventSource={heroSectionRef} />
 
         </div>
 

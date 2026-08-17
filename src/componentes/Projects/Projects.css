@@ -599,10 +599,12 @@
     }
 
     .main-wrapper{
-        padding-top: var(--margin-top-general);
+                padding-top: 0;
+
+        /*padding-top: var(--margin-top-general);*/
     }
     .wrapperA {
-        padding-top: 0;
+        padding-top: var(--margin-top-general);
         position: static;
         height: auto;
         overflow: visible;
