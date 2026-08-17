@@ -1,11 +1,3 @@
-/*#Home {
-  flex-flow: column;
-  align-items: center;
-  height: auto;
-  margin-top: 0;
-  display: block;
-  overflow: hidden;
-}*/
 .hero-wrapper {
   font-family: var(--font-family-base);
   z-index: 2;
@@ -31,21 +23,6 @@
   overflow: hidden;
 }
 
-/*
-.hero-section {
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  margin-top: 0;
-  padding: 0 0 0;
-  position: sticky;
-  top: 0;
-  overflow: visible;
-  margin-bottom: -60px ; Subir el about
-}
-*/
 
 .hero-particles {
   position: absolute;
@@ -58,56 +35,7 @@
   z-index: 6;
   overflow: hidden;
 }
-/*
-.hero-subtitle {
-  width: 100%;
-  margin-top: -165px;
-}
 
-
-.hero-subtitle {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  z-index: 1;
-  width: 100%;
-  margin-top: -131px;
-  bottom: 15px;
-}
-
-.outLineScroll {
-  display: flex;
-  justify-content: center;
-  border: 1px solid #2f1313 !important;
-  border-radius: 25px;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-.scroll {
-  background-color: var(--white);
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-}
-
-.distance {
-  color: white;
-  width: 100%;
-  margin-top: 0px;
-  position: relative;
-  height: 280vh;
-}
-
-   ── Transición Hero → About ──
-.arc-top,
-.arc-bottom {
-  opacity: calc(1 - var(--act1, 0));
-  transition: none;
-}
-*/
 
 .heroParticles {
   background-color: transparent;
@@ -122,23 +50,8 @@
   display: block;
 }
 
-/*.dotSpace-hero{
-  border: solid 2px yellow;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 50; 
-}*/
 
 .content-hero {
-  /* height: 100%;
-  width: 60% ;
-  border: solid 2px blue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 50px;*/
 
   position: relative;
   z-index: 5;
@@ -214,41 +127,11 @@
 
 
 @media screen and (max-width: 1280px) {
- /* .distance {
-    margin-top: -81px;
-    height: 98vh;
-  }
-*/
-
 
 }
 
 @media screen and (max-width: 991px) {
-  /*.hero-wrapper {
-    z-index: 1;
-    margin-top: 0;
-    top: 0;
-    overflow: visible;
-  }
 
-  .hero-section {
-    z-index: auto;
-    margin-top: 0;
-    padding: 0 0 0;
-    position: sticky;
-    overflow: visible;
-  }
-
-  .hero-subtitle {
-    margin-top: -136px;
-    bottom: 25px !important;
-  }
-
-  .distance {
-    margin-top: -150px;
-    height: 98vh;
-  }
-*/
 }
 
 @media screen and (max-width: 767px) {

@@ -4,6 +4,7 @@
 .dark-mode {
   --text: var(--white);
   --white-transparent: var(--black-transparent);
+  background-color: var(--black);
 }
 
 .dark-mode  .heading span{
@@ -125,6 +126,11 @@
 
 }
 
+.dark-mode .about-scroll-runway,
+.dark-mode .sobremi {
+  background-color: var(--black);
+}
+
 
 /*************************** PROJECTS ***************************/
 .dark-mode  .main-wrapper {
@@ -215,18 +221,22 @@
 }
 
 .dark-mode .stack_card {
-    border: solid 1px var(--purpura4);
+    border: solid 1px var(--purpura3);
     background-color: var(--black);
-    box-shadow: 3px -3px 10px var(--purpura3);
+    box-shadow: 3px -3px 10px var(--purpura);
     background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
   }
 
 .dark-mode .stack_card:hover {
   background-color: var(--purpura);
-  box-shadow: 6px -6px 20px var(--purpura3);
+  box-shadow: 6px -6px 20px var(--purpura);
 }
+
+
 /********************* WEBS ***************************/ 
 /*FONDO DE TODO EL HTML*/
 .dark-mode .webs {
   background-color: var(--black);
 }
+
+

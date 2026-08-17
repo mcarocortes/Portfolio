@@ -5,19 +5,17 @@
   display: block;
   width: 100%;
   min-height: 100vh;
-  /*min-height: calc(100vh + 240px);*/
-  /*padding-bottom: 8vh;*/
+  padding-top: 200vh;
   isolation: isolate;
 }
 
 .about-anchor {
+  display: block;
   height: 130vh !important;
   width: 100%;
   pointer-events: none;
-  scroll-margin-top: 100px; 
-  margin-top: 200vh;        /* scroll donde About se ve bien — ajusta */
-
-} 
+  scroll-margin-top: 100px;
+}
 
 .about-intro {
   position: fixed;

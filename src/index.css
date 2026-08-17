@@ -2,7 +2,7 @@
 :root {
   /* COLORS*/
   --text: #292b29;
-  --black: #292b29;
+  --black: #1f221f; /* #292b29;*/
   --white: #f4f4f4;
   --graybg: #ececec;
   --purpura: #5a12fa;
