@@ -41,6 +41,10 @@
 
     "whatIBringSection": {
       "title": "Que Ofrezco",
+      "eyebrow": "Cómo trabajo",
+      "carouselPrev": "Diapositiva anterior",
+      "carouselNext": "Diapositiva siguiente",
+      "swipeHint": "Desliza la tarjeta o elige un tema",
       "cards": {
         "productThinking": {
           "title": "Pensamiento de Producto",

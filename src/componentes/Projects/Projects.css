@@ -1,10 +1,11 @@
 .page-wrapper {
     display: block;
     position: sticky;
-    z-index: 3;
+    z-index: 4;
 }
 
 .main-wrapper {
+    border-radius: 25px;
     padding:0;
     display: block;
     position: relative;
@@ -68,10 +69,10 @@
     top: 0;
     height: 100vh;
     overflow: hidden;
-    border-end-end-radius: 25px;
-    border-end-start-radius: 25px;
+    border-radius: 25px;
     background:linear-gradient(to top, var(--purpura4) -40%, var(--white) 50%);
     margin-bottom: -25px;
+    
     will-change: transform;
         box-shadow: -2px 2px 10px var(--purpura4);
 

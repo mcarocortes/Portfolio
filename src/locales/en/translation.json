@@ -41,6 +41,10 @@
 
     "whatIBringSection": {
       "title": "What I Bring",
+      "eyebrow": "How I work",
+      "carouselPrev": "Previous slide",
+      "carouselNext": "Next slide",
+      "swipeHint": "Swipe the card or tap a topic",
       "cards": {
         "productThinking": {
           "title": "Product Thinking",
@@ -71,7 +75,7 @@
     },
 
     "evolutionSection": {
-      "subtitleLine": "Del diseño al desarrollo web",
+      "subtitleLine": "From design to web development",
       "steps": {
   "industrial": {
     "title": "Industrial Designer",

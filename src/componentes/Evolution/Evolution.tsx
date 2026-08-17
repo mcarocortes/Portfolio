@@ -264,29 +264,31 @@ export default function Evolution() {
                 </div>
             </div>
 
-            <ol className="experience-mobile-list">
+            <div className="experience-mobile">
                 <h1 className="heading">
                     {t("evolution")}
                     <br />
                     <span>{t("evolutionSection.subtitleLine")}</span>
                 </h1>
-                {steps.map((step) => (
-                    <li key={step.key} className="experience-mobile-item">
-                        <span className="experience-mobile-year">{t(step.period)}</span>
-                        <h2 className="experience-mobile-title">
-                            {t(step.title)}
-                        </h2>
-                        <h3 className="experience-slide-period">
-                            {t(step.subtitle)}
-                        </h3>
-                        <p className="experience-mobile-description">{step.description}</p>
-                        <div className="experience-mobile-visual">
-                            <div className={`experience-visual-bg ${step.bgClass}`} />
-                            <div className={`experience-visual-fg ${step.fgClass}`} />
-                        </div>
-                    </li>
-                ))}
-            </ol>
+                <ol className="experience-mobile-list">
+                    {steps.map((step) => (
+                        <li key={step.key} className="experience-mobile-item">
+                            <span className="experience-mobile-year">{t(step.period)}</span>
+                            <h2 className="experience-mobile-title">
+                                {t(step.title)}
+                            </h2>
+                            <h3 className="experience-slide-period">
+                                {t(step.subtitle)}
+                            </h3>
+                            <p className="experience-mobile-description">{step.description}</p>
+                            <div className="experience-mobile-visual">
+                                <div className={`experience-visual-bg ${step.bgClass}`} />
+                                <div className={`experience-visual-fg ${step.fgClass}`} />
+                            </div>
+                        </li>
+                    ))}
+                </ol>
+            </div>
         </section>
     );
 }

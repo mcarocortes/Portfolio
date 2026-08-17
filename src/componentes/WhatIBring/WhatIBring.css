@@ -1,341 +1,329 @@
-/***************************PARA SCROOLL VERTICAL********************/
+/* ===== WHAT I BRING — grid desktop + explorador interactivo mobile ===== */
 
-.page-wrapper-vertical {
-    color: var(--text);
-    display: block;
-    position: sticky;
-    z-index: 4;
-    border-radius: 25px;
-    box-shadow: 2px -2px 10px var(--purpura);
+.what-i-bring {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-family-base);
+    background-color: var(--purpura4);
+    border-radius: 0 25px 0 0;
     margin-bottom: -30px;
+    padding-top:var(--margin-top-general);
+    padding-bottom:var(--margin-top-general);
+    padding-left:var(--margin-left-rigth-general);
+    padding-right:var(--margin-left-rigth-general);
+    min-height: 100vh;
+    margin-top: -30px;
 }
 
-.main-wrapper-vertical {
-    padding: var(--margin-left-rigth-general);
-    display: block;
-    position: static;
-    margin-top: -25px;
+.what-i-bring__header {
+    max-width: 720px;
+    margin: 0 auto clamp(2.5rem, 6vh, 3.5rem);
+    text-align: center;
 }
 
-.section_stack {
-    display: block;
-    position: static;
+
+.what-i-bring__title {
+    margin: 0;
 }
 
-.container-large {
-    margin-top: 80px;
-    width: 100%;
-    position: static;
-}
-
-.stack_component {
+/* —— shared card —— */
+.what-i-bring__card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10rem;
-    align-items: stretch;
-    justify-content: space-between;
-}
-
-.section_description {
-    top: var(--margin-top-general);
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.stack_card {
-    display: flex;
-    padding: 20px;
-    border: solid 1px var(--purpura4);
-    background-color: var(--skillsBg);
-    overflow: hidden;
+    border: 1px solid rgba(90, 18, 250, 0.14);
     border-radius: 20px;
-    min-height: 45vh;
-    height: auto;
-    position: sticky;
-    top: 6rem;
-    box-shadow: 3px -3px 10px var(--purpura4);
+    background-color: rgba(255, 255, 255, 0.55);
     background-image: url("/src/assets/img/Skills/BgCiclesLigth.svg");
     background-position: left bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    overflow: hidden;
     transition:
-        background-color 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
 }
 
-.stack_card:hover {
-    background-color: var(--purpura);
-    box-shadow: 6px -6px 20px var(--purpura3);
-    background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
-
-}
-
-
-.stack_card:hover .card_description h3,
-.stack_card:hover .card_description p,
-.stack_card:hover .card_subtitle {
-    color: var(--white);
-}
-.stack_card:hover .card_description h4 {
+.what-i-bring__index {
+    font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
     color: var(--purpura4);
-    text-shadow: 2px 2px var(--black);
-
+    margin-bottom: 0.65rem;
 }
 
-.stack_card:hover .card_subtitle {
+.what-i-bring__icon {
+    position: absolute;
+    right: 0.85rem;
+    bottom: 0.85rem;
+    width:50%;
+    height: 100%;
     opacity: 0.92;
+    pointer-events: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.ImgIcon {
-    height: auto;
-    width: 50%;
-}
-
-.card_description {
-    font-family: var(--font-family-base);
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
-    width: 50%;
-}
-
-.card_description h3 {
-    margin: 0;
-    font-weight: var(--font-weight-600);
-}
-
-.card_subtitle {
-    margin-bottom: 10px;
-    font-size: var(--font-size-h4);
-    color: var(--purpura3);
-}
-
-.card_description span {
-    color: var(--purpura);
-    color: var(--purpura);
-}
-
-.card_description p {
-    font-size: var(--font-size-base);
-    color: var(--grayweb);
-}
-
-.one {
-    top: 25vh;
-}
-
-.one .ImgIcon {
+.what-i-bring__card--icon-blue .what-i-bring__icon {
     background-image: url("/src/assets/img/Skills/BlueWhite.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
-.stack_card.one:hover .ImgIcon {
-    background-image: url("/src/assets/img/Skills/BlueDark.svg");
-}
-
-.two {
-    top: 28vh;
-}
-
-.two .ImgIcon {
+.what-i-bring__card--icon-maca .what-i-bring__icon {
     background-image: url("/src/assets/img/Skills/MacaWhite.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
-.stack_card.two:hover .ImgIcon {
-    background-image: url("/src/assets/img/Skills/MacaDark.svg");
-}
-
-.three {
-    top: 31vh;
-}
-
-.three .ImgIcon {
+.what-i-bring__card--icon-green .what-i-bring__icon {
     background-image: url("/src/assets/img/Skills/GreenWhite.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.stack_card.three:hover .ImgIcon {
-    background-image: url("/src/assets/img/Skills/GreenDark.svg");
 }
 
-.four {
-    top: 34vh;
+.what-i-bring__body {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
 }
 
-.four .ImgIcon {
-    background-image: url("/src/assets/img/Skills/BlueWhite.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+.what-i-bring__card-title {
+    margin: 0 0 0.4rem;
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-600);
+    line-height: 1.15;
+    color: var(--text);
 }
 
-.stack_card.four:hover .ImgIcon {
-    background-image: url("/src/assets/img/Skills/BlueDark.svg");
+.what-i-bring__card-subtitle {
+    margin: 0 0 0.65rem;
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-600);
+    color: var(--purpura3);
+    line-height: 1.3;
 }
 
-.five {
-    top: 37vh;
+.what-i-bring__card-text {
+    margin: 0;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--grayweb);
+    max-width: 100%;
 }
 
-.five .ImgIcon {
-    background-image: url("/src/assets/img/Skills/MacaWhite.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+/* —— desktop grid —— */
+.what-i-bring__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(0.85rem, 1.8vw, 1.25rem);
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
-.stack_card.five:hover .ImgIcon {
-    background-image: url("/src/assets/img/Skills/MacaDark.svg");
+.what-i-bring__card--grid {
+    min-height: clamp(220px, 28vh, 320px);
+    padding: clamp(1.25rem, 2.5vw, 1.75rem);
+    background-size: 52%;
+    box-shadow: 0 12px 32px rgba(90, 18, 250, 0.06);
 }
 
-.six {
-    opacity: 0;
-    top: 320px;
-    height: 40vh;
+.what-i-bring__card--grid .what-i-bring__index {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.75rem;
 }
 
-.spacer2 {
-    width: 100%;
-    height: 400vh
+.what-i-bring__card--grid .what-i-bring__icon {
+    width: clamp(72px, 12vw, 112px);
+    height: clamp(72px, 12vw, 112px);
 }
 
+.what-i-bring__card--grid:hover {
+    transform: translateY(-4px);
+    border-color: rgba(90, 18, 250, 0.35);
+    box-shadow: 0 18px 40px rgba(90, 18, 250, 0.12);
+}
+
+.what-i-bring__card--grid:hover .what-i-bring__icon {
+    transform: scale(1.06) rotate(-3deg);
+}
+
+.what-i-bring__card--span-7 { grid-column: span 7; }
+.what-i-bring__card--span-5 { grid-column: span 5; }
+.what-i-bring__card--span-4 { grid-column: span 4; }
+
+.what-i-bring__card--span-7 .what-i-bring__card-text {
+    max-width: 48ch;
+}
+
+/* —— mobile explorer (hidden desktop) —— */
+.what-i-bring__explorer {
+    display: none;
+}
 
 @media screen and (max-width: 991px) {
-    .padding-global {
-        padding: 0;
-    }
-    .card_description h3 {
-    font-size: 35px;
-}
-.ImgIcon {
-    height: auto;
-    width: 40%;
-}
-.card_description p,
-.card_description ul {
-    font-size: 20px;
-}
-   /* .one {
-    top: 260px;
-    }
-
-    
-    .two {
-    top: 275px;
-    }
-    
-    
-    .three {
-    top: 290px;
-    }*/
-
-}
-
-@media screen and (max-width: 767px) {
-    
-   .stack_card {
-        padding: 20px;
-        padding-top: 30px;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-
-    .card_description {
-        width: auto;
-        margin-bottom: 30px;
-    }
-
-    .card_description h3 {
-        font-size: 35px;
-    }
-
-    .card_description ul {
+    .what-i-bring__grid {
         display: none;
     }
 
-    .ImgIcon {
-        height: 260px;
-        width: auto;
+    .what-i-bring__body {
+        max-width: 45%;
     }
 
-       /* .one {
-    top: 240px;
+    .what-i-bring__explorer {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1.25rem;
+        border-radius: 22px;
+        border: 1px solid rgba(90, 18, 250, 0.12);
+        background: rgba(255, 255, 255, 0.35);
+        overflow: hidden;
+        touch-action: pan-y;
+        height: auto;
     }
 
-    
-    .two {
-    top: 260px;
-    }
-    
-    
-    .three {
-    top: 280px;
+    .what-i-bring__particles {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.85;
     }
 
-    .five{
-    top: 280px;
-    height: 30vh;
-    }*/
+    .what-i-bring__chips,
+    .what-i-bring__stage,
+    .what-i-bring__stepper {
+        position: relative;
+        z-index: 1;
+    }
+
+    .what-i-bring__chips {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .what-i-bring__chips::-webkit-scrollbar {
+        display: none;
+    }
+
+    .what-i-bring__chip {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.5rem 0.85rem;
+        border: 1px solid rgba(90, 18, 250, 0.18);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--text);
+        font-family: var(--font-family-base);
+        font-size: var(--font-size-underBase);
+        cursor: pointer;
+        transition:
+            background-color 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .what-i-bring__chip.is-active {
+        background: var(--purpura);
+        border-color: var(--purpura);
+        color: var(--white);
+        box-shadow: 0 5px 5px rgba(90, 18, 250, 0.28);
+        transform: translateY(-1px);
+    }
+
+    .what-i-bring__chip-num {
+        font-size: var(--font-size-h4);
+        font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+        letter-spacing: -0.03em;
+    }
+
+    .what-i-bring__chip-label {
+        max-width: 11rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: var(--font-size-h4);
+    }
+
+    .what-i-bring__stage {
+        min-height: 280px;
+    }
+
+    .what-i-bring__card--stage {
+        min-height: 50vh;
+        padding: 1.1rem 1.1rem 4.5rem;
+        background-size: 55%;
+        box-shadow: 0 12px 32px rgba(90, 18, 250, 0.1);
+        cursor: grab;
+        touch-action: pan-y;
+    }
+
+    .what-i-bring__card--stage:active {
+        cursor: grabbing;
+    }
+
+    .what-i-bring__card--stage .what-i-bring__card-text {
+        max-width: none;
+    }
+
+    .what-i-bring__swipe-hint {
+        margin: 0.75rem 0 0;
+        text-align: center;
+        font-size: var(--font-size-underBase);
+        color: var(--purpura3);
+        opacity: 0.85;
+    }
+
+    .what-i-bring__stepper {
+        display: flex;
+        justify-content: center;
+        gap: 0.45rem;
+        margin-top: 1rem;
+    }
+
+    .what-i-bring__step {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--purpura4);
+        opacity: 0.4;
+        transition:
+            width 0.3s ease,
+            opacity 0.3s ease,
+            background-color 0.3s ease;
+    }
+
+    .what-i-bring__step.is-active {
+        width: 22px;
+        opacity: 1;
+        background: var(--purpura);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .what-i-bring__header {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .what-i-bring__explorer {
+        margin: 0;
+        padding: 1rem;
+    }
 }
 
 @media screen and (max-width: 479px) {
-    .main-wrapper-vertical {
-        padding: 40px;
+    .what-i-bring {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
-
-
-    .stack_card {
-        padding: 20px;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-    }
-
-    .card_description {
-        margin: 0;
-    }
-
-    .card_description h3 {
-        font-size: 30px;
-    }
-
-    .card_description p {
-        font-size: 18px;
-    }
-
-    .ImgIcon {
-        height: 200px;
-        width: auto;
-    }
-
-          /*  .one {
-    top: 210px;
-    }
-
-    
-    .two {
-    top: 230px;
-    }
-    
-    
-    .three {
-    top: 250px;
-    }
-
-        .five{
-    top: 250px;
-    height: 10vh;
-    }*/
 }

@@ -215,21 +215,60 @@
   color: var(--white);
 }
 
-/*************************WHAT I BRING ***************/
-.dark-mode .page-wrapper-vertical {
-  box-shadow: 2px -2px 10px var(--purpura3);
+/*************************WHAT I BRING 2.0 ***************/
+.dark-mode .what-i-bring {
+  background-color: var(--black);
 }
 
-.dark-mode .stack_card {
-    border: solid 1px var(--purpura3);
-    background-color: var(--black);
-    box-shadow: 3px -3px 10px var(--purpura);
-    background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
-  }
+.dark-mode .what-i-bring__card {
+  background-color: rgba(41, 43, 41, 0.72);
+  border-color: rgba(191, 193, 252, 0.22);
+  background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
+  box-shadow: 0 12px 32px rgba(90, 18, 250, 0.08);
+}
 
-.dark-mode .stack_card:hover {
-  background-color: var(--purpura);
-  box-shadow: 6px -6px 20px var(--purpura);
+.dark-mode .what-i-bring__card:hover {
+  border-color: rgba(191, 193, 252, 0.45);
+  box-shadow: 0 18px 40px rgba(90, 18, 250, 0.16);
+}
+
+.dark-mode .what-i-bring__explorer {
+  background: rgba(41, 43, 41, 0.55);
+  border-color: rgba(191, 193, 252, 0.18);
+}
+
+.dark-mode .what-i-bring__chip {
+  background: rgba(41, 43, 41, 0.8);
+  border-color: rgba(191, 193, 252, 0.22);
+  color: var(--white);
+}
+
+.dark-mode .what-i-bring__chip.is-active {
+  color: var(--white);
+}
+
+.dark-mode .what-i-bring__card-title {
+  color: var(--white);
+}
+
+.dark-mode .what-i-bring__card-text {
+  color: rgba(244, 244, 244, 0.78);
+}
+
+.dark-mode .what-i-bring__index {
+  color: var(--purpura3);
+}
+
+.dark-mode .what-i-bring__card--icon-blue .what-i-bring__icon {
+  background-image: url("/src/assets/img/Skills/BlueDark.svg");
+}
+
+.dark-mode .what-i-bring__card--icon-maca .what-i-bring__icon {
+  background-image: url("/src/assets/img/Skills/MacaDark.svg");
+}
+
+.dark-mode .what-i-bring__card--icon-green .what-i-bring__icon {
+  background-image: url("/src/assets/img/Skills/GreenDark.svg");
 }
 
 
