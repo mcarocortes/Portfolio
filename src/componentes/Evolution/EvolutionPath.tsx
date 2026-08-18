@@ -34,7 +34,7 @@ export const EvolutionPath = forwardRef<SVGPathElement>(
                         C 940 40, 1080 180, 960 320
                         C 820 480, 560 420, 460 560
                         C 360 700, 520 860, 760 780
-                        C 980 710, 1180 880, 1040 940
+                        C 980 710, 1180 880, 1040 1500
                     "
                     stroke="var(--purpura4)"
                 />
@@ -46,7 +46,7 @@ export const EvolutionPath = forwardRef<SVGPathElement>(
                         C 940 40, 1080 180, 960 320
                         C 820 480, 560 420, 460 560
                         C 360 700, 520 860, 760 780
-                        C 980 710, 1180 880, 1040 940
+                        C 980 710, 1180 880, 1040 1500
                     "
                     stroke="url(#experiencePathGradient)"
                 />
