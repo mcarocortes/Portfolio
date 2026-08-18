@@ -7,6 +7,7 @@ import "./Navbar.css";
 import useNavbarScroll from "../../hooks/useNavbarScroll";
 import useActiveSection from "../../hooks/useActiveSection";
 import useCloseOnRouteChange from "../../hooks/useOnRouterChange";
+import { scrollToTop } from "../../lib/smoothScroll";
 import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
@@ -52,7 +53,7 @@ export default function Navbar() {
         <div className="bg-navbar">
 
           <Link to="#Home" className="navbar-brand logoNavM" onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            scrollToTop();
             window.history.replaceState(null, "", "#Home");}}
           />
           <div className="nav-menu-wrapper-right">

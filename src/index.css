@@ -37,10 +37,12 @@
   --font-size-h2: calc(36px * var(--font-scale));
   --font-size-h3: calc(26px * var(--font-scale));
   --font-size-h4: calc(22px * var(--font-scale));
+  --font-size-maximus: calc(90px * var(--font-scale));
 
 
   --font-family-base: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
   --font-weight-base: 400;
+  --font-family-bold: "DIN Next LT Pro Bold", system-ui, -apple-system, sans-serif;
   --font-weight-600: 600;
   --font-line-height-base: 1.5;
 
@@ -87,7 +89,7 @@ body {
 
 .heading {
   text-transform: uppercase;
-  font-family: "DIN Next LT Pro Bold", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family-bold);
   color: var(--text);
   margin-bottom: 30px;
   margin-left: 0;
@@ -96,7 +98,7 @@ body {
 
 .heading span{
   text-transform: capitalize;
-    font-family: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family-base);
   font-size: var(--font-size-h3);
   color: var(--purpura);
   margin-bottom: 30px;
@@ -187,12 +189,12 @@ select,
   cursor: none !important;
 }
 
-ul,
+/*ul,
 ol {
   margin-top: 0;
   margin-bottom: 10px;
   padding-left: 40px;
-}
+}*/
 
 label {
   margin-bottom: 5px;
@@ -209,6 +211,7 @@ label {
     --font-size-h3: calc(22px * var(--font-scale));
     --font-size-h4: calc(18px * var(--font-scale));
     --font-size-base: calc(18px * var(--font-scale));
+    --font-size-maximus:calc(75px * var(--font-scale));
   }
 
   .heading {
@@ -226,7 +229,7 @@ label {
     --font-size-h4: calc(18px * var(--font-scale));
     --font-size-base: calc(18px * var(--font-scale));
     --font-size-underBase: calc(16px * var(--font-scale));
-
+    --font-size-maximus:calc(57px * var(--font-scale));
   }
 
   .heading {
@@ -250,6 +253,7 @@ label {
     --margin-left-rigth-general: 40px;
     --font-size-base: calc(16px * var(--font-scale));
     --font-size-underBase: calc(14px * var(--font-scale));
+    --font-size-maximus:calc(50px * var(--font-scale));
   }
 
 

@@ -6,6 +6,7 @@ import ScrollToHash from "./ScrollToHash";
 import UnderConstruction from "./componentes/UnderConstruction/UnderConstruction";
 import Lenis from "lenis";
 import { useEffect } from "react";
+import { setLenisInstance } from "./lib/smoothScroll";
 
 // Importa las imágenes dark mode (Vite resuelve la URL correcta)
 import logoDarkmode from "./assets/img/Hero/MacarenaCaroLogo_darkmode.svg";
@@ -44,7 +45,12 @@ function AppContent() {
     };
 
     requestAnimationFrame(raf);
-    return () => lenis.destroy();
+    setLenisInstance(lenis);
+
+    return () => {
+      lenis.destroy();
+      setLenisInstance(null);
+    };
   }, [isStandalonePage]);
 
   // 2) Precarga diferida de imágenes dark mode

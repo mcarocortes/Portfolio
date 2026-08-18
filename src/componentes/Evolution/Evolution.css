@@ -238,7 +238,7 @@
 }
 
 .experience-year-prefix {
-    font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+    font-family: var(--font-family-bold);
     font-size: var(--year-slot-height);
     line-height: 0.82;
     letter-spacing: -0.045em;
@@ -259,7 +259,7 @@
 .experience-year-suffix {
     display: block;
     height: var(--year-slot-height);
-    font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+    font-family: var(--font-family-bold);
     font-size: var(--year-slot-height);
     line-height: var(--year-slot-height);
     letter-spacing: -0.045em;
@@ -316,7 +316,7 @@
 
     .experience-mobile-year {
         text-transform: uppercase;
-        font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+        font-family: var(--font-family-bold);
         font-size: 5vw;
         line-height: 1;
         color: var(--purpura3);

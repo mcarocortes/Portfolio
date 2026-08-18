@@ -76,7 +76,7 @@
     font-size: var(--font-size-h1);
     position: relative;
     z-index: 1;
-    font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+    font-family:var(--font-family-bold);
     line-height: 1;
     color: var(--purpura);
     margin-bottom: 0.65rem;
@@ -276,7 +276,7 @@
 
     .what-i-bring__chip-num {
         font-size: var(--font-size-h4);
-        font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+        font-family: var(--font-family-bold);
         letter-spacing: -0.03em;
     }
 

@@ -308,3 +308,37 @@
 }
 
 
+
+/************************** CONTACT ***********************/
+.dark-mode #Contact {
+  background: url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,
+  linear-gradient(to bottom, var(--black) 40%, var(--purpura) 95%);
+}
+.dark-mode .btnAContacto{
+  background: var(--gradientWhite);
+  color: var(--black);
+  box-shadow: 2px 2px 8px var(--purpura3);
+}
+
+.dark-mode .madeWith span {
+    color: var(--purpura3);
+}
+
+.dark-mode .items ul li {
+  border-top: 1px solid var(--purpura3);
+  border-bottom: 1px solid var(--purpura3);
+}
+
+.dark-mode .list:hover{
+  color: var(--purpura3);
+}
+
+.dark-mode .back{
+  background-color: var(--black-transparent);
+  color: var(--white);
+  border-radius: 99px;
+}
+
+.dark-mode .back:hover{
+  color: var(--purpura3);
+}

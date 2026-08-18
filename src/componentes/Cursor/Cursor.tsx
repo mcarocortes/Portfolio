@@ -38,9 +38,7 @@ export default function Cursor() {
                 setIsPointer(false);
 
                 // variantes especiales solo si no es botón
-                if (target.closest(".cursor-contact")) {
-                    setVariant("contact");
-                } else if (target.closest(".cursor-project")) {
+                 if (target.closest(".cursor-project")) {
                     setVariant("project");
                 } else if (target.closest(".no-cursor")) {
                     setVariant("hidden");
