@@ -146,6 +146,7 @@
       "prev": "Anterior",
       "next": "Siguiente",
       "navLabel": "Navegación del proyecto",
+      "previewVideoLabel": "Vídeo de vista previa de {{project}}",
       "pages": {
         "healthcare": {
           "headline": "Atención mobile-first donde más se necesita.",

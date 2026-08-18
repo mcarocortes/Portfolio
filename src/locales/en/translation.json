@@ -146,6 +146,7 @@
       "prev": "Previous",
       "next": "Next",
       "navLabel": "Project navigation",
+      "previewVideoLabel": "Preview video for {{project}}",
       "pages": {
         "healthcare": {
           "headline": "Mobile-first care where teams need it most.",

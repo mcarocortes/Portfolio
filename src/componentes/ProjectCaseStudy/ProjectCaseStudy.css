@@ -244,6 +244,7 @@
 }
 
 .project-case__nav-link {
+    cursor: none;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -278,6 +279,7 @@
 
 .project-case__nav-back {
     justify-self: center;
+    cursor: none;
     padding: 0.65rem 1.15rem;
     border-radius: 999px;
     border: 1px solid rgba(90, 18, 250, 0.2);
@@ -301,6 +303,7 @@
     border-color: var(--purpura);
     color: var(--white);
     transform: translateY(-1px);
+    text-decoration: none;
 }
 
 .project-case__nav-spacer {
@@ -325,7 +328,7 @@
 }
 
 .project-case__heroImage{
-    height: 60vh;
+    height: auto;
     width: 100%;
     margin: 0;
     z-index: 1;

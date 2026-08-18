@@ -1,3 +1,5 @@
+import projectPreviewVideo from "../assets/img/HandProjects/video.mp4";
+
 export type ProjectCaseKey =
     | "healthcare"
     | "modular"
@@ -32,6 +34,16 @@ export const PROJECT_IMAGE_SOURCES: Record<ProjectCaseKey, (string | null)[]> = 
     bank: [null, null, null, null],
     movies: [null, null, null, null],
     vinos: [null, null, null, null],
+};
+
+/** Vídeo del mockup móvil en el hero del case study. `null` = pantalla placeholder. */
+export const PROJECT_VIDEO_SOURCES: Record<ProjectCaseKey, string | null> = {
+    healthcare: projectPreviewVideo,
+    modular: null,
+    vc: null,
+    bank: null,
+    movies: null,
+    vinos: null,
 };
 
 export function getProjectNeighbors(slug: string) {

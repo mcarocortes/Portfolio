@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import {
     PROJECT_IMAGE_SOURCES,
+    PROJECT_VIDEO_SOURCES,
     getProjectNeighbors,
     getProjectRoute,
     type ProjectCaseKey,
@@ -114,7 +115,12 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         </motion.div>
 
                         <motion.div className="project-case__heroImage">
-                            <HandProject></HandProject>
+                            <HandProject
+                                videoSrc={PROJECT_VIDEO_SOURCES[projectKey]}
+                                ariaLabel={t("projectCaseStudy.previewVideoLabel", {
+                                    project: projectTitle,
+                                })}
+                            />
                         </motion.div>
 
                     </motion.div>

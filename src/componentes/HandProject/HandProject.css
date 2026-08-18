@@ -1,49 +1,82 @@
-.hand{
+.hand {
     position: relative;
     height: 645px;
     width: 460px;
-    border: solid 2px red;
-    background: url("/src/assets/img/HandProjects/hand.png") bottom/contain no-repeat;
+    flex-shrink: 0;
 }
 
-.mobile{
+/* Capa 1: vídeo dentro de la pantalla del móvil */
+.hand__screen {
     position: absolute;
+    z-index: 1;
     right: 55px;
-    top:80px;
-    height: 435px;
+    top: 80px;
     width: 215px;
-    border: solid 2px yellow;
+    height: 435px;
     border-radius: 30px;
+    overflow: hidden;
+    background: #0f0f12;
+}
+
+.hand__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border: 0;
+    pointer-events: none;
+}
+
+.hand__screen-placeholder {
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(160deg, rgba(191, 193, 252, 0.35), rgba(90, 18, 250, 0.12)),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.06) 0,
+            rgba(255, 255, 255, 0.06) 8px,
+            transparent 8px,
+            transparent 16px
+        );
+}
+
+/* Capa 2: imagen de la mano encima del vídeo */
+.hand__frame {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: url("../../assets/img/HandProjects/hand.png") bottom / contain no-repeat;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 767px) {
-.hand{
-    height: 480px;
-    width: 400px;
-}
+    .hand {
+        height: 480px;
+        width: 400px;
+    }
 
-.mobile{
-    right: 55px;
-    top:7px;
-    height: 365px;
-    width: 180px;
-    border-radius: 30px;
-}
-
+    .hand__screen {
+        right: 55px;
+        top: 7px;
+        width: 180px;
+        height: 365px;
+        border-radius: 30px;
+    }
 }
 
 @media screen and (max-width: 479px) {
-.hand{
-    height: 400px;
-    width: 320px;
-}
+    .hand {
+        height: 400px;
+        width: 320px;
+    }
 
-.mobile{
-    right: 40px;
-    top:7px;
-    height: 300px;
-    width: 148px;
-    border-radius: 20px;
-}
-
+    .hand__screen {
+        right: 40px;
+        top: 7px;
+        width: 148px;
+        height: 300px;
+        border-radius: 20px;
+    }
 }
