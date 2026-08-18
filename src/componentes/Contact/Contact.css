@@ -1,11 +1,10 @@
 #Contact {
   width: 100%;
-  margin-top: -30px;
   font-family: var(--font-family-base);
   line-height: 1.5;
   display: flex;
   flex-direction: row;
-  height: 104vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   z-index: 2;

@@ -33,6 +33,7 @@
   --font-scale: 1;
   --font-size-underBase: calc(15px * var(--font-scale));
   --font-size-base: calc(20px * var(--font-scale));
+  --font-size-heading: calc(65px * var(--font-scale));
   --font-size-h1: calc(46px * var(--font-scale));
   --font-size-h2: calc(36px * var(--font-scale));
   --font-size-h3: calc(26px * var(--font-scale));
@@ -93,7 +94,8 @@ body {
   color: var(--text);
   margin-bottom: 30px;
   margin-left: 0;
-  line-height: 40px;
+  line-height:var(--font-size-heading) !important;
+  font-size:var(--font-size-heading) !important;
 }
 
 .heading span{
@@ -206,6 +208,7 @@ label {
 
   :root {
     --margin-left-rigth-general: 2.5rem;
+    --font-size-heading: calc(55px * var(--font-scale));
     --font-size-h1: calc(36px * var(--font-scale));
     --font-size-h2: calc(25px * var(--font-scale));
     --font-size-h3: calc(22px * var(--font-scale));
@@ -214,22 +217,20 @@ label {
     --font-size-maximus:calc(75px * var(--font-scale));
   }
 
-  .heading {
-    font-size: 50px !important;
-  }
 }
 
 @media screen and (max-width: 767px) {
   :root {
     --margin-left-rigth-general: 3rem;
     --margin-top-general: 15vh;
+    --font-size-heading: calc(50px * var(--font-scale));
     --font-size-h1: calc(32px * var(--font-scale));
     --font-size-h2: calc(22px * var(--font-scale));
     --font-size-h3: calc(20px * var(--font-scale));
     --font-size-h4: calc(18px * var(--font-scale));
     --font-size-base: calc(18px * var(--font-scale));
     --font-size-underBase: calc(16px * var(--font-scale));
-    --font-size-maximus:calc(57px * var(--font-scale));
+    --font-size-maximus:calc(60px * var(--font-scale));
   }
 
   .heading {
@@ -237,8 +238,6 @@ label {
     margin-top: 0;
     margin-bottom: 40px;
     margin-left: 0;
-    line-height: .8em;
-    font-size: 45px !important;
   }
 
   button {
@@ -251,6 +250,7 @@ label {
 
     :root {
     --margin-left-rigth-general: 40px;
+    --font-size-heading: calc(40px * var(--font-scale));
     --font-size-base: calc(16px * var(--font-scale));
     --font-size-underBase: calc(14px * var(--font-scale));
     --font-size-maximus:calc(50px * var(--font-scale));
@@ -261,7 +261,6 @@ label {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 2.3em;
   }
 }
 

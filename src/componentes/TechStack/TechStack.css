@@ -1,0 +1,167 @@
+/* ===== TECH STACK — marquee horizontal ===== */
+
+.tech-stack {
+    height: 80vh;
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-family-base);
+    background: var(--purpura3);
+    margin-top: -25px;
+    padding-left:var(--margin-left-rigth-general);
+    padding-right:var(--margin-left-rigth-general);
+    padding-top:var(--margin-top-general);
+    padding-bottom:var(--margin-top-general);
+
+    overflow: hidden;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.tech-stack__header {
+    max-width: 720px;
+    margin: 0 auto clamp(2rem, 5vh, 3rem);
+    text-align: center;
+}
+
+.tech-stack__eyebrow {
+    margin: 0 0 0.65rem;
+    font-size: var(--font-size-underBase);
+    font-weight: var(--font-weight-600);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purpura);
+}
+
+.tech-stack__title {
+    margin: 0 0 0.75rem;
+}
+
+.tech-stack__subtitle {
+    width: 100%;
+    margin-inline: auto;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--purpura4) !important;
+    margin-bottom: 100px;
+}
+
+.tech-stack__rows {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.85rem, 2vh, 1.1rem);
+}
+
+.tech-stack__marquee {
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+    );
+}
+
+.tech-stack__track {
+    display: flex;
+    width: max-content;
+    gap: clamp(0.75rem, 1.6vw, 1rem);
+    animation: tech-stack-scroll 42s linear infinite;
+    will-change: transform;
+}
+
+.tech-stack__marquee--reverse .tech-stack__track {
+    animation-direction: reverse;
+    animation-duration: 48s;
+}
+
+.tech-stack__marquee:hover .tech-stack__track,
+.tech-stack__marquee:focus-within .tech-stack__track {
+    animation-play-state: paused;
+}
+
+.tech-stack__pill {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    min-width: clamp(132px, 13vw, 168px);
+    padding: 0.95rem 1.15rem;
+    border-radius: 16px;
+    border: 1px solid rgba(90, 18, 250, 0.14);
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 10px 24px rgba(90, 18, 250, 0.08);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tech-stack__pill-name {
+    font-family: "DIN Next LT Pro Bold", system-ui, sans-serif;
+    font-size: var(--font-size-h4);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.tech-stack__pill-tag {
+    font-size: var(--font-size-underBase);
+    font-weight: var(--font-weight-600);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--purpura3);
+}
+
+.tech-stack__static {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tech-stack__pill--static {
+    min-width: auto;
+}
+
+@keyframes tech-stack-scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .tech-stack__subtitle {
+        margin-inline: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tech-stack__rows {
+        display: none;
+    }
+
+    .tech-stack__static {
+        display: flex;
+    }
+}

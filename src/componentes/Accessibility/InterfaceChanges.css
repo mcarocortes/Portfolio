@@ -301,13 +301,31 @@
 }
 
 
+
 /********************* WEBS ***************************/ 
 /*FONDO DE TODO EL HTML*/
 .dark-mode .webs {
   background-color: var(--black);
 }
 
+/******************* TECH STACK **************************/
 
+.dark-mode .tech-stack {
+  background: var(--black)}
+
+.dark-mode .tech-stack__pill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(140, 142, 242, 0.22);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.dark-mode .tech-stack__pill-name {
+  color: var(--white);
+}
+
+.dark-mode .tech-stack__subtitle {
+  color: rgba(255, 255, 255, 0.72);
+}
 
 /************************** CONTACT ***********************/
 .dark-mode #Contact {

@@ -74,6 +74,20 @@
       }
     },
 
+    "techStackSection": {
+      "title": "Tech Stack",
+      "eyebrow": "Tools & technologies",
+      "subtitle": "Tools & frameworks behind my craft",
+      "marqueeFrontend": "Frontend technologies",
+      "marqueeDesign": "Design and tooling",
+      "categories": {
+        "frontend": "Frontend",
+        "design": "Design",
+        "tools": "Tools",
+        "data": "AI & Data"
+      }
+    },
+
     "evolutionSection": {
       "subtitleLine": "From design to web development",
       "steps": {

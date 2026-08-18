@@ -74,6 +74,20 @@
       }
     },
 
+    "techStackSection": {
+      "title": "Stack de Tecnologías",
+      "eyebrow": "Herramientas y tecnologías",
+      "subtitle": "Herramientas y frameworks detrás de mi desarrollo",
+      "marqueeFrontend": "Tecnologías frontend",
+      "marqueeDesign": "Diseño y herramientas",
+      "categories": {
+        "frontend": "Frontend",
+        "design": "Diseño",
+        "tools": "Tools",
+        "data": "IA & Data"
+      }
+    },
+
     "evolutionSection": {
       "subtitleLine": "Del diseño al desarrollo web",
       "steps": {

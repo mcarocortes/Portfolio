@@ -1,6 +1,6 @@
 .switch-control{
     display:flex;
-    background-color:var(--black-transparent);
+    background-color:rgba(0, 0, 0, 0.116);
     border-radius:999px;
     overflow:hidden;
     width:max-content;
