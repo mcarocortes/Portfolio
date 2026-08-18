@@ -39,13 +39,14 @@
 .project-case__heroImage{
     display: flex;
     justify-content: right;
-    /*position: absolute;*/
     height: 100%;
     width: 60%;
     bottom:0;
     right: 0;
     z-index: 1;
     padding: 0;
+    transform-origin: center bottom;
+    will-change: transform, opacity, filter;
 }
 
 .project-case__eyebrow {
@@ -141,7 +142,7 @@
         var(--margin-left-rigth-general)
         var(--margin-left-rigth-general);
     border-bottom: 1px solid rgba(90, 18, 250, 0.12);
-
+    overflow: visible;
 }
 
 .project-case__gallery-grid {
@@ -149,10 +150,17 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(1rem, 2vw, 1.35rem);
     margin-top: 1.5rem;
+    perspective: 900px;
+    perspective-origin: center center;
 }
 
 .project-case__figure {
     margin: 0;
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+    overflow: visible;
 }
 
 .project-case__figure--wide {
@@ -165,6 +173,8 @@
     border: 1px solid rgba(90, 18, 250, 0.12);
     background: var(--graybg);
     box-shadow: 0 14px 36px rgba(90, 18, 250, 0.08);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 .project-case__media img {
@@ -364,5 +374,11 @@
     .project-case__nav-link:hover,
     .project-case__nav-back:hover {
         transform: none;
+    }
+
+    .project-case__heroImage,
+    .project-case__figure {
+        will-change: auto;
+        filter: none !important;
     }
 }
