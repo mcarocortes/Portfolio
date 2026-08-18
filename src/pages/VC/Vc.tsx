@@ -1,5 +1,5 @@
+import ProjectCaseStudy from "../../componentes/ProjectCaseStudy/ProjectCaseStudy";
+
 export default function Vc() {
-    return (
-        <></>
-    )
+    return <ProjectCaseStudy projectKey="vc" />;
 }

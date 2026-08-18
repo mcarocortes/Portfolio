@@ -1,5 +1,5 @@
+import ProjectCaseStudy from "../../componentes/ProjectCaseStudy/ProjectCaseStudy";
+
 export default function Movies() {
-    return (
-        <></>
-    )
+    return <ProjectCaseStudy projectKey="movies" />;
 }

@@ -1,0 +1,49 @@
+.hand{
+    position: relative;
+    height: 645px;
+    width: 460px;
+    border: solid 2px red;
+    background: url("/src/assets/img/HandProjects/hand.png") bottom/contain no-repeat;
+}
+
+.mobile{
+    position: absolute;
+    right: 55px;
+    top:80px;
+    height: 435px;
+    width: 215px;
+    border: solid 2px yellow;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 767px) {
+.hand{
+    height: 480px;
+    width: 400px;
+}
+
+.mobile{
+    right: 55px;
+    top:7px;
+    height: 365px;
+    width: 180px;
+    border-radius: 30px;
+}
+
+}
+
+@media screen and (max-width: 479px) {
+.hand{
+    height: 400px;
+    width: 320px;
+}
+
+.mobile{
+    right: 40px;
+    top:7px;
+    height: 300px;
+    width: 148px;
+    border-radius: 20px;
+}
+
+}

@@ -138,6 +138,169 @@
       }
     },
 
+    "projectCaseStudy": {
+      "roleTitle": "Mi rol",
+      "outputsTitle": "Galería del proyecto",
+      "imagePlaceholder": "Reemplazar imagen",
+      "backToProjects": "Volver a proyectos",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "navLabel": "Navegación del proyecto",
+      "pages": {
+        "healthcare": {
+          "headline": "Atención mobile-first donde más se necesita.",
+          "role": "Team Leader",
+          "company": "Resiplus",
+          "roleDescription": "Contribuí a nuevas funcionalidades en una PWA sanitaria en producción: layouts responsive, mejoras de usabilidad móvil y patrones de UI orientados al rendimiento en flujos clínicos diarios.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "El personal sanitario necesitaba herramientas fiables en dispositivos móviles dentro de centros donde el acceso a escritorio es limitado. El producto debía sentirse rápido, claro y estable bajo presión."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Trabajé en flujos front-end con patrones touch-friendly, mejora progresiva y consistencia entre breakpoints, alineando decisiones con restricciones reales de uso y colaboración con producto y backend."
+            },
+            {
+              "title": "Resultado",
+              "body": "Una experiencia móvil más usable que apoya el trabajo diario, reduce fricción en tareas clave y mantiene el rendimiento en un entorno de producción."
+            }
+          ],
+          "images": [
+            { "caption": "Vista general del dashboard móvil", "alt": "Dashboard PWA sanitaria", "layout": "wide" },
+            { "caption": "Flujo de tareas en móvil", "alt": "Pantalla de flujo móvil" },
+            { "caption": "Detalle de layout responsive", "alt": "Detalle UI responsive" },
+            { "caption": "Snapshot del sistema de componentes", "alt": "Vista de componentes UI" }
+          ]
+        },
+        "modular": {
+          "headline": "Conectando artistas y clientes con AR inmersiva.",
+          "role": "Contribuidora Producto & Web",
+          "roleDescription": "Ayudé a definir la experiencia de una plataforma multiservicio que combina marketplace con realidad aumentada, mejorando visibilidad para artistas e interacción con clientes.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "modulAR debía sentirse como un ecosistema cohesionado — no como herramientas sueltas — destacando la AR inmersiva como diferencial."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Combiné pensamiento de servicio con implementación web: journeys claros, estructuras modulares y lenguaje visual alineado con la marca."
+            },
+            {
+              "title": "Resultado",
+              "body": "Una dirección de plataforma que mejora el engagement, clarifica el valor del servicio y conecta mejor artistas, clientes y oportunidades."
+            }
+          ],
+          "images": [
+            { "caption": "Vista general del landing", "alt": "Landing modulAR", "layout": "wide" },
+            { "caption": "Punto de entrada AR", "alt": "Módulo de realidad aumentada" },
+            { "caption": "Layout de perfil de artista", "alt": "Pantalla perfil artista" },
+            { "caption": "Flujo del marketplace", "alt": "Flujo marketplace" }
+          ]
+        },
+        "vc": {
+          "headline": "Una presencia digital serena basada en confianza.",
+          "role": "Diseñadora & Desarrolladora Front-End",
+          "roleDescription": "Diseñé y desarrollé identidad digital y web para una consulta de psicología y mediación familiar, priorizando accesibilidad, claridad y seguridad emocional en la interfaz.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "La consulta necesitaba una presencia online profesional y cercana, especialmente en temas sensibles como terapia y mediación familiar."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Definí una identidad visual con jerarquía suave, tipografía legible y una estructura de contenido que guía sin abrumar."
+            },
+            {
+              "title": "Resultado",
+              "body": "Marca y web cohesionadas que comunican credibilidad, facilitan descubrir servicios y ayudan al usuario a contactar con confianza."
+            }
+          ],
+          "images": [
+            { "caption": "Hero de la homepage", "alt": "Homepage Valezka Cortés", "layout": "wide" },
+            { "caption": "Sistema de identidad", "alt": "Identidad de marca" },
+            { "caption": "Sección de servicios", "alt": "Sección servicios" },
+            { "caption": "Contacto y señales de confianza", "alt": "Diseño sección contacto" }
+          ]
+        },
+        "bank": {
+          "headline": "Claridad de datos para dashboards bancarios modernos.",
+          "role": "Desarrolladora Front-End",
+          "roleDescription": "Exploré un concepto de dashboard con React y TypeScript centrado en visualización de datos legible, patrones UI escalables y base de design system.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "Los dashboards financieros suelen abrumar con densidad de datos. El objetivo era una interfaz moderna, escaneable y confiable."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Estructuré la UI con tarjetas modulares, espaciado consistente y jerarquía que prioriza métricas clave sin ocultar datos secundarios."
+            },
+            {
+              "title": "Resultado",
+              "body": "Un concepto que demuestra arquitectura front-end, claridad visual y un enfoque escalable para interfaces complejas."
+            }
+          ],
+          "images": [
+            { "caption": "Vista general del dashboard", "alt": "Overview dashboard bancario", "layout": "wide" },
+            { "caption": "Métricas y gráficos", "alt": "Panel visualización datos" },
+            { "caption": "Navegación y layout", "alt": "Navegación dashboard" },
+            { "caption": "Estados de panel detalle", "alt": "UI panel detalle" }
+          ]
+        },
+        "movies": {
+          "headline": "UX conversacional impulsada por IA.",
+          "role": "Desarrolladora Front-End",
+          "roleDescription": "Construí una interfaz de asistente con IA que combina interacción conversacional, integración API y patrones front-end preparados para la nube.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "El proyecto explora cómo la IA puede ser útil y no un gimmick: estados claros, feedback predecible y UI orientada a tareas reales."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Me centré en layout conversacional, estados de carga/error y una estructura de componentes que evoluciona con modelos y APIs."
+            },
+            {
+              "title": "Resultado",
+              "body": "Un demostrador de integración práctica de IA, fundamentos UX sólidos y desarrollo front-end con mentalidad de producción."
+            }
+          ],
+          "images": [
+            { "caption": "Pantalla inicial del asistente", "alt": "Home asistente IA", "layout": "wide" },
+            { "caption": "Flujo conversacional", "alt": "UI de chat" },
+            { "caption": "Estados con API", "alt": "Estados carga y respuesta" },
+            { "caption": "Ajustes e integraciones", "alt": "Panel de ajustes" }
+          ]
+        },
+        "vinos": {
+          "headline": "Calidez y elegancia para una vinoteca.",
+          "role": "Diseñadora & Desarrolladora",
+          "roleDescription": "Creé una experiencia digital para una vinoteca que une branding, usabilidad y reservas en una interfaz cohesionada y acogedora.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "La marca debía sentirse premium pero cercana online, reflejando el ambiente del local y facilitando la reserva."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Desarrollé un lenguaje visual con tipografía rica, equilibrio de imagen y un recorrido simple de descubrimiento a reserva."
+            },
+            {
+              "title": "Resultado",
+              "body": "Una web elegante que refuerza la percepción de marca y apoya acciones clave del negocio con claridad."
+            }
+          ],
+          "images": [
+            { "caption": "Atmósfera de la homepage", "alt": "Homepage Vinos y Sabores", "layout": "wide" },
+            { "caption": "Carta y propuesta", "alt": "Sección carta" },
+            { "caption": "Flujo de reserva", "alt": "UI de reservas" },
+            { "caption": "Aplicaciones de marca", "alt": "Aplicaciones visuales marca" }
+          ]
+        }
+      }
+    },
+
     "contactSection": {
       "titleBefore": "Creando ",
       "titleHighlightLine1": "experiencias",

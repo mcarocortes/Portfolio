@@ -327,6 +327,63 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
+/******************* PROJECT CASE STUDY **************************/
+
+.dark-mode .project-case {
+  background: var(--black);
+  color: var(--white);
+}
+
+.dark-mode .project-case__hero {
+  border-bottom-color: rgba(140, 142, 242, 0.2);
+  background: linear-gradient(180deg, rgba(90, 18, 250, 0.12) 0%, rgba(31, 34, 31, 0) 72%);
+}
+
+.dark-mode .project-case__lead,
+.dark-mode .project-case__block-text,
+.dark-mode .project-case__caption {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.dark-mode .project-case__block-title,
+.dark-mode .project-case__nav-link {
+  color: var(--white);
+}
+
+.dark-mode .project-case__tags li,
+.dark-mode .project-case__nav-back {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(140, 142, 242, 0.24);
+  color: var(--white);
+}
+
+.dark-mode .project-case__media {
+  border-color: rgba(140, 142, 242, 0.2);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+.dark-mode .project-case__placeholder {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(90, 18, 250, 0.12)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(140, 142, 242, 0.06) 0,
+      rgba(140, 142, 242, 0.06) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+}
+
+.dark-mode .project-case__nav {
+  background: rgba(90, 18, 250, 0.1);
+  border-top-color: rgba(140, 142, 242, 0.2);
+}
+
+.dark-mode .project-case__nav-back:hover {
+  background: var(--purpura);
+  color: var(--white);
+}
+
 /************************** CONTACT ***********************/
 .dark-mode #Contact {
   background: url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,

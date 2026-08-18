@@ -1,5 +1,5 @@
+import ProjectCaseStudy from "../../componentes/ProjectCaseStudy/ProjectCaseStudy";
+
 export default function Vinos() {
-    return (
-        <></>
-    )
+    return <ProjectCaseStudy projectKey="vinos" />;
 }

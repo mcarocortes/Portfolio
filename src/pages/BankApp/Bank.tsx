@@ -1,5 +1,5 @@
+import ProjectCaseStudy from "../../componentes/ProjectCaseStudy/ProjectCaseStudy";
+
 export default function Bank() {
-    return (
-        <></>
-    )
+    return <ProjectCaseStudy projectKey="bank" />;
 }

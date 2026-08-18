@@ -138,6 +138,168 @@
       }
     },
 
+    "projectCaseStudy": {
+      "roleTitle": "My role",
+      "outputsTitle": "Project gallery",
+      "imagePlaceholder": "Replace image",
+      "backToProjects": "Back to projects",
+      "prev": "Previous",
+      "next": "Next",
+      "navLabel": "Project navigation",
+      "pages": {
+        "healthcare": {
+          "headline": "Mobile-first care where teams need it most.",
+          "role": "Front-End Developer",
+          "roleDescription": "I contributed to new features in a production healthcare PWA — from responsive layouts and mobile usability improvements to performance-focused UI patterns used in daily clinical workflows.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "Healthcare staff needed reliable tools on mobile devices inside facilities where desktop access is limited. The product had to feel fast, clear, and dependable in high-pressure environments."
+            },
+            {
+              "title": "Approach",
+              "body": "I worked on front-end flows with a focus on touch-friendly patterns, progressive enhancement, and consistency across breakpoints. Decisions were guided by real usage constraints and close collaboration with product and backend teams."
+            },
+            {
+              "title": "Outcome",
+              "body": "The result is a more usable mobile experience that supports everyday workflows, reduces friction in key tasks, and keeps performance stable in a production environment."
+            }
+          ],
+          "images": [
+            { "caption": "Mobile dashboard overview", "alt": "Healthcare PWA dashboard", "layout": "wide" },
+            { "caption": "Task flow on mobile", "alt": "Mobile workflow screen" },
+            { "caption": "Responsive layout detail", "alt": "Responsive UI detail" },
+            { "caption": "Component system snapshot", "alt": "UI components overview" }
+          ]
+        },
+        "modular": {
+          "headline": "Connecting artists and clients through immersive AR.",
+          "role": "Product & Web Contributor",
+          "roleDescription": "I helped shape a multi-service platform experience that combines marketplace features with augmented reality, supporting visibility for artists and smoother client interactions.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "modulAR needed to feel like one cohesive ecosystem — not a collection of disconnected tools — while highlighting immersive AR as a differentiator."
+            },
+            {
+              "title": "Approach",
+              "body": "The work combined service design thinking with web implementation: clear user journeys, modular page structures, and visual language aligned with the brand."
+            },
+            {
+              "title": "Outcome",
+              "body": "A platform direction that improves engagement, clarifies service value, and creates a stronger bridge between artists, clients, and opportunities."
+            }
+          ],
+          "images": [
+            { "caption": "Platform landing overview", "alt": "modulAR landing page", "layout": "wide" },
+            { "caption": "AR experience entry point", "alt": "Augmented reality module" },
+            { "caption": "Artist profile layout", "alt": "Artist profile screen" },
+            { "caption": "Marketplace flow", "alt": "Marketplace user flow" }
+          ]
+        },
+        "vc": {
+          "headline": "A calm digital presence built on trust.",
+          "role": "Designer & Front-End Developer",
+          "roleDescription": "I designed and built a digital identity and website for a psychology and family mediation practice, prioritizing accessibility, clarity, and emotional safety in the interface.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "The practice needed a professional online presence that feels approachable and trustworthy — especially for sensitive topics like therapy and family mediation."
+            },
+            {
+              "title": "Approach",
+              "body": "I defined a visual identity with soft hierarchy, readable typography, and a content structure that guides users without overwhelming them."
+            },
+            {
+              "title": "Outcome",
+              "body": "A cohesive brand and website that communicates credibility, supports discovery of services, and helps users feel confident reaching out."
+            }
+          ],
+          "images": [
+            { "caption": "Homepage hero", "alt": "Valezka Cortés homepage", "layout": "wide" },
+            { "caption": "Brand identity system", "alt": "Brand identity overview" },
+            { "caption": "Services section", "alt": "Services page section" },
+            { "caption": "Contact & trust cues", "alt": "Contact section design" }
+          ]
+        },
+        "bank": {
+          "headline": "Data clarity for modern banking dashboards.",
+          "role": "Front-End Developer",
+          "roleDescription": "I explored a React + TypeScript dashboard concept focused on readable data visualization, scalable UI patterns, and a clean design system foundation.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "Financial dashboards often overwhelm users with dense data. The goal was to create a interface that feels modern, scannable, and trustworthy."
+            },
+            {
+              "title": "Approach",
+              "body": "I structured the UI around modular cards, consistent spacing, and hierarchy that prioritizes key metrics while keeping secondary data accessible."
+            },
+            {
+              "title": "Outcome",
+              "body": "A dashboard concept that demonstrates front-end architecture, visual clarity, and a scalable approach to complex product interfaces."
+            }
+          ],
+          "images": [
+            { "caption": "Dashboard overview", "alt": "Banking dashboard overview", "layout": "wide" },
+            { "caption": "Metrics & charts", "alt": "Data visualization panel" },
+            { "caption": "Navigation & layout", "alt": "Dashboard navigation" },
+            { "caption": "Detail panel states", "alt": "Detail panel UI" }
+          ]
+        },
+        "movies": {
+          "headline": "Conversational UX powered by AI.",
+          "role": "Front-End Developer",
+          "roleDescription": "I built an AI assistant interface that combines conversational interaction, API integration, and cloud-ready front-end patterns in a polished product shell.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "The project explores how AI can feel useful rather than gimmicky — with clear interaction states, predictable feedback, and a UI that supports real tasks."
+            },
+            {
+              "title": "Approach",
+              "body": "I focused on conversation layout, loading and error states, and a component structure that can evolve as models and APIs change."
+            },
+            {
+              "title": "Outcome",
+              "body": "A demonstrator that shows practical AI integration, strong UX fundamentals, and production-minded front-end development."
+            }
+          ],
+          "images": [
+            { "caption": "Assistant home screen", "alt": "AI assistant home", "layout": "wide" },
+            { "caption": "Conversation flow", "alt": "Chat conversation UI" },
+            { "caption": "API-driven states", "alt": "Loading and response states" },
+            { "caption": "Settings & integrations", "alt": "Settings panel" }
+          ]
+        },
+        "vinos": {
+          "headline": "Warmth and elegance for a wine bar experience.",
+          "role": "Designer & Developer",
+          "roleDescription": "I created a digital experience for a wine bar that blends branding, usability, and reservation features into a cohesive, inviting interface.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "The brand needed to feel premium yet approachable online — reflecting the atmosphere of the physical space and making booking easy."
+            },
+            {
+              "title": "Approach",
+              "body": "I developed a visual language with rich typography, balanced imagery, and a simple user path from discovery to reservation."
+            },
+            {
+              "title": "Outcome",
+              "body": "An elegant web experience that strengthens brand perception and supports key business actions with clarity."
+            }
+          ],
+          "images": [
+            { "caption": "Homepage atmosphere", "alt": "Vinos y Sabores homepage", "layout": "wide" },
+            { "caption": "Menu & offerings", "alt": "Menu section design" },
+            { "caption": "Reservation flow", "alt": "Reservation UI" },
+            { "caption": "Brand applications", "alt": "Brand visual applications" }
+          ]
+        }
+      }
+    },
+
     "contactSection": {
       "titleBefore": "Crafting ",
       "titleHighlightLine1": "bold",
