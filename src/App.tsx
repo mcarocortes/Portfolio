@@ -3,6 +3,7 @@ import AppRoutes from "./AppRoutes";
 import Navbar from "./componentes/NavBar/Navbar";
 import Cursor from "./componentes/Cursor/Cursor";
 import ScrollToHash from "./ScrollToHash";
+import ScrollToTopOnNavigate from "./ScrollToTopOnNavigate";
 import UnderConstruction from "./componentes/UnderConstruction/UnderConstruction";
 import Lenis from "lenis";
 import { useEffect } from "react";
@@ -26,6 +27,10 @@ function AppContent() {
   // 1) Lenis (scroll suave) — igual que ahora
   useEffect(() => {
     if (isStandalonePage) return;
+
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
 
     const lenis = new Lenis({
       duration: 1.35,
@@ -89,6 +94,7 @@ function AppContent() {
   return (
     <>
       <Cursor />
+      <ScrollToTopOnNavigate />
       <ScrollToHash />
       <Navbar />
       <AppRoutes />

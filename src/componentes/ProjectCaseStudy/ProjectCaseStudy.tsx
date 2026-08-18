@@ -1,9 +1,9 @@
 import "./ProjectCaseStudy.css";
 import HandProject from "../HandProject/HandProject"
 import { motion } from "framer-motion";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
     PROJECT_IMAGE_SOURCES,
     PROJECT_VIDEO_SOURCES,
@@ -11,7 +11,7 @@ import {
     getProjectRoute,
     type ProjectCaseKey,
 } from "../../data/projectsCatalog";
-import { scrollToHash, scrollToTop } from "../../lib/smoothScroll";
+import { scrollToHash } from "../../lib/smoothScroll";
 
 type CaseSection = {
     title: string;
@@ -39,7 +39,6 @@ type ProjectCaseStudyProps = {
 
 export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) {
     const { t } = useTranslation();
-    const location = useLocation();
     const route = getProjectRoute(projectKey);
     const { prev, next } = getProjectNeighbors(route?.slug ?? "");
 
@@ -56,10 +55,6 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
     );
 
     const imageSources = PROJECT_IMAGE_SOURCES[projectKey] ?? [];
-
-    useEffect(() => {
-        scrollToTop();
-    }, [location.pathname]);
 
     const projectTitle = t(`projectsSection.items.${projectKey}.title`);
     const projectTags = t(`projectsSection.items.${projectKey}.tags`, {
