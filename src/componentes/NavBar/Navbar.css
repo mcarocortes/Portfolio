@@ -53,6 +53,7 @@
   border-radius: 6px;
   overflow: hidden;
   border: solid 1px var(--purpura);
+  flex-shrink: 0;
 }
 
 .logoNavM:hover {
@@ -65,11 +66,19 @@
 .nav-menu-wrapper-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.nav-menu.new {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .nav-buttons-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
   object-fit: cover;
@@ -77,12 +86,15 @@
 
   width: auto;
   height: auto;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .nav-buttons-wrapper.new {
   border: 0px solid var(--bg-Navbar-border);
   background-color: transparent;
   width: auto;
+  max-width: 100%;
   position: static;
   grid-column-gap: 1.2rem;
   grid-row-gap: 1.2rem;
@@ -109,6 +121,21 @@
   outline: none;
 }
 
+.nav-buttons-wrapper .navbartext {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  flex: 0 1 auto;
+  min-width: 0;
+  line-height: 1.4;
+  padding-top: 5px;
+}
+
+.accessibility-button {
+  flex-shrink: 0;
+}
+
 .btnContact {
   background: var(--gradient-purple);
   color: var(--white) !important;
@@ -122,6 +149,19 @@
   transform: scale(1.05);
 }
 
+
+/* Desktop intermedio: el texto en español no cabe y no debe subir de altura */
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+  .nav-buttons-wrapper .navbartext {
+    font-size: clamp(0.72rem, 0.04rem + 1.37vw, 1rem);
+    padding-left: clamp(6px, 0.4vw + 4px, 15px);
+    padding-right: clamp(6px, 0.4vw + 4px, 15px);
+  }
+
+  .nav-buttons-wrapper.new {
+    grid-column-gap: clamp(0.3rem, 0.7vw, 1.2rem);
+  }
+}
 
 /*********************************************MobileMenu*********************************************/
 .collapse.collapsado {

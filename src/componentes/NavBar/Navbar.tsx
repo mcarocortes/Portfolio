@@ -69,32 +69,36 @@ export default function Navbar() {
             <nav className="nav-menu new">
               <div className="nav-buttons-wrapper new">
 
-<Link
-  to="/#About"
-  className={`navbartext ${activeSection === "About" ? "active" : ""}`}
-  onClick={(event) => handleSectionLinkClick(event, "#About", location.pathname)}
->
-  {t("about")}
-</Link>                
+                <Link
+                  to="/#About"
+                  className={`navbartext ${activeSection === "About" ? "active" : ""}`}
+                  title={t("about")}
+                  onClick={(event) => handleSectionLinkClick(event, "#About", location.pathname)}
+                >
+                  {t("about")}
+                </Link>
                 <Link
                   to="/#Evolution"
                   className={`navbartext ${activeSection === "Evolution" ? "active" : ""}`}
+                  title={t("evolution")}
                   onClick={(event) => handleSectionLinkClick(event, "#Evolution", location.pathname)}
                 >{t("evolution")}</Link>
                 <Link
                   to="/#WhatIDo"
                   className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}
+                  title={t("whatido")}
                   onClick={(event) => handleSectionLinkClick(event, "#WhatIDo", location.pathname)}
                 >{t("whatido")}</Link>
-<Link
-  to="/#Projects"
-  className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}
-  onClick={(event) => handleSectionLinkClick(event, "#Projects", location.pathname)}
->{t("projects")}</Link>
-
+                <Link
+                  to="/#Projects"
+                  className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}
+                  title={t("projects")}
+                  onClick={(event) => handleSectionLinkClick(event, "#Projects", location.pathname)}
+                >{t("projects")}</Link>
                 <Link
                   to="/#Contact"
                   className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}
+                  title={t("contact")}
                   onClick={(event) => handleSectionLinkClick(event, "#Contact", location.pathname)}
                 >{t("contact")}</Link>
               </div>
