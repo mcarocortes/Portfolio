@@ -48,7 +48,6 @@
 }
 
 
-
 .what-i-bring__title {
     margin: 0;
 }
@@ -58,17 +57,19 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(90, 18, 250, 0.14);
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.55);
-    background-image: url("/src/assets/img/Skills/BgCiclesLigth.svg");
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    border: 1px solid var(--white);
+    box-shadow: 3px 3px 8px var(--white-transparent);
+    background-color: var(--white-transparent2);
     transition:
         transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.45s ease,
         border-color 0.45s ease;
+}
+
+.what-i-bring__card:hover {
+  border-color: var(--purpura3);
+  box-shadow: 3px 3px 15px var(--purpura3);
 }
 
 .what-i-bring__index {
@@ -137,7 +138,7 @@
     margin: 0;
     font-size: var(--font-size-base);
     line-height: 1.5;
-    color: var(--grayweb);
+    color: var(--text);
     max-width: 100%;
 }
 
@@ -154,7 +155,6 @@
     min-height: clamp(220px, 28vh, 320px);
     padding: clamp(1.25rem, 2.5vw, 1.75rem);
     background-size: 52%;
-    box-shadow: 0 2px 6px var(--purpura3);
 }
 
 
@@ -163,12 +163,6 @@
     margin-bottom: 0.75rem;
 }
 
-
-.what-i-bring__card--grid:hover {
-    transform: translateY(-4px);
-    border-color: var(--purpura3);
-    box-shadow: 5px 10px 10px var(--purpura3);
-}
 .what-i-bring__card--grid::before {
     content: "";
     position: absolute;
@@ -224,8 +218,8 @@
         margin: 0 auto;
         padding: 1.25rem;
         border-radius: 22px;
-        border: 1px solid rgba(90, 18, 250, 0.12);
-        background: rgba(255, 255, 255, 0.35);
+        border: 1px solid var(--purpura4);
+        background: var(--white-transparent);
         overflow: hidden;
         height: auto;
     }
@@ -258,13 +252,14 @@
         align-items: center;
         gap: 0.45rem;
         padding: 0.5rem 0.85rem;
-        border: 1px solid rgba(90, 18, 250, 0.18);
+        border: 1px solid var(--purpura4);
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.72);
+        background: var(--white-transparent2);
         color: var(--text);
         font-family: var(--font-family-base);
         font-size: var(--font-size-underBase);
         cursor: pointer;
+        box-shadow: 2px 2px 3px var(--purpura4);
         transition:
             background-color 0.25s ease,
             border-color 0.25s ease,
@@ -276,8 +271,7 @@
         background: var(--purpura);
         border-color: var(--purpura);
         color: var(--white);
-        box-shadow: 0 5px 5px rgba(90, 18, 250, 0.28);
-        transform: translateY(-1px);
+        box-shadow: 2px 2px 3px var(--purpura2);
     }
 
     .what-i-bring__chip-num {
@@ -302,7 +296,6 @@
         min-height: 50vh;
         padding: 1.1rem 1.1rem 4.5rem;
         background-size: 55%;
-        box-shadow: 0 12px 32px rgba(90, 18, 250, 0.1);
         cursor: grab;
         touch-action: pan-x pinch-zoom;
     }
@@ -311,6 +304,9 @@
         cursor: grabbing;
     }
 
+     .what-i-bring__card--stage:hover {
+        background-color: var(--white);
+    }
     .what-i-bring__card--stage .what-i-bring__card-text {
         max-width: none;
     }

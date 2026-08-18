@@ -3,9 +3,12 @@
   /* COLORS*/
   --text: #292b29;
   --black: #1f221f; /* #292b29;*/
+  --black-light: rgb(73, 73, 75);
   --white: #f4f4f4;
   --graybg: #ececec;
   --purpura: #5a12fa;
+  --purpura-transparent: #5b12facc;
+  --purpura2: #6769f5;
   --purpura3: #8c8ef2;
   --purpura4: #bfc1fc;
   --bg-Navbar-border: #d7d1e9;
@@ -47,7 +50,7 @@
   --margin-top-general: 12vh;
 
 
-  --purpura2: #5a12fa;
+
   --purpura5: #e0e1ff;
   --smoke: #0000;
 

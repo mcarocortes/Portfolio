@@ -63,6 +63,16 @@
   background-color: var(--black-transparent2);
 }
 
+
+/*****SWITCH********/
+.dark-mode .switch-control{
+    background-color:rgba(255, 255, 255, 0.314);
+}
+.dark-mode .switch.active{
+    background:var(--black);
+    border-radius:999px;
+    border:1px solid var(--white-transparent2);
+}
 /********************* HERO   ***************************/ 
 .dark-mode .hero-wrapper {
     background: url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,
@@ -221,30 +231,49 @@
 }
 
 .dark-mode .what-i-bring__card {
-  background-color: rgba(41, 43, 41, 0.72);
-  border-color: rgba(191, 193, 252, 0.22);
-  background-image: url("/src/assets/img/Skills/BgCiclesDark.svg");
-  box-shadow: 0 12px 32px rgba(90, 18, 250, 0.08);
+  border: 1px solid var(--black-light);
+  background-color: var(--black-transparent2);
+  box-shadow: 3px 3px 8px var(--purpura2);
 }
 
 .dark-mode .what-i-bring__card:hover {
-  border-color: rgba(191, 193, 252, 0.45);
-  box-shadow: 0 18px 40px rgba(90, 18, 250, 0.16);
+  border-color: var(--purpura);
+  box-shadow: 3px 3px 15px var(--purpura);
 }
 
+.dark-mode .what-i-bring__card--grid:hover::before  {
+    background-color: var(--purpura);
+    opacity: 0.6;
+}
+
+
 .dark-mode .what-i-bring__explorer {
-  background: rgba(41, 43, 41, 0.55);
-  border-color: rgba(191, 193, 252, 0.18);
+  background: var(--black-transparent2);
+  border-color: var(--black-light);
 }
 
 .dark-mode .what-i-bring__chip {
-  background: rgba(41, 43, 41, 0.8);
-  border-color: rgba(191, 193, 252, 0.22);
+  background: var(--black-light);
+  border-color:var(--black);
   color: var(--white);
+  box-shadow: 2px 2px 3px var(--black);
 }
 
 .dark-mode .what-i-bring__chip.is-active {
+  background: var(--purpura);
+  border-color: var(--purpura);
   color: var(--white);
+  box-shadow: 2px 2px 3px var(--purpura2);
+    
+}
+
+.dark-mode .what-i-bring__card--stage {
+    border-color: var(--black-light);
+    background-color: var(--black-transparent2);
+}
+
+.dark-mode .what-i-bring__card--stage:hover {
+  background-color: var(--purpura-transparent);
 }
 
 .dark-mode .what-i-bring__card-title {
@@ -252,7 +281,7 @@
 }
 
 .dark-mode .what-i-bring__card-text {
-  color: rgba(244, 244, 244, 0.78);
+  color: var(--white)
 }
 
 .dark-mode .what-i-bring__index {

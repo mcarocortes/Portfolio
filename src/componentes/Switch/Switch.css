@@ -1,6 +1,6 @@
 .switch-control{
     display:flex;
-    border:1px solid var(--purpura4);
+    background-color:var(--black-transparent);
     border-radius:999px;
     overflow:hidden;
     width:max-content;
@@ -13,12 +13,11 @@
     transition:.25s;
     color:var(--text);
     border-radius: 999px;          /* ← redondo SIEMPRE, no solo cuando está activo */
-
 }
 
 .switch.active{
-    background:var(--white-transparent2);
+    background:var(--white);
     border-radius:999px;
     box-shadow:0 0 5px rgba(0,0,0,.15);
-    border:1px solid var(--purpura4);
+    border:1px solid var(--black-transparent);
 }
