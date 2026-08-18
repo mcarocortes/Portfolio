@@ -146,10 +146,61 @@
 
 
 
-.img_oportunities{
-    height: 80vh;
+.project-case__heroImage--image {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.project-case__hero-photo {
+    display: block;
     width: 100%;
-    background: url("/src/assets/img/HandProjects/hand.png") bottom/contain no-repeat;
+    max-height: 645px;
+    object-fit: contain;
+    object-position: bottom right;
+    border-radius: 20px;
+}
+
+.project-case__hero-photo--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 420px;
+    border-radius: 20px;
+    border: 1px dashed rgba(90, 18, 250, 0.25);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(191, 193, 252, 0.35));
+    color: var(--purpura3);
+    font-size: var(--font-size-underBase);
+    font-weight: var(--font-weight-600);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.img_oportunities {
+    display: block;
+    height: clamp(320px, 80vh, 720px);
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.img_oportunities--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: unset;
+    border: 1px dashed rgba(90, 18, 250, 0.2);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(191, 193, 252, 0.28)),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(90, 18, 250, 0.04) 0,
+            rgba(90, 18, 250, 0.04) 8px,
+            transparent 8px,
+            transparent 16px
+        );
 }
 
 

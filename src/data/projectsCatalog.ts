@@ -6,11 +6,27 @@ export type ProjectCaseKey =
     | "vc"
     | "bank"
     | "movies"
-    | "vinos";
+    | "vinos"
+    | "packaging"
+    | "catamaran";
+
+export type ProjectCatalogSection = "items" | "beyond";
 
 export type ProjectCaseRoute = {
     key: ProjectCaseKey;
     slug: string;
+};
+
+/** Sección i18n en projectsSection (items = dev, beyond = beyond code). */
+export const PROJECT_CATALOG_SECTION: Record<ProjectCaseKey, ProjectCatalogSection> = {
+    healthcare: "items",
+    modular: "items",
+    vc: "items",
+    bank: "items",
+    movies: "items",
+    vinos: "items",
+    packaging: "beyond",
+    catamaran: "beyond",
 };
 
 /** Orden de navegación prev/next (mismo que el carrusel de Projects). */
@@ -21,6 +37,8 @@ export const PROJECT_CASE_ORDER: ProjectCaseRoute[] = [
     { key: "bank", slug: "/Bank" },
     { key: "movies", slug: "/Movies" },
     { key: "vinos", slug: "/Vinos" },
+    { key: "packaging", slug: "/Design" },
+    { key: "catamaran", slug: "/Catamaran" },
 ];
 
 /**
@@ -34,17 +52,45 @@ export const PROJECT_IMAGE_SOURCES: Record<ProjectCaseKey, (string | null)[]> = 
     bank: [null, null, null, null],
     movies: [null, null, null, null],
     vinos: [null, null, null, null],
+    packaging: [null, null, null, null],
+    catamaran: [null, null, null, null],
 };
 
-/** Vídeo del mockup móvil en el hero del case study. `null` = pantalla placeholder. */
-export const PROJECT_VIDEO_SOURCES: Record<ProjectCaseKey, string | null> = {
-    healthcare: projectPreviewVideo,
+/** Hero del case study: mockup Hand + vídeo, o imagen estática (Beyond Code). */
+export type ProjectHeroMedia =
+    | { type: "hand"; videoSrc: string | null }
+    | { type: "image"; src: string | null };
+
+export const PROJECT_HERO_MEDIA: Record<ProjectCaseKey, ProjectHeroMedia> = {
+    healthcare: { type: "hand", videoSrc: projectPreviewVideo },
+    modular: { type: "hand", videoSrc: null },
+    vc: { type: "hand", videoSrc: null },
+    bank: { type: "hand", videoSrc: null },
+    movies: { type: "hand", videoSrc: null },
+    vinos: { type: "hand", videoSrc: null },
+    packaging: { type: "image", src: null },
+    catamaran: { type: "image", src: null },
+};
+
+/**
+ * Imagen grande bajo las cajas de oportunidades (`.img_oportunities`).
+ * Importa el asset aquí o usa ruta public. `null` = placeholder.
+ */
+export const PROJECT_OPPORTUNITY_IMAGES: Record<ProjectCaseKey, string | null> = {
+    healthcare: null,
     modular: null,
     vc: null,
     bank: null,
     movies: null,
     vinos: null,
+    packaging: null,
+    catamaran: null,
 };
+
+export function getProjectCatalogPath(key: ProjectCaseKey) {
+    const section = PROJECT_CATALOG_SECTION[key];
+    return `projectsSection.${section}.${key}`;
+}
 
 export function getProjectNeighbors(slug: string) {
     const index = PROJECT_CASE_ORDER.findIndex((project) => project.slug === slug);

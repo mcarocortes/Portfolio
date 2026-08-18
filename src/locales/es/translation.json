@@ -147,6 +147,7 @@
       "next": "Siguiente",
       "navLabel": "Navegación del proyecto",
       "previewVideoLabel": "Vídeo de vista previa de {{project}}",
+      "opportunityImageAlt": "Imagen destacada de {{project}}",
       "pages": {
         "healthcare": {
           "headline": "Atención mobile-first donde más se necesita.",
@@ -297,6 +298,58 @@
             { "caption": "Carta y propuesta", "alt": "Sección carta" },
             { "caption": "Flujo de reserva", "alt": "UI de reservas" },
             { "caption": "Aplicaciones de marca", "alt": "Aplicaciones visuales marca" }
+          ]
+        },
+        "packaging": {
+          "headline": "Impacto en estantería con sistemas de packaging cohesionados.",
+          "role": "Diseñadora de packaging",
+          "company": "Beyond Code",
+          "roleDescription": "Diseñé packaging comercial para productos alimentarios, creando identidades visuales cohesionadas orientadas al impacto en estantería, reconocimiento de marca y producción print-ready.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "Las marcas alimentarias compiten en el lineal y necesitan un packaging que comunique calidad al instante — equilibrando normativa, producción y una identidad visual diferenciada."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Desarrollé sistemas modulares de etiquetas, jerarquías tipográficas y paletas de color que escalan entre referencias manteniendo legibilidad en el punto de venta."
+            },
+            {
+              "title": "Resultado",
+              "body": "Una colección de packaging que refuerza la presencia de marca en retail y muestra pensamiento de diseño más allá de lo digital."
+            }
+          ],
+          "images": [
+            { "caption": "Vista general de la colección", "alt": "Colección de packaging", "layout": "wide" },
+            { "caption": "Sistema principal de etiquetas", "alt": "Etiqueta principal de packaging" },
+            { "caption": "Mockup en estantería", "alt": "Mockup de estantería" },
+            { "caption": "Detalle de impresión", "alt": "Detalle print packaging" }
+          ]
+        },
+        "catamaran": {
+          "headline": "Biomímesis aplicada a la movilidad acuática a pedales.",
+          "role": "Diseñadora industrial",
+          "company": "Beyond Code",
+          "roleDescription": "Mi TFG de diseño industrial se centró en un catamarán a pedales inspirado en biomímesis — desde investigación y modelado 3D hasta prototipado y validación centrada en la persona usuaria.",
+          "sections": [
+            {
+              "title": "Contexto",
+              "body": "El proyecto exploró movilidad sostenible de ocio en el agua, combinando pedaleo ergonómico con una plataforma estable de doble casco inspirada en formas naturales."
+            },
+            {
+              "title": "Enfoque",
+              "body": "Investigación, bocetos e iteración 3D guiaron decisiones sobre geometría del casco, materiales y postura — contrastando siempre con restricciones reales de uso."
+            },
+            {
+              "title": "Resultado",
+              "body": "Un concepto de producto biomimético que conecta mis raíces en diseño industrial con la mirada user-centered que aplico hoy en producto digital."
+            }
+          ],
+          "images": [
+            { "caption": "Vista general del concepto", "alt": "Concepto catamarán biomimético", "layout": "wide" },
+            { "caption": "Desarrollo del casco", "alt": "Modelado del casco" },
+            { "caption": "Ergonomía y pedaleo", "alt": "Estudio ergonómico a pedales" },
+            { "caption": "Snapshot del prototipo", "alt": "Prototipo del catamarán" }
           ]
         }
       }

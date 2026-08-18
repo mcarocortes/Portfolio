@@ -12,9 +12,11 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {
     PROJECT_IMAGE_SOURCES,
-    PROJECT_VIDEO_SOURCES,
+    PROJECT_HERO_MEDIA,
+    PROJECT_OPPORTUNITY_IMAGES,
     getProjectNeighbors,
     getProjectRoute,
+    getProjectCatalogPath,
     type ProjectCaseKey,
 } from "../../data/projectsCatalog";
 
@@ -199,9 +201,12 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
     );
 
     const imageSources = PROJECT_IMAGE_SOURCES[projectKey] ?? [];
+    const heroMedia = PROJECT_HERO_MEDIA[projectKey];
+    const opportunityImage = PROJECT_OPPORTUNITY_IMAGES[projectKey];
 
-    const projectTitle = t(`projectsSection.items.${projectKey}.title`);
-    const projectTags = t(`projectsSection.items.${projectKey}.tags`, {
+    const catalogPath = getProjectCatalogPath(projectKey);
+    const projectTitle = t(`${catalogPath}.title`);
+    const projectTags = t(`${catalogPath}.tags`, {
         returnObjects: true,
     }) as string[];
 
@@ -242,7 +247,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                             </motion.p>
 
                             <motion.p className="project-case__lead" variants={reveal}>
-                                {t(`projectsSection.items.${projectKey}.subtitle`)}
+                                {t(`${catalogPath}.subtitle`)}
                             </motion.p>
 
                             <motion.section variants={reveal}>
@@ -272,18 +277,32 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         </motion.div>
 
                         <motion.div
-                            className="project-case__heroImage"
+                            className={`project-case__heroImage project-case__heroImage--${heroMedia.type}`}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.15 }}
                             variants={handMotion}
                         >
-                            <HandProject
-                                videoSrc={PROJECT_VIDEO_SOURCES[projectKey]}
-                                ariaLabel={t("projectCaseStudy.previewVideoLabel", {
-                                    project: projectTitle,
-                                })}
-                            />
+                            {heroMedia.type === "hand" ? (
+                                <HandProject
+                                    videoSrc={heroMedia.videoSrc}
+                                    ariaLabel={t("projectCaseStudy.previewVideoLabel", {
+                                        project: projectTitle,
+                                    })}
+                                />
+                            ) : heroMedia.src ? (
+                                <img
+                                    className="project-case__hero-photo"
+                                    src={heroMedia.src}
+                                    alt={t(`${pagePrefix}.heroImageAlt`, {
+                                        defaultValue: projectTitle,
+                                    })}
+                                />
+                            ) : (
+                                <div className="project-case__hero-photo project-case__hero-photo--placeholder" aria-hidden="true">
+                                    <span>{t("projectCaseStudy.imagePlaceholder")}</span>
+                                </div>
+                            )}
                         </motion.div>
                     </div>
                 </div>
@@ -310,13 +329,33 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         ))}
                     </div>
 
-                 <motion.div
+                 {opportunityImage ? (
+                    <motion.img
                         className="img_oportunities"
+                        src={opportunityImage}
+                        alt={t(`${pagePrefix}.opportunityImageAlt`, {
+                            defaultValue: projectTitle,
+                        })}
                         initial="hidden"
                         whileInView="visible"
                         viewport={viewport}
                         variants={reveal}
+                        loading="lazy"
                     />
+                ) : (
+                    <motion.div
+                        className="img_oportunities img_oportunities--placeholder"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewport}
+                        variants={reveal}
+                        aria-hidden="true"
+                    >
+                        <span className="project-case__placeholder-label">
+                            {t("projectCaseStudy.imagePlaceholder")}
+                        </span>
+                    </motion.div>
+                )}
                 </div>
 
 
@@ -356,7 +395,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         <Link to={prev.slug} className="project-case__nav-link project-case__nav-link--prev">
                             <span className="project-case__nav-kicker">{t("projectCaseStudy.prev")}</span>
                             <span className="project-case__nav-title">
-                                {t(`projectsSection.items.${prev.key}.title`)}
+                                {t(`${getProjectCatalogPath(prev.key)}.title`)}
                             </span>
                         </Link>
                     ) : (
@@ -371,7 +410,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         <Link to={next.slug} className="project-case__nav-link project-case__nav-link--next">
                             <span className="project-case__nav-kicker">{t("projectCaseStudy.next")}</span>
                             <span className="project-case__nav-title">
-                                {t(`projectsSection.items.${next.key}.title`)}
+                                {t(`${getProjectCatalogPath(next.key)}.title`)}
                             </span>
                         </Link>
                     ) : (

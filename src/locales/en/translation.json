@@ -147,6 +147,7 @@
       "next": "Next",
       "navLabel": "Project navigation",
       "previewVideoLabel": "Preview video for {{project}}",
+      "opportunityImageAlt": "Project highlight for {{project}}",
       "pages": {
         "healthcare": {
           "headline": "Mobile-first care where teams need it most.",
@@ -296,6 +297,58 @@
             { "caption": "Menu & offerings", "alt": "Menu section design" },
             { "caption": "Reservation flow", "alt": "Reservation UI" },
             { "caption": "Brand applications", "alt": "Brand visual applications" }
+          ]
+        },
+        "packaging": {
+          "headline": "Shelf impact through cohesive packaging systems.",
+          "role": "Packaging Designer",
+          "company": "Beyond Code",
+          "roleDescription": "I designed commercial packaging for food products, building cohesive visual identities focused on shelf impact, brand recognition, and print-ready production files.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "Food brands competing on shelf need packaging that communicates quality instantly — balancing regulation, production constraints, and a distinctive visual identity."
+            },
+            {
+              "title": "Approach",
+              "body": "I developed modular label systems, typography hierarchies, and color palettes that scale across product lines while keeping each SKU readable at a glance."
+            },
+            {
+              "title": "Outcome",
+              "body": "A packaging collection that strengthens brand presence in retail environments and demonstrates design thinking beyond digital interfaces."
+            }
+          ],
+          "images": [
+            { "caption": "Collection overview", "alt": "Packaging design collection", "layout": "wide" },
+            { "caption": "Primary label system", "alt": "Primary packaging label" },
+            { "caption": "Shelf mockup", "alt": "Packaging shelf mockup" },
+            { "caption": "Print detail", "alt": "Packaging print detail" }
+          ]
+        },
+        "catamaran": {
+          "headline": "Biomimicry applied to human-powered water mobility.",
+          "role": "Industrial Designer",
+          "company": "Beyond Code",
+          "roleDescription": "My industrial design thesis focused on a pedal-powered catamaran inspired by biomimicry principles — from research and 3D modeling to prototyping and user-centered validation.",
+          "sections": [
+            {
+              "title": "Context",
+              "body": "The project explored sustainable leisure mobility on water, combining ergonomic pedaling with a stable twin-hull platform inspired by natural forms and efficient movement."
+            },
+            {
+              "title": "Approach",
+              "body": "Research, sketching, and iterative 3D modeling guided decisions around hull geometry, materials, and user posture — always testing against real usability constraints."
+            },
+            {
+              "title": "Outcome",
+              "body": "A biomimetic product concept that connects my industrial design roots with the user-centered mindset I bring to digital products today."
+            }
+          ],
+          "images": [
+            { "caption": "Concept overview", "alt": "Biomimetic catamaran concept", "layout": "wide" },
+            { "caption": "Hull development", "alt": "Catamaran hull modeling" },
+            { "caption": "Ergonomics & pedaling", "alt": "Pedal-powered ergonomics study" },
+            { "caption": "Prototype snapshot", "alt": "Catamaran prototype" }
           ]
         }
       }
