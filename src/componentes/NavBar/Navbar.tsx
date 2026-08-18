@@ -7,8 +7,9 @@ import "./Navbar.css";
 import useNavbarScroll from "../../hooks/useNavbarScroll";
 import useActiveSection from "../../hooks/useActiveSection";
 import useCloseOnRouteChange from "../../hooks/useOnRouterChange";
-import { scrollToTop } from "../../lib/smoothScroll";
+import { scrollToTop, handleSectionLinkClick } from "../../lib/smoothScroll";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
 
@@ -19,6 +20,7 @@ export default function Navbar() {
   const hidden = useNavbarScroll(); //Desaparecer navbar con scroll
   const activeSection = useActiveSection(); // Destacar currentLink
   const { t } = useTranslation();
+  const location = useLocation();
 
   /* FUNCTIONS */
   const toggleMenu = () => {
@@ -52,9 +54,15 @@ export default function Navbar() {
       <div className={`navbar ${hidden ? "navbar-hidden" : ""}`}>
         <div className="bg-navbar">
 
-          <Link to="#Home" className="navbar-brand logoNavM" onClick={() => {
-            scrollToTop();
-            window.history.replaceState(null, "", "#Home");}}
+          <Link
+            to="/#Home"
+            className="navbar-brand logoNavM"
+            onClick={(event) => {
+              if (location.pathname !== "/") return;
+              event.preventDefault();
+              scrollToTop();
+              window.history.replaceState(null, "", "#Home");
+            }}
           />
           <div className="nav-menu-wrapper-right">
 
@@ -62,32 +70,33 @@ export default function Navbar() {
               <div className="nav-buttons-wrapper new">
 
 <Link
-  to="#About"
+  to="/#About"
   className={`navbartext ${activeSection === "About" ? "active" : ""}`}
-  onClick={() => {
-    document.getElementById("About")?.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", "#About");
-  }}
+  onClick={(event) => handleSectionLinkClick(event, "#About", location.pathname)}
 >
   {t("about")}
 </Link>                
-                <Link to="#Evolution" className={`navbartext ${activeSection === "Evolution" ? "active" : ""}`} onClick={() => {
-  document.getElementById("Evolution")?.scrollIntoView({ behavior: "smooth" });
-  window.history.replaceState(null, "", "#Evolution");
-}}>{t("evolution")}</Link>
-                <Link to="#WhatIDo" className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`} onClick={() => {
-  document.getElementById("WhatIDo")?.scrollIntoView({ behavior: "smooth" });
-  window.history.replaceState(null, "", "#WhatIDo");
-}}>{t("whatido")}</Link>
-<Link to="#Projects" className={`navbartext ${activeSection === "Projects" ? "active" : ""}`} onClick={() => {
-  document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
-  window.history.replaceState(null, "", "#Projects");
-}}>{t("projects")}</Link>
+                <Link
+                  to="/#Evolution"
+                  className={`navbartext ${activeSection === "Evolution" ? "active" : ""}`}
+                  onClick={(event) => handleSectionLinkClick(event, "#Evolution", location.pathname)}
+                >{t("evolution")}</Link>
+                <Link
+                  to="/#WhatIDo"
+                  className={`navbartext ${activeSection === "WhatIDo" ? "active" : ""}`}
+                  onClick={(event) => handleSectionLinkClick(event, "#WhatIDo", location.pathname)}
+                >{t("whatido")}</Link>
+<Link
+  to="/#Projects"
+  className={`navbartext ${activeSection === "Projects" ? "active" : ""}`}
+  onClick={(event) => handleSectionLinkClick(event, "#Projects", location.pathname)}
+>{t("projects")}</Link>
 
-                <Link to="#Contact" className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}onClick={() => {
-  document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" });
-  window.history.replaceState(null, "", "#Contact");
-}}>{t("contact")}</Link>
+                <Link
+                  to="/#Contact"
+                  className={`navbartext btnContact ${activeSection === "Contact" ? "active" : ""}`}
+                  onClick={(event) => handleSectionLinkClick(event, "#Contact", location.pathname)}
+                >{t("contact")}</Link>
               </div>
             </nav>
 

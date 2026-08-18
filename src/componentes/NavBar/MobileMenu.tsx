@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"; //Navegar sin recargar la página.
-//import AccessibilityPanel from "../Accessibility/AccessibilityPanel";
-import { useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useRef, type MouseEvent } from "react";
 import "./Navbar.css";
-import useClickOutside from "../../hooks/useClickOutside"
+import useClickOutside from "../../hooks/useClickOutside";
+import { handleSectionLinkClick } from "../../lib/smoothScroll";
 import { useTranslation } from "react-i18next";
 
 
@@ -22,6 +22,11 @@ export default function MobileMenu({ isOpen, onClose, /*accessibilityOpen, setAc
 
   /* HOOKS*/
   const { t } = useTranslation();
+  const location = useLocation();
+
+  const onSectionClick = (event: MouseEvent<HTMLAnchorElement>, hash: string) => {
+    handleSectionLinkClick(event, hash, location.pathname, onClose);
+  };
 
 
   /* Handle Click Outside Menu */
@@ -36,39 +41,35 @@ export default function MobileMenu({ isOpen, onClose, /*accessibilityOpen, setAc
 <Link
   to="/#About"
   className="menuLinktext"
-  onClick={() => {
-    onClose();
-    document.getElementById("About")?.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", "#About");
-  }}
+  onClick={(event) => onSectionClick(event, "#About")}
 >
   {t("about")}
 </Link>
         <hr />
-        <Link to="/#Evolution" className="menuLinktext"   onClick={() => {
-    onClose();
-    document.getElementById("Evolution")?.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", "#Evolution");
-  }}>{t("evolution")}</Link>
+        <Link
+          to="/#Evolution"
+          className="menuLinktext"
+          onClick={(event) => onSectionClick(event, "#Evolution")}
+        >{t("evolution")}</Link>
    <hr />
    
-        <Link to="/#WhatIDo" className="menuLinktext"   onClick={() => {
-    onClose();
-    document.getElementById("WhatIDo")?.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", "#WhatIDo");
-  }}>{t("whatido")}</Link>
+        <Link
+          to="/#WhatIDo"
+          className="menuLinktext"
+          onClick={(event) => onSectionClick(event, "#WhatIDo")}
+        >{t("whatido")}</Link>
  <hr />
-        <Link to="/#Projects" className="menuLinktext"   onClick={() => {
-    onClose();
-    document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", "#Projects");
-  }}>{t("projects")}</Link>
+        <Link
+          to="/#Projects"
+          className="menuLinktext"
+          onClick={(event) => onSectionClick(event, "#Projects")}
+        >{t("projects")}</Link>
 
-        <Link to="/#Contact" className="menuLinktext btnContact"   onClick={() => {
-    onClose();
-    document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", "#Contact");
-  }}>{t("contact")}</Link>
+        <Link
+          to="/#Contact"
+          className="menuLinktext btnContact"
+          onClick={(event) => onSectionClick(event, "#Contact")}
+        >{t("contact")}</Link>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ export const EvolutionPath = forwardRef<SVGPathElement>(
         return (
             <svg
                 className="experience-path-svg"
-                viewBox="0 0 1600 100vw"
+                viewBox="0 0 1600 1000"
                 preserveAspectRatio="none"
                 aria-hidden="true"
             >

@@ -1,14 +1,24 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { shouldSuppressActiveSectionUpdate } from "../lib/smoothScroll";
 
 const NAV_IDS = ["Home", "About", "Projects", "Evolution", "WhatIDo", "Contact"];
 
 export default function useActiveSection() {
   const [activeSection, setActiveSection] = useState("Home");
   const currentRef = useRef("Home");
+  const { pathname } = useLocation();
 
   useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection("Home");
+      currentRef.current = "Home";
+      return;
+    }
+
     const handleScroll = () => {
-      // ── 1) Home: arriba del todo ──
+      if (shouldSuppressActiveSectionUpdate()) return;
+
       if (window.scrollY < window.innerHeight * 0.35) {
         if (currentRef.current !== "Home") {
           currentRef.current = "Home";
@@ -18,7 +28,6 @@ export default function useActiveSection() {
         return;
       }
 
-      // ── 2) Resto: la sección con más área visible ──
       let bestId = "";
       let bestVisible = 0;
 
@@ -53,7 +62,7 @@ export default function useActiveSection() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("lenis-scroll", handleScroll as EventListener);
     };
-  }, []);
+  }, [pathname]);
 
   return activeSection;
 }

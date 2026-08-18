@@ -11,7 +11,6 @@ import {
     getProjectRoute,
     type ProjectCaseKey,
 } from "../../data/projectsCatalog";
-import { scrollToHash } from "../../lib/smoothScroll";
 
 type CaseSection = {
     title: string;
@@ -203,14 +202,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         <span className="project-case__nav-spacer" aria-hidden="true" />
                     )}
 
-                    <Link
-                        to="/#Projects"
-                        className="project-case__nav-back"
-                        onClick={() => {
-                            window.history.replaceState(null, "", "#Projects");
-                            scrollToHash("#Projects");
-                        }}
-                    >
+                    <Link to="/#Projects" className="project-case__nav-back">
                         {t("projectCaseStudy.backToProjects")}
                     </Link>
 
