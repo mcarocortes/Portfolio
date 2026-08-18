@@ -38,7 +38,7 @@
   --font-size-h2: calc(36px * var(--font-scale));
   --font-size-h3: calc(26px * var(--font-scale));
   --font-size-h4: calc(22px * var(--font-scale));
-  --font-size-maximus: calc(90px * var(--font-scale));
+  --font-size-maximus: calc(75px * var(--font-scale));
 
 
   --font-family-base: "DIN Next LT Pro", system-ui, -apple-system, sans-serif;
@@ -214,7 +214,7 @@ label {
     --font-size-h3: calc(22px * var(--font-scale));
     --font-size-h4: calc(18px * var(--font-scale));
     --font-size-base: calc(18px * var(--font-scale));
-    --font-size-maximus:calc(75px * var(--font-scale));
+    --font-size-maximus:calc(65px * var(--font-scale));
   }
 
 }
@@ -230,7 +230,7 @@ label {
     --font-size-h4: calc(18px * var(--font-scale));
     --font-size-base: calc(18px * var(--font-scale));
     --font-size-underBase: calc(16px * var(--font-scale));
-    --font-size-maximus:calc(60px * var(--font-scale));
+    --font-size-maximus:calc(50px * var(--font-scale));
   }
 
   .heading {
@@ -253,7 +253,7 @@ label {
     --font-size-heading: calc(40px * var(--font-scale));
     --font-size-base: calc(16px * var(--font-scale));
     --font-size-underBase: calc(14px * var(--font-scale));
-    --font-size-maximus:calc(50px * var(--font-scale));
+    --font-size-maximus:calc(45px * var(--font-scale));
   }
 
 
