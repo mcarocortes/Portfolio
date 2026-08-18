@@ -245,7 +245,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                                 {t(`projectsSection.items.${projectKey}.subtitle`)}
                             </motion.p>
 
-                            <motion.section className="project-case__block" variants={reveal}>
+                            <motion.section variants={reveal}>
                                 <h2 className="project-case__block-title">
                                     {t("projectCaseStudy.roleTitle")}
                                 </h2>
@@ -291,22 +291,26 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
 
             <div>
                 <div className="project-case_oportunities">
-                    {sections.map((section, index) => (
-                        <motion.section
-                            key={section.title}
+                    <div className="block-boxes">
+                        {sections.map((section, index) => (                           
+                        
+                            <motion.section
+                                key={section.title}
                             className="project-case__block"
                             initial="hidden"
                             whileInView="visible"
                             viewport={viewport}
                             variants={reveal}
                             transition={{ delay: index * 0.04 }}
-                        >
+                            >
                             <h2 className="project-case__block-title">{section.title}</h2>
                             <p className="project-case__block-text">{section.body}</p>
                         </motion.section>
-                    ))}
+                        
+                        ))}
+                    </div>
 
-                    <motion.div
+                 <motion.div
                         className="img_oportunities"
                         initial="hidden"
                         whileInView="visible"
@@ -314,6 +318,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         variants={reveal}
                     />
                 </div>
+
 
                 <motion.section
                     className="project-case__gallery"
@@ -355,7 +360,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                             </span>
                         </Link>
                     ) : (
-                        <span className="project-case__nav-spacer" aria-hidden="true" />
+                        <span className="project-case__nav-spacer project-case__nav-spacer--prev" aria-hidden="true" />
                     )}
 
                     <Link to="/#Projects" className="project-case__nav-back">
@@ -370,7 +375,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                             </span>
                         </Link>
                     ) : (
-                        <span className="project-case__nav-spacer" aria-hidden="true" />
+                        <span className="project-case__nav-spacer project-case__nav-spacer--next" aria-hidden="true" />
                     )}
                 </div>
             </nav>

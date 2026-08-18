@@ -182,7 +182,7 @@ div .exterior .icon img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white-transparent2);
+  background-color: rgba(255, 255, 255, 0.73);
   border: solid 1px var(--purpura5);
   border-right: solid 2px var(--purpura4);
   border-radius: 15px;
@@ -203,8 +203,8 @@ div .exterior .icon img {
   padding: 3px;
 }
 .underAbout .two{
-  border-right: solid 1px var(--purpura4);
-  border-left: solid 1px var(--purpura4);
+  border-right: solid 1px var(--purpura3);
+  border-left: solid 1px var(--purpura3);
 }
 
 .underAbout span{
