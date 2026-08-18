@@ -330,16 +330,24 @@
 /******************* PROJECT CASE STUDY **************************/
 
 .dark-mode .project-case {
-  background: var(--black);
+  background-color: var(--black);
   color: var(--white);
 }
 
 .dark-mode .project-case__hero {
-  border-bottom-color: rgba(140, 142, 242, 0.2);
-  background: linear-gradient(180deg, rgba(90, 18, 250, 0.12) 0%, rgba(31, 34, 31, 0) 72%);
+  border-bottom-color:var(--black-light);
+  background: linear-gradient(180deg, var(--purpura-transparent) 0%, var(--white-transparent) 50%);
 }
 
-.dark-mode .project-case__lead,
+.dark-mode .project-case_oportunities{
+  background-color: rgb(19, 19, 19) !important;
+  border-bottom-color:var(--black-light);
+}
+.dark-mode .project-case__gallery {
+    background-color: var(--black);
+    border-bottom-color:var(--black-light);
+  }
+/*.dark-mode .project-case__lead,
 .dark-mode .project-case__block-text,
 .dark-mode .project-case__caption {
   color: rgba(255, 255, 255, 0.72);
@@ -373,15 +381,23 @@
       transparent 16px
     );
 }
-
+*/
 .dark-mode .project-case__nav {
-  background: rgba(90, 18, 250, 0.1);
-  border-top-color: rgba(140, 142, 242, 0.2);
+  background-color: var(--black);
+}
+
+.dark-mode .project-case__nav-back {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--black-light);
+  color: var(--white);
 }
 
 .dark-mode .project-case__nav-back:hover {
-  background: var(--purpura);
-  color: var(--white);
+    background: var(--purpura);
+    border-color: var(--purpura);
+    color: var(--white);
+    transform: translateY(-1px);
+    text-decoration: none;
 }
 
 /************************** CONTACT ***********************/

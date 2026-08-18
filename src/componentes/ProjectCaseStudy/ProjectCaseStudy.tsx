@@ -123,9 +123,9 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                 
             </header>
 
-            <div className="project-case__body">
+            <div>
 
-
+            <div className="project-case_oportunities">
                 {sections.map((section) => (
                     <motion.section
                         key={section.title}
@@ -139,7 +139,8 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         <p className="project-case__block-text">{section.body}</p>
                     </motion.section>
                 ))}
-
+                <motion.div className="img_oportunities"></motion.div>
+            </div>
                 <motion.section
                     className="project-case__gallery"
                     initial="hidden"

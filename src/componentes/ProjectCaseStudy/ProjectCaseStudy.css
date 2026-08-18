@@ -117,32 +117,31 @@
     margin-bottom: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.project-case__body {
-    padding:
-        clamp(2rem, 5vh, 3rem)
+.project-case_oportunities{
+    background-color: #f3f3ff;
+        padding:
         var(--margin-left-rigth-general)
-        clamp(3rem, 8vh, 5rem);
+        var(--margin-left-rigth-general)
+        0;
+        border-bottom: 1px solid rgba(90, 18, 250, 0.12);
+}
+
+
+.img_oportunities{
+    height: 60vh;
+    width: 100%;
+    background: url("/src/assets/img/Projects/Movies/1.CoficafeTotal.jpg");
 }
 
 
 .project-case__gallery {
-    max-width: 1180px;
-    margin: clamp(3rem, 8vh, 5rem) auto 0;
+    background-color: var(--white);
+            padding:
+        var(--margin-left-rigth-general)
+        var(--margin-left-rigth-general)
+        var(--margin-left-rigth-general);
+    border-bottom: 1px solid rgba(90, 18, 250, 0.12);
+
 }
 
 .project-case__gallery-grid {
@@ -228,7 +227,7 @@
 
 .project-case__nav {
     border-top: 1px solid rgba(90, 18, 250, 0.12);
-    background: rgba(191, 193, 252, 0.22);
+    background: var(--white);
     padding:
         clamp(1.25rem, 3vh, 2rem)
         var(--margin-left-rigth-general);
@@ -251,11 +250,13 @@
     text-decoration: none;
     color: var(--text);
     transition: color 0.25s ease, transform 0.25s ease;
+    text-decoration: none;
 }
 
 .project-case__nav-link:hover {
     color: var(--purpura);
     transform: translateY(-1px);
+    text-decoration: none;
 }
 
 .project-case__nav-link--next {
