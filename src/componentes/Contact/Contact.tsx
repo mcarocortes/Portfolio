@@ -1,96 +1,102 @@
-import './Contact.css'
-import logoName from '../../assets/img/Footer/macarenaFooter.svg'
-import Spline from '@splinetool/react-spline';
-import { Link } from 'react-router-dom'
-import { scrollToTop } from '../../lib/smoothScroll'
+import "./Contact.css";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { scrollToTop } from "../../lib/smoothScroll";
 
 export default function Contact() {
-  return (
-    <>
-      <section id="Contact" >
-        {/*<div className='loop'>
-          <div className="track">
-              <img src={logoName} alt="" />
-              <img src={logoName} alt="" />
-              <img src={logoName} alt="" />              
-              <img src={logoName} alt="" />
-              <img src={logoName} alt="" />
-              <img src={logoName} alt="" />
-              </div>
-        </div>*/}
-        <div className='content'>
-          <div className='message'>
-            
-            <p className='title'>Crafting <span>bold <br />design</span> experiences</p>
+    const { t } = useTranslation();
+    const mailSubject = encodeURIComponent(t("contactSection.mailSubject"));
 
-            <button className='btnAContacto' onClick={() =>
-              window.location.href =
-              "mailto:m.caro.cortes2@gmail.com?subject=I%20want%20to%20connect!"
-            }>Let's talk!</button>
+    return (
+        <>
+            <section id="Contact">
+                <div className="content">
+                    <div className="message">
+                        <p className="title">
+                            {t("contactSection.titleBefore")}
+                            <span>
+                                {t("contactSection.titleHighlightLine1")} <br />
+                                {t("contactSection.titleHighlightLine2")}
+                            </span>
+                            {t("contactSection.titleAfter")}
+                        </p>
 
-            <p className='madeWith'>Made with <span>love</span> in Spain ❤︎</p>
-          </div>
+                        <button
+                            className="btnAContacto"
+                            onClick={() => {
+                                window.location.href = `mailto:m.caro.cortes2@gmail.com?subject=${mailSubject}`;
+                            }}
+                        >
+                            {t("contactSection.cta")}
+                        </button>
 
-          <div className='items'>
-            
-            <ul>
-              <li>
-                <a href="mailto:m.caro.cortes2@gmail.com" className="list">Email</a>
-              </li>
+                        <p className="madeWith">
+                            {t("contactSection.madeWithBefore")}
+                            <span>{t("contactSection.madeWithHighlight")}</span>
+                            {t("contactSection.madeWithAfter")}
+                        </p>
+                    </div>
 
-              <li>
-                <a href="https://www.linkedin.com/in/macarena-caro-cortes/"className="list" target="_blank"rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </li>
+                    <div className="items">
+                        <ul>
+                            <li>
+                                <a href="mailto:m.caro.cortes2@gmail.com" className="list">
+                                    {t("contactSection.email")}
+                                </a>
+                            </li>
 
-              <li>
-                <a
-                  href="https://github.com/mcarocortes" className="list" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/macarena-caro-cortes/"
+                                    className="list"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    LinkedIn
+                                </a>
+                            </li>
 
-              <li>
-                <a
-                  href="https://www.instagram.com/macarocortes/"
-                  className="list"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram
-                </a>
-              </li>
-            </ul>
+                            <li>
+                                <a
+                                    href="https://github.com/mcarocortes"
+                                    className="list"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                </a>
+                            </li>
 
-          </div>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/macarocortes/"
+                                    className="list"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-        </div>
+                <div className="logoTrack"></div>
 
-        <div className='logoTrack'>
-
-        </div>
-        <div className='footerLine'>
-          Copyright © Macarena Caro 2026. All rights reserved
-          <Link
-            to="#Home"
-            className="back"
-            onClick={() => {
-              scrollToTop();
-              window.history.replaceState(null, "", "#Home");
-            }}
-          >
-            Back to top
-          </Link>
-        </div>
-        {/*<div className='figures'>
-          <Spline scene="https://prod.spline.design/H3rK74CKvZRSLX4n/scene.splinecode" />
-        </div>*/}
-      </section>
-
-
-    </>
-  )
-
-
+                <div className="footerLine">
+                    {t("contactSection.copyright")}
+                    <Link
+                        to="#Home"
+                        className="back"
+                        onClick={() => {
+                            scrollToTop();
+                            window.history.replaceState(null, "", "#Home");
+                        }}
+                    >
+                        {t("contactSection.backToTop")}
+                    </Link>
+                </div>
+            </section>
+        </>
+    );
 }

@@ -32,11 +32,61 @@
     },
 
 
-    "projectsSection":{
+    "projectsSection": {
       "augmentedreality": "Augmented Reality",
       "webDevelopment": "Web Development",
-      "brandDevelopment": "Brand Development"
-
+      "brandDevelopment": "Brand Development",
+      "beyondCode": {
+        "title": "Beyond Code",
+        "subtitle": "Design · Branding · Products",
+        "descriptionBefore": "Before transitioning into Front-End development, I worked in ",
+        "descriptionHighlight": "product design, branding, and graphic design.",
+        "descriptionAfter": " This background allows me to approach interfaces not only from a technical perspective but also through user experience, visual communication, and problem-solving."
+      },
+      "items": {
+        "healthcare": {
+          "title": "Healthcare Platform (PWA)",
+          "subtitle": "Designed and developed new features for a production Progressive Web App used in healthcare facilities, improving mobile usability, performance, and day-to-day workflows.",
+          "tags": ["PWA", "Mobile UX/UI", "Responsive Design", "API Integration"]
+        },
+        "modular": {
+          "title": "modulAR",
+          "subtitle": "A multi-service platform that connects artists, clients, and job opportunities through immersive Augmented Reality experiences, increasing engagement and product visibility.",
+          "tags": ["ASP.NET Core", "Augmented Reality", "MVC", "E-commerce"]
+        },
+        "vc": {
+          "title": "Valezka Cortés",
+          "subtitle": "Designed a trustworthy digital identity and website for a psychology and family mediation practice, focused on accessibility, clarity, and user confidence.",
+          "tags": ["Branding", "UX/UI", "React", "Web Design"]
+        },
+        "bank": {
+          "title": "Modern React Dashboard",
+          "subtitle": "A modern banking dashboard concept built with React and TypeScript, focused on data visualization, clean UI patterns, and scalable front-end architecture.",
+          "tags": ["React", "TypeScript", "Data Visualization", "UI Design"]
+        },
+        "movies": {
+          "title": "AI Assistant",
+          "subtitle": "An AI-powered assistant interface that demonstrates practical integration of modern APIs, conversational UX, and cloud-ready front-end development.",
+          "tags": ["Web Design", "API Development", "React", "Azure"]
+        },
+        "vinos": {
+          "title": "Vinos y Sabores",
+          "subtitle": "Designed a clean and elegant digital experience for a wine bar, combining branding, usability, and online reservation features.",
+          "tags": ["Branding", "UX/UI", "Visual Identity", "Responsive"]
+        }
+      },
+      "beyond": {
+        "packaging": {
+          "title": "Packaging Design Collection",
+          "subtitle": "Designed commercial packaging for food products, creating cohesive visual identities focused on shelf impact and brand recognition.",
+          "tags": ["Packaging", "Print Design", "Illustrator"]
+        },
+        "catamaran": {
+          "title": "Biomimetic Catamaran",
+          "subtitle": "Industrial design thesis focused on creating a pedal-powered catamaran inspired by biomimicry principles and user-centered design.",
+          "tags": ["3D Modeling", "Product Design", "Prototyping"]
+        }
+      }
     },
 
     "whatIBringSection": {
@@ -86,6 +136,21 @@
         "tools": "Tools",
         "data": "AI & Data"
       }
+    },
+
+    "contactSection": {
+      "titleBefore": "Crafting ",
+      "titleHighlightLine1": "bold",
+      "titleHighlightLine2": "design",
+      "titleAfter": " experiences",
+      "cta": "Let's talk!",
+      "mailSubject": "I want to connect!",
+      "madeWithBefore": "Made with ",
+      "madeWithHighlight": "love",
+      "madeWithAfter": " in Spain ❤︎",
+      "email": "Email",
+      "copyright": "Copyright © Macarena Caro 2026. All rights reserved",
+      "backToTop": "Back to top"
     },
 
     "evolutionSection": {

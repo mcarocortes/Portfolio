@@ -32,11 +32,61 @@
       "innovation":"Innovación"
   },
 
-      "projectsSection":{
+      "projectsSection": {
       "augmentedreality": "Realidad Aumentada",
       "webDevelopment": "Desarrollo Web",
-      "brandDevelopment": "Desarrollo de Marca"
-
+      "brandDevelopment": "Desarrollo de Marca",
+      "beyondCode": {
+        "title": "Más allá del código",
+        "subtitle": "Diseño · Branding · Producto",
+        "descriptionBefore": "Antes de dar el salto al desarrollo Front-End, trabajé en ",
+        "descriptionHighlight": "diseño de producto, branding y diseño gráfico.",
+        "descriptionAfter": " Esta base me permite abordar las interfaces no solo desde lo técnico, sino también desde la experiencia de usuario, la comunicación visual y la resolución de problemas."
+      },
+      "items": {
+        "healthcare": {
+          "title": "Plataforma Sanitaria (PWA)",
+          "subtitle": "Diseño y desarrollo de nuevas funcionalidades para una PWA en producción usada en centros sanitarios, mejorando usabilidad móvil, rendimiento y flujos de trabajo diarios.",
+          "tags": ["PWA", "UX/UI Móvil", "Diseño Responsive", "Integración API"]
+        },
+        "modular": {
+          "title": "modulAR",
+          "subtitle": "Plataforma multiservicio que conecta artistas, clientes y oportunidades laborales mediante experiencias inmersivas de Realidad Aumentada, aumentando engagement y visibilidad del producto.",
+          "tags": ["ASP.NET Core", "Realidad Aumentada", "MVC", "E-commerce"]
+        },
+        "vc": {
+          "title": "Valezka Cortés",
+          "subtitle": "Identidad digital y web para una consulta de psicología y mediación familiar, con foco en accesibilidad, claridad y confianza del usuario.",
+          "tags": ["Branding", "UX/UI", "React", "Diseño Web"]
+        },
+        "bank": {
+          "title": "Dashboard moderno React",
+          "subtitle": "Concepto de dashboard bancario construido con React y TypeScript, centrado en visualización de datos, patrones de UI limpios y arquitectura front-end escalable.",
+          "tags": ["React", "TypeScript", "Visualización de datos", "Diseño UI"]
+        },
+        "movies": {
+          "title": "Asistente con IA",
+          "subtitle": "Interfaz de asistente con IA que demuestra integración práctica de APIs modernas, UX conversacional y desarrollo front-end preparado para la nube.",
+          "tags": ["Diseño Web", "Desarrollo API", "React", "Azure"]
+        },
+        "vinos": {
+          "title": "Vinos y Sabores",
+          "subtitle": "Experiencia digital elegante para una vinoteca, combinando branding, usabilidad y funcionalidades de reserva online.",
+          "tags": ["Branding", "UX/UI", "Identidad Visual", "Responsive"]
+        }
+      },
+      "beyond": {
+        "packaging": {
+          "title": "Colección de Packaging",
+          "subtitle": "Diseño de packaging comercial para productos alimentarios, creando identidades visuales cohesionadas orientadas al impacto en estantería y reconocimiento de marca.",
+          "tags": ["Packaging", "Diseño Print", "Illustrator"]
+        },
+        "catamaran": {
+          "title": "Catamarán Biomimético",
+          "subtitle": "Proyecto fin de grado en diseño industrial: catamarán a pedales inspirado en biomímesis y diseño centrado en las personas.",
+          "tags": ["Modelado 3D", "Diseño de Producto", "Prototipado"]
+        }
+      }
     },
 
     "whatIBringSection": {
@@ -86,6 +136,21 @@
         "tools": "Tools",
         "data": "IA & Data"
       }
+    },
+
+    "contactSection": {
+      "titleBefore": "Creando ",
+      "titleHighlightLine1": "experiencias",
+      "titleHighlightLine2": "de diseño",
+      "titleAfter": " audaces",
+      "cta": "¡Hablemos!",
+      "mailSubject": "¡Quiero conectar!",
+      "madeWithBefore": "Hecho con ",
+      "madeWithHighlight": "amor",
+      "madeWithAfter": " en España ❤︎",
+      "email": "Email",
+      "copyright": "Copyright © Macarena Caro 2026. Todos los derechos reservados",
+      "backToTop": "Volver arriba"
     },
 
     "evolutionSection": {
