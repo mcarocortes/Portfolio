@@ -304,7 +304,13 @@ export default function Evolution() {
                             <p className="experience-mobile-description">{step.description}</p>
                             <div className="experience-mobile-visual">
                                 <div className={`experience-visual-bg ${step.bgClass}`} />
-                                <div className={`experience-visual-fg ${step.fgClass}`} />
+                                <div className={`experience-visual-fg ${step.fgClass}`}>
+                                    <div className="visual-fg_title">
+                                        {step.years}
+                                        <div className={`visual-fg_icon fg_icon_${step.key}`}></div>
+                                    </div>
+                                    {step.subtitle}
+                                </div>
                             </div>
                         </li>
                     ))}

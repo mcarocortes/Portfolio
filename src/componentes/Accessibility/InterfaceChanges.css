@@ -225,6 +225,13 @@
   color: var(--white);
 }
 
+.dark-mode .experience-visual-fg{
+
+    box-shadow:
+        5px 5px 10px var(--purpura),
+        0 0 0 1px var(--black-transparent2) inset;
+
+}
 .dark-mode .experience-visual-bg--industrial {
     background-image:url("/src/assets/img/Evolution/img_2021_darkmode.png");
 }

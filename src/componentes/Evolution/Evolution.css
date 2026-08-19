@@ -169,7 +169,7 @@
 }
 
 .experience-visual-fg {
-    
+    box-sizing: border-box;
     width: clamp(150px, 36%, 240px);
     height: clamp(150px, 36%, 240px);
     right: clamp(0.5rem, 6%, 1.75rem);
@@ -185,9 +185,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: var(--font-size-underbase);
-    line-height:20px;
-    
+    font-size: var(--font-size-underBase);
+    line-height: 1.25;
+    overflow-wrap: break-word;
 }
 
 .experience-visual-bg--industrial {
@@ -227,6 +227,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 0.4rem;
     font-size: var(--font-size-h3);
     border-bottom: solid 1px var(--white);
     margin-bottom: 10px;
@@ -237,6 +238,7 @@
 .visual-fg_icon{
     width: 45px;
     height: 45px;
+    flex-shrink: 0;
 }
 
 .fg_icon_industrial{
@@ -264,7 +266,7 @@
     background-image: url("/src/assets/img/Evolution/icon_2026.png");
     background-size: contain;
     background-position: center, 88% 78%;
-    background-repeat: no-repeat;-size: contain;
+    background-repeat: no-repeat;
 }
 
 .experience-visual-fg--web {
@@ -390,7 +392,7 @@
 
     .experience-mobile-visual {
         position: relative;
-        min-height: 220px;
+        min-height: 260px;
         margin-top: 0.5rem;
     }
 
@@ -399,8 +401,49 @@
     }
 
     .experience-mobile-visual .experience-visual-fg {
-        right: 1rem;
+        width: clamp(148px, 48%, 190px);
+        height: auto;
+        min-height: clamp(148px, 48%, 190px);
+        right: 0.75rem;
         bottom: 0;
+        padding: 12px;
+        font-size: var(--font-size-underBase);
+        line-height: 1.2;
+    }
+
+    .experience-mobile-visual .visual-fg_title {
+        font-size: var(--font-size-h4);
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+    }
+
+    .experience-mobile-visual .visual-fg_icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .experience-mobile-visual {
+        min-height: 230px;
+    }
+
+    .experience-mobile-visual .experience-visual-fg {
+        width: clamp(132px, 52%, 168px);
+        min-height: clamp(132px, 52%, 168px);
+        right: 0.5rem;
+        padding: 10px;
+    }
+
+    .experience-mobile-visual .visual-fg_title {
+        font-size: var(--font-size-underBase);
+        gap: 0.35rem;
+    }
+
+    .experience-mobile-visual .visual-fg_icon {
+        width: 28px;
+        height: 28px;
     }
 }
 
@@ -411,5 +454,21 @@
 
     .experience-slide-copy {
         max-width: 100%;
+    }
+
+    .experience-visual-fg {
+        width: clamp(160px, 42%, 210px);
+        height: clamp(160px, 42%, 210px);
+        padding: 12px;
+    }
+
+    .visual-fg_title {
+        font-size: var(--font-size-h4);
+    }
+
+    .visual-fg_icon {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
     }
 }

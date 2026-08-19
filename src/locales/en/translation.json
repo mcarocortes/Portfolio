@@ -375,24 +375,32 @@
   "industrial": {
     "title": "Industrial Designer",
     "period": "2016–2021",
+    "years": "+3 Years",
+    "slogan": "Research • Prototype • Solve",
     "subtitle": "Human-centered design",
     "description": "My career began designing physical products through research, prototyping, and project management. This user-centered approach continues to shape how I design and build digital products today."
   },
   "web": {
     "title": "Web Development",
     "period": "2022–2024",
+    "years": "2 Years",
+    "slogan": "Learn • Code • Build",
     "subtitle": "From design to code",
     "description": "I transitioned into web development to turn ideas into digital experiences. Since then, I've built web and mobile applications with a strong focus on usability, performance, and user value."
   },
   "ai": {
     "title": "AI & Big Data Specialization",
     "period": "2025",
+    "years": "1 Year",
+    "slogan": "Analyze • Train • Automate",
     "subtitle": "Data, AI & automation",
     "description": "I expanded my perspective by exploring artificial intelligence, data, and automation to create smarter, more efficient, and future-oriented solutions."
   },
   "lead": {
     "title": "Front-End Team Lead",
     "period": "2026–Present",
+    "years": "Today",
+    "slogan": "Research • Prototype • Solve",
     "subtitle": "Product, leadership & collaboration",
     "description": "Today I lead the Front-End development of a production application, contributing to technical decisions, new features, and the product's continuous evolution with a strong focus on quality and user experience."
   }
