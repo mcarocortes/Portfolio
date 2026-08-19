@@ -102,16 +102,21 @@
 }
 
 .what-i-bring__grid {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: clamp(1rem, 2vw, 1.6rem);
+    --card-gap: clamp(1rem, 2vw, 1.6rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--card-gap);
 }
 
 .what-i-bring__card {
     position: relative;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    grid-column: span 2;
+    flex: 0 1 calc((100% - 2 * var(--card-gap)) / 3);
+    width: calc((100% - 2 * var(--card-gap)) / 3);
+    min-width: min(100%, 18rem);
     padding: 1.35rem 1.35rem 1.5rem;
     border-radius: 18px;
     border: 1px solid var(--white-transparent2);
@@ -121,14 +126,6 @@
         transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.35s ease,
         border-color 0.35s ease;
-}
-
-.what-i-bring__card:nth-child(4) {
-    grid-column: 2 / span 2;
-}
-
-.what-i-bring__card:nth-child(5) {
-    grid-column: 4 / span 2;
 }
 
 .what-i-bring__card:hover {
@@ -170,6 +167,7 @@
     font-family: var(--font-family-bold);
     line-height: 1.15;
     color: var(--text);
+    overflow-wrap: break-word;
 }
 
 .what-i-bring__card-subtitle {
@@ -199,25 +197,12 @@
     display: none;
 }
 
-@media screen and (max-width: 1100px) {
-    .what-i-bring__card:nth-child(4),
-    .what-i-bring__card:nth-child(5) {
-        grid-column: span 2;
-    }
-
-    .what-i-bring__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+@media screen and (max-width: 1280px) and (min-width: 992px) {
     .what-i-bring__card {
-        grid-column: auto;
-    }
-
-    .what-i-bring__card:last-child {
-        grid-column: 1 / -1;
-        max-width: calc(50% - 0.8rem);
-        justify-self: center;
-        width: 100%;
+        flex: 1 1 calc((100% - var(--card-gap)) / 2);
+        width: calc((100% - var(--card-gap)) / 2);
+        max-width: calc((100% - var(--card-gap)) / 2);
+        min-width: 0;
     }
 }
 
