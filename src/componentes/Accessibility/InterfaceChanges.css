@@ -254,8 +254,30 @@
   background-color: var(--black);
 }
 
+.dark-mode .what-i-bring__portrait-img--light {
+  display: none;
+}
+
+.dark-mode .what-i-bring__portrait-img--dark {
+  display: block;
+  mix-blend-mode: screen;
+}
+
+.dark-mode .what-i-bring__lede,
+.dark-mode .what-i-bring__card-text,
+.dark-mode .what-i-bring__row-subtitle {
+  color: var(--purpura4);
+}
+
+.dark-mode .what-i-bring__card-title,
+.dark-mode .what-i-bring__card-subtitle,
+.dark-mode .what-i-bring__row-title,
+.dark-mode .what-i-bring__row-text {
+  color: var(--white);
+}
+
 .dark-mode .what-i-bring__card {
-  border: 1px solid var(--black-light);
+  border-color: var(--black-light);
   background-color: var(--black-transparent2);
   box-shadow: 3px 3px 8px var(--purpura2);
 }
@@ -265,63 +287,18 @@
   box-shadow: 3px 3px 15px var(--purpura);
 }
 
-.dark-mode .what-i-bring__card--grid:hover::before  {
-    background-color: var(--purpura);
-    opacity: 0.6;
-}
-
-
-.dark-mode .what-i-bring__explorer {
-  background: var(--black-transparent2);
-  border-color: var(--black-light);
-}
-
-.dark-mode .what-i-bring__chip {
-  background: var(--black-light);
-  border-color:var(--black);
-  color: var(--white);
-  box-shadow: 2px 2px 3px var(--black);
-}
-
-.dark-mode .what-i-bring__chip.is-active {
-  background: var(--purpura);
-  border-color: var(--purpura);
-  color: var(--white);
-  box-shadow: 2px 2px 3px var(--purpura2);
-    
-}
-
-.dark-mode .what-i-bring__card--stage {
-    border-color: var(--black-light);
-    background-color: var(--black-transparent2);
-}
-
-.dark-mode .what-i-bring__card--stage:hover {
-  background-color: var(--purpura-transparent);
-}
-
-.dark-mode .what-i-bring__card-title {
-  color: var(--white);
-}
-
-.dark-mode .what-i-bring__card-text {
-  color: var(--white)
-}
-
-.dark-mode .what-i-bring__index {
+.dark-mode .what-i-bring__index,
+.dark-mode .what-i-bring__row-index {
   color: var(--purpura3);
 }
 
-.dark-mode .what-i-bring__card--icon-blue .what-i-bring__icon {
-  background-image: url("/src/assets/img/Skills/BlueDark.svg");
+.dark-mode .what-i-bring__list {
+  background: var(--black-transparent2);
+  box-shadow: 10px 10px 20px var(--purpura-transparent);
 }
 
-.dark-mode .what-i-bring__card--icon-maca .what-i-bring__icon {
-  background-image: url("/src/assets/img/Skills/MacaDark.svg");
-}
-
-.dark-mode .what-i-bring__card--icon-green .what-i-bring__icon {
-  background-image: url("/src/assets/img/Skills/GreenDark.svg");
+.dark-mode .what-i-bring__row {
+  border-bottom-color: var(--black-light);
 }
 
 

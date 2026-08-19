@@ -11,7 +11,7 @@ type Particle = {
     phase: number;
 };
 
-const DEFAULT_PARTICLE_COUNT = 90;
+const DEFAULT_PARTICLE_COUNT = 180;
 const PURPLE = { r: 161, g: 128, b: 210 };
 
 export default function WhatIBringParticles({

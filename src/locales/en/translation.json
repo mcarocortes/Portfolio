@@ -91,35 +91,32 @@
 
     "whatIBringSection": {
       "title": "What I Bring",
-      "eyebrow": "How I work",
-      "carouselPrev": "Previous slide",
-      "carouselNext": "Next slide",
-      "swipeHint": "Swipe the card or tap a topic",
+      "intro": "Beyond writing code. I connect design vision, Front-End architecture, and business goals to deliver high-performance, scalable products.",
       "cards": {
         "productThinking": {
           "title": "Product Thinking",
-          "subtitle": "Real problems, real impact",
-          "description": "Every feature should solve a real problem. I focus on creating experiences that bring value to both users and the business."
+          "subtitle": "Real problems, real impact.",
+          "description": "I design solutions that balance user needs and business goals."
         },
         "designDevelopment": {
           "title": "Design × Development",
-          "subtitle": "Where creativity meets code",
-          "description": "With a background in industrial design and front-end engineering, I bridge creativity and technology to build intuitive digital products."
+          "subtitle": "Where creativity meets code.",
+          "description": "Design and development to create intuitive digital experiences."
         },
         "collaborativeMindset": {
-          "title": "Collaborative Mindset",
-          "subtitle": "From idea to production",
-          "description": "I enjoy working across teams, contributing to technical decisions and helping transform ideas into reliable, production-ready solutions."
+          "title": "Collaboration",
+          "subtitle": "From idea to production.",
+          "description": "I work with teams to turn ideas into real solutions."
         },
         "aiImprovement": {
-          "title": "AI & Continuous Improvement",
-          "subtitle": "Smarter every day",
-          "description": "I embrace AI and emerging technologies to optimize workflows, automate repetitive tasks and keep learning every day."
+          "title": "AI & Continuous Learning",
+          "subtitle": "Smarter every day.",
+          "description": "I explore AI and new technologies to improve how we build."
         },
         "qualityFirst": {
           "title": "Quality First",
-          "subtitle": "Built to last",
-          "description": "From clean code to thoughtful interactions, I care about performance, usability and maintainable solutions that last."
+          "subtitle": "Built to last.",
+          "description": "Clean code, careful interfaces, and solutions that last."
         }
       }
     },

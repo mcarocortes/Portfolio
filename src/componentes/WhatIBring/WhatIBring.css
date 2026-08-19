@@ -1,18 +1,17 @@
-/* ===== WHAT I BRING — grid desktop + explorador interactivo mobile ===== */
+/* ===== WHAT I BRING — retrato + grid web / lista mobile ===== */
 
 .what-i-bring {
     position: relative;
     z-index: 1;
     font-family: var(--font-family-base);
-    background-color: var(--purpura4);
+    background-color: var(--white);
     border-radius: 0 25px 0 0;
-    margin-bottom: -30px;
-    padding-top:var(--margin-top-general);
-    padding-bottom:var(--margin-top-general);
-    padding-left:var(--margin-left-rigth-general);
-    padding-right:var(--margin-left-rigth-general);
-    min-height: 100vh;
     margin-top: -30px;
+    margin-bottom: -30px;
+    padding-top: var(--margin-top-general);
+    padding-bottom: var(--margin-top-general);
+    padding-left: var(--margin-left-rigth-general);
+    padding-right: var(--margin-left-rigth-general);
     overflow: hidden;
     isolation: isolate;
 }
@@ -31,329 +30,340 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.85;
+    opacity: 0.72;
 }
 
-.what-i-bring__header,
+.what-i-bring__intro,
 .what-i-bring__grid,
-.what-i-bring__explorer {
+.what-i-bring__list {
     position: relative;
     z-index: 1;
 }
 
-.what-i-bring__header {
-    max-width: 720px;
-    margin: 0 auto clamp(2.5rem, 6vh, 3.5rem);
-    text-align: center;
+.what-i-bring__intro {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.85fr) minmax(0, 1.15fr);
+    align-items: top;
+    gap: clamp(1rem, 4vw, 3.5rem);
+    margin-bottom: 0;
 }
 
+.what-i-bring__portrait {
+    position: relative;
+    min-height: clamp(260px, 38vh, 430px);
+}
 
-.what-i-bring__title {
+.what-i-bring__portrait-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+    pointer-events: none;
+    user-select: none;
+}
+
+.what-i-bring__portrait-img--light {
+    mix-blend-mode: multiply;
+}
+
+.what-i-bring__portrait-img--dark {
+    display: none;
+}
+
+.what-i-bring__copy {
+    text-align: right;
+    width: 80%;
+    margin-left: auto;
+}
+
+.heading.what-i-bring__title {
     margin: 0;
+    text-align: right;
 }
 
-/* —— shared card —— */
+.what-i-bring__kicker {
+    margin: 0.15rem 0 1.1rem;
+    text-transform: uppercase;
+    font-family: var(--font-family-bold);
+    font-size: var(--font-size-h3);
+    letter-spacing: 0.04em;
+    color: var(--purpura);
+}
+
+.what-i-bring__lede {
+    margin: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-top: 20px;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.what-i-bring__grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.6rem);
+}
+
 .what-i-bring__card {
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    border: 1px solid var(--white);
-    box-shadow: 3px 3px 8px var(--white-transparent);
-    background-color: var(--white-transparent2);
+    grid-column: span 2;
+    padding: 1.35rem 1.35rem 1.5rem;
+    border-radius: 18px;
+    border: 1px solid var(--white-transparent2);
+    background: var(--white);
+    box-shadow: 0 10px 28px var(--black-transparent);
     transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.45s ease,
-        border-color 0.45s ease;
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.what-i-bring__card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.what-i-bring__card:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
 .what-i-bring__card:hover {
-  border-color: var(--purpura3);
-  box-shadow: 3px 3px 15px var(--purpura3);
+    transform: translateY(-4px);
+    border-color: var(--purpura4);
+    box-shadow: 0 14px 32px var(--black-transparent2);
+}
+
+.what-i-bring__card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
 }
 
 .what-i-bring__index {
-    font-size: var(--font-size-h1);
-    position: relative;
-    z-index: 1;
-    font-family:var(--font-family-bold);
-    line-height: 1;
-    color: var(--purpura);
-    margin-bottom: 0.65rem;
+    font-family: var(--font-family-bold);
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--purpura4);
 }
 
 .what-i-bring__icon {
-    position: absolute;
-    z-index: 1;
-    right: 0.85rem;
-    bottom: 0.85rem;
-    width:50%;
+    width: 1.65rem;
+    height: 1.65rem;
+    color: var(--purpura);
+}
+
+.what-i-bring__icon svg {
+    display: block;
+    width: 100%;
     height: 100%;
-    pointer-events: none;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.what-i-bring__card--grid .what-i-bring__icon {
-    width: 40%;
-    height: 90%;
-}
-
-.what-i-bring__card--icon-blue .what-i-bring__icon {
-    background-image: url("/src/assets/img/Skills/BlueWhite.svg");
-}
-
-.what-i-bring__card--icon-maca .what-i-bring__icon {
-    background-image: url("/src/assets/img/Skills/MacaWhite.svg");
-}
-
-.what-i-bring__card--icon-green .what-i-bring__icon {
-    background-image: url("/src/assets/img/Skills/GreenWhite.svg");
-}
-
-.what-i-bring__body {
-    position: relative;
-    z-index: 1;
-    max-width: 60%;
 }
 
 .what-i-bring__card-title {
-    margin: 0 0 0.4rem;
-    font-size: var(--font-size-h3);
-    font-weight: var(--font-weight-600);
+    margin: 0 0 0.45rem;
+    text-transform: uppercase;
+    font-family: var(--font-family-bold);
     line-height: 1.15;
     color: var(--text);
 }
 
 .what-i-bring__card-subtitle {
-    margin: 0 0 0.65rem;
-    font-size: var(--font-size-h4);
+    margin: 0 0 0.55rem;
     font-weight: var(--font-weight-600);
-    color: var(--purpura3);
+    color: var(--text);
     line-height: 1.3;
 }
 
 .what-i-bring__card-text {
-    margin: 0;
-    font-size: var(--font-size-base);
+    margin: 0 0 1.15rem;
+    font-size: var(--font-size-underBase);
     line-height: 1.5;
-    color: var(--text);
-    max-width: 100%;
+    color: var(--grayweb);
 }
 
-/* —— desktop grid —— */
-.what-i-bring__grid {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: clamp(0.85rem, 1.8vw, 1.25rem);
-    max-width: 100%;
-    margin: 0 auto;
+.what-i-bring__accent {
+    display: block;
+    width: 2.4rem;
+    height: 2px;
+    margin-top: auto;
+    background: var(--purpura);
+    border-radius: 99px;
 }
 
-.what-i-bring__card--grid {
-    min-height: clamp(220px, 28vh, 320px);
-    padding: clamp(1.25rem, 2.5vw, 1.75rem);
-    background-size: 52%;
-}
-
-
-.what-i-bring__card--grid .what-i-bring__index {
-    font-size: var(--font-size-h1);
-    margin-bottom: 0.75rem;
-}
-
-.what-i-bring__card--grid::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.45s ease, background-color 0.45s ease;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.what-i-bring__card--grid:hover::before {
-    background-color: var(--white);
-    opacity: 0.6;
-}
-
-.what-i-bring__card--grid:hover .what-i-bring__icon {
-    transform: scale(1.06) rotate(-3deg);
-}
-
-.what-i-bring__card--span-7 { grid-column: span 7; }
-.what-i-bring__card--span-5 { grid-column: span 5; }
-.what-i-bring__card--span-4 { grid-column: span 4; }
-
-.what-i-bring__card--span-7 .what-i-bring__card-text {
-    max-width: 48ch;
-}
-
-/* —— mobile explorer (hidden desktop) —— */
-.what-i-bring__explorer {
+.what-i-bring__list {
     display: none;
 }
 
-@media screen and (min-width: 992px) {
-    .what-i-bring__particles {
-        opacity: 0.78;
+@media screen and (max-width: 1100px) {
+    .what-i-bring__card:nth-child(4),
+    .what-i-bring__card:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    .what-i-bring__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .what-i-bring__card {
+        grid-column: auto;
+    }
+
+    .what-i-bring__card:last-child {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 0.8rem);
+        justify-self: center;
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 991px) {
+    .what-i-bring__particles {
+        opacity: 0.5;
+    }
+
+    .what-i-bring__intro {
+        position: relative;
+        display: block;
+        min-height: 42vh;
+        margin-bottom: 0;
+        padding-bottom: 5.5rem;
+    }
+
+    .what-i-bring__portrait {
+display: none;
+    }
+
+    .what-i-bring__portrait-img {
+        object-position: center top;
+    }
+
+    .what-i-bring__copy {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .heading.what-i-bring__title,
+    .what-i-bring__kicker,
+    .what-i-bring__lede {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .what-i-bring__lede {
+        width: 80%;
+    }
+
     .what-i-bring__grid {
         display: none;
     }
 
-    .what-i-bring__body {
-        max-width: 45%;
-    }
-
-    .what-i-bring__explorer {
-        display: block;
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-        padding: 1.25rem;
-        border-radius: 22px;
-        border: 1px solid var(--purpura4);
-        background: var(--white-transparent);
-        overflow: hidden;
-        height: auto;
-    }
-
-    .what-i-bring__chips,
-    .what-i-bring__stage,
-    .what-i-bring__stepper {
+    .what-i-bring__list {
+        display: flex;
+        flex-direction: column;
         position: relative;
         z-index: 2;
-        pointer-events: auto;
+        margin-top: -4.5rem;
+        padding: 0.35rem 0.85rem;
+        border-radius: 22px;
+        background: var(--white);
+        box-shadow: 0 16px 40px var(--black-transparent);
     }
 
-    .what-i-bring__chips {
-        display: flex;
-        gap: 0.5rem;
-        overflow-x: auto;
-        scrollbar-width: none;
-        padding-bottom: 0.75rem;
-        margin-bottom: 0.75rem;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .what-i-bring__chips::-webkit-scrollbar {
-        display: none;
-    }
-
-    .what-i-bring__chip {
-        flex: 0 0 auto;
-        display: inline-flex;
+    .what-i-bring__row {
+        display: grid;
+        grid-template-columns: auto auto minmax(0, 1fr) auto;
         align-items: center;
-        gap: 0.45rem;
-        padding: 0.5rem 0.85rem;
-        border: 1px solid var(--purpura4);
-        border-radius: 999px;
-        background: var(--white-transparent2);
-        color: var(--text);
-        font-family: var(--font-family-base);
-        font-size: var(--font-size-underBase);
-        cursor: pointer;
-        box-shadow: 2px 2px 3px var(--purpura4);
-        transition:
-            background-color 0.25s ease,
-            border-color 0.25s ease,
-            box-shadow 0.25s ease,
-            transform 0.25s ease;
-    }
-
-    .what-i-bring__chip.is-active {
-        background: var(--purpura);
-        border-color: var(--purpura);
-        color: var(--white);
-        box-shadow: 2px 2px 3px var(--purpura2);
-    }
-
-    .what-i-bring__chip-num {
-        font-size: var(--font-size-h4);
-        font-family: var(--font-family-bold);
-        letter-spacing: -0.03em;
-    }
-
-    .what-i-bring__chip-label {
-        max-width: 11rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: var(--font-size-h4);
-    }
-
-    .what-i-bring__stage {
-        min-height: 280px;
-    }
-
-    .what-i-bring__card--stage {
-        min-height: 50vh;
-        padding: 1.1rem 1.1rem 4.5rem;
-        background-size: 55%;
-        cursor: grab;
-        touch-action: pan-x pinch-zoom;
-    }
-
-    .what-i-bring__card--stage:active {
-        cursor: grabbing;
-    }
-
-     .what-i-bring__card--stage:hover {
-        background-color: var(--white);
-    }
-    .what-i-bring__card--stage .what-i-bring__card-text {
-        max-width: none;
-    }
-
-    .what-i-bring__swipe-hint {
-        margin: 0.75rem 0 0;
-        text-align: center;
-        font-size: var(--font-size-underBase);
-        color: var(--purpura3);
-        opacity: 0.85;
-    }
-
-    .what-i-bring__stepper {
-        display: flex;
-        justify-content: center;
-        gap: 0.45rem;
-        margin-top: 1rem;
-    }
-
-    .what-i-bring__step {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: var(--purpura4);
-        opacity: 0.4;
-        transition:
-            width 0.3s ease,
-            opacity 0.3s ease,
-            background-color 0.3s ease;
-    }
-
-    .what-i-bring__step.is-active {
-        width: 22px;
-        opacity: 1;
-        background: var(--purpura);
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .what-i-bring__header {
+        gap: 0.7rem;
+        width: 100%;
+        padding: 1rem 0.35rem;
+        border: 0;
+        border-bottom: 1px solid var(--purpura5);
+        background: transparent;
+        color: inherit;
         text-align: left;
-        margin-bottom: 2rem;
+        cursor: pointer;
     }
 
-    .what-i-bring__explorer {
-        margin: 0;
-        padding: 1rem;
+    .what-i-bring__row:last-child {
+        border-bottom: 0;
+    }
+
+    .what-i-bring__row-icon {
+        display: grid;
+        place-items: center;
+        width: 2.35rem;
+        height: 2.35rem;
+        border-radius: 999px;
+        background: var(--purpura2);
+        color: var(--white);
+        flex-shrink: 0;
+    }
+
+    .what-i-bring__row-icon svg {
+        width: 1.05rem;
+        height: 1.05rem;
+    }
+
+    .what-i-bring__row-index {
+        font-family: var(--font-family-bold);
+        font-size: clamp(1.7rem, 7vw, 2.15rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: var(--purpura4);
+    }
+
+    .what-i-bring__row-copy {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        gap: 0.15rem;
+    }
+
+    .what-i-bring__row-title {
+        text-transform: uppercase;
+        font-family: var(--font-family-bold);
+        font-size: var(--font-size-h4);
+        line-height: 1.2;
+        color: var(--text);
+    }
+
+    .what-i-bring__row-subtitle {
+        font-size: var(--font-size-underBase);
+        line-height: 1.3;
+        color: var(--grayweb);
+    }
+
+    .what-i-bring__row-text {
+        margin-top: 0.35rem;
+        font-size: var(--font-size-underBase);
+        line-height: 1.45;
+        color: var(--text);
+    }
+
+    .what-i-bring__row-chevron {
+        width: 1.1rem;
+        height: 1.1rem;
+        color: var(--purpura);
+        transition: transform 0.25s ease;
+    }
+
+    .what-i-bring__row-chevron svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .what-i-bring__row.is-open .what-i-bring__row-chevron {
+        transform: rotate(90deg);
     }
 }
 
@@ -361,5 +371,16 @@
     .what-i-bring {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
+    }
+
+    .what-i-bring__row {
+        gap: 0.5rem;
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
+    }
+
+    .what-i-bring__row-icon {
+        width: 2.1rem;
+        height: 2.1rem;
     }
 }

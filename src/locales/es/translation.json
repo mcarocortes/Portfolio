@@ -3,7 +3,7 @@
     "about": "Sobre mi",
     "projects": "Proyectos",
     "evolution": "Evolución",
-    "whatido": "Que ofrezco",
+    "whatido": "Mi Enfoque",
     "contact": "Contacto",
 
     "designingIntelligent":"Diseño de Experiencias Digitales Inteligentes",
@@ -90,36 +90,33 @@
     },
 
     "whatIBringSection": {
-      "title": "Que Ofrezco",
-      "eyebrow": "Cómo trabajo",
-      "carouselPrev": "Diapositiva anterior",
-      "carouselNext": "Diapositiva siguiente",
-      "swipeHint": "Desliza la tarjeta o elige un tema",
+      "title": "Mi Enfoque",
+      "intro": "No solo escribo código. Construyo el puente entre la visión de diseño, la arquitectura Front-End y los objetivos de negocio para crear productos que rinden y escalan.",
       "cards": {
         "productThinking": {
           "title": "Pensamiento de Producto",
-          "subtitle": "Problemas reales, impacto real",
-          "description": "Cada funcionalidad debe resolver un problema real. Me centro en crear experiencias que aporten valor tanto a usuarios como al negocio"
+          "subtitle": "Problemas reales, impacto real.",
+          "description": "Diseño soluciones que equilibran necesidades de usuario y negocio."
         },
         "designDevelopment": {
           "title": "Diseño × Desarrollo",
-          "subtitle": "Donde la creatividad encuentra el código",
-          "description": "Con formación en diseño industrial e ingeniería front-end, uno creatividad y tecnología para construir productos digitales intuitivos."
+          "subtitle": "Donde la creatividad encuentra el código.",
+          "description": "Diseño y desarrollo para crear experiencias digitales intuitivas."
         },
         "collaborativeMindset": {
-          "title": "Mentalidad Colaborativa",
-          "subtitle": "De la idea a producción",
-          "description": "Disfruto trabajar entre equipos, contribuir a decisiones técnicas y ayudar a transformar ideas en soluciones fiables y listas para producción."
+          "title": "Colaboración",
+          "subtitle": "De la idea a producción.",
+          "description": "Trabajo en equipo para convertir ideas en soluciones reales."
         },
         "aiImprovement": {
-          "title": "IA y Mejora Continua",
-          "subtitle": "Más inteligente cada día",
-          "description": "Adopto la IA y las tecnologías emergentes para optimizar flujos de trabajo, automatizar tareas repetitivas y seguir aprendiendo cada día."
+          "title": "IA y Aprendizaje Continuo",
+          "subtitle": "Más inteligente cada día.",
+          "description": "Exploro IA y nuevas tecnologías para mejorar cómo construimos."
         },
         "qualityFirst": {
           "title": "Calidad Primero",
-          "subtitle": "Hecho para durar",
-          "description": "Desde código limpio hasta interacciones cuidadas, me importan el rendimiento, la usabilidad y soluciones mantenibles que perduran."
+          "subtitle": "Hecho para durar.",
+          "description": "Código limpio, interfaces cuidadas y soluciones mantenibles en el tiempo."
         }
       }
     },
