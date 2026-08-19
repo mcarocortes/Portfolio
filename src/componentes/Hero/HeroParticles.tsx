@@ -62,7 +62,7 @@ function FaceParticles() {
     } else if (viewportWidth < 1536) {
       return [1.0, 0, 0]
     }
-    return [0.8, 0, 0]
+    return [0.9, 0, 0]
   }, [viewportWidth])
 
   const modelPositionRef = useRef(modelPosition)
