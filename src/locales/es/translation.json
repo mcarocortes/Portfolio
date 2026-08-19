@@ -375,25 +375,33 @@
       "steps": {
   "industrial": {
     "title": "Diseñadora Industrial",
-    "period": "2016–2021",
+    "period": "2017–2021",
+    "years": "+3 Años",
+    "slogan": "Investigar • Propotipar • Resolver",
     "subtitle": "Diseño centrado en las personas",
     "description": "Comencé diseñando productos físicos, investigando, prototipando y gestionando proyectos. Aprendí a resolver problemas desde la perspectiva del usuario, una forma de pensar que sigue guiando mi trabajo en productos digitales."
   },
   "web": {
     "title": "Desarrollo Web",
     "period": "2022–2024",
+    "years": "2 Años",
+    "slogan": "Aprender • Codificar • Construir",
     "subtitle": "Del diseño al código",
     "description": "Di el salto al desarrollo para convertir ideas en experiencias digitales. Desde entonces he creado aplicaciones web y móviles, desarrollando funcionalidades con foco en usabilidad, rendimiento y valor para el usuario."
   },
   "ai": {
     "title": "Especialización en IA y Big Data",
     "period": "2025",
+    "years": "1 Año",
+    "slogan": "Analizar • Entrenar • Automatizar",
     "subtitle": "Datos, IA y automatización",
     "description": "Amplié mi enfoque incorporando inteligencia artificial, análisis de datos y automatización para diseñar soluciones más inteligentes, eficientes y orientadas al futuro."
   },
   "lead": {
     "title": "Líder de Equipo Front-End",
     "period": "2026–Actualidad",
+    "years": "Hoy",
+    "slogan": "Investigar • Prototipar • Resolver",
     "subtitle": "Producto, liderazgo y colaboración",
     "description": "Actualmente lidero el desarrollo Front-End de una aplicación en producción, colaborando en decisiones técnicas, nuevas funcionalidades y la evolución continua del producto con especial atención a la calidad y la experiencia de usuario."
   }

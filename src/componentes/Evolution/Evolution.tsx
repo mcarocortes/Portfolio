@@ -48,8 +48,11 @@ export default function Evolution() {
             subtitle: t("evolutionSection.steps.industrial.subtitle"),
             period: t("evolutionSection.steps.industrial.period"),
             description: t("evolutionSection.steps.industrial.description"),
+            years: t("evolutionSection.steps.industrial.years"),
+            slogan: t("evolutionSection.steps.industrial.slogan"),
             bgClass: "experience-visual-bg--industrial",
             fgClass: "experience-visual-fg--industrial",
+
         },
         {
             key: "web",
@@ -58,6 +61,8 @@ export default function Evolution() {
             subtitle: t("evolutionSection.steps.web.subtitle"),
             period: t("evolutionSection.steps.web.period"),
             description: t("evolutionSection.steps.web.description"),
+            years: t("evolutionSection.steps.web.years"),
+            slogan: t("evolutionSection.steps.web.slogan"),
             bgClass: "experience-visual-bg--web",
             fgClass: "experience-visual-fg--web",
         },
@@ -68,6 +73,8 @@ export default function Evolution() {
             subtitle: t("evolutionSection.steps.ai.subtitle"),
             period: t("evolutionSection.steps.ai.period"),
             description: t("evolutionSection.steps.ai.description"),
+            years: t("evolutionSection.steps.ai.years"),
+            slogan: t("evolutionSection.steps.ai.slogan"),
             bgClass: "experience-visual-bg--ai",
             fgClass: "experience-visual-fg--ai",
         },
@@ -78,6 +85,8 @@ export default function Evolution() {
             subtitle: t("evolutionSection.steps.lead.subtitle"),
             period: t("evolutionSection.steps.lead.period"),
             description: t("evolutionSection.steps.lead.description"),
+            years: t("evolutionSection.steps.lead.years"),
+            slogan: t("evolutionSection.steps.lead.slogan"),
             bgClass: "experience-visual-bg--lead",
             fgClass: "experience-visual-fg--lead",
         },
@@ -222,7 +231,7 @@ export default function Evolution() {
                                                 {t(step.title)}
                                             </h2>
                                             <h3 className="experience-slide-subti">
-                                                {t(step.subtitle)}
+                                                {t(step.slogan)}
                                             </h3>
                                             <p className="experience-slide-description">
                                                 {step.description}
@@ -236,12 +245,24 @@ export default function Evolution() {
                                                     transform: `translate3d(0, ${parallax * 0.45}px, 0) scale(1.02)`,
                                                 }}
                                             />
+                                            
                                             <div
                                                 className={`experience-visual-fg ${step.fgClass}`}
                                                 style={{
                                                     transform: `translate3d(0, ${parallax * -0.35}px, 0)`,
                                                 }}
-                                            />
+                                            > 
+                                            <div className={`visual-fg_title`}>
+                                               
+                                                    {t(step.years)} 
+                                                    <div className={`visual-fg_icon fg_icon_${step.key}`}></div>
+                                                
+                                            </div>
+
+                                                {t(step.subtitle)}
+                                            
+                                            </div>
+
                                         </div>
                                     </article>
                                 );
@@ -278,7 +299,7 @@ export default function Evolution() {
                                 {t(step.title)}
                             </h2>
                             <h3 className="experience-slide-period">
-                                {t(step.subtitle)}
+                                {t(step.slogan)}
                             </h3>
                             <p className="experience-mobile-description">{step.description}</p>
                             <div className="experience-mobile-visual">

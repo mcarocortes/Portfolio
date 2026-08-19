@@ -179,43 +179,96 @@
         -10px 14px 36px rgba(90, 18, 250, 0.28),
         0 0 0 1px rgba(255, 255, 255, 0.35) inset;
     z-index: 2;
+    padding: 15px;
+    color: var(--white);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: var(--font-size-underbase);
+    line-height:20px;
+    
 }
 
 .experience-visual-bg--industrial {
     background-image:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(236, 236, 236, 0.88)),
-        url("/src/assets/img/About/iconDesign.png");
-    background-size: cover, 58%;
+        url("/src/assets/img/Evolution/img_2021.png");
+    background-size: cover;
     background-position: center, 88% 78%;
-    background-repeat: no-repeat;
-}
-
-.experience-visual-fg--industrial {
-    background:
-        linear-gradient(135deg, var(--purpura) 0%, var(--purpura3) 100%),
-        url("/src/assets/img/About/iconBrand.png");
-    background-size: cover, 72%;
-    background-position: center;
     background-repeat: no-repeat;
 }
 
 .experience-visual-bg--web {
     background-image:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(236, 236, 236, 0.88)),
-        url("/src/assets/img/About/iconInteraction.png");
-    background-size: cover, 52%;
-    background-position: center, 82% 72%;
+        url("/src/assets/img/Evolution/img_2024.png");
+    background-size: cover;
+    background-position: center, 88% 78%;
     background-repeat: no-repeat;
+}
+
+.experience-visual-bg--ai {
+    background-image:
+        url("/src/assets/img/Evolution/img_2025.png");
+    background-size: cover;
+    background-position: center, 88% 78%;
+    background-repeat: no-repeat;
+}
+
+.experience-visual-bg--lead {
+    background-image:
+        url("/src/assets/img/Evolution/img_2026.png");
+    background-size: cover;
+    background-position: center, 88% 78%;
+    background-repeat: no-repeat;
+}
+
+.visual-fg_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-h3);
+    border-bottom: solid 1px var(--white);
+    margin-bottom: 10px;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.visual-fg_icon{
+    width: 45px;
+    height: 45px;
+}
+
+.fg_icon_industrial{
+    background-image: url("/src/assets/img/Evolution/icon_2021.png");
+    background-size: contain;
+    background-position: center, 88% 78%;
+    background-repeat: no-repeat;
+}
+
+.fg_icon_web{
+    background-image: url("/src/assets/img/Evolution/icon_2024.png");
+    background-size: contain;
+    background-position: center, 88% 78%;
+    background-repeat: no-repeat;
+}
+
+.fg_icon_ai{
+    background-image: url("/src/assets/img/Evolution/icon_2025.png");
+    background-size: contain;
+    background-position: center, 88% 78%;
+    background-repeat: no-repeat;
+}
+
+.fg_icon_lead{
+    background-image: url("/src/assets/img/Evolution/icon_2026.png");
+    background-size: contain;
+    background-position: center, 88% 78%;
+    background-repeat: no-repeat;-size: contain;
 }
 
 .experience-visual-fg--web {
     background: linear-gradient(135deg, var(--purpura3) 0%, var(--purpura) 100%);
-}
-
-.experience-visual-bg--ai,
-.experience-visual-bg--lead {
-    background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(236, 236, 236, 0.92));
 }
 
 .experience-visual-fg--ai,

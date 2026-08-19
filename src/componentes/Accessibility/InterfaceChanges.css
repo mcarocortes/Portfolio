@@ -225,6 +225,23 @@
   color: var(--white);
 }
 
+.dark-mode .experience-visual-bg--industrial {
+    background-image:url("/src/assets/img/Evolution/img_2021_darkmode.png");
+}
+
+.dark-mode .experience-visual-bg--web {
+    background-image:url("/src/assets/img/Evolution/img_2024_darkmode.png");
+}
+
+.dark-mode .experience-visual-bg--ai {
+    background-image:url("/src/assets/img/Evolution/img_2025_darkmode.png");
+}
+
+.dark-mode .experience-visual-bg--lead {
+    background-image:url("/src/assets/img/Evolution/img_2026_darkmode.png");
+}
+
+
 /*************************WHAT I BRING 2.0 ***************/
 .dark-mode .what-i-bring {
   background-color: var(--black);
