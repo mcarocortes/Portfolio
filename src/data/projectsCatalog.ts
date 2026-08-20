@@ -1,4 +1,5 @@
 import projectVideoHealth from "../assets/img/Projects/Health/resiplus.mp4";
+import healthOpportunityImage from "../assets/img/Projects/Health/health_oppor.png";
 
 export const CASE_ICON_NAMES = [
     "search",
@@ -68,7 +69,7 @@ export const PROJECTS: ProjectDefinition[] = [
         cardId: "ProyectA",
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: projectVideoHealth },
-        opportunityImage: null,
+        opportunityImage: healthOpportunityImage,
         opportunityIcons: ["search", "layers", "check"],
         impactIcons: ["mobile", "clock", "spark"],
     },

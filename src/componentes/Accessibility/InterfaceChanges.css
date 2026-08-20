@@ -354,7 +354,6 @@
 }
 
 .dark-mode .project-case__block-icon {
-  background: var(--purpura);
   color: var(--white);
 }
 

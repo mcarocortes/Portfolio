@@ -97,6 +97,7 @@ type GalleryFigureProps = {
     alt: string;
     placeholderLabel: string;
     index: number;
+    settleEarly?: boolean;
 };
 
 function GalleryFigure({
@@ -106,13 +107,14 @@ function GalleryFigure({
     alt,
     placeholderLabel,
     index,
+    settleEarly = false,
 }: GalleryFigureProps) {
     const ref = useRef<HTMLElement>(null);
     const prefersReducedMotion = useReducedMotion();
 
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start 0.95", "center 0.52"],
+        offset: settleEarly ? ["start 0.96", "start 0.82"] : ["start 0.95", "center 0.78"],
     });
 
     const rotateX = useTransform(scrollYProgress, [0, 1], [15, 0]);
@@ -234,7 +236,8 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         viewport={viewport}
                         variants={reveal}
                     >
-                        {projectTitle}
+                       {t(`${pagePrefix}.subtitle`)}
+
                     </motion.p>
 
                     <motion.h1
@@ -260,7 +263,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                             </motion.p>
 
                             <motion.p className="project-case__lead" variants={reveal}>
-                                {t(`${catalogPath}.subtitle`)}
+                                {t(`${pagePrefix}.companyDescription`)}
                             </motion.p>
 
                             <motion.section variants={reveal}>
@@ -421,7 +424,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                     <div className="project-case__gallery-grid">
                         {imagesMeta.map((image, index) => {
                             const src = imageSources[index] ?? null;
-                            const layout = image.layout ?? (index % 3 === 0 ? "wide" : "default");
+                            const layout = "wide";
 
                             return (
                                 <GalleryFigure
@@ -432,6 +435,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                                     alt={image.alt}
                                     placeholderLabel={t("projectCaseStudy.imagePlaceholder")}
                                     index={index}
+                                    settleEarly={index >= imagesMeta.length - 2}
                                 />
                             );
                         })}

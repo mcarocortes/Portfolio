@@ -45,8 +45,8 @@
       },
       "items": {
         "healthcare": {
-          "title": "Plataforma Sanitaria (PWA)",
-          "subtitle": "Diseño y desarrollo de nuevas funcionalidades para una PWA en producción usada en centros sanitarios, mejorando usabilidad móvil, rendimiento y flujos de trabajo diarios.",
+          "title": "ResiPlus® Mobile",
+          "subtitle": "Liderazgo y desarrollo Front-end de una PWA en producción para la gestión diaria de centros de atención a la dependencia, combinando desarrollo, UX/UI, resolución de problemas y coordinación de equipo.",
           "tags": ["PWA", "UX/UI Móvil", "Diseño Responsive", "Integración API"]
         },
         "modular": {
@@ -149,28 +149,33 @@
       "opportunityImageAlt": "Imagen destacada de {{project}}",
       "pages": {
         "healthcare": {
-          "headline": "Atención mobile-first donde más se necesita.",
-          "role": "Team Leader",
-          "company": "Resiplus",
-          "roleDescription": "Contribuí a nuevas funcionalidades en una PWA sanitaria en producción: layouts responsive, mejoras de usabilidad móvil y patrones de UI orientados al rendimiento en flujos clínicos diarios.",
+          "headline": "Software de Gestión Sociosanitaria",
+          "subtitle": "Plataforma Web Progresiva (PWA) para Entornos de Atención a la Dependencia",
+          "role": "Front-end · Líder de Equipo",
+          "company": "ResiPlus®",
+          "companyDescription":"ResiPlus® es la plataforma de gestión líder para centros sociosanitarios (residencias, centros de día y discapacidad). Su versión PWA (Mobile/Tablet) digitaliza la operativa diaria y el seguimiento clínico del personal asistencial en tiempo real.",
+          "roleDescription": "Lidero el área Front-end de Mobile & Tablet, coordinando un equipo de tres desarrolladores y participando en el análisis, diseño y desarrollo de nuevas funcionalidades para una PWA en producción. Mi trabajo combina desarrollo Front-end, UX/UI, resolución de problemas, definición de flujos y permisos, coordinación técnica y evolución del producto.",
           "sections": [
             {
-              "title": "Contexto",
-              "body": "El personal sanitario necesitaba herramientas fiables en dispositivos móviles dentro de centros donde el acceso a escritorio es limitado. El producto debía sentirse rápido, claro y estable bajo presión."
+              "title": "Complejidad del producto",
+              "body": "¿Cómo simplificar flujos complejos para usuarios que trabajan con múltiples tareas y permisos?"
             },
             {
-              "title": "Enfoque",
-              "body": "Trabajé en flujos front-end con patrones touch-friendly, mejora progresiva y consistencia entre breakpoints, alineando decisiones con restricciones reales de uso y colaboración con producto y backend."
+              "title": "Experiencia móvil",
+              "body": "¿Cómo llevar una plataforma compleja a una experiencia clara y eficiente en tablet y móvil?"
             },
             {
-              "title": "Resultado",
-              "body": "Una experiencia móvil más usable que apoya el trabajo diario, reduce fricción en tareas clave y mantiene el rendimiento en un entorno de producción."
+              "title": "Escalabilidad del equipo",
+              "body": "¿Cómo mantener consistencia técnica y de producto mientras crece el equipo Front-end?"
             }
           ],
           "impact": [
-            { "title": "Uso diario más ágil", "body": "Tareas frecuentes se resuelven con menos pasos y una interfaz más clara en el día a día clínico." },
-            { "title": "Menos fricción en móvil", "body": "Patrones táctiles y layouts responsive que funcionan en dispositivos reales, no solo en escritorio." },
-            { "title": "Flujos clínicos más claros", "body": "La jerarquía visual prioriza lo urgente y reduce ruido en momentos de alta presión." }
+            { "title": "Optimización UX/UI Móvil", 
+            "body": "Rediseño e implementación de layouts responsive para trabajo en campo, reduciendo la fricción operativa y agilizando el registro diario de atención sanitaria con menor margen de error." },
+            { "title": "Innovación con IA (Claude)", 
+            "body": "Pionero en integrar Claude AI en el flujo Front-End para automatizar pruebas unitarias/E2E, reduciendo drásticamente el tiempo en tareas repetitivas de QA." },
+            { "title": "Liderazgo Técnico", 
+            "body": "Gestión y mentoría del equipo Front-end mediante reparto ágil de tareas y estimaciones precisas, eliminando cuellos de botella en la entrega de nuevas funcionalidades." }
           ],
           "images": [
             { "caption": "Vista general del dashboard móvil", "alt": "Dashboard PWA sanitaria", "layout": "wide" },
@@ -185,7 +190,7 @@
           "roleDescription": "Ayudé a definir la experiencia de una plataforma multiservicio que combina marketplace con realidad aumentada, mejorando visibilidad para artistas e interacción con clientes.",
           "sections": [
             {
-              "title": "Contexto",
+              "title": "Mejora el núcleo",
               "body": "modulAR debía sentirse como un ecosistema cohesionado — no como herramientas sueltas — destacando la AR inmersiva como diferencial."
             },
             {

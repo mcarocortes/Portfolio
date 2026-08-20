@@ -33,7 +33,7 @@
 }
 
 .header-information{
-    width: 40%;
+    width: 60%;
 }
 
 .project-case__heroImage{
@@ -84,6 +84,7 @@
     padding: 0;
     list-style: none;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .project-case__tags li {
@@ -154,8 +155,7 @@
     width: 2.6rem;
     height: 2.6rem;
     border-radius: 12px;
-    background: var(--purpura);
-    color: var(--white);
+    color: var(--text);
 }
 
 .project-case__block-icon svg {
@@ -214,10 +214,13 @@
 
 .img_oportunities {
     display: block;
-    height: clamp(320px, 80vh, 720px);
     width: 100%;
-    object-fit: cover;
+    max-height: clamp(320px, 80vh, 720px);
+    height: auto;
+    margin-inline: auto;
+    object-fit: contain;
     object-position: center;
+    background-repeat: no-repeat;
     border-radius: 20px;
 }
 
@@ -251,7 +254,7 @@
 
 .project-case__gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: clamp(1rem, 2vw, 1.35rem);
     margin-top: 0.35rem;
     perspective: 900px;
@@ -288,12 +291,10 @@
     object-fit: cover;
 }
 
-.project-case__figure--wide .project-case__media {
-    aspect-ratio: 16 / 8;
-}
-
+.project-case__figure--wide .project-case__media,
 .project-case__figure--default .project-case__media {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 8;
+    width: 100%;
 }
 
 .project-case__placeholder {
@@ -484,10 +485,6 @@
 
     .project-case__gallery-grid {
         grid-template-columns: 1fr;
-    }
-
-    .project-case__figure--wide {
-        grid-column: auto;
     }
 
     .project-case__nav-title {

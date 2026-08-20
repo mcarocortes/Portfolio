@@ -45,7 +45,7 @@
       },
       "items": {
         "healthcare": {
-          "title": "Healthcare Platform (PWA)",
+          "title": "ResiPlus® Mobile",
           "subtitle": "Designed and developed new features for a production Progressive Web App used in healthcare facilities, improving mobile usability, performance, and day-to-day workflows.",
           "tags": ["PWA", "Mobile UX/UI", "Responsive Design", "API Integration"]
         },
@@ -149,27 +149,33 @@
       "opportunityImageAlt": "Project highlight for {{project}}",
       "pages": {
         "healthcare": {
-          "headline": "Mobile-first care where teams need it most.",
-          "role": "Front-End Developer",
-          "roleDescription": "I contributed to new features in a production healthcare PWA — from responsive layouts and mobile usability improvements to performance-focused UI patterns used in daily clinical workflows.",
+          "headline": "Social-Healthcare Management Software",
+          "subtitle": "Progressive Web App (PWA) for Long-term Care Environments",
+          "role": "Front-end · Team Lead",
+          "company": "ResiPlus®",
+          "companyDescription": "ResiPlus® is the leading management platform for social-healthcare facilities (nursing homes, day centers, and disability care). Its PWA (mobile/tablet) digitizes daily operations and clinical follow-up for care staff in real time.",
+          "roleDescription": "I lead the Mobile & Tablet Front-end area, coordinating a team of three developers and taking part in the analysis, design, and development of new features for a production PWA. My work combines Front-end development, UX/UI, problem-solving, flow and permissions definition, technical coordination, and product evolution.",
           "sections": [
             {
-              "title": "Context",
-              "body": "Healthcare staff needed reliable tools on mobile devices inside facilities where desktop access is limited. The product had to feel fast, clear, and dependable in high-pressure environments."
+              "title": "Product complexity",
+              "body": "How do we simplify complex flows for users who juggle multiple tasks and permissions?"
             },
             {
-              "title": "Approach",
-              "body": "I worked on front-end flows with a focus on touch-friendly patterns, progressive enhancement, and consistency across breakpoints. Decisions were guided by real usage constraints and close collaboration with product and backend teams."
+              "title": "Mobile experience",
+              "body": "How do we turn a complex platform into a clear, efficient experience on tablet and mobile?"
             },
             {
-              "title": "Outcome",
-              "body": "The result is a more usable mobile experience that supports everyday workflows, reduces friction in key tasks, and keeps performance stable in a production environment."
+              "title": "Team scalability",
+              "body": "How do we keep technical and product consistency as the Front-end team grows?"
             }
           ],
           "impact": [
-            { "title": "Faster everyday use", "body": "Frequent tasks take fewer steps, with a clearer interface for daily clinical work." },
-            { "title": "Less mobile friction", "body": "Touch-friendly patterns and responsive layouts that work on real devices, not just desktop." },
-            { "title": "Clearer clinical flows", "body": "Visual hierarchy puts what matters first and cuts noise under pressure." }
+            { "title": "Mobile UX/UI optimization",
+            "body": "Redesign and implementation of responsive layouts for field work, reducing operational friction and speeding up daily care records with fewer errors." },
+            { "title": "AI innovation (Claude)",
+            "body": "Pioneered integrating Claude AI into the Front-end workflow to automate unit/E2E tests, drastically cutting time spent on repetitive QA tasks." },
+            { "title": "Technical leadership",
+            "body": "Managing and mentoring the Front-end team through agile task allocation and accurate estimates, removing bottlenecks in the delivery of new features." }
           ],
           "images": [
             { "caption": "Mobile dashboard overview", "alt": "Healthcare PWA dashboard", "layout": "wide" },
@@ -184,7 +190,7 @@
           "roleDescription": "I helped shape a multi-service platform experience that combines marketplace features with augmented reality, supporting visibility for artists and smoother client interactions.",
           "sections": [
             {
-              "title": "Context",
+              "title": "Strengthen the core",
               "body": "modulAR needed to feel like one cohesive ecosystem — not a collection of disconnected tools — while highlighting immersive AR as a differentiator."
             },
             {
@@ -245,7 +251,7 @@
           "sections": [
             {
               "title": "Context",
-              "body": "Financial dashboards often overwhelm users with dense data. The goal was to create a interface that feels modern, scannable, and trustworthy."
+              "body": "Financial dashboards often overwhelm users with dense data. The goal was to create an interface that feels modern, scannable, and trustworthy."
             },
             {
               "title": "Approach",
