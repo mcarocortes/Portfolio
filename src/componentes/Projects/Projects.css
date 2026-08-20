@@ -147,9 +147,14 @@
     width: 100%;
     left: 0;
     top:0;
+    z-index: 1;
 }
 
 .ProjectNameLink {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    align-self: flex-end;
     font-family: var(--font-family-base);
     font-size: var(--font-size-h2);
     backdrop-filter: blur(15px);
@@ -160,14 +165,18 @@
     font-weight: var(--font-weight-600);
     color: var(--text);
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform 0.35s ease, color 0.3s ease;
     box-shadow: -2px 2px 5px var(--shadows);
 }
 
 .ProjectNameLink:hover {
+    transform: scale(1.04);
     text-decoration: none;
-    color: var(--purpura);
+    color: var(--text);
 }
+
 
 
 /* ===== FLECHA DE REDIRECCIÓN ===== */
@@ -221,6 +230,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 2;
     padding: 25px;
     border-radius: 25px;
     display: flex;
@@ -301,8 +311,6 @@
 }
 
 .figure:hover .buildItem {
-    /*opacity: 0;
-    display: none;*/
     background-color:var(--white-transparent);
     color: var(--black);
 }
@@ -315,12 +323,13 @@
 .ProyectE,
 .ProyectF  {
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: center;
     background-size: cover;
 }
 
 
 .figureMedia.ProyectA {
+    background-image: url(/src/assets/img/Projects/Health/health_cover.png);
 }
 
 .figureMedia.ProyectB {
@@ -350,7 +359,7 @@
 }
 
 .figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection{
-    background-color: red;
+   background-color: rgba(255, 255, 255, 0.733);
 }
 
 .figure:nth-child(2) .ProjectNameLink, .figure:nth-child(2):hover .descriptionSection {

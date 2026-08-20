@@ -132,7 +132,6 @@ p {
 }
 
 .btnLink,
-.btnAbout,
 .btnAContacto {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
@@ -155,7 +154,6 @@ p {
 }
 
 .btnLink:hover,
-.btnAbout:hover,
 .btnAContacto:hover {
   font-weight: 700;
   transform: scale(1.1);
@@ -165,11 +163,6 @@ p {
 
 
 /*button:hover,*/
-.ProjectNameLink:hover {
-  transform: scale(1.1);
-  text-decoration: none;
-}
-
 .ProjectNameLink,
 .navbartext,
 .logoNavM,

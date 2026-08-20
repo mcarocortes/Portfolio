@@ -169,8 +169,14 @@
 }
 
 .dark-mode .ProjectNameLink:hover {
-    color: var(--purpura);
+     color: var(--black);
 }
+
+.dark-mode .figure:hover .buildItem {
+    background-color:var(--white);
+    color: var(--black);
+}
+
 
 .dark-mode .btnArrow:hover{
     color: var(--white);
