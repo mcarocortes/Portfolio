@@ -186,7 +186,7 @@ type ProjectCaseStudyProps = {
 };
 
 export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const prefersReducedMotion = useReducedMotion();
     const project = getProjectByKey(projectKey);
     const { prev, next } = getProjectNeighbors(project?.slug ?? "");
@@ -217,9 +217,10 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
 
     const catalogPath = getProjectCatalogPath(projectKey);
     const projectTitle = t(`${catalogPath}.title`);
-    const projectTags = t(`${catalogPath}.tags`, {
-        returnObjects: true,
-    }) as string[];
+    const projectTags = useMemo(() => {
+        const tags = t(`${catalogPath}.tags`, { returnObjects: true });
+        return Array.isArray(tags) ? (tags as string[]) : [];
+    }, [t, catalogPath, i18n.language]);
 
     if (!project || !heroMedia) {
         return null;
@@ -276,7 +277,10 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                             </motion.section>
 
                             <motion.ul
+                                key={i18n.language}
                                 className="project-case__tags"
+                                initial="hidden"
+                                animate="visible"
                                 variants={{
                                     hidden: {},
                                     visible: {
@@ -284,8 +288,8 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                                     },
                                 }}
                             >
-                                {projectTags.map((tag) => (
-                                    <motion.li key={tag} variants={reveal}>
+                                {projectTags.map((tag, index) => (
+                                    <motion.li key={`${i18n.language}-${index}`} variants={reveal}>
                                         {tag}
                                     </motion.li>
                                 ))}
