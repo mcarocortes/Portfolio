@@ -11,6 +11,9 @@ export default function ScrollToTopOnNavigate() {
 
     useLayoutEffect(() => {
         if (pathname === "/" && hash) return;
+        if (pathname !== "/" && hash) {
+            window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
         resetScrollInstant();
     }, [pathname, hash]);
 

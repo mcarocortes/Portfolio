@@ -1,35 +1,25 @@
 import { Routes, Route } from "react-router-dom";
 import PortfolioLayout from "./layouts/PortfolioLayout";
 import LandingPage from "./componentes/LandingPage/LandingPage";
-import Healthcare from "./pages/Healthcare/Healthcare";
-import Modular from "./pages/Modular/Modular";
-import Vc from "./pages/VC/Vc";
-import Vinos from "./pages/Vinos/Vinos";
-import Bank from "./pages/BankApp/Bank";
-import Movies from "./pages/Movies/Movies";
-import Design from "./pages/Design/Design";
-import Catamaran from "./pages/Catamaran/Catamaran";
+import ProjectCaseStudy from "./componentes/ProjectCaseStudy/ProjectCaseStudy";
 import NotFound from "./componentes/NotFound/NotFound";
 import UnderConstruction from "./componentes/UnderConstruction/UnderConstruction";
+import { PROJECTS } from "./data/projectsCatalog";
 
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* Página standalone: sin navbar, sin links al portfolio */}
       <Route path="/en-construccion" element={<UnderConstruction />} />
 
-      {/* TODO el portfolio vive bajo el mismo layout, así no se desmonta el Hero ni el Preloader*/}
       <Route element={<PortfolioLayout />}>
         <Route index element={<LandingPage />} />
-
-        <Route path="/healthcare" element={<Healthcare />} />
-        <Route path="/modulAR" element={<Modular />} />
-        <Route path="/Vc" element={<Vc />} />
-        <Route path="/Bank" element={<Bank />} />
-        <Route path="/Movies" element={<Movies />} />
-        <Route path="/Vinos" element={<Vinos />} />
-        <Route path="/Design" element={<Design />} />
-        <Route path="/Catamaran" element={<Catamaran />} />
+        {PROJECTS.map((project) => (
+          <Route
+            key={project.key}
+            path={project.slug}
+            element={<ProjectCaseStudy projectKey={project.key} />}
+          />
+        ))}
       </Route>
 
       <Route path="*" element={<NotFound />} />

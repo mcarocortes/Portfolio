@@ -17,95 +17,144 @@ export type ProjectCaseRoute = {
     slug: string;
 };
 
-/** Sección i18n en projectsSection (items = dev, beyond = beyond code). */
-export const PROJECT_CATALOG_SECTION: Record<ProjectCaseKey, ProjectCatalogSection> = {
-    healthcare: "items",
-    modular: "items",
-    vc: "items",
-    bank: "items",
-    movies: "items",
-    vinos: "items",
-    packaging: "beyond",
-    catamaran: "beyond",
-};
-
-/** Orden de navegación prev/next (mismo que el carrusel de Projects). */
-export const PROJECT_CASE_ORDER: ProjectCaseRoute[] = [
-    { key: "healthcare", slug: "/healthcare" },
-    { key: "modular", slug: "/modulAR" },
-    { key: "vc", slug: "/Vc" },
-    { key: "bank", slug: "/Bank" },
-    { key: "movies", slug: "/Movies" },
-    { key: "vinos", slug: "/Vinos" },
-    { key: "packaging", slug: "/Design" },
-    { key: "catamaran", slug: "/Catamaran" },
-];
-
-/**
- * Rutas de imagen por proyecto. `null` = placeholder (reemplazar luego).
- * Ejemplo: healthcare: ["/Portfolio/img/healthcare-01.jpg", null, ...]
- */
-export const PROJECT_IMAGE_SOURCES: Record<ProjectCaseKey, (string | null)[]> = {
-    healthcare: [null, null, null, null],
-    modular: [null, null, null, null],
-    vc: [null, null, null, null],
-    bank: [null, null, null, null],
-    movies: [null, null, null, null],
-    vinos: [null, null, null, null],
-    packaging: [null, null, null, null],
-    catamaran: [null, null, null, null],
-};
-
 /** Hero del case study: mockup Hand + vídeo, o imagen estática (Beyond Code). */
 export type ProjectHeroMedia =
     | { type: "hand"; videoSrc: string | null }
     | { type: "image"; src: string | null };
 
-export const PROJECT_HERO_MEDIA: Record<ProjectCaseKey, ProjectHeroMedia> = {
-    healthcare: { type: "hand", videoSrc: projectPreviewVideo },
-    modular: { type: "hand", videoSrc: null },
-    vc: { type: "hand", videoSrc: null },
-    bank: { type: "hand", videoSrc: null },
-    movies: { type: "hand", videoSrc: null },
-    vinos: { type: "hand", videoSrc: null },
-    packaging: { type: "image", src: null },
-    catamaran: { type: "image", src: null },
+/**
+ * Un proyecto = una entrada.
+ * Textos ES/EN viven en locales; aquí solo datos que no se traducen.
+ * `cardId` es la clase CSS del carrusel (ProyectA, ProyectB…).
+ */
+export type ProjectDefinition = {
+    key: ProjectCaseKey;
+    slug: string;
+    section: ProjectCatalogSection;
+    cardId: string;
+    images: (string | null)[];
+    hero: ProjectHeroMedia;
+    opportunityImage: string | null;
 };
 
-/**
- * Imagen grande bajo las cajas de oportunidades (`.img_oportunities`).
- * Importa el asset aquí o usa ruta public. `null` = placeholder.
- */
-export const PROJECT_OPPORTUNITY_IMAGES: Record<ProjectCaseKey, string | null> = {
-    healthcare: null,
-    modular: null,
-    vc: null,
-    bank: null,
-    movies: null,
-    vinos: null,
-    packaging: null,
-    catamaran: null,
-};
+export const PROJECTS: ProjectDefinition[] = [
+    {
+        key: "healthcare",
+        slug: "/healthcare",
+        section: "items",
+        cardId: "ProyectA",
+        images: [null, null, null, null],
+        hero: { type: "hand", videoSrc: projectPreviewVideo },
+        opportunityImage: null,
+    },
+    {
+        key: "modular",
+        slug: "/modulAR",
+        section: "items",
+        cardId: "ProyectB",
+        images: [null, null, null, null],
+        hero: { type: "hand", videoSrc: null },
+        opportunityImage: null,
+    },
+    {
+        key: "vc",
+        slug: "/Vc",
+        section: "items",
+        cardId: "ProyectC",
+        images: [null, null, null, null],
+        hero: { type: "hand", videoSrc: null },
+        opportunityImage: null,
+    },
+    {
+        key: "bank",
+        slug: "/Bank",
+        section: "items",
+        cardId: "ProyectD",
+        images: [null, null, null, null],
+        hero: { type: "hand", videoSrc: null },
+        opportunityImage: null,
+    },
+    {
+        key: "movies",
+        slug: "/Movies",
+        section: "items",
+        cardId: "ProyectE",
+        images: [null, null, null, null],
+        hero: { type: "hand", videoSrc: null },
+        opportunityImage: null,
+    },
+    {
+        key: "vinos",
+        slug: "/Vinos",
+        section: "items",
+        cardId: "ProyectF",
+        images: [null, null, null, null],
+        hero: { type: "hand", videoSrc: null },
+        opportunityImage: null,
+    },
+    {
+        key: "packaging",
+        slug: "/Design",
+        section: "beyond",
+        cardId: "ProyectG",
+        images: [null, null, null, null],
+        hero: { type: "image", src: null },
+        opportunityImage: null,
+    },
+    {
+        key: "catamaran",
+        slug: "/Catamaran",
+        section: "beyond",
+        cardId: "ProyectH",
+        images: [null, null, null, null],
+        hero: { type: "image", src: null },
+        opportunityImage: null,
+    },
+];
+
+export const PROJECTS_ITEMS = PROJECTS.filter((project) => project.section === "items");
+export const PROJECTS_BEYOND = PROJECTS.filter((project) => project.section === "beyond");
+
+/** Orden de navegación prev/next (el del catálogo). */
+export const PROJECT_CASE_ORDER: ProjectCaseRoute[] = PROJECTS.map(({ key, slug }) => ({
+    key,
+    slug,
+}));
+
+export function getProjectByKey(key: ProjectCaseKey) {
+    return PROJECTS.find((project) => project.key === key);
+}
 
 export function getProjectCatalogPath(key: ProjectCaseKey) {
-    const section = PROJECT_CATALOG_SECTION[key];
-    return `projectsSection.${section}.${key}`;
+    const project = getProjectByKey(key);
+    return project ? `projectsSection.${project.section}.${key}` : "";
 }
 
 export function getProjectNeighbors(slug: string) {
-    const index = PROJECT_CASE_ORDER.findIndex((project) => project.slug === slug);
+    const index = PROJECTS.findIndex((project) => project.slug === slug);
 
     if (index === -1) {
         return { prev: null, next: null, index: -1 };
     }
 
+    const toRoute = (project: ProjectDefinition): ProjectCaseRoute => ({
+        key: project.key,
+        slug: project.slug,
+    });
+
     return {
-        prev: index > 0 ? PROJECT_CASE_ORDER[index - 1] : null,
-        next: index < PROJECT_CASE_ORDER.length - 1 ? PROJECT_CASE_ORDER[index + 1] : null,
+        prev: index > 0 ? toRoute(PROJECTS[index - 1]) : null,
+        next: index < PROJECTS.length - 1 ? toRoute(PROJECTS[index + 1]) : null,
         index,
     };
 }
 
 export function getProjectRoute(key: ProjectCaseKey) {
-    return PROJECT_CASE_ORDER.find((project) => project.key === key);
+    const project = getProjectByKey(key);
+    return project ? { key: project.key, slug: project.slug } : undefined;
+}
+
+/** Evita arrastrar el hash de la home (#Home, #Projects…) al abrir un caso. */
+export function projectLink(slug: string) {
+    return { pathname: slug, hash: "" };
 }

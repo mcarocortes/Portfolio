@@ -11,12 +11,10 @@ import { useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {
-    PROJECT_IMAGE_SOURCES,
-    PROJECT_HERO_MEDIA,
-    PROJECT_OPPORTUNITY_IMAGES,
+    getProjectByKey,
     getProjectNeighbors,
-    getProjectRoute,
     getProjectCatalogPath,
+    projectLink,
     type ProjectCaseKey,
 } from "../../data/projectsCatalog";
 
@@ -182,8 +180,8 @@ type ProjectCaseStudyProps = {
 export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) {
     const { t } = useTranslation();
     const prefersReducedMotion = useReducedMotion();
-    const route = getProjectRoute(projectKey);
-    const { prev, next } = getProjectNeighbors(route?.slug ?? "");
+    const project = getProjectByKey(projectKey);
+    const { prev, next } = getProjectNeighbors(project?.slug ?? "");
 
     const pagePrefix = `projectCaseStudy.pages.${projectKey}`;
 
@@ -200,15 +198,19 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
         [t, pagePrefix]
     );
 
-    const imageSources = PROJECT_IMAGE_SOURCES[projectKey] ?? [];
-    const heroMedia = PROJECT_HERO_MEDIA[projectKey];
-    const opportunityImage = PROJECT_OPPORTUNITY_IMAGES[projectKey];
+    const imageSources = project?.images ?? [];
+    const heroMedia = project?.hero;
+    const opportunityImage = project?.opportunityImage ?? null;
 
     const catalogPath = getProjectCatalogPath(projectKey);
     const projectTitle = t(`${catalogPath}.title`);
     const projectTags = t(`${catalogPath}.tags`, {
         returnObjects: true,
     }) as string[];
+
+    if (!project || !heroMedia) {
+        return null;
+    }
 
     return (
         <article className="project-case">
@@ -392,7 +394,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
             <nav className="project-case__nav" aria-label={t("projectCaseStudy.navLabel")}>
                 <div className="project-case__nav-inner">
                     {prev ? (
-                        <Link to={prev.slug} className="project-case__nav-link project-case__nav-link--prev">
+                        <Link to={projectLink(prev.slug)} className="project-case__nav-link project-case__nav-link--prev">
                             <span className="project-case__nav-kicker">{t("projectCaseStudy.prev")}</span>
                             <span className="project-case__nav-title">
                                 {t(`${getProjectCatalogPath(prev.key)}.title`)}
@@ -407,7 +409,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                     </Link>
 
                     {next ? (
-                        <Link to={next.slug} className="project-case__nav-link project-case__nav-link--next">
+                        <Link to={projectLink(next.slug)} className="project-case__nav-link project-case__nav-link--next">
                             <span className="project-case__nav-kicker">{t("projectCaseStudy.next")}</span>
                             <span className="project-case__nav-title">
                                 {t(`${getProjectCatalogPath(next.key)}.title`)}

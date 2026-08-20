@@ -1,10 +1,15 @@
-
 import './Projects.css'
 import { Link } from 'react-router-dom'
 import { useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import useProjectsEntranceFade from "../../hooks/useProjectsEntranceFade";
 import { ProjectsPathBeyond } from './ProjectsPath';
+import {
+    PROJECTS_BEYOND,
+    PROJECTS_ITEMS,
+    projectLink,
+    type ProjectDefinition,
+} from "../../data/projectsCatalog";
 
 type ProjectEntry = {
     id: string;
@@ -14,28 +19,13 @@ type ProjectEntry = {
     build: string[];
 };
 
-const MAIN_PROJECTS = [
-    { id: "ProyectA", key: "healthcare", url: "/healthcare" },
-    { id: "ProyectB", key: "modular", url: "/modulAR" },
-    { id: "ProyectC", key: "vc", url: "/Vc" },
-    { id: "ProyectD", key: "bank", url: "/Bank" },
-    { id: "ProyectE", key: "movies", url: "/Movies" },
-    { id: "ProyectF", key: "vinos", url: "/Vinos" },
-] as const;
-
-const BEYOND_PROJECTS = [
-    { id: "ProyectG", key: "packaging", url: "/Design" },
-    { id: "ProyectH", key: "catamaran", url: "/Catamaran" },
-] as const;
-
 function mapProjects(
-    entries: readonly { id: string; key: string; url: string }[],
-    section: "items" | "beyond",
+    entries: readonly ProjectDefinition[],
     t: (key: string, options?: { returnObjects?: boolean }) => string | string[]
 ): ProjectEntry[] {
-    return entries.map(({ id, key, url }) => ({
-        id,
-        url,
+    return entries.map(({ cardId, key, slug, section }) => ({
+        id: cardId,
+        url: slug,
         title: t(`projectsSection.${section}.${key}.title`) as string,
         subt: t(`projectsSection.${section}.${key}.subtitle`) as string,
         build: t(`projectsSection.${section}.${key}.tags`, { returnObjects: true }) as string[],
@@ -49,12 +39,12 @@ export default function Projects() {
     const enterY = (1 - projectsFade) * 48;
 
     const projectsData = useMemo(
-        () => mapProjects(MAIN_PROJECTS, "items", t),
+        () => mapProjects(PROJECTS_ITEMS, t),
         [t, i18n.language]
     );
 
     const beyond = useMemo(
-        () => mapProjects(BEYOND_PROJECTS, "beyond", t),
+        () => mapProjects(PROJECTS_BEYOND, t),
         [t, i18n.language]
     );
 
@@ -173,8 +163,8 @@ export default function Projects() {
                                 {projectsData.map((proj) => (
                                     <div key={proj.id} className={`figure ${proj.id}`}>
                                         <div className={`figureMedia ${proj.id}`}></div>
-                                        <Link to={proj.url} className='ProjectNameHover'></Link>
-                                        <Link to={proj.url} className='ProjectNameLink'>{proj.title}</Link>
+                                        <Link to={projectLink(proj.url)} className='ProjectNameHover'></Link>
+                                        <Link to={projectLink(proj.url)} className='ProjectNameLink'>{proj.title}</Link>
                                         <div className='descriptionSection'>
                                             <p className='projectDetails'>{proj.subt}</p>
                                             <div className="buildList">
@@ -185,7 +175,7 @@ export default function Projects() {
                                                         </span>
                                                     ))}
                                                 </div>
-                                                <Link to={proj.url} className="btnArrow">→</Link>
+                                                <Link to={projectLink(proj.url)} className="btnArrow">→</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -211,8 +201,8 @@ export default function Projects() {
                             {beyond.map((proj) => (
                                 <div key={proj.id} className={`figure ${proj.id}`}>
                                     <div className={`figureMedia ${proj.id}`}></div>
-                                    <Link to={proj.url} className='ProjectNameHover'></Link>
-                                    <Link to={proj.url} className='ProjectNameLink'>{proj.title}</Link>
+                                    <Link to={projectLink(proj.url)} className='ProjectNameHover'></Link>
+                                    <Link to={projectLink(proj.url)} className='ProjectNameLink'>{proj.title}</Link>
                                     <div className='descriptionSection'>
                                         <p className='projectDetails'>{proj.subt}</p>
                                         <div className="buildList">
@@ -223,7 +213,7 @@ export default function Projects() {
                                                     </span>
                                                 ))}
                                             </div>
-                                            <Link to={proj.url} className="btnArrow">→</Link>
+                                            <Link to={projectLink(proj.url)} className="btnArrow">→</Link>
                                         </div>
                                     </div>
                                 </div>
