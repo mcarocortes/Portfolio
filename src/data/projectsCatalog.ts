@@ -1,4 +1,25 @@
-import projectPreviewVideo from "../assets/img/HandProjects/video.mp4";
+import projectVideoHealth from "../assets/img/Projects/Health/resiplus.mp4";
+
+export const CASE_ICON_NAMES = [
+    "search",
+    "layers",
+    "check",
+    "users",
+    "mobile",
+    "spark",
+    "heart",
+    "clock",
+    "shield",
+    "target",
+    "code",
+    "palette",
+    "box",
+    "waves",
+    "chat",
+    "chart",
+] as const;
+
+export type CaseIconName = (typeof CASE_ICON_NAMES)[number];
 
 export type ProjectCaseKey =
     | "healthcare"
@@ -35,6 +56,8 @@ export type ProjectDefinition = {
     images: (string | null)[];
     hero: ProjectHeroMedia;
     opportunityImage: string | null;
+    opportunityIcons: [CaseIconName, CaseIconName, CaseIconName];
+    impactIcons: [CaseIconName, CaseIconName, CaseIconName];
 };
 
 export const PROJECTS: ProjectDefinition[] = [
@@ -44,8 +67,10 @@ export const PROJECTS: ProjectDefinition[] = [
         section: "items",
         cardId: "ProyectA",
         images: [null, null, null, null],
-        hero: { type: "hand", videoSrc: projectPreviewVideo },
+        hero: { type: "hand", videoSrc: projectVideoHealth },
         opportunityImage: null,
+        opportunityIcons: ["search", "layers", "check"],
+        impactIcons: ["mobile", "clock", "spark"],
     },
     {
         key: "modular",
@@ -55,6 +80,8 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        opportunityIcons: ["search", "layers", "check"],
+        impactIcons: ["spark", "users", "target"],
     },
     {
         key: "vc",
@@ -64,6 +91,8 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        opportunityIcons: ["heart", "palette", "check"],
+        impactIcons: ["shield", "heart", "users"],
     },
     {
         key: "bank",
@@ -73,6 +102,8 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        opportunityIcons: ["chart", "layers", "check"],
+        impactIcons: ["chart", "target", "code"],
     },
     {
         key: "movies",
@@ -82,6 +113,8 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        opportunityIcons: ["chat", "spark", "check"],
+        impactIcons: ["spark", "chat", "code"],
     },
     {
         key: "vinos",
@@ -91,6 +124,8 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        opportunityIcons: ["palette", "heart", "check"],
+        impactIcons: ["palette", "target", "heart"],
     },
     {
         key: "packaging",
@@ -100,6 +135,8 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "image", src: null },
         opportunityImage: null,
+        opportunityIcons: ["box", "palette", "check"],
+        impactIcons: ["box", "target", "spark"],
     },
     {
         key: "catamaran",
@@ -109,6 +146,8 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "image", src: null },
         opportunityImage: null,
+        opportunityIcons: ["waves", "search", "check"],
+        impactIcons: ["waves", "users", "spark"],
     },
 ];
 
@@ -154,7 +193,6 @@ export function getProjectRoute(key: ProjectCaseKey) {
     return project ? { key: project.key, slug: project.slug } : undefined;
 }
 
-/** Evita arrastrar el hash de la home (#Home, #Projects…) al abrir un caso. */
 export function projectLink(slug: string) {
     return { pathname: slug, hash: "" };
 }

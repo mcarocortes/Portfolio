@@ -10,6 +10,7 @@ import {
 import { useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import CaseStudyIcon from "./CaseStudyIcon";
 import {
     getProjectByKey,
     getProjectNeighbors,
@@ -19,6 +20,11 @@ import {
 } from "../../data/projectsCatalog";
 
 type CaseSection = {
+    title: string;
+    body: string;
+};
+
+type CaseImpact = {
     title: string;
     body: string;
 };
@@ -198,6 +204,11 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
         [t, pagePrefix]
     );
 
+    const impactItems = useMemo(() => {
+        const items = t(`${pagePrefix}.impact`, { returnObjects: true }) as CaseImpact[] | string;
+        return Array.isArray(items) ? items : [];
+    }, [t, pagePrefix]);
+
     const imageSources = project?.images ?? [];
     const heroMedia = project?.hero;
     const opportunityImage = project?.opportunityImage ?? null;
@@ -312,22 +323,30 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
 
             <div>
                 <div className="project-case_oportunities">
+                    <h2 className="project-case__section-heading">
+                        {t("projectCaseStudy.opportunitiesTitle")}
+                    </h2>
                     <div className="block-boxes">
-                        {sections.map((section, index) => (                           
-                        
+                        {sections.map((section, index) => (
                             <motion.section
                                 key={section.title}
-                            className="project-case__block"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={viewport}
-                            variants={reveal}
-                            transition={{ delay: index * 0.04 }}
+                                className="project-case__block"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={viewport}
+                                variants={reveal}
+                                transition={{ delay: index * 0.04 }}
                             >
-                            <h2 className="project-case__block-title">{section.title}</h2>
-                            <p className="project-case__block-text">{section.body}</p>
-                        </motion.section>
-                        
+                                <div className="project-case__block-head">
+                                    <span className="project-case__block-icon" aria-hidden="true">
+                                        <CaseStudyIcon
+                                            name={project.opportunityIcons[index] ?? "spark"}
+                                        />
+                                    </span>
+                                    <h3 className="project-case__block-title">{section.title}</h3>
+                                </div>
+                                <p className="project-case__block-text">{section.body}</p>
+                            </motion.section>
                         ))}
                     </div>
 
@@ -368,7 +387,36 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                     viewport={viewport}
                     variants={reveal}
                 >
-                    <h2 className="project-case__block-title">{t("projectCaseStudy.outputsTitle")}</h2>
+                    <h2 className="project-case__section-heading">
+                        {t("projectCaseStudy.impactTitle")}
+                    </h2>
+                    <div className="block-boxes block-boxes--impact">
+                        {impactItems.map((item, index) => (
+                            <motion.section
+                                key={item.title}
+                                className="project-case__block project-case__block--impact"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={viewport}
+                                variants={reveal}
+                                transition={{ delay: index * 0.04 }}
+                            >
+                                <div className="project-case__block-head">
+                                    <span className="project-case__block-icon" aria-hidden="true">
+                                        <CaseStudyIcon
+                                            name={project.impactIcons[index] ?? "spark"}
+                                        />
+                                    </span>
+                                    <h3 className="project-case__block-title">{item.title}</h3>
+                                </div>
+                                <p className="project-case__block-text">{item.body}</p>
+                            </motion.section>
+                        ))}
+                    </div>
+
+                    <h2 className="project-case__section-heading">
+                        {t("projectCaseStudy.outputsTitle")}
+                    </h2>
 
                     <div className="project-case__gallery-grid">
                         {imagesMeta.map((image, index) => {

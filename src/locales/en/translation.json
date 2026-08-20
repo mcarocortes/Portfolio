@@ -137,6 +137,8 @@
 
     "projectCaseStudy": {
       "roleTitle": "My role",
+      "opportunitiesTitle": "Opportunities",
+      "impactTitle": "Impact & results",
       "outputsTitle": "Glimpse of Outputs",
       "imagePlaceholder": "Replace image",
       "backToProjects": "Back to projects",
@@ -164,6 +166,11 @@
               "body": "The result is a more usable mobile experience that supports everyday workflows, reduces friction in key tasks, and keeps performance stable in a production environment."
             }
           ],
+          "impact": [
+            { "title": "Faster everyday use", "body": "Frequent tasks take fewer steps, with a clearer interface for daily clinical work." },
+            { "title": "Less mobile friction", "body": "Touch-friendly patterns and responsive layouts that work on real devices, not just desktop." },
+            { "title": "Clearer clinical flows", "body": "Visual hierarchy puts what matters first and cuts noise under pressure." }
+          ],
           "images": [
             { "caption": "Mobile dashboard overview", "alt": "Healthcare PWA dashboard", "layout": "wide" },
             { "caption": "Task flow on mobile", "alt": "Mobile workflow screen" },
@@ -188,6 +195,11 @@
               "title": "Outcome",
               "body": "A platform direction that improves engagement, clarifies service value, and creates a stronger bridge between artists, clients, and opportunities."
             }
+          ],
+          "impact": [
+            { "title": "Cohesive ecosystem", "body": "The platform feels like one product, not a set of disconnected tools." },
+            { "title": "AR as a differentiator", "body": "Augmented reality sits inside the journey, not as an isolated extra." },
+            { "title": "Stronger artist–client bridge", "body": "Profiles and marketplace make visibility, contact, and commissions easier." }
           ],
           "images": [
             { "caption": "Platform landing overview", "alt": "modulAR landing page", "layout": "wide" },
@@ -214,6 +226,11 @@
               "body": "A cohesive brand and website that communicates credibility, supports discovery of services, and helps users feel confident reaching out."
             }
           ],
+          "impact": [
+            { "title": "Warmer digital presence", "body": "A calm identity that feels professional without losing human warmth." },
+            { "title": "Clarity and trust", "body": "Content and hierarchy that explain sensitive services without overwhelm." },
+            { "title": "Easier to reach out", "body": "Booking or writing feels obvious and emotionally safe." }
+          ],
           "images": [
             { "caption": "Homepage hero", "alt": "Valezka Cortés homepage", "layout": "wide" },
             { "caption": "Brand identity system", "alt": "Brand identity overview" },
@@ -238,6 +255,11 @@
               "title": "Outcome",
               "body": "A dashboard concept that demonstrates front-end architecture, visual clarity, and a scalable approach to complex product interfaces."
             }
+          ],
+          "impact": [
+            { "title": "More scannable data", "body": "Financial information reads at a glance, without losing depth when you need it." },
+            { "title": "Key metrics first", "body": "Primary figures stand out; secondary detail stays available without competing." },
+            { "title": "Scalable UI", "body": "Card patterns and a visual system built to grow with more modules." }
           ],
           "images": [
             { "caption": "Dashboard overview", "alt": "Banking dashboard overview", "layout": "wide" },
@@ -264,6 +286,11 @@
               "body": "A demonstrator that shows practical AI integration, strong UX fundamentals, and production-minded front-end development."
             }
           ],
+          "impact": [
+            { "title": "Useful AI, not a gimmick", "body": "Conversation serves a real task, with predictable feedback at every step." },
+            { "title": "Clear interaction states", "body": "Loading, error, and response are obvious; there is no black box." },
+            { "title": "Conversational UX", "body": "Chat layout and components are built to evolve with the API." }
+          ],
           "images": [
             { "caption": "Assistant home screen", "alt": "AI assistant home", "layout": "wide" },
             { "caption": "Conversation flow", "alt": "Chat conversation UI" },
@@ -288,6 +315,11 @@
               "title": "Outcome",
               "body": "An elegant web experience that strengthens brand perception and supports key business actions with clarity."
             }
+          ],
+          "impact": [
+            { "title": "Stronger brand feel", "body": "Typography and imagery convey the wine bar atmosphere from the first scroll." },
+            { "title": "Simpler booking", "body": "From discovering the menu to reserving a table, the path is short and obvious." },
+            { "title": "Premium atmosphere", "body": "The interface feels considered and warm, aligned with the physical space." }
           ],
           "images": [
             { "caption": "Homepage atmosphere", "alt": "Vinos y Sabores homepage", "layout": "wide" },
@@ -315,6 +347,11 @@
               "body": "A packaging collection that strengthens brand presence in retail environments and demonstrates design thinking beyond digital interfaces."
             }
           ],
+          "impact": [
+            { "title": "Shelf impact", "body": "Each SKU is recognizable on the shelf at a glance, even from a distance." },
+            { "title": "Label system", "body": "A visual language that scales across products without losing family coherence." },
+            { "title": "Recognizable identity", "body": "Color, type, and composition build the brand beyond a single pack." }
+          ],
           "images": [
             { "caption": "Collection overview", "alt": "Packaging design collection", "layout": "wide" },
             { "caption": "Primary label system", "alt": "Primary packaging label" },
@@ -340,6 +377,11 @@
               "title": "Outcome",
               "body": "A biomimetic product concept that connects my industrial design roots with the user-centered mindset I bring to digital products today."
             }
+          ],
+          "impact": [
+            { "title": "Sustainable mobility", "body": "A human-powered leisure craft concept, designed for real use on water." },
+            { "title": "Validated ergonomics", "body": "Posture and pedaling iterated through 3D modeling and human-use criteria." },
+            { "title": "Biomimetic concept", "body": "Twin-hull geometry draws from natural forms and efficient movement." }
           ],
           "images": [
             { "caption": "Concept overview", "alt": "Biomimetic catamaran concept", "layout": "wide" },
