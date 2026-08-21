@@ -178,10 +178,10 @@
             "body": "Managing and mentoring the Front-end team through agile task allocation and accurate estimates, removing bottlenecks in the delivery of new features." }
           ],
           "images": [
-            { "caption": "Mobile dashboard overview", "alt": "Healthcare PWA dashboard", "layout": "wide" },
-            { "caption": "Task flow on mobile", "alt": "Mobile workflow screen" },
-            { "caption": "Responsive layout detail", "alt": "Responsive UI detail" },
-            { "caption": "Component system snapshot", "alt": "UI components overview" }
+            { "caption": "From need to production", "alt": "Needs diagram", "layout": "wide" },
+            { "caption": "Designing for complexity", "alt": "ResiPlus approach diagram" },
+            { "caption": "Navigation flow layout", "alt": "Mobile navigation" },
+            { "caption": "ResiPlus Mobile visualizations", "alt": "Result" }
           ]
         },
         "modular": {

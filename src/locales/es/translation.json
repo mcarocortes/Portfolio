@@ -178,10 +178,10 @@
             "body": "Gestión y mentoría del equipo Front-end mediante reparto ágil de tareas y estimaciones precisas, eliminando cuellos de botella en la entrega de nuevas funcionalidades." }
           ],
           "images": [
-            { "caption": "Vista general del dashboard móvil", "alt": "Dashboard PWA sanitaria", "layout": "wide" },
-            { "caption": "Flujo de tareas en móvil", "alt": "Pantalla de flujo móvil" },
-            { "caption": "Detalle de layout responsive", "alt": "Detalle UI responsive" },
-            { "caption": "Snapshot del sistema de componentes", "alt": "Vista de componentes UI" }
+            { "caption": "De la necesidad a la producción", "alt": "Esquema necesidades", "layout": "wide" },
+            { "caption": "Diseñar para la complejidad", "alt": "Esquema planteamiento Resiplus" },
+            { "caption": "Layout flujo navegación", "alt": "navegación móvil" },
+            { "caption": "Visualizaciones de Resiplus Mobile", "alt": "Resultado" }
           ]
         },
         "modular": {

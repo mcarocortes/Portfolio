@@ -1,5 +1,10 @@
 import projectVideoHealth from "../assets/img/Projects/Health/resiplus.mp4";
 import healthOpportunityImage from "../assets/img/Projects/Health/health_oppor.png";
+import health1 from "../assets/img/Projects/Health/health_1.png";
+import health2 from "../assets/img/Projects/Health/health_2.png";
+import health3 from "../assets/img/Projects/Health/health_3.png";
+import health4 from "../assets/img/Projects/Health/health_4.png";
+
 
 export const CASE_ICON_NAMES = [
     "search",
@@ -67,7 +72,7 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/healthcare",
         section: "items",
         cardId: "ProyectA",
-        images: [null, null, null, null],
+        images: [health1, health2, health3, health4],
         hero: { type: "hand", videoSrc: projectVideoHealth },
         opportunityImage: healthOpportunityImage,
         opportunityIcons: ["search", "layers", "check"],

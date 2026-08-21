@@ -201,10 +201,10 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
         [t, pagePrefix]
     );
 
-    const imagesMeta = useMemo(
-        () => t(`${pagePrefix}.images`, { returnObjects: true }) as CaseImage[],
-        [t, pagePrefix]
-    );
+    const imagesMeta = useMemo(() => {
+        const images = t(`${pagePrefix}.images`, { returnObjects: true });
+        return Array.isArray(images) ? (images as CaseImage[]) : [];
+    }, [t, pagePrefix, i18n.language]);
 
     const impactItems = useMemo(() => {
         const items = t(`${pagePrefix}.impact`, { returnObjects: true }) as CaseImpact[] | string;
@@ -387,13 +387,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                 </div>
 
 
-                <motion.section
-                    className="project-case__gallery"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={viewport}
-                    variants={reveal}
-                >
+                <section className="project-case__gallery">
                     <h2 className="project-case__section-heading">
                         {t("projectCaseStudy.impactTitle")}
                     </h2>
@@ -444,7 +438,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                             );
                         })}
                     </div>
-                </motion.section>
+                </section>
             </div>
 
             <nav className="project-case__nav" aria-label={t("projectCaseStudy.navLabel")}>
