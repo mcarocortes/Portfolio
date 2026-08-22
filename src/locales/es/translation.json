@@ -51,8 +51,8 @@
         },
         "modular": {
           "title": "modulAR",
-          "subtitle": "Plataforma multiservicio que conecta artistas, clientes y oportunidades laborales mediante experiencias inmersivas de Realidad Aumentada, aumentando engagement y visibilidad del producto.",
-          "tags": ["ASP.NET Core", "Realidad Aumentada", "MVC", "E-commerce"]
+          "subtitle": "Conceptualización, diseño y desarrollo integral de una plataforma digital para creativos, desde la creación de la marca y el modelo de negocio hasta el desarrollo Front-end y la integración de experiencias 3D y Realidad Aumentada.",
+          "tags": ["ASP.NET MVC", "Realidad Aumentada", "3D Interactivo", "E-commerce"]
         },
         "vc": {
           "title": "Valezka Cortés",
@@ -155,6 +155,7 @@
           "company": "ResiPlus®",
           "companyDescription":"ResiPlus® es la plataforma de gestión líder para centros sociosanitarios (residencias, centros de día y discapacidad). Su versión PWA (Mobile/Tablet) digitaliza la operativa diaria y el seguimiento clínico del personal asistencial en tiempo real.",
           "roleDescription": "Lidero el área Front-end de Mobile & Tablet, coordinando un equipo de tres desarrolladores y participando en el análisis, diseño y desarrollo de nuevas funcionalidades para una PWA en producción. Mi trabajo combina desarrollo Front-end, UX/UI, resolución de problemas, definición de flujos y permisos, coordinación técnica y evolución del producto.",
+          "linkLabel": "Visitar ResiPlus",
           "sections": [
             {
               "title": "Complejidad del producto",
@@ -180,44 +181,57 @@
           "images": [
             { "caption": "De la necesidad a la producción", "alt": "Esquema necesidades", "layout": "wide" },
             { "caption": "Diseñar para la complejidad", "alt": "Esquema planteamiento Resiplus" },
-            { "caption": "Layout flujo navegación", "alt": "navegación móvil" },
+            { "caption": "Esquema de pantalla: flujo navegación", "alt": "navegación móvil" },
             { "caption": "Visualizaciones de Resiplus Mobile", "alt": "Resultado" }
           ]
         },
         "modular": {
-          "headline": "Conectando artistas y clientes con AR inmersiva.",
-          "role": "Contribuidora Producto & Web",
-          "roleDescription": "Ayudé a definir la experiencia de una plataforma multiservicio que combina marketplace con realidad aumentada, mejorando visibilidad para artistas e interacción con clientes.",
+          "headline": "modulAR",
+          "subtitle": "De una idea de negocio a un producto digital interactivo",
+          "role": "Diseño de Producto · Desarrolladora Front-end",
+          "company": "Proyecto académico · TFG",
+          "companyDescription": "modulAR es una plataforma concebida desde cero para permitir a creativos y artistas comercializar sus obras mediante experiencias inmersivas. El proyecto abarca desde el modelo de negocio y la identidad de marca hasta la arquitectura técnica, sustituyendo galerías 2D tradicionales por interacción 3D/AR en tiempo real.",
+          "roleDescription": "Creadora y desarrolladora única del proyecto integral. Asumí la definición de la idea de negocio, la identidad de marca completa (Photoshop/Illustrator), el diseño UX/UI, la arquitectura de base de datos y back-end (ASP.NET Core MVC / EF Core), y el desarrollo Front-end con integración de la API model-viewer para Realidad Aumentada sin aplicaciones externas.",
+          "linkLabel": "Ver PDF",
           "sections": [
             {
-              "title": "Mejora el núcleo",
-              "body": "modulAR debía sentirse como un ecosistema cohesionado — no como herramientas sueltas — destacando la AR inmersiva como diferencial."
+              "title": "De idea a producto",
+              "body": "¿Cómo transformar una idea de negocio en un producto digital coherente y viable?"
             },
             {
-              "title": "Enfoque",
-              "body": "Combiné pensamiento de servicio con implementación web: journeys claros, estructuras modulares y lenguaje visual alineado con la marca."
+              "title": "Identidad y experiencia",
+              "body": "¿Cómo construir una marca y una experiencia digital capaces de transmitir el valor de los productos creativos?"
             },
             {
-              "title": "Resultado",
-              "body": "Una dirección de plataforma que mejora el engagement, clarifica el valor del servicio y conecta mejor artistas, clientes y oportunidades."
+              "title": "3D y AR",
+              "body": "¿Cómo utilizar tecnologías inmersivas para hacer que los productos sean más tangibles antes de la compra?"
             }
           ],
           "impact": [
-            { "title": "Ecosistema cohesionado", "body": "La plataforma se percibe como un solo producto, no como herramientas sueltas." },
-            { "title": "AR como diferencial", "body": "La realidad aumentada queda integrada en el journey, no como un extra aislado." },
-            { "title": "Mejor puente artista–cliente", "body": "Perfiles y marketplace acercan visibilidad, contacto y oportunidades de encargo." }
+            { "title": "Concepto de marca y producto",
+            "body": "Creación de la identidad visual, propuesta de valor y concepto de negocio de modulAR desde cero."
+          },
+            { "title": "3D y AR interactivos",
+            "body": "Integración de modelos 3D y Realidad Aumentada para permitir explorar productos de forma más inmersiva e interactiva."
+          },
+            { "title": "Aplicación web funcional",
+            "body": "Desarrollo integral de la plataforma utilizando arquitectura MVC, conexión con base de datos y despliegue en Azure." }
           ],
           "images": [
-            { "caption": "Vista general del landing", "alt": "Landing modulAR", "layout": "wide" },
-            { "caption": "Punto de entrada AR", "alt": "Módulo de realidad aumentada" },
-            { "caption": "Layout de perfil de artista", "alt": "Pantalla perfil artista" },
-            { "caption": "Flujo del marketplace", "alt": "Flujo marketplace" }
+            { "caption": "Esquema de arquitectura / Esquema de modelo relacional", "alt": "Esquemas", "layout": "wide" },
+            { "caption": "Esquema de pantalla", "alt": "Esquema de pantalla" },
+            { "caption": "Antes / Después", "alt": "Antes y después" },
+            { "caption": "Visualizaciones de modulAR", "alt": "Capturas" }
           ]
         },
         "vc": {
           "headline": "Una presencia digital serena basada en confianza.",
+          "subtitle": "Identidad digital para psicología y mediación familiar",
           "role": "Diseñadora & Desarrolladora Front-End",
+          "company": "Consulta Valezka Cortés",
+          "companyDescription": "Consulta de psicología y mediación familiar que necesitaba una presencia online profesional y cercana, con foco en accesibilidad, claridad y confianza del usuario.",
           "roleDescription": "Diseñé y desarrollé identidad digital y web para una consulta de psicología y mediación familiar, priorizando accesibilidad, claridad y seguridad emocional en la interfaz.",
+          "linkLabel": "Visitar la web",
           "sections": [
             {
               "title": "Contexto",
@@ -246,8 +260,12 @@
         },
         "bank": {
           "headline": "Claridad de datos para dashboards bancarios modernos.",
+          "subtitle": "Visualización de datos y UI escalable",
           "role": "Desarrolladora Front-End",
+          "company": "Proyecto personal",
+          "companyDescription": "Concepto de dashboard bancario construido con React y TypeScript, centrado en visualización de datos, patrones de UI limpios y arquitectura front-end escalable.",
           "roleDescription": "Exploré un concepto de dashboard con React y TypeScript centrado en visualización de datos legible, patrones UI escalables y base de design system.",
+          "linkLabel": "Ver prototipo",
           "sections": [
             {
               "title": "Contexto",
@@ -276,8 +294,12 @@
         },
         "movies": {
           "headline": "UX conversacional impulsada por IA.",
+          "subtitle": "Asistente conversacional con IA",
           "role": "Desarrolladora Front-End",
+          "company": "Proyecto personal",
+          "companyDescription": "Interfaz de asistente con IA que demuestra integración práctica de APIs modernas, UX conversacional y desarrollo front-end preparado para la nube.",
           "roleDescription": "Construí una interfaz de asistente con IA que combina interacción conversacional, integración API y patrones front-end preparados para la nube.",
+          "linkLabel": "Ver prototipo",
           "sections": [
             {
               "title": "Contexto",
@@ -306,8 +328,12 @@
         },
         "vinos": {
           "headline": "Calidez y elegancia para una vinoteca.",
+          "subtitle": "Branding, usabilidad y reserva online",
           "role": "Diseñadora & Desarrolladora",
+          "company": "Vinos y Sabores",
+          "companyDescription": "Vinoteca que necesitaba una experiencia digital elegante, combinando branding, usabilidad y funcionalidades de reserva online.",
           "roleDescription": "Creé una experiencia digital para una vinoteca que une branding, usabilidad y reservas en una interfaz cohesionada y acogedora.",
+          "linkLabel": "Visitar la web",
           "sections": [
             {
               "title": "Contexto",
@@ -336,9 +362,12 @@
         },
         "packaging": {
           "headline": "Impacto en estantería con sistemas de packaging cohesionados.",
+          "subtitle": "Identidades visuales orientadas al impacto en estantería",
           "role": "Diseñadora de packaging",
           "company": "Beyond Code",
+          "companyDescription": "Colección de packaging comercial para productos alimentarios, con identidades visuales cohesionadas orientadas al reconocimiento de marca y a la producción lista para impresión.",
           "roleDescription": "Diseñé packaging comercial para productos alimentarios, creando identidades visuales cohesionadas orientadas al impacto en estantería, reconocimiento de marca y producción print-ready.",
+          "linkLabel": "Ver PDF",
           "sections": [
             {
               "title": "Contexto",
@@ -367,9 +396,12 @@
         },
         "catamaran": {
           "headline": "Biomímesis aplicada a la movilidad acuática a pedales.",
+          "subtitle": "Movilidad acuática a pedales inspirada en la naturaleza",
           "role": "Diseñadora industrial",
           "company": "Beyond Code",
+          "companyDescription": "Proyecto fin de grado en diseño industrial: un catamarán a pedales inspirado en biomímesis y diseño centrado en las personas.",
           "roleDescription": "Mi TFG de diseño industrial se centró en un catamarán a pedales inspirado en biomímesis — desde investigación y modelado 3D hasta prototipado y validación centrada en la persona usuaria.",
+          "linkLabel": "Ver PDF",
           "sections": [
             {
               "title": "Contexto",

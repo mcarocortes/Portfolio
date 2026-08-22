@@ -51,8 +51,8 @@
         },
         "modular": {
           "title": "modulAR",
-          "subtitle": "A multi-service platform that connects artists, clients, and job opportunities through immersive Augmented Reality experiences, increasing engagement and product visibility.",
-          "tags": ["ASP.NET Core", "Augmented Reality", "MVC", "E-commerce"]
+          "subtitle": "End-to-end conceptualization, design, and development of a digital platform for creatives — from brand and business model to Front-end development and 3D and Augmented Reality experiences.",
+          "tags": ["ASP.NET MVC", "Augmented Reality", "Interactive 3D", "E-commerce"]
         },
         "vc": {
           "title": "Valezka Cortés",
@@ -155,6 +155,7 @@
           "company": "ResiPlus®",
           "companyDescription": "ResiPlus® is the leading management platform for social-healthcare facilities (nursing homes, day centers, and disability care). Its PWA (mobile/tablet) digitizes daily operations and clinical follow-up for care staff in real time.",
           "roleDescription": "I lead the Mobile & Tablet Front-end area, coordinating a team of three developers and taking part in the analysis, design, and development of new features for a production PWA. My work combines Front-end development, UX/UI, problem-solving, flow and permissions definition, technical coordination, and product evolution.",
+          "linkLabel": "Visit ResiPlus",
           "sections": [
             {
               "title": "Product complexity",
@@ -180,44 +181,57 @@
           "images": [
             { "caption": "From need to production", "alt": "Needs diagram", "layout": "wide" },
             { "caption": "Designing for complexity", "alt": "ResiPlus approach diagram" },
-            { "caption": "Navigation flow layout", "alt": "Mobile navigation" },
+            { "caption": "Wireframe: Navigation", "alt": "Mobile navigation" },
             { "caption": "ResiPlus Mobile visualizations", "alt": "Result" }
           ]
         },
         "modular": {
-          "headline": "Connecting artists and clients through immersive AR.",
-          "role": "Product & Web Contributor",
-          "roleDescription": "I helped shape a multi-service platform experience that combines marketplace features with augmented reality, supporting visibility for artists and smoother client interactions.",
+          "headline": "modulAR",
+          "subtitle": "From a business idea to an interactive digital product",
+          "role": "Product Design · Front-end Developer",
+          "company": "Academic project · Final Degree Project (TFG)",
+          "companyDescription": "modulAR is a platform built from scratch so creatives and artists can sell their work through immersive experiences. The project covers everything from the business model and brand identity to the technical architecture, replacing traditional 2D galleries with real-time 3D/AR interaction.",
+          "roleDescription": "Sole creator and developer of the end-to-end project. I defined the business idea, the full brand identity (Photoshop/Illustrator), the UX/UI design, the database and back-end architecture (ASP.NET Core MVC / EF Core), and the Front-end, integrating the model-viewer API for Augmented Reality without external apps.",
+          "linkLabel": "View PDF",
           "sections": [
             {
-              "title": "Strengthen the core",
-              "body": "modulAR needed to feel like one cohesive ecosystem — not a collection of disconnected tools — while highlighting immersive AR as a differentiator."
+              "title": "From idea to product",
+              "body": "How do we turn a business idea into a coherent, viable digital product?"
             },
             {
-              "title": "Approach",
-              "body": "The work combined service design thinking with web implementation: clear user journeys, modular page structures, and visual language aligned with the brand."
+              "title": "Identity and experience",
+              "body": "How do we build a brand and a digital experience that convey the value of creative products?"
             },
             {
-              "title": "Outcome",
-              "body": "A platform direction that improves engagement, clarifies service value, and creates a stronger bridge between artists, clients, and opportunities."
+              "title": "3D and AR",
+              "body": "How do we use immersive technologies to make products more tangible before purchase?"
             }
           ],
           "impact": [
-            { "title": "Cohesive ecosystem", "body": "The platform feels like one product, not a set of disconnected tools." },
-            { "title": "AR as a differentiator", "body": "Augmented reality sits inside the journey, not as an isolated extra." },
-            { "title": "Stronger artist–client bridge", "body": "Profiles and marketplace make visibility, contact, and commissions easier." }
+            { "title": "Brand and product concept",
+            "body": "Created modulAR’s visual identity, value proposition, and business concept from scratch."
+          },
+            { "title": "Interactive 3D and AR",
+            "body": "Integrated 3D models and Augmented Reality so products can be explored in a more immersive, interactive way."
+          },
+            { "title": "Functional web application",
+            "body": "End-to-end development of the platform using MVC architecture, database connection, and Azure deployment." }
           ],
           "images": [
-            { "caption": "Platform landing overview", "alt": "modulAR landing page", "layout": "wide" },
-            { "caption": "AR experience entry point", "alt": "Augmented reality module" },
-            { "caption": "Artist profile layout", "alt": "Artist profile screen" },
-            { "caption": "Marketplace flow", "alt": "Marketplace user flow" }
+            { "caption": "Architecture diagram / Relational model diagram", "alt": "Diagrams", "layout": "wide" },
+            { "caption": "Screen layout", "alt": "Screen layout" },
+            { "caption": "Before / After", "alt": "Before and after" },
+            { "caption": "modulAR visualizations", "alt": "Screenshots" }
           ]
         },
         "vc": {
           "headline": "A calm digital presence built on trust.",
+          "subtitle": "Digital identity for psychology and family mediation",
           "role": "Designer & Front-End Developer",
+          "company": "Valezka Cortés practice",
+          "companyDescription": "A psychology and family mediation practice that needed a professional, approachable online presence focused on accessibility, clarity, and user trust.",
           "roleDescription": "I designed and built a digital identity and website for a psychology and family mediation practice, prioritizing accessibility, clarity, and emotional safety in the interface.",
+          "linkLabel": "Visit website",
           "sections": [
             {
               "title": "Context",
@@ -246,8 +260,12 @@
         },
         "bank": {
           "headline": "Data clarity for modern banking dashboards.",
+          "subtitle": "Data visualization and scalable UI",
           "role": "Front-End Developer",
+          "company": "Personal project",
+          "companyDescription": "A banking dashboard concept built with React and TypeScript, focused on data visualization, clean UI patterns, and scalable front-end architecture.",
           "roleDescription": "I explored a React + TypeScript dashboard concept focused on readable data visualization, scalable UI patterns, and a clean design system foundation.",
+          "linkLabel": "View prototype",
           "sections": [
             {
               "title": "Context",
@@ -276,8 +294,12 @@
         },
         "movies": {
           "headline": "Conversational UX powered by AI.",
+          "subtitle": "AI-powered conversational assistant",
           "role": "Front-End Developer",
+          "company": "Personal project",
+          "companyDescription": "An AI assistant interface that demonstrates practical integration of modern APIs, conversational UX, and cloud-ready front-end development.",
           "roleDescription": "I built an AI assistant interface that combines conversational interaction, API integration, and cloud-ready front-end patterns in a polished product shell.",
+          "linkLabel": "View prototype",
           "sections": [
             {
               "title": "Context",
@@ -306,8 +328,12 @@
         },
         "vinos": {
           "headline": "Warmth and elegance for a wine bar experience.",
+          "subtitle": "Branding, usability, and online booking",
           "role": "Designer & Developer",
+          "company": "Vinos y Sabores",
+          "companyDescription": "A wine bar that needed an elegant digital experience combining branding, usability, and online reservation features.",
           "roleDescription": "I created a digital experience for a wine bar that blends branding, usability, and reservation features into a cohesive, inviting interface.",
+          "linkLabel": "Visit website",
           "sections": [
             {
               "title": "Context",
@@ -336,9 +362,12 @@
         },
         "packaging": {
           "headline": "Shelf impact through cohesive packaging systems.",
+          "subtitle": "Visual identities built for shelf impact",
           "role": "Packaging Designer",
           "company": "Beyond Code",
+          "companyDescription": "A commercial packaging collection for food products, with cohesive visual identities focused on brand recognition and print-ready production.",
           "roleDescription": "I designed commercial packaging for food products, building cohesive visual identities focused on shelf impact, brand recognition, and print-ready production files.",
+          "linkLabel": "View PDF",
           "sections": [
             {
               "title": "Context",
@@ -367,9 +396,12 @@
         },
         "catamaran": {
           "headline": "Biomimicry applied to human-powered water mobility.",
+          "subtitle": "Pedal-powered water mobility inspired by nature",
           "role": "Industrial Designer",
           "company": "Beyond Code",
+          "companyDescription": "Industrial design thesis: a pedal-powered catamaran inspired by biomimicry and human-centered design.",
           "roleDescription": "My industrial design thesis focused on a pedal-powered catamaran inspired by biomimicry principles — from research and 3D modeling to prototyping and user-centered validation.",
+          "linkLabel": "View PDF",
           "sections": [
             {
               "title": "Context",

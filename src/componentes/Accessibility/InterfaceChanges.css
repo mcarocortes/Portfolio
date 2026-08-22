@@ -205,6 +205,9 @@
   filter: drop-shadow(0 0 20px var(--purpura));
 }
 
+/*.dark-mode .figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection{
+   background-color: var(--black-transparent2);
+}*/
 
 /********************* EVOLUTION ***************************/ 
 .dark-mode .experience2{
@@ -369,10 +372,20 @@ border-bottom: 1px solid var(--shadows);
 }
 
 .dark-mode .project-case__tags li,
-.dark-mode .project-case__nav-back {
+.dark-mode .project-case__nav-back{
   background: rgba(255, 255, 255, 0.06);
   border-color: var(--shadows);
   color: var(--white);
+}
+
+.dark-mode .project-case__external {
+  background: var(--white-transparent2);
+  border-color: var(--shadows);
+  color: var(--black);
+}
+
+.dark-mode .project-case__eyebrow{
+  color: var(--purpura4);
 }
 /*.dark-mode .project-case__lead,
 .dark-mode .project-case__block-text,
@@ -414,7 +427,8 @@ border-bottom: 1px solid var(--shadows);
   color: var(--white);
 }
 
-.dark-mode .project-case__nav-back:hover {
+.dark-mode .project-case__nav-back:hover,
+.dark-mode .project-case__external:hover {
     background: var(--purpura);
     border-color: var(--purpura);
     color: var(--white);

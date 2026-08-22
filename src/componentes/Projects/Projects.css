@@ -156,12 +156,12 @@
     display: inline-block;
     align-self: flex-end;
     font-family: var(--font-family-base);
-    font-size: var(--font-size-h2);
+    font-size: var(--font-size-h3);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 25px;
     padding: 5px 15px;
-    line-height: var(--font-size-h2 * 2);
+    line-height: var(--font-size-h3 * 2);
     font-weight: var(--font-weight-600);
     color: var(--text);
     text-decoration: none;
@@ -333,7 +333,7 @@
 }
 
 .figureMedia.ProyectB {
-    background-image: url(/src/assets/img/Projects/modulAR/modular_Fin.jpg);
+    background-image: url(/src/assets/img/Projects/modulAR/modular_cover.png);
 }
 
 .figureMedia.ProyectC {

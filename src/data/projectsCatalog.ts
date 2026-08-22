@@ -1,10 +1,16 @@
-import projectVideoHealth from "../assets/img/Projects/Health/resiplus.mp4";
+import handHealth from "../assets/img/Projects/Health/resiplus.mp4";
 import healthOpportunityImage from "../assets/img/Projects/Health/health_oppor.png";
 import health1 from "../assets/img/Projects/Health/health_1.png";
 import health2 from "../assets/img/Projects/Health/health_2.png";
 import health3 from "../assets/img/Projects/Health/health_3.png";
 import health4 from "../assets/img/Projects/Health/health_4.png";
 
+import handModular from "../assets/img/Projects/modulAR/handModular.mp4";
+import modularOpportunity from "../assets/img/Projects/modulAR/modular_Oppor.png";
+import modular1 from "../assets/img/Projects/modulAR/modular1.png";
+import modular2 from "../assets/img/Projects/modulAR/modular2.png";
+import modular3 from "../assets/img/Projects/modulAR/modular3.png";
+import modular4 from "../assets/img/Projects/modulAR/modular4.png";
 
 export const CASE_ICON_NAMES = [
     "search",
@@ -62,6 +68,8 @@ export type ProjectDefinition = {
     images: (string | null)[];
     hero: ProjectHeroMedia;
     opportunityImage: string | null;
+    /** Web, PDF o repo del proyecto. Si es null, no se muestra el botón. */
+    externalUrl: string | null;
     opportunityIcons: [CaseIconName, CaseIconName, CaseIconName];
     impactIcons: [CaseIconName, CaseIconName, CaseIconName];
 };
@@ -73,8 +81,9 @@ export const PROJECTS: ProjectDefinition[] = [
         section: "items",
         cardId: "ProyectA",
         images: [health1, health2, health3, health4],
-        hero: { type: "hand", videoSrc: projectVideoHealth },
+        hero: { type: "hand", videoSrc: handHealth },
         opportunityImage: healthOpportunityImage,
+        externalUrl: "https://addinformatica.com/",
         opportunityIcons: ["search", "layers", "check"],
         impactIcons: ["mobile", "clock", "spark"],
     },
@@ -83,9 +92,10 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/modulAR",
         section: "items",
         cardId: "ProyectB",
-        images: [null, null, null, null],
-        hero: { type: "hand", videoSrc: null },
-        opportunityImage: null,
+        images: [modular1, modular2, modular3, modular4],
+        hero: { type: "hand", videoSrc: handModular },
+        opportunityImage: modularOpportunity,
+        externalUrl: "https://drive.google.com/file/d/11xp-0XL6avpjykezN0eSKZbl05MKdB-M/view",
         opportunityIcons: ["search", "layers", "check"],
         impactIcons: ["spark", "users", "target"],
     },
@@ -97,6 +107,7 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        externalUrl: null,
         opportunityIcons: ["heart", "palette", "check"],
         impactIcons: ["shield", "heart", "users"],
     },
@@ -108,6 +119,7 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        externalUrl: null,
         opportunityIcons: ["chart", "layers", "check"],
         impactIcons: ["chart", "target", "code"],
     },
@@ -119,6 +131,7 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        externalUrl: null,
         opportunityIcons: ["chat", "spark", "check"],
         impactIcons: ["spark", "chat", "code"],
     },
@@ -130,6 +143,7 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "hand", videoSrc: null },
         opportunityImage: null,
+        externalUrl: null,
         opportunityIcons: ["palette", "heart", "check"],
         impactIcons: ["palette", "target", "heart"],
     },
@@ -141,6 +155,7 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "image", src: null },
         opportunityImage: null,
+        externalUrl: null,
         opportunityIcons: ["box", "palette", "check"],
         impactIcons: ["box", "target", "spark"],
     },
@@ -152,6 +167,7 @@ export const PROJECTS: ProjectDefinition[] = [
         images: [null, null, null, null],
         hero: { type: "image", src: null },
         opportunityImage: null,
+        externalUrl: null,
         opportunityIcons: ["waves", "search", "check"],
         impactIcons: ["waves", "users", "spark"],
     },

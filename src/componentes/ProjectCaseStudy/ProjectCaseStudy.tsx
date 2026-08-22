@@ -204,7 +204,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
     const imagesMeta = useMemo(() => {
         const images = t(`${pagePrefix}.images`, { returnObjects: true });
         return Array.isArray(images) ? (images as CaseImage[]) : [];
-    }, [t, pagePrefix, i18n.language]);
+    }, [t, pagePrefix]);
 
     const impactItems = useMemo(() => {
         const items = t(`${pagePrefix}.impact`, { returnObjects: true }) as CaseImpact[] | string;
@@ -220,7 +220,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
     const projectTags = useMemo(() => {
         const tags = t(`${catalogPath}.tags`, { returnObjects: true });
         return Array.isArray(tags) ? (tags as string[]) : [];
-    }, [t, catalogPath, i18n.language]);
+    }, [t, catalogPath]);
 
     if (!project || !heroMedia) {
         return null;
@@ -259,9 +259,12 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                             viewport={viewport}
                             variants={staggerContainer}
                         >
-                            <motion.p className="project-case__role-line" variants={reveal}>
-                                {t(`${pagePrefix}.company`)} | {t(`${pagePrefix}.role`)}
-                            </motion.p>
+                            <motion.div className="project-case__role-row" variants={reveal}>
+                                <p className="project-case__role-line">
+                                    {t(`${pagePrefix}.company`)} | {t(`${pagePrefix}.role`)}
+                                </p>
+
+                            </motion.div>
 
                             <motion.p className="project-case__lead" variants={reveal}>
                                 {t(`${pagePrefix}.companyDescription`)}
@@ -294,6 +297,18 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                                     </motion.li>
                                 ))}
                             </motion.ul>
+
+                                {project.externalUrl ? (
+                                    <a
+                                        className="project-case__external"
+                                        href={project.externalUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {t(`${pagePrefix}.linkLabel`)}
+                                        <span aria-hidden="true">↗</span>
+                                    </a>
+                                ) : null}
                         </motion.div>
 
                         <motion.div
