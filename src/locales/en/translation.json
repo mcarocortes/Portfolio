@@ -150,7 +150,6 @@
       "pages": {
         "healthcare": {
           "headline": "Social-Healthcare Management Software",
-          "subtitle": "Progressive Web App (PWA) for Long-term Care Environments",
           "role": "Front-end · Team Lead",
           "company": "ResiPlus®",
           "companyDescription": "ResiPlus® is the leading management platform for social-healthcare facilities (nursing homes, day centers, and disability care). Its PWA (mobile/tablet) digitizes daily operations and clinical follow-up for care staff in real time.",
@@ -187,7 +186,6 @@
         },
         "modular": {
           "headline": "modulAR",
-          "subtitle": "From a business idea to an interactive digital product",
           "role": "Product Design · Front-end Developer",
           "company": "Academic project · Final Degree Project (TFG)",
           "companyDescription": "modulAR is a platform built from scratch so creatives and artists can sell their work through immersive experiences. The project covers everything from the business model and brand identity to the technical architecture, replacing traditional 2D galleries with real-time 3D/AR interaction.",
@@ -226,7 +224,6 @@
         },
         "vc": {
           "headline": "A calm digital presence built on trust.",
-          "subtitle": "Digital identity for psychology and family mediation",
           "role": "Designer & Front-End Developer",
           "company": "Valezka Cortés practice",
           "companyDescription": "A psychology and family mediation practice that needed a professional, approachable online presence focused on accessibility, clarity, and user trust.",
@@ -260,7 +257,6 @@
         },
         "bank": {
           "headline": "Data clarity for modern banking dashboards.",
-          "subtitle": "Data visualization and scalable UI",
           "role": "Front-End Developer",
           "company": "Personal project",
           "companyDescription": "A banking dashboard concept built with React and TypeScript, focused on data visualization, clean UI patterns, and scalable front-end architecture.",
@@ -294,7 +290,6 @@
         },
         "movies": {
           "headline": "Conversational UX powered by AI.",
-          "subtitle": "AI-powered conversational assistant",
           "role": "Front-End Developer",
           "company": "Personal project",
           "companyDescription": "An AI assistant interface that demonstrates practical integration of modern APIs, conversational UX, and cloud-ready front-end development.",
@@ -328,7 +323,6 @@
         },
         "vinos": {
           "headline": "Warmth and elegance for a wine bar experience.",
-          "subtitle": "Branding, usability, and online booking",
           "role": "Designer & Developer",
           "company": "Vinos y Sabores",
           "companyDescription": "A wine bar that needed an elegant digital experience combining branding, usability, and online reservation features.",
@@ -362,7 +356,6 @@
         },
         "packaging": {
           "headline": "Shelf impact through cohesive packaging systems.",
-          "subtitle": "Visual identities built for shelf impact",
           "role": "Packaging Designer",
           "company": "Beyond Code",
           "companyDescription": "A commercial packaging collection for food products, with cohesive visual identities focused on brand recognition and print-ready production.",
@@ -396,7 +389,6 @@
         },
         "catamaran": {
           "headline": "Biomimicry applied to human-powered water mobility.",
-          "subtitle": "Pedal-powered water mobility inspired by nature",
           "role": "Industrial Designer",
           "company": "Beyond Code",
           "companyDescription": "Industrial design thesis: a pedal-powered catamaran inspired by biomimicry and human-centered design.",

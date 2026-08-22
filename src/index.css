@@ -32,8 +32,8 @@
   /*FONT-FAMILY*/
   --font-scale: 1;
   --font-size-underBase: calc(15px * var(--font-scale));
-  --font-size-base: calc(20px * var(--font-scale));
-  --font-size-heading: calc(65px * var(--font-scale));
+  --font-size-base: calc(18px * var(--font-scale));
+  --font-size-heading: calc(60px * var(--font-scale));
   --font-size-h1: calc(46px * var(--font-scale));
   --font-size-h2: calc(36px * var(--font-scale));
   --font-size-h3: calc(26px * var(--font-scale));
@@ -233,9 +233,7 @@ label {
     margin-left: 0;
   }
 
-  button {
-    font-size: 21px !important;
-  }
+
 
 }
 

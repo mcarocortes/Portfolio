@@ -292,11 +292,6 @@ font-size: var(--font-family-base);
     border-radius: 6px;
     width: 45px;
   }
-
-  .signatureText {
-    font-size: 20px;
-  }
-
 }
 
 @media screen and (max-width: 767px) {

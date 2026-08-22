@@ -230,19 +230,8 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
         <article className="project-case">
             <header className="project-case__hero">
                 <div className="project-case__hero-inner">
-                    <motion.p
-                        className="project-case__eyebrow"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={viewport}
-                        variants={reveal}
-                    >
-                       {t(`${pagePrefix}.subtitle`)}
-
-                    </motion.p>
-
                     <motion.h1
-                        className="project-case__headline heading"
+                        className="project-case__headline"
                         initial="hidden"
                         whileInView="visible"
                         viewport={viewport}

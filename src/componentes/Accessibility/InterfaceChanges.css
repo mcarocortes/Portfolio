@@ -390,9 +390,6 @@ border-bottom: 1px solid var(--shadows);
   color: var(--black);
 }
 
-.dark-mode .project-case__eyebrow{
-  color: var(--purpura4);
-}
 /*.dark-mode .project-case__lead,
 .dark-mode .project-case__block-text,
 .dark-mode .project-case__caption {
