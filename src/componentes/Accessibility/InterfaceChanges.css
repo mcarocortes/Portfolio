@@ -205,15 +205,8 @@
   filter: drop-shadow(0 0 20px var(--purpura));
 }
 
-/*.dark-mode .figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection{
-   background-color: var(--black-transparent2);
-}*/
 
 
-/*.dark-mode .figure:nth-child(1) .descriptionSection, .dark-mode .figure:nth-child(2) .descriptionSection{
-    background-color:  var(--black-transparent2);
-    color: var(--white);
-}*/
 
 /********************* EVOLUTION ***************************/ 
 .dark-mode .experience2{

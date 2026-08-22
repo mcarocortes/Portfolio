@@ -251,7 +251,7 @@
     max-height: clamp(320px, 80vh, 720px);
     height: auto;
     margin-inline: auto;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     background-repeat: no-repeat;
     border-radius: 20px;
@@ -312,7 +312,7 @@
     border-radius: 18px;
     /*border: 1px solid rgba(90, 18, 250, 0.12);*/
     background: var(--graybg);
-    box-shadow: 0 14px 36px rgba(90, 18, 250, 0.08);
+    box-shadow: 0 5px 10px var(--black-transparent);
     transform-style: preserve-3d;
     backface-visibility: hidden;
     width: 100%;

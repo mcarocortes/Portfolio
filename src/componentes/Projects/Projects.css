@@ -522,7 +522,7 @@
     .descriptionSection {
         bottom: -110px;        
         padding: 15px;
-        min-height: 150px;
+        height: 140px;
     }
 
     .btnArrow{
@@ -537,7 +537,11 @@
     .figure .projectDetails,.beyondSection .figure .projectDetails {
         opacity: 1;
         color: var(--black);
+        font-size: var(--font-size-underBase);
+        line-height: 20px;
     }
+
+
 
     .buildList {
         display: none;

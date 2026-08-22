@@ -38,8 +38,12 @@ export default function Contact() {
                                             <div className="items">
                         <ul>
                             <li>
-                                <a href="mailto:m.caro.cortes2@gmail.com" className="list">
-                                    {t("contactSection.email")}
+                                <a href="https://docs.google.com/document/d/1NMfEXo7zS4QSl8IMpvD-GIpJqqQYchyYX1pfKIqw7Fg/edit?usp=sharing" 
+                                className="list"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    CV
                                 </a>
                             </li>
 

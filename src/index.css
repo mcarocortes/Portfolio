@@ -75,6 +75,7 @@ html {
   font-weight: var(--font-weight-base);
   font-style: normal;
   line-height: var(--font-line-height-base);
+  cursor: none !important;
 }
 
 body {
