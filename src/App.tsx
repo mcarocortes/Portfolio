@@ -6,6 +6,7 @@ import ScrollToHash from "./ScrollToHash";
 import ScrollToTopOnNavigate from "./ScrollToTopOnNavigate";
 import UnderConstruction from "./componentes/UnderConstruction/UnderConstruction";
 import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 import { useEffect } from "react";
 import { setLenisInstance } from "./lib/smoothScroll";
 
@@ -38,21 +39,28 @@ function AppContent() {
       wheelMultiplier: 0.85,
       touchMultiplier: 1.8,
       smoothWheel: true,
+      autoRaf: true,
     });
 
     lenis.on("scroll", () => {
       window.dispatchEvent(new Event("lenis-scroll"));
     });
 
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
     setLenisInstance(lenis);
 
+    let cancelled = false;
+    const refresh = () => {
+      if (!cancelled) lenis.resize();
+    };
+
+    window.addEventListener("load", refresh);
+    void document.fonts?.ready.then(refresh);
+    const rafId = requestAnimationFrame(refresh);
+
     return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("load", refresh);
       lenis.destroy();
       setLenisInstance(null);
     };

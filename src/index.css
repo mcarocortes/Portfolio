@@ -69,7 +69,7 @@
 
 html {
   color: var(--text);
-  height: 100%;
+  height: auto;
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-base);
@@ -79,7 +79,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: var(--white);
 }
 

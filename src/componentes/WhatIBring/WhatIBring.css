@@ -260,7 +260,7 @@ display: none;
         padding: 0.35rem 0.85rem;
         border-radius: 22px;
         background: var(--white);
-        box-shadow: 0 16px 40px var(--black-transparent);
+        box-shadow: 5px 5px 10px var(--black-transparent);
     }
 
     .what-i-bring__row {

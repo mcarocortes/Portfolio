@@ -144,24 +144,24 @@
 
 /*************************** PROJECTS ***************************/
 .dark-mode  .main-wrapper {
-    box-shadow: -2px 2px 20px var(--purpura);
+    box-shadow: 2px 2px 20px var(--purpura);
     background-color: var(--black);
 
 }
 
 .dark-mode  .wrapperA {
     background:linear-gradient(to top, var(--purpura) -60%, var(--black) 40%);
-            box-shadow: -2px 2px 10px var(--black);
+            box-shadow: 2px 2px 10px var(--black);
 
 }
 
 .dark-mode  .figure {
-  box-shadow: -2px 2px 10px var(--purpura);
+  box-shadow: 5px 5px 10px var(--purpura-transparent);
 
 }
 
 .dark-mode .figure:hover{
-        box-shadow: -5px 5px 10px var(--purpura3);
+        box-shadow: 5px 5px 10px var(--purpura3);
 }
 
 .dark-mode .ProjectNameLink {
@@ -207,6 +207,12 @@
 
 /*.dark-mode .figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection{
    background-color: var(--black-transparent2);
+}*/
+
+
+/*.dark-mode .figure:nth-child(1) .descriptionSection, .dark-mode .figure:nth-child(2) .descriptionSection{
+    background-color:  var(--black-transparent2);
+    color: var(--white);
 }*/
 
 /********************* EVOLUTION ***************************/ 
@@ -303,7 +309,7 @@
 
 .dark-mode .what-i-bring__list {
   background: var(--black-transparent2);
-  box-shadow: 10px 10px 20px var(--purpura-transparent);
+  box-shadow: 5px 5px 10px var(--purpura-transparent);
 }
 
 .dark-mode .what-i-bring__row {
