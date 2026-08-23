@@ -8,22 +8,33 @@ export default function useActiveSection() {
   const [activeSection, setActiveSection] = useState("Home");
   const currentRef = useRef("Home");
   const { pathname } = useLocation();
+  const pathnameRef = useRef(pathname);
+  pathnameRef.current = pathname;
 
   useEffect(() => {
     if (pathname !== "/") {
       setActiveSection("Home");
       currentRef.current = "Home";
+      if (window.location.hash === "#Home") {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
       return;
     }
 
+    const setSectionHash = (hash: string) => {
+      if (pathnameRef.current !== "/") return;
+      window.history.replaceState(null, "", hash);
+    };
+
     const handleScroll = () => {
+      if (pathnameRef.current !== "/") return;
       if (shouldSuppressActiveSectionUpdate()) return;
 
       if (window.scrollY < window.innerHeight * 0.35) {
         if (currentRef.current !== "Home") {
           currentRef.current = "Home";
           setActiveSection("Home");
-          window.history.replaceState(null, "", "#Home");
+          setSectionHash("#Home");
         }
         return;
       }
@@ -50,7 +61,7 @@ export default function useActiveSection() {
       if (bestId && bestId !== currentRef.current) {
         currentRef.current = bestId;
         setActiveSection(bestId);
-        window.history.replaceState(null, "", `#${bestId}`);
+        setSectionHash(`#${bestId}`);
       }
     };
 
