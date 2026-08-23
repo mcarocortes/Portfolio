@@ -337,7 +337,7 @@
 }
 
 .figureMedia.ProyectC {
-    background-image: url(/src/assets/img/Projects/VC/bgvcfin.jpg);
+    background-image: url(/src/assets/img/Projects/VC/vc_cover.png);
 }
 
 .figureMedia.ProyectC {
@@ -358,16 +358,10 @@
     background-image: url(/src/assets/img/Projects/Vinos/1.VinosNew.jpg);
 }
 
-.figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection{
+.figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection,
+.figure:nth-child(2) .ProjectNameLink, .figure:nth-child(2):hover .descriptionSection,
+.figure:nth-child(3) .ProjectNameLink , .figure:nth-child(3):hover .descriptionSection {
    background-color: rgba(255, 255, 255, 0.733);
-}
-
-.figure:nth-child(2) .ProjectNameLink, .figure:nth-child(2):hover .descriptionSection {
-    background-color: rgba(255, 255, 255, 0.733);
-}
-
-.figure:nth-child(3) .ProjectNameLink , .figure:nth-child(3):hover .descriptionSection{
-       background-color: #f2ead3b7;
 }
 
 .figure:nth-child(4) .ProjectNameLink , .figure:nth-child(4):hover .descriptionSection{

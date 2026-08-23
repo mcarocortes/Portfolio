@@ -55,8 +55,8 @@
           "tags": ["ASP.NET MVC", "Augmented Reality", "Interactive 3D", "E-commerce"]
         },
         "vc": {
-          "title": "Valezka Cortés",
-          "subtitle": "Designed a trustworthy digital identity and website for a psychology and family mediation practice, focused on accessibility, clarity, and user confidence.",
+          "title": "Psychology & Mediation",
+          "subtitle": "End-to-end design and development of a professional website for a psychologist and family mediator — from visual identity and UX/UI to Front-end development with React.",
           "tags": ["Branding", "UX/UI", "React", "Web Design"]
         },
         "bank": {
@@ -223,36 +223,36 @@
           ]
         },
         "vc": {
-          "headline": "A calm digital presence built on trust.",
-          "role": "Designer & Front-End Developer",
-          "company": "Valezka Cortés practice",
-          "companyDescription": "A psychology and family mediation practice that needed a professional, approachable online presence focused on accessibility, clarity, and user trust.",
-          "roleDescription": "I designed and built a digital identity and website for a psychology and family mediation practice, prioritizing accessibility, clarity, and emotional safety in the interface.",
-          "linkLabel": "Visit website",
+          "headline": "Psychology & Mediation — Corporate Website",
+          "role": "Product Designer & Front-end Developer",
+          "company": "Freelance / Consulting",
+          "companyDescription": "A professional website for a practice specialized in clinical psychology and family mediation. Designed to convey warmth, trust, and professional authority, while supporting client acquisition and appointment booking.",
+          "roleDescription": "I designed and developed the project end to end, defining the visual identity, color palette, logo, and brand direction. I also structured the experience and content architecture, designed the interface, and built the site with React and Vite, ensuring a responsive, consistent experience across devices.",
+          "linkLabel": "Visit the website",
           "sections": [
             {
-              "title": "Context",
-              "body": "The practice needed a professional online presence that feels approachable and trustworthy — especially for sensitive topics like therapy and family mediation."
+              "title": "Brand identity",
+              "body": "How do we build a visual identity that conveys professionalism, warmth, and trust?"
             },
             {
-              "title": "Approach",
-              "body": "I defined a visual identity with soft hierarchy, readable typography, and a content structure that guides users without overwhelming them."
+              "title": "Communication",
+              "body": "How do we present psychology and mediation services in a clear, easy-to-understand way?"
             },
             {
-              "title": "Outcome",
-              "body": "A cohesive brand and website that communicates credibility, supports discovery of services, and helps users feel confident reaching out."
+              "title": "Digital experience",
+              "body": "How do we create a simple experience that guides the user from first contact through to requesting information?"
             }
           ],
           "impact": [
-            { "title": "Warmer digital presence", "body": "A calm identity that feels professional without losing human warmth." },
-            { "title": "Clarity and trust", "body": "Content and hierarchy that explain sensitive services without overwhelm." },
-            { "title": "Easier to reach out", "body": "Booking or writing feels obvious and emotionally safe." }
+            { "title": "Visual identity", "body": "Created the logo, color palette, and visual language to establish a professional, approachable, and coherent identity." },
+            { "title": "User experience", "body": "Structured and designed a clear, responsive experience that makes services easy to understand and navigation seamless on any device." },
+            { "title": "Front-end development", "body": "Built from scratch: implemented the interface with React and Vite, turning the visual concept into a functional, responsive, and maintainable web experience." }
           ],
           "images": [
-            { "caption": "Homepage hero", "alt": "Valezka Cortés homepage", "layout": "wide" },
-            { "caption": "Brand identity system", "alt": "Brand identity overview" },
-            { "caption": "Services section", "alt": "Services page section" },
-            { "caption": "Contact & trust cues", "alt": "Contact section design" }
+            { "caption": "Color palette", "alt": "Color palette", "layout": "wide" },
+            { "caption": "Website mockup", "alt": "Website mockup" },
+            { "caption": "Typography", "alt": "Typography" },
+            { "caption": "Psychology and Mediation visualizations", "alt": "Design" }
           ]
         },
         "bank": {

@@ -133,7 +133,7 @@
 }
 
 .project-case_oportunities{
-    background-color: #f3f3ff;
+    background-color: #fdfdfd;
         padding:
         var(--margin-left-rigth-general)
         var(--margin-left-rigth-general)
@@ -165,7 +165,8 @@
 .project-case__block {
     padding: 30px;
     border-radius: 20px;
-    background-color: var(--white-transparent2);
+    background-color: var(--white);
+    border: solid 1px var(--black-transparent);
 }
 
 .block-boxes .project-case__block {

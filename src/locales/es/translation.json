@@ -55,8 +55,8 @@
           "tags": ["ASP.NET MVC", "Realidad Aumentada", "3D Interactivo", "E-commerce"]
         },
         "vc": {
-          "title": "Valezka Cortés",
-          "subtitle": "Identidad digital y web para una consulta de psicología y mediación familiar, con foco en accesibilidad, claridad y confianza del usuario.",
+          "title": "Psicología & Mediación",
+          "subtitle": "Diseño y desarrollo integral de una web profesional para una psicóloga y mediadora familiar, desde la identidad visual y UX/UI hasta el desarrollo Front-end con React.",
           "tags": ["Branding", "UX/UI", "React", "Diseño Web"]
         },
         "bank": {
@@ -150,7 +150,6 @@
       "pages": {
         "healthcare": {
           "headline": "Software de Gestión Sociosanitaria",
-          "subtitle": "(PWA) para Entornos de Atención a la Dependencia",
           "role": "Front-end · Líder de Equipo",
           "company": "ResiPlus®",
           "companyDescription":"ResiPlus® es la plataforma de gestión líder para centros sociosanitarios (residencias, centros de día y discapacidad). Su versión PWA (Mobile/Tablet) digitaliza la operativa diaria y el seguimiento clínico del personal asistencial en tiempo real.",
@@ -187,7 +186,6 @@
         },
         "modular": {
           "headline": "modulAR",
-          "subtitle": "De una idea de negocio a un producto digital interactivo",
           "role": "Diseño de Producto · Desarrolladora Front-end",
           "company": "Proyecto académico · TFG",
           "companyDescription": "modulAR es una plataforma concebida desde cero para permitir a creativos y artistas comercializar sus obras mediante experiencias inmersivas. El proyecto abarca desde el modelo de negocio y la identidad de marca hasta la arquitectura técnica, sustituyendo galerías 2D tradicionales por interacción 3D/AR en tiempo real.",
@@ -225,42 +223,40 @@
           ]
         },
         "vc": {
-          "headline": "Una presencia digital serena basada en confianza.",
-          "subtitle": "Identidad digital para psicología y mediación familiar",
-          "role": "Diseñadora & Desarrolladora Front-End",
-          "company": "Consulta Valezka Cortés",
-          "companyDescription": "Consulta de psicología y mediación familiar que necesitaba una presencia online profesional y cercana, con foco en accesibilidad, claridad y confianza del usuario.",
-          "roleDescription": "Diseñé y desarrollé identidad digital y web para una consulta de psicología y mediación familiar, priorizando accesibilidad, claridad y seguridad emocional en la interfaz.",
+          "headline": "Psicología & Mediación — Web Corporativa",
+          "role": "Product Designer & Front-end Developer",
+          "company": "Freelance / Consultoría",
+          "companyDescription": "Sitio web profesional para una consulta especializada en psicología clínica y mediación familiar. Diseñado para transmitir cercanía, confianza y autoridad profesional, facilitando la captación de clientes y la reserva de citas.",
+          "roleDescription": "Diseñé y desarrollé el proyecto de principio a fin, definiendo la identidad visual, paleta cromática, logotipo y dirección visual de la marca. También estructuré la experiencia y arquitectura de contenidos, diseñé la interfaz y desarrollé la web con React y Vite, asegurando una experiencia responsive y coherente en diferentes dispositivos.",
           "linkLabel": "Visitar la web",
           "sections": [
             {
-              "title": "Contexto",
-              "body": "La consulta necesitaba una presencia online profesional y cercana, especialmente en temas sensibles como terapia y mediación familiar."
+              "title": "Identidad de marca",
+              "body": "¿Cómo construir una identidad visual que transmita profesionalidad, cercanía y confianza?"
             },
             {
-              "title": "Enfoque",
-              "body": "Definí una identidad visual con jerarquía suave, tipografía legible y una estructura de contenido que guía sin abrumar."
+              "title": "Comunicación",
+              "body": "¿Cómo presentar servicios de psicología y mediación de forma clara y fácil de comprender?"
             },
             {
-              "title": "Resultado",
-              "body": "Marca y web cohesionadas que comunican credibilidad, facilitan descubrir servicios y ayudan al usuario a contactar con confianza."
+              "title": "Experiencia digital",
+              "body": "¿Cómo crear una experiencia sencilla que acompañe al usuario desde el primer contacto hasta la solicitud de información?"
             }
           ],
           "impact": [
-            { "title": "Presencia más cercana", "body": "Una identidad serena que se siente profesional sin perder calidez humana." },
-            { "title": "Claridad y confianza", "body": "Contenido y jerarquía que explican servicios sensibles sin abrumar." },
-            { "title": "Contacto más fácil", "body": "El camino a pedir cita o escribir es evidente y transmite seguridad." }
+            { "title": "Identidad visual", "body": "Creación del logotipo, paleta cromática y lenguaje visual para establecer una identidad profesional, cercana y coherente." },
+            { "title": "Experiencia de usuario", "body": "Estructuración y diseño de una experiencia clara y responsive, facilitando la comprensión de los servicios y la navegación desde cualquier dispositivo." },
+            { "title": "Desarrollo Front-end", "body": "Desarrollo desde cero: Implementación de la interfaz con React y Vite, transformando el concepto visual en una experiencia web funcional, responsive y mantenible." }
           ],
           "images": [
-            { "caption": "Hero de la homepage", "alt": "Homepage Valezka Cortés", "layout": "wide" },
-            { "caption": "Sistema de identidad", "alt": "Identidad de marca" },
-            { "caption": "Sección de servicios", "alt": "Sección servicios" },
-            { "caption": "Contacto y señales de confianza", "alt": "Diseño sección contacto" }
+            { "caption": "Paleta de colores", "alt": "Paleta de colores", "layout": "wide" },
+            { "caption": "Web mockup", "alt": "Web mockup" },
+            { "caption": "Tipografía", "alt": "Tipografía" },
+            { "caption": "Visualizaciones de Psicología y mediación", "alt": "Diseño" }
           ]
         },
         "bank": {
           "headline": "Claridad de datos para dashboards bancarios modernos.",
-          "subtitle": "Visualización de datos y UI escalable",
           "role": "Desarrolladora Front-End",
           "company": "Proyecto personal",
           "companyDescription": "Concepto de dashboard bancario construido con React y TypeScript, centrado en visualización de datos, patrones de UI limpios y arquitectura front-end escalable.",
@@ -294,7 +290,6 @@
         },
         "movies": {
           "headline": "UX conversacional impulsada por IA.",
-          "subtitle": "Asistente conversacional con IA",
           "role": "Desarrolladora Front-End",
           "company": "Proyecto personal",
           "companyDescription": "Interfaz de asistente con IA que demuestra integración práctica de APIs modernas, UX conversacional y desarrollo front-end preparado para la nube.",
@@ -328,7 +323,6 @@
         },
         "vinos": {
           "headline": "Calidez y elegancia para una vinoteca.",
-          "subtitle": "Branding, usabilidad y reserva online",
           "role": "Diseñadora & Desarrolladora",
           "company": "Vinos y Sabores",
           "companyDescription": "Vinoteca que necesitaba una experiencia digital elegante, combinando branding, usabilidad y funcionalidades de reserva online.",
@@ -396,7 +390,6 @@
         },
         "catamaran": {
           "headline": "Biomímesis aplicada a la movilidad acuática a pedales.",
-          "subtitle": "Movilidad acuática a pedales inspirada en la naturaleza",
           "role": "Diseñadora industrial",
           "company": "Beyond Code",
           "companyDescription": "Proyecto fin de grado en diseño industrial: un catamarán a pedales inspirado en biomímesis y diseño centrado en las personas.",

@@ -12,6 +12,13 @@ import modular2 from "../assets/img/Projects/modulAR/modular2.png";
 import modular3 from "../assets/img/Projects/modulAR/modular3.png";
 import modular4 from "../assets/img/Projects/modulAR/modular4.png";
 
+import handVC from "../assets/img/Projects/VC/handVC.mp4";
+import vcOpportunity from "../assets/img/Projects/VC/vc_oppor.png";
+import vc1 from "../assets/img/Projects/VC/vc_1.png";
+import vc2 from "../assets/img/Projects/VC/vc_2.png";
+import vc3 from "../assets/img/Projects/VC/vc_3.png";
+import vc4 from "../assets/img/Projects/VC/vc_4.png";
+
 export const CASE_ICON_NAMES = [
     "search",
     "layers",
@@ -104,10 +111,10 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Vc",
         section: "items",
         cardId: "ProyectC",
-        images: [null, null, null, null],
-        hero: { type: "hand", videoSrc: null },
-        opportunityImage: null,
-        externalUrl: null,
+        images: [vc1, vc2, vc3, vc4],
+        hero: { type: "hand", videoSrc: handVC },
+        opportunityImage: vcOpportunity,
+        externalUrl: "https://www.psicologiaymediacion.com/",
         opportunityIcons: ["heart", "palette", "check"],
         impactIcons: ["shield", "heart", "users"],
     },
