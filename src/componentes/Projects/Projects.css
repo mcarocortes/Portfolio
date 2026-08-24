@@ -340,10 +340,8 @@
     background-image: url(/src/assets/img/Projects/VC/vc_cover.png);
 }
 
-.figureMedia.ProyectC {
-}
-
 .figureMedia.ProyectD {
+    background-image: url(/src/assets/img/Projects/Menta/menta_cover.png);
 }
 
 .figureMedia.ProyectF {
@@ -360,13 +358,11 @@
 
 .figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection,
 .figure:nth-child(2) .ProjectNameLink, .figure:nth-child(2):hover .descriptionSection,
-.figure:nth-child(3) .ProjectNameLink , .figure:nth-child(3):hover .descriptionSection {
+.figure:nth-child(3) .ProjectNameLink , .figure:nth-child(3):hover .descriptionSection,
+.figure:nth-child(4) .ProjectNameLink , .figure:nth-child(4):hover .descriptionSection {
    background-color: rgba(255, 255, 255, 0.733);
 }
 
-.figure:nth-child(4) .ProjectNameLink , .figure:nth-child(4):hover .descriptionSection{
-       background-color: purple;
-}
 
 .figure:nth-child(5) .ProjectNameLink , .figure:nth-child(5):hover .descriptionSection{
        background-color: greenyellow;

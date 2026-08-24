@@ -59,8 +59,8 @@
           "subtitle": "Diseño y desarrollo integral de una web profesional para una psicóloga y mediadora familiar, desde la identidad visual y UX/UI hasta el desarrollo Front-end con React.",
           "tags": ["Branding", "UX/UI", "React", "Diseño Web"]
         },
-        "bank": {
-          "title": "Dashboard moderno React",
+        "menta": {
+          "title": "Menta",
           "subtitle": "Concepto de dashboard bancario construido con React y TypeScript, centrado en visualización de datos, patrones de UI limpios y arquitectura front-end escalable.",
           "tags": ["React", "TypeScript", "Visualización de datos", "Diseño UI"]
         },
@@ -255,13 +255,13 @@
             { "caption": "Visualizaciones de Psicología y mediación", "alt": "Diseño" }
           ]
         },
-        "bank": {
+        "menta": {
           "headline": "Claridad de datos para dashboards bancarios modernos.",
           "role": "Desarrolladora Front-End",
           "company": "Proyecto personal",
           "companyDescription": "Concepto de dashboard bancario construido con React y TypeScript, centrado en visualización de datos, patrones de UI limpios y arquitectura front-end escalable.",
           "roleDescription": "Exploré un concepto de dashboard con React y TypeScript centrado en visualización de datos legible, patrones UI escalables y base de design system.",
-          "linkLabel": "Ver prototipo",
+          "linkLabel": "Ver Demo",
           "sections": [
             {
               "title": "Contexto",

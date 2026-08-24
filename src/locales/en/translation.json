@@ -59,7 +59,7 @@
           "subtitle": "End-to-end design and development of a professional website for a psychologist and family mediator — from visual identity and UX/UI to Front-end development with React.",
           "tags": ["Branding", "UX/UI", "React", "Web Design"]
         },
-        "bank": {
+        "menta": {
           "title": "Modern React Dashboard",
           "subtitle": "A modern banking dashboard concept built with React and TypeScript, focused on data visualization, clean UI patterns, and scalable front-end architecture.",
           "tags": ["React", "TypeScript", "Data Visualization", "UI Design"]
@@ -255,7 +255,7 @@
             { "caption": "Psychology and Mediation visualizations", "alt": "Design" }
           ]
         },
-        "bank": {
+        "menta": {
           "headline": "Data clarity for modern banking dashboards.",
           "role": "Front-End Developer",
           "company": "Personal project",

@@ -19,6 +19,9 @@ import vc2 from "../assets/img/Projects/VC/vc_2.png";
 import vc3 from "../assets/img/Projects/VC/vc_3.png";
 import vc4 from "../assets/img/Projects/VC/vc_4.png";
 
+import handMenta from "../assets/img/Projects/Menta/handMenta.mp4";
+import mentaOpportunity from "../assets/img/Projects/Menta/menta_oppor.png";
+
 export const CASE_ICON_NAMES = [
     "search",
     "layers",
@@ -44,7 +47,7 @@ export type ProjectCaseKey =
     | "healthcare"
     | "modular"
     | "vc"
-    | "bank"
+    | "menta"
     | "movies"
     | "vinos"
     | "packaging"
@@ -119,14 +122,14 @@ export const PROJECTS: ProjectDefinition[] = [
         impactIcons: ["shield", "heart", "users"],
     },
     {
-        key: "bank",
-        slug: "/Bank",
+        key: "menta",
+        slug: "/Menta",
         section: "items",
         cardId: "ProyectD",
         images: [null, null, null, null],
-        hero: { type: "hand", videoSrc: null },
-        opportunityImage: null,
-        externalUrl: null,
+        hero: { type: "hand", videoSrc: handMenta },
+        opportunityImage: mentaOpportunity,
+        externalUrl: "https://mcarocortes.github.io/Menta-Front/",
         opportunityIcons: ["chart", "layers", "check"],
         impactIcons: ["chart", "target", "code"],
     },
