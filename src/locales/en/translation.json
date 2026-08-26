@@ -60,9 +60,9 @@
           "tags": ["Branding", "UX/UI", "React", "Web Design"]
         },
         "menta": {
-          "title": "Modern React Dashboard",
-          "subtitle": "A modern banking dashboard concept built with React and TypeScript, focused on data visualization, clean UI patterns, and scalable front-end architecture.",
-          "tags": ["React", "TypeScript", "Data Visualization", "UI Design"]
+          "title": "Menta",
+          "subtitle": "Front-end development of an end-to-end web and PWA platform for psychology, bringing together classic clinical management, daily emotional tracking, and standardized tests in a single tool.",
+          "tags": ["React", "TypeScript", "PWA", "Clinical UX/UI"]
         },
         "movies": {
           "title": "AI Assistant",
@@ -256,36 +256,45 @@
           ]
         },
         "menta": {
-          "headline": "Data clarity for modern banking dashboards.",
-          "role": "Front-End Developer",
+          "headline": "Menta — Psychological Tracking Platform",
+          "role": "Front-end · Product Design",
           "company": "Personal project",
-          "companyDescription": "A banking dashboard concept built with React and TypeScript, focused on data visualization, clean UI patterns, and scalable front-end architecture.",
-          "roleDescription": "I explored a React + TypeScript dashboard concept focused on readable data visualization, scalable UI patterns, and a clean design system foundation.",
-          "linkLabel": "View prototype",
+          "companyDescription": "Menta is a psychological tracking platform designed to connect the patient's experience with the psychologist's work. The product brings together three experiences: an emotional journal for daily tracking, standardized psychological tests with automated scoring, and a clinical space to review the patient's progress, record sessions, and manage documentation.",
+          "roleDescription": "I designed and developed the product's Front-end experience, defining the navigation architecture, the main flows, and the experience for each user type. The project is conceived as a PWA built with React, with an architecture ready to connect later to an API and a relational database.",
+          "linkLabel": "View demo",
           "sections": [
             {
-              "title": "Context",
-              "body": "Financial dashboards often overwhelm users with dense data. The goal was to create an interface that feels modern, scannable, and trustworthy."
+              "title": "Patient experience",
+              "body": "How do we turn emotional tracking into a simple, quick habit?"
             },
             {
-              "title": "Approach",
-              "body": "I structured the UI around modular cards, consistent spacing, and hierarchy that prioritizes key metrics while keeping secondary data accessible."
+              "title": "Therapeutic continuity",
+              "body": "How do we connect what happens between sessions with the work of the practice?"
             },
             {
-              "title": "Outcome",
-              "body": "A dashboard concept that demonstrates front-end architecture, visual clarity, and a scalable approach to complex product interfaces."
+              "title": "Multiple users",
+              "body": "How do we design different experiences without fragmenting the product?"
             }
           ],
           "impact": [
-            { "title": "More scannable data", "body": "Financial information reads at a glance, without losing depth when you need it." },
-            { "title": "Key metrics first", "body": "Primary figures stand out; secondary detail stays available without competing." },
-            { "title": "Scalable UI", "body": "Card patterns and a visual system built to grow with more modules." }
+            {
+              "title": "Unified hybrid ecosystem",
+              "body": "Developed a centralized interface that removes the need for multiple platforms, allowing therapists to see notes, documents, self-scored test progress, and mood logs in one place."
+            },
+            {
+              "title": "Optimized patient experience (PWA)",
+              "body": "Implemented a patient-focused Progressive Web App for mobile devices, enabling daily interaction (emotional journal and 1-to-10 anxiety scales) with a native feel and without the friction of downloading apps from stores."
+            },
+            {
+              "title": "Structured assessment",
+              "body": "Digitized standardized tests to allow assignment, response, and automatic scoring within the same flow."
+            }
           ],
           "images": [
-            { "caption": "Dashboard overview", "alt": "Banking dashboard overview", "layout": "wide" },
-            { "caption": "Metrics & charts", "alt": "Data visualization panel" },
-            { "caption": "Navigation & layout", "alt": "Dashboard navigation" },
-            { "caption": "Detail panel states", "alt": "Detail panel UI" }
+            { "caption": "Architecture diagram", "alt": "Architecture diagram", "layout": "wide" },
+            { "caption": "Screen map", "alt": "Screen map" },
+            { "caption": "Screen layout", "alt": "Screen layout" },
+            { "caption": "Menta visualizations", "alt": "Design" }
           ]
         },
         "movies": {

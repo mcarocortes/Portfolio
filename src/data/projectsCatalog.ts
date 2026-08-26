@@ -21,6 +21,11 @@ import vc4 from "../assets/img/Projects/VC/vc_4.png";
 
 import handMenta from "../assets/img/Projects/Menta/handMenta.mp4";
 import mentaOpportunity from "../assets/img/Projects/Menta/menta_oppor.png";
+import menta1 from "../assets/img/Projects/Menta/menta_1.png";
+import menta2 from "../assets/img/Projects/Menta/menta_2.png";
+import menta3 from "../assets/img/Projects/Menta/menta_3.png";
+import menta4 from "../assets/img/Projects/Menta/menta_4.png";
+
 
 export const CASE_ICON_NAMES = [
     "search",
@@ -126,7 +131,7 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Menta",
         section: "items",
         cardId: "ProyectD",
-        images: [null, null, null, null],
+        images: [menta1, menta2, menta3, menta4],
         hero: { type: "hand", videoSrc: handMenta },
         opportunityImage: mentaOpportunity,
         externalUrl: "https://mcarocortes.github.io/Menta-Front/",

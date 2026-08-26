@@ -61,8 +61,8 @@
         },
         "menta": {
           "title": "Menta",
-          "subtitle": "Concepto de dashboard bancario construido con React y TypeScript, centrado en visualización de datos, patrones de UI limpios y arquitectura front-end escalable.",
-          "tags": ["React", "TypeScript", "Visualización de datos", "Diseño UI"]
+          "subtitle": "Desarrollo Front-end de una plataforma web y PWA integral para psicología, uniendo gestión clínica clásica, seguimiento emocional diario y tests estandarizados en una sola herramienta.",
+          "tags": ["React", "TypeScript", "PWA", "UX/UI Clínico"]
         },
         "movies": {
           "title": "Asistente con IA",
@@ -256,36 +256,45 @@
           ]
         },
         "menta": {
-          "headline": "Claridad de datos para dashboards bancarios modernos.",
-          "role": "Desarrolladora Front-End",
+          "headline": "Menta — Plataforma de Seguimiento Psicológico",
+          "role": "Front-end · Diseño de Producto",
           "company": "Proyecto personal",
-          "companyDescription": "Concepto de dashboard bancario construido con React y TypeScript, centrado en visualización de datos, patrones de UI limpios y arquitectura front-end escalable.",
-          "roleDescription": "Exploré un concepto de dashboard con React y TypeScript centrado en visualización de datos legible, patrones UI escalables y base de design system.",
-          "linkLabel": "Ver Demo",
+          "companyDescription": "Menta es una plataforma de seguimiento psicológico diseñada para conectar la experiencia del paciente con el trabajo de la psicóloga. El producto integra tres experiencias: un diario emocional para el seguimiento diario, tests psicológicos estandarizados con corrección automatizada y un espacio clínico para consultar la evolución del paciente, registrar sesiones y gestionar documentación.",
+          "roleDescription": "Diseñé y desarrollé la experiencia Front-end del producto, definiendo la arquitectura de navegación, los flujos principales y la experiencia de cada tipo de usuario. El proyecto se plantea como una PWA desarrollada con React, con una arquitectura preparada para conectar posteriormente con una API y una base de datos relacional.",
+          "linkLabel": "Ver demostración",
           "sections": [
             {
-              "title": "Contexto",
-              "body": "Los dashboards financieros suelen abrumar con densidad de datos. El objetivo era una interfaz moderna, escaneable y confiable."
+              "title": "Experiencia del paciente",
+              "body": "¿Cómo convertir el seguimiento emocional en un hábito sencillo y rápido?"
             },
             {
-              "title": "Enfoque",
-              "body": "Estructuré la UI con tarjetas modulares, espaciado consistente y jerarquía que prioriza métricas clave sin ocultar datos secundarios."
+              "title": "Continuidad terapéutica",
+              "body": "¿Cómo conectar lo que ocurre entre sesiones con el trabajo de la consulta?"
             },
             {
-              "title": "Resultado",
-              "body": "Un concepto que demuestra arquitectura front-end, claridad visual y un enfoque escalable para interfaces complejas."
+              "title": "Múltiples usuarios",
+              "body": "¿Cómo diseñar experiencias diferentes sin fragmentar el producto?"
             }
           ],
           "impact": [
-            { "title": "Datos más escaneables", "body": "La información financiera se lee en un vistazo, sin perder profundidad cuando hace falta." },
-            { "title": "Métricas en primer plano", "body": "Las cifras clave destacan; el detalle secundario sigue accesible sin competir." },
-            { "title": "UI escalable", "body": "Patrones de cards y sistema visual pensados para crecer con más módulos." }
+            { 
+              "title": "Ecosistema híbrido unificado", 
+              "body": "Desarrollo de una interfaz centralizada que elimina la necesidad de usar múltiples plataformas, permitiendo a los terapeutas ver notas, documentos, la evolución de tests de autocorrección y registros de ánimo en un solo lugar." 
+            },
+            { 
+              "title": "Experiencia de paciente optimizada (PWA)", 
+              "body": "Implementación de una aplicación web progresiva (PWA) enfocada en el paciente para dispositivos móviles, logrando una interacción diaria (diario emocional y escalas de ansiedad del 1 al 10) con sensación nativa y sin la fricción de descargar apps en las tiendas." 
+            },
+            { 
+              "title": "Evaluación estructurada", 
+              "body": "Digitalización de tests estandarizados para permitir la asignación, la respuesta y la corrección automática dentro del mismo flujo." 
+            }
           ],
           "images": [
-            { "caption": "Vista general del dashboard", "alt": "Overview dashboard bancario", "layout": "wide" },
-            { "caption": "Métricas y gráficos", "alt": "Panel visualización datos" },
-            { "caption": "Navegación y layout", "alt": "Navegación dashboard" },
-            { "caption": "Estados de panel detalle", "alt": "UI panel detalle" }
+            { "caption": "Esquema de arquitectura", "alt": "Esquema de arquitectura", "layout": "wide" },
+            { "caption": "Mapa de pantallas", "alt": "Mapa de pantallas" },
+            { "caption": "Esquema de pantalla", "alt": "Esquema de pantalla" },
+            { "caption": "Visualizaciones de Menta", "alt": "Diseño" }
           ]
         },
         "movies": {
