@@ -344,6 +344,11 @@
     background-image: url(/src/assets/img/Projects/Menta/menta_cover.png);
 }
 
+.figureMedia.ProyectE {
+    background-image: url(/src/assets/img/Projects/Mimi/mimi_cover.png);
+}
+
+
 .figureMedia.ProyectF {
     background-image: url(/src/assets/img/Projects/Vinos/1.VinosNew.jpg);
 }
@@ -359,25 +364,12 @@
 .figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection,
 .figure:nth-child(2) .ProjectNameLink, .figure:nth-child(2):hover .descriptionSection,
 .figure:nth-child(3) .ProjectNameLink , .figure:nth-child(3):hover .descriptionSection,
-.figure:nth-child(4) .ProjectNameLink , .figure:nth-child(4):hover .descriptionSection {
-   background-color: rgba(255, 255, 255, 0.733);
-}
-
-
-.figure:nth-child(5) .ProjectNameLink , .figure:nth-child(5):hover .descriptionSection{
-       background-color: greenyellow;
-}
-
-.figure:nth-child(6) .ProjectNameLink, .figure:nth-child(6):hover .descriptionSection {
-    background-color: #f3cdd0c6;
-}
-
-.beyondProjects .figure:nth-child(1) .ProjectNameLink, .beyondProjects .figure:nth-child(1):hover .descriptionSection {
-    background-color: orange;
-}
-
+.figure:nth-child(4) .ProjectNameLink , .figure:nth-child(4):hover .descriptionSection,
+.figure:nth-child(5) .ProjectNameLink , .figure:nth-child(5):hover .descriptionSection,
+.figure:nth-child(6) .ProjectNameLink, .figure:nth-child(6):hover .descriptionSection,
+.beyondProjects .figure:nth-child(1) .ProjectNameLink, .beyondProjects .figure:nth-child(1):hover .descriptionSection,
 .beyondProjects .figure:nth-child(2) .ProjectNameLink, .beyondProjects .figure:nth-child(2):hover .descriptionSection {
-    background-color: cornflowerblue;
+   background-color: rgba(255, 255, 255, 0.733);
 }
 
 
@@ -549,33 +541,15 @@
         background-color: rgba(255, 255, 255, 0.733);
     }
 
-.figure:nth-child(1) .descriptionSection, .figure:nth-child(2) .descriptionSection{
-    background-color:  rgba(255, 255, 255, 0.733);
-}
-
-
-.figure:nth-child(3) .descriptionSection{
-       background-color: #f2ead3b7;
-}
-
-.figure:nth-child(4) .descriptionSection{
-       background-color: purple;
-}
-
-.figure:nth-child(5) .descriptionSection{
-       background-color: greenyellow;
-}
-
-.figure:nth-child(6) .descriptionSection {
-    background-color: #f3cdd0c6;
-}
-
-.beyondProjects .figure:nth-child(1) .descriptionSection{
-    background-color: orange;
-}
-
+.figure:nth-child(1) .descriptionSection, 
+.figure:nth-child(2) .descriptionSection,
+.figure:nth-child(3) .descriptionSection,
+.figure:nth-child(4) .descriptionSection,
+.figure:nth-child(5) .descriptionSection,
+.figure:nth-child(6) .descriptionSection,
+.beyondProjects .figure:nth-child(1) .descriptionSection,
 .beyondProjects .figure:nth-child(2) .descriptionSection{
-    background-color: cornflowerblue;
+        background-color:  rgba(255, 255, 255, 0.733);
 }
 
      .beyondSection .descriptionSection {

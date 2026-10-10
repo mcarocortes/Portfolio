@@ -37,6 +37,9 @@ type CaseImage = {
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+/** Sin galería "Vistazo a los resultados". Quitar la clave de aquí para volver a mostrarla. */
+const HIDE_RESULTS_GALLERY = new Set<ProjectCaseKey>(["mimi"]);
+
 const viewport = { once: true, amount: 0.22 };
 
 const fadeReveal: Variants = {
@@ -419,29 +422,33 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
                         ))}
                     </div>
 
-                    <h2 className="project-case__section-heading">
-                        {t("projectCaseStudy.outputsTitle")}
-                    </h2>
+                    {HIDE_RESULTS_GALLERY.has(projectKey) ? null : (
+                        <>
+                            <h2 className="project-case__section-heading">
+                                {t("projectCaseStudy.outputsTitle")}
+                            </h2>
 
-                    <div className="project-case__gallery-grid">
-                        {imagesMeta.map((image, index) => {
-                            const src = imageSources[index] ?? null;
-                            const layout = "wide";
+                            <div className="project-case__gallery-grid">
+                                {imagesMeta.map((image, index) => {
+                                    const src = imageSources[index] ?? null;
+                                    const layout = "wide";
 
-                            return (
-                                <GalleryFigure
-                                    key={`${projectKey}-image-${index}`}
-                                    layout={layout}
-                                    src={src}
-                                    caption={image.caption}
-                                    alt={image.alt}
-                                    placeholderLabel={t("projectCaseStudy.imagePlaceholder")}
-                                    index={index}
-                                    settleEarly={index >= imagesMeta.length - 2}
-                                />
-                            );
-                        })}
-                    </div>
+                                    return (
+                                        <GalleryFigure
+                                            key={`${projectKey}-image-${index}`}
+                                            layout={layout}
+                                            src={src}
+                                            caption={image.caption}
+                                            alt={image.alt}
+                                            placeholderLabel={t("projectCaseStudy.imagePlaceholder")}
+                                            index={index}
+                                            settleEarly={index >= imagesMeta.length - 2}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </>
+                    )}
                 </section>
             </div>
 

@@ -64,10 +64,10 @@
           "subtitle": "Desarrollo Front-end de una plataforma web y PWA integral para psicología, uniendo gestión clínica clásica, seguimiento emocional diario y tests estandarizados en una sola herramienta.",
           "tags": ["React", "TypeScript", "PWA", "UX/UI Clínico"]
         },
-        "movies": {
-          "title": "Asistente con IA",
+        "mimi": {
+          "title": "MIMI AI",
           "subtitle": "Interfaz de asistente con IA que demuestra integración práctica de APIs modernas, UX conversacional y desarrollo front-end preparado para la nube.",
-          "tags": ["Diseño Web", "Desarrollo API", "React", "Azure"]
+          "tags": ["Diseño Web", "Desarrollo API", "React", "Tailwind"]
         },
         "vinos": {
           "title": "Vinos y Sabores",
@@ -297,7 +297,7 @@
             { "caption": "Visualizaciones de Menta", "alt": "Diseño" }
           ]
         },
-        "movies": {
+        "mimi": {
           "headline": "UX conversacional impulsada por IA.",
           "role": "Desarrolladora Front-End",
           "company": "Proyecto personal",

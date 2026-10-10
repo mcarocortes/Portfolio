@@ -64,7 +64,7 @@
           "subtitle": "Front-end development of an end-to-end web and PWA platform for psychology, bringing together classic clinical management, daily emotional tracking, and standardized tests in a single tool.",
           "tags": ["React", "TypeScript", "PWA", "Clinical UX/UI"]
         },
-        "movies": {
+        "mimi": {
           "title": "AI Assistant",
           "subtitle": "An AI-powered assistant interface that demonstrates practical integration of modern APIs, conversational UX, and cloud-ready front-end development.",
           "tags": ["Web Design", "API Development", "React", "Azure"]
@@ -297,7 +297,7 @@
             { "caption": "Menta visualizations", "alt": "Design" }
           ]
         },
-        "movies": {
+        "mimi": {
           "headline": "Conversational UX powered by AI.",
           "role": "Front-End Developer",
           "company": "Personal project",

@@ -26,6 +26,9 @@ import menta2 from "../assets/img/Projects/Menta/menta_2.png";
 import menta3 from "../assets/img/Projects/Menta/menta_3.png";
 import menta4 from "../assets/img/Projects/Menta/menta_4.png";
 
+import handMimi from "../assets/img/Projects/Mimi/handMimi.mp4";
+import mimiOpportunity from "../assets/img/Projects/Mimi/mimi1.png";
+
 
 export const CASE_ICON_NAMES = [
     "search",
@@ -53,7 +56,7 @@ export type ProjectCaseKey =
     | "modular"
     | "vc"
     | "menta"
-    | "movies"
+    | "mimi"
     | "vinos"
     | "packaging"
     | "catamaran";
@@ -139,14 +142,14 @@ export const PROJECTS: ProjectDefinition[] = [
         impactIcons: ["chart", "target", "code"],
     },
     {
-        key: "movies",
-        slug: "/Movies",
+        key: "mimi",
+        slug: "/Mimi",
         section: "items",
         cardId: "ProyectE",
         images: [null, null, null, null],
-        hero: { type: "hand", videoSrc: null },
-        opportunityImage: null,
-        externalUrl: null,
+        hero: { type: "hand", videoSrc: handMimi },
+        opportunityImage: mimiOpportunity,
+        externalUrl: "https://mcarocortes.github.io/Mimi-AI/",
         opportunityIcons: ["chat", "spark", "check"],
         impactIcons: ["spark", "chat", "code"],
     },
