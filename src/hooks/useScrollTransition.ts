@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { scrollTransition } from "../lib/scrollTransitionState";
 
 /** Cuántas pantallas de scroll dura la transición completa (0 → 1) */
-export const SCROLL_VIEWPORTS = 2.8;
+export const SCROLL_VIEWPORTS = 1.35;
 
 function clamp(value: number, min = 0, max = 1) {
   return Math.min(Math.max(value, min), max);

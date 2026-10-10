@@ -3,7 +3,7 @@ import type { MouseEvent } from "react";
 
 let lenisInstance: Lenis | null = null;
 
-const SCROLL_DURATION = 1.35;
+const SCROLL_DURATION = 1.15;
 const HASH_RETRY_MS = 3000;
 
 let suppressActiveSectionUntil = 0;

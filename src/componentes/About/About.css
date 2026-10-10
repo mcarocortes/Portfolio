@@ -5,14 +5,15 @@
   display: block;
   width: 100%;
   min-height: 100vh;
-  padding-top: 200vh;
+  padding-top: 50vh;
   isolation: isolate;
   background-color: var(--white);
 }
 
 .about-anchor {
   display: block;
-  height: 130vh !important;
+  /* About se lee aquí antes de que Evolution suba y lo tape */
+  height: 170vh !important;
   width: 100%;
   pointer-events: none;
   scroll-margin-top: 100px;
@@ -217,7 +218,7 @@ div .exterior .icon img {
 }
 
 .about-scroll-runway {
-  height: 200vh;      
+  height: 80vh;      
   width: 100%;
   pointer-events: none;
 }

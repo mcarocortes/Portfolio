@@ -53,7 +53,7 @@ export default function Projects() {
     const beyondPathRef = useRef<SVGCircleElement>(null);
     const beyondLengthRef = useRef(0);
 
-    const START_AT = 0.3;
+    const START_AT = 0.08;
     const END_MARGIN = 60;
 
     const setupPath = (path: SVGPathElement | SVGCircleElement | null, lengthRef: { current: number }) => {

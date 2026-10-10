@@ -11,7 +11,7 @@
 }
 
 .experience-scroll-space {
-    height: calc(var(--exp-steps, 4) * var(--exp-step-vh, 155) * 1vh);
+    height: calc(var(--exp-steps, 4) * var(--exp-step-vh, 85) * 1vh);
     position: relative;
 }
 

@@ -49,7 +49,7 @@
 
 /* ajustas según nº de proyectos */
 .containers {
-    height: 400vh;
+    height: 200vh;
     position: relative;
     z-index: 2;
             margin-top: -50px;

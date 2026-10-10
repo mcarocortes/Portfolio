@@ -30,7 +30,7 @@ function getSequentialSlideOpacity(index: number, stepFloat: number): number {
 
 const YEAR_SUFFIXES = ["21", "24", "25", "26"] as const;
 const STEP_COUNT = YEAR_SUFFIXES.length;
-const SCROLL_VH_PER_STEP = 155;
+const SCROLL_VH_PER_STEP = 85;
 
 export default function Evolution() {
     const { t } = useTranslation();
