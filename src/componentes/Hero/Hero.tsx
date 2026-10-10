@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 
 import './Hero.css'
 
@@ -6,13 +6,13 @@ import logoLigth from './../../assets/img/Hero/MacarenaCaroLogo.svg'
 
 import logoDarkmode from './../../assets/img/Hero/MacarenaCaroLogo_darkmode.svg'
 
-import HeroParticles from './HeroParticles';
-
 import HeroArcs from './HeroArcs';
 
 import { useTranslation } from "react-i18next";
 
 import { useScrollTransitionContext } from "../../context/ScrollTransitionContext";
+
+const HeroParticles = lazy(() => import("./HeroParticles"));
 
 
 
@@ -101,7 +101,9 @@ export default function Hero() {
 
         <div className='hero-particles'>
 
-          <HeroParticles eventSource={heroSectionRef} />
+          <Suspense fallback={null}>
+            <HeroParticles eventSource={heroSectionRef} active={act2 < 0.98} />
+          </Suspense>
 
         </div>
 
@@ -109,7 +111,7 @@ export default function Hero() {
 
         <div className='content-hero'>
 
-          <img src={logo} loading="lazy" alt="Macarena Caro" />
+          <img src={logo} alt="Macarena Caro" fetchPriority="high" decoding="async" />
 
           <h1>{t("designingIntelligent")}</h1>
 

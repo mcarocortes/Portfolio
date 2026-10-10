@@ -34,10 +34,10 @@ function AppContent() {
     }
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.3,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      wheelMultiplier: 1.6,
-      touchMultiplier: 1.45,
+      wheelMultiplier: 1.2,
+      touchMultiplier: 1.2,
       smoothWheel: true,
       autoRaf: true,
     });

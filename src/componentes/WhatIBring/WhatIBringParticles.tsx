@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 
 type Pointer = { x: number; y: number } | null;
 
@@ -15,15 +15,13 @@ const DEFAULT_PARTICLE_COUNT = 180;
 const PURPLE = { r: 161, g: 128, b: 210 };
 
 export default function WhatIBringParticles({
-    pointer,
+    pointerRef,
     count = DEFAULT_PARTICLE_COUNT,
 }: {
-    pointer: Pointer;
+    pointerRef: RefObject<Pointer>;
     count?: number;
 }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const pointerRef = useRef(pointer);
-    pointerRef.current = pointer;
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -36,14 +34,16 @@ export default function WhatIBringParticles({
         let particles: Particle[] = [];
         let width = 0;
         let height = 0;
+        let visible = true;
 
         const resize = () => {
             const rect = canvas.getBoundingClientRect();
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
             width = rect.width;
             height = rect.height;
-            canvas.width = Math.floor(width * window.devicePixelRatio);
-            canvas.height = Math.floor(height * window.devicePixelRatio);
-            ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+            canvas.width = Math.max(1, Math.floor(width * dpr));
+            canvas.height = Math.max(1, Math.floor(height * dpr));
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         };
 
         const initParticles = () => {
@@ -58,11 +58,15 @@ export default function WhatIBringParticles({
         };
 
         const draw = (time: number) => {
+            frame = requestAnimationFrame(draw);
+            if (!visible) return;
+
             ctx.clearRect(0, 0, width, height);
 
             const ptr = pointerRef.current;
-            const px = ptr ? ptr.x - canvas.getBoundingClientRect().left : -9999;
-            const py = ptr ? ptr.y - canvas.getBoundingClientRect().top : -9999;
+            const bounds = canvas.getBoundingClientRect();
+            const px = ptr ? ptr.x - bounds.left : -9999;
+            const py = ptr ? ptr.y - bounds.top : -9999;
 
             for (const p of particles) {
                 p.x += p.vx;
@@ -73,23 +77,22 @@ export default function WhatIBringParticles({
 
                 const dx = p.x - px;
                 const dy = p.y - py;
-                const dist = Math.sqrt(dx * dx + dy * dy);
+                const dist = Math.hypot(dx, dy);
                 const influence = Math.max(0, 1 - dist / 120);
                 const pulse = 0.45 + Math.sin(time * 0.002 + p.phase) * 0.2;
                 const alpha = pulse + influence * 0.55;
-
                 const radius = p.size + influence * 2.5;
 
+                ctx.fillStyle = `rgba(${PURPLE.r}, ${PURPLE.g}, ${PURPLE.b}, ${alpha * 0.28})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, radius * 2.4, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = `rgba(${PURPLE.r}, ${PURPLE.g}, ${PURPLE.b}, ${alpha})`;
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${PURPLE.r}, ${PURPLE.g}, ${PURPLE.b}, ${alpha})`;
-                ctx.shadowBlur = 12 + influence * 16;
-                ctx.shadowColor = `rgba(${PURPLE.r}, ${PURPLE.g}, ${PURPLE.b}, 0.85)`;
                 ctx.fill();
-                ctx.shadowBlur = 0;
             }
-
-            frame = requestAnimationFrame(draw);
         };
 
         resize();
@@ -102,11 +105,17 @@ export default function WhatIBringParticles({
         });
         observer.observe(canvas);
 
+        const visibility = new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting;
+        }, { rootMargin: "200px" });
+        visibility.observe(canvas);
+
         return () => {
             cancelAnimationFrame(frame);
             observer.disconnect();
+            visibility.disconnect();
         };
-    }, [count]);
+    }, [count, pointerRef]);
 
     return (
         <canvas

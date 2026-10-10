@@ -22,30 +22,16 @@ export default function Cursor() {
             const target = e.target as Element | null;
             if (!target) return;
 
-            // ocultar cursor
-            /*if (target.closest(".no-cursor")) {
-                setHidden(true);
-                return;
-            } else {
-                setHidden(false);
-            }*/
+            const nextPointer = Boolean(target.closest("a, button, input"));
+            let nextVariant = "";
 
-            // elementos interactivos tienen prioridad
-            if (target.closest("a, button, input")) {
-                setIsPointer(true);
-                setVariant(""); // cancelar variantes
-            } else {
-                setIsPointer(false);
-
-                // variantes especiales solo si no es botón
-                 if (target.closest(".cursor-project")) {
-                    setVariant("project");
-                } else if (target.closest(".no-cursor")) {
-                    setVariant("hidden");
-                } else {
-                    setVariant("");
-                }
+            if (!nextPointer) {
+                if (target.closest(".cursor-project")) nextVariant = "project";
+                else if (target.closest(".no-cursor")) nextVariant = "hidden";
             }
+
+            setIsPointer((prev) => (prev === nextPointer ? prev : nextPointer));
+            setVariant((prev) => (prev === nextVariant ? prev : nextVariant));
 
         };
 
@@ -58,8 +44,9 @@ export default function Cursor() {
     /* cursor con inercia suave */
     useEffect(() => {
 
-        const animate = () => {
+        let frame = 0;
 
+        const animate = () => {
             pos.current.x += (mouse.current.x - pos.current.x) * 0.85;
             pos.current.y += (mouse.current.y - pos.current.y) * 0.85;
 
@@ -68,10 +55,11 @@ export default function Cursor() {
                     `translate(${pos.current.x}px, ${pos.current.y}px) translate(-50%, -50%)`;
             }
 
-            requestAnimationFrame(animate);
+            frame = requestAnimationFrame(animate);
         };
 
-        animate();
+        frame = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(frame);
 
     }, []);
 

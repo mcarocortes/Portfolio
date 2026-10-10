@@ -1,40 +1,3 @@
-import handHealth from "../assets/img/Projects/Health/resiplus.mp4";
-import healthOpportunityImage from "../assets/img/Projects/Health/health_oppor.png";
-import health1 from "../assets/img/Projects/Health/health_1.png";
-import health2 from "../assets/img/Projects/Health/health_2.png";
-import health3 from "../assets/img/Projects/Health/health_3.png";
-import health4 from "../assets/img/Projects/Health/health_4.png";
-
-import handModular from "../assets/img/Projects/modulAR/handModular.mp4";
-import modularOpportunity from "../assets/img/Projects/modulAR/modular_Oppor.png";
-import modular1 from "../assets/img/Projects/modulAR/modular1.png";
-import modular2 from "../assets/img/Projects/modulAR/modular2.png";
-import modular3 from "../assets/img/Projects/modulAR/modular3.png";
-import modular4 from "../assets/img/Projects/modulAR/modular4.png";
-
-import handVC from "../assets/img/Projects/VC/handVC.mp4";
-import vcOpportunity from "../assets/img/Projects/VC/vc_oppor.png";
-import vc1 from "../assets/img/Projects/VC/vc_1.png";
-import vc2 from "../assets/img/Projects/VC/vc_2.png";
-import vc3 from "../assets/img/Projects/VC/vc_3.png";
-import vc4 from "../assets/img/Projects/VC/vc_4.png";
-
-import handMenta from "../assets/img/Projects/Menta/handMenta.mp4";
-import mentaOpportunity from "../assets/img/Projects/Menta/menta_oppor.png";
-import menta1 from "../assets/img/Projects/Menta/menta_1.png";
-import menta2 from "../assets/img/Projects/Menta/menta_2.png";
-import menta3 from "../assets/img/Projects/Menta/menta_3.png";
-import menta4 from "../assets/img/Projects/Menta/menta_4.png";
-
-import handMimi from "../assets/img/Projects/Mimi/handMimi.mp4";
-import mimiOpportunity from "../assets/img/Projects/Mimi/mimi1.png";
-
-import handCatamaran from "../assets/img/Projects/Catamaran/catamaranHand.png";
-import catOpportunity from "../assets/img/Projects/Catamaran/cata_opport.png";
-import cat1 from "../assets/img/Projects/Catamaran/cat1.png";
-import cat2 from "../assets/img/Projects/Catamaran/cat2.png";
-import cat3 from "../assets/img/Projects/Catamaran/cat3.png";
-import cat4 from "../assets/img/Projects/Catamaran/cat4.png";
 export const CASE_ICON_NAMES = [
     "search",
     "layers",
@@ -73,14 +36,10 @@ export type ProjectCaseRoute = {
     slug: string;
 };
 
-/** Hero del case study: mockup Hand + vídeo, o imagen estática (Beyond Code). */
-export type ProjectHeroMedia =
-    | { type: "hand"; videoSrc: string | null }
-    | { type: "image"; src: string | null };
-
 /**
  * Un proyecto = una entrada.
  * Textos ES/EN viven en locales; aquí solo datos que no se traducen.
+ * Imágenes y vídeos viven en projectMedia.ts y solo se cargan al abrir el proyecto.
  * `cardId` es la clase CSS del carrusel (ProyectA, ProyectB…).
  */
 export type ProjectDefinition = {
@@ -88,9 +47,6 @@ export type ProjectDefinition = {
     slug: string;
     section: ProjectCatalogSection;
     cardId: string;
-    images: (string | null)[];
-    hero: ProjectHeroMedia;
-    opportunityImage: string | null;
     /** Web, PDF o repo del proyecto. Si es null, no se muestra el botón. */
     externalUrl: string | null;
     opportunityIcons: [CaseIconName, CaseIconName, CaseIconName];
@@ -103,9 +59,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/healthcare",
         section: "items",
         cardId: "ProyectA",
-        images: [health1, health2, health3, health4],
-        hero: { type: "hand", videoSrc: handHealth },
-        opportunityImage: healthOpportunityImage,
         externalUrl: "https://addinformatica.com/",
         opportunityIcons: ["search", "layers", "check"],
         impactIcons: ["mobile", "clock", "spark"],
@@ -115,9 +68,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/modulAR",
         section: "items",
         cardId: "ProyectB",
-        images: [modular1, modular2, modular3, modular4],
-        hero: { type: "hand", videoSrc: handModular },
-        opportunityImage: modularOpportunity,
         externalUrl: "https://drive.google.com/file/d/11xp-0XL6avpjykezN0eSKZbl05MKdB-M/view",
         opportunityIcons: ["search", "layers", "check"],
         impactIcons: ["spark", "users", "target"],
@@ -127,9 +77,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Vc",
         section: "items",
         cardId: "ProyectC",
-        images: [vc1, vc2, vc3, vc4],
-        hero: { type: "hand", videoSrc: handVC },
-        opportunityImage: vcOpportunity,
         externalUrl: "https://www.psicologiaymediacion.com/",
         opportunityIcons: ["heart", "palette", "check"],
         impactIcons: ["shield", "heart", "users"],
@@ -139,9 +86,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Menta",
         section: "items",
         cardId: "ProyectD",
-        images: [menta1, menta2, menta3, menta4],
-        hero: { type: "hand", videoSrc: handMenta },
-        opportunityImage: mentaOpportunity,
         externalUrl: "https://mcarocortes.github.io/Menta-Front/",
         opportunityIcons: ["chart", "layers", "check"],
         impactIcons: ["chart", "target", "code"],
@@ -151,9 +95,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Mimi",
         section: "items",
         cardId: "ProyectE",
-        images: [null, null, null, null],
-        hero: { type: "hand", videoSrc: handMimi },
-        opportunityImage: mimiOpportunity,
         externalUrl: "https://mcarocortes.github.io/Mimi-AI/",
         opportunityIcons: ["chat", "spark", "check"],
         impactIcons: ["spark", "chat", "code"],
@@ -163,9 +104,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Vinos",
         section: "items",
         cardId: "ProyectF",
-        images: [null, null, null, null],
-        hero: { type: "hand", videoSrc: null },
-        opportunityImage: null,
         externalUrl: null,
         opportunityIcons: ["palette", "heart", "check"],
         impactIcons: ["palette", "target", "heart"],
@@ -175,9 +113,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Design",
         section: "beyond",
         cardId: "ProyectG",
-        images: [null, null, null, null],
-        hero: { type: "image", src: null },
-        opportunityImage: null,
         externalUrl: null,
         opportunityIcons: ["box", "palette", "check"],
         impactIcons: ["box", "target", "spark"],
@@ -187,9 +122,6 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Catamaran",
         section: "beyond",
         cardId: "ProyectH",
-        images: [cat1, cat2, cat3, cat4],
-        hero: { type: "image", src: handCatamaran },
-        opportunityImage: catOpportunity,
         externalUrl: "https://wiki-ead.b-cdn.net/images/7/78/UCD6134_01.pdf",
         opportunityIcons: ["waves", "search", "check"],
         impactIcons: ["waves", "users", "spark"],

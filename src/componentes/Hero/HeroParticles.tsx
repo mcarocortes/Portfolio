@@ -7,6 +7,7 @@ import { scrollTransition } from "../../lib/scrollTransitionState"
 
 /**VARIABLE GLOBAL**/
 const cursorWorldPosition = new THREE.Vector3()
+const cursorScratch = new THREE.Vector3()
 const FACE_Y_OFFSET = -0.35
 
 /**    CURSOR WAVE VISUAL **/
@@ -164,6 +165,24 @@ function FaceParticles() {
 
     if (currentAct2 >= 1) return
 
+    cursorScratch.copy(cursorWorldPosition)
+    pivotRef.current.worldToLocal(cursorScratch)
+
+    const rotationBlend = 1 - currentAct1 * 0.85
+
+    if (isMobile) {
+      pivotRef.current.rotation.x = 0
+      pivotRef.current.rotation.y = 0
+    } else {
+      const targetY = cursorScratch.x * 0.8 * rotationBlend
+      const targetX = (cursorScratch.y * FACE_Y_OFFSET) * 0.3 * rotationBlend
+
+      pivotRef.current.rotation.y += (targetY - pivotRef.current.rotation.y) * 0.08
+      pivotRef.current.rotation.x += (targetX - pivotRef.current.rotation.x) * 0.08
+    }
+
+    if (Math.floor(state.clock.elapsedTime * 30) % 2 !== 0) return
+
     const geometry = particlesGeometry
     const time = state.clock.elapsedTime
     const variation = geometry.userData.brightnessVariation as Float32Array
@@ -171,16 +190,11 @@ function FaceParticles() {
     const colors = geometry.attributes.color.array as Float32Array
     const originalColors = geometry.userData.originalColors as Float32Array
 
-    const cursor = cursorWorldPosition.clone()
-    pivotRef.current.worldToLocal(cursor)
-
-    const rotationBlend = 1 - currentAct1 * 0.85
-
     for (let i = 0; i < pos.length; i += 3) {
       const x = pos[i]
       const y = pos[i + 1]
-      const dx = x - cursor.x
-      const dy = y - cursor.y
+      const dx = x - cursorScratch.x
+      const dy = y - cursorScratch.y
       const dist = Math.sqrt(dx * dx + dy * dy)
       const influence = Math.max(0, 1 - dist * 2.5)
       const organic = Math.sin(time * 4.0 + i * 0.1) * 0.25
@@ -192,20 +206,6 @@ function FaceParticles() {
     }
 
     geometry.attributes.color.needsUpdate = true
-
-    if (isMobile) {
-      pivotRef.current.rotation.x = 0
-      pivotRef.current.rotation.y = 0
-    } else {
-      const cursorLocal = cursorWorldPosition.clone()
-      pivotRef.current.worldToLocal(cursorLocal)
-
-      const targetY = cursorLocal.x * 0.8 * rotationBlend
-      const targetX = (cursorLocal.y * FACE_Y_OFFSET) * 0.3 * rotationBlend
-
-      pivotRef.current.rotation.y += (targetY - pivotRef.current.rotation.y) * 0.08
-      pivotRef.current.rotation.x += (targetX - pivotRef.current.rotation.x) * 0.08
-    }
   })
 
   return (
@@ -230,18 +230,28 @@ function FaceParticles() {
 
 function HeroParticles({
   eventSource,
+  active,
 }: {
   eventSource?: RefObject<HTMLElement | null>;
+  active: boolean;
 }) {
   return (
     <div className="heroParticles">
       <Canvas
-        eventSource={eventSource}
+        eventSource={eventSource as RefObject<HTMLElement> | undefined}
+        frameloop={active ? "always" : "never"}
         camera={{
           position: [0, -0.2, 3.2],
           fov: 32
         }}
-        dpr={[1, 2]}
+        dpr={[1, 1.5]}
+        gl={{
+          antialias: false,
+          alpha: true,
+          powerPreference: "high-performance",
+          stencil: false,
+        }}
+        performance={{ min: 0.5 }}
         style={{
           width: "100vw",
           height: "100vh",
@@ -252,11 +262,11 @@ function HeroParticles({
         <CursorWave />
         <FaceParticles />
 
-        <EffectComposer>
+        <EffectComposer multisampling={0}>
           <Bloom
-            intensity={1}
-            luminanceThreshold={0.4}
-            luminanceSmoothing={0.8}
+            intensity={0.85}
+            luminanceThreshold={0.45}
+            luminanceSmoothing={0.75}
             mipmapBlur
           />
         </EffectComposer>

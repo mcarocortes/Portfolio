@@ -1,6 +1,6 @@
 import "./WhatIBring.css";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import portraitLight from "../../assets/img/WhatIBring/Particles.png";
 import portraitDark from "../../assets/img/WhatIBring/Particles_darkmode.png";
@@ -104,7 +104,7 @@ function Portrait() {
 export default function WhatIBring() {
     const { t } = useTranslation();
     const [openIndex, setOpenIndex] = useState<number | null>(null);
-    const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null);
+    const pointerRef = useRef<{ x: number; y: number } | null>(null);
     const [particleCount, setParticleCount] = useState(PARTICLE_COUNT_MOBILE);
 
     useEffect(() => {
@@ -121,11 +121,15 @@ export default function WhatIBring() {
         <section
             id="WhatIDo"
             className="what-i-bring"
-            onPointerMove={(e) => setPointer({ x: e.clientX, y: e.clientY })}
-            onPointerLeave={() => setPointer(null)}
+            onPointerMove={(e) => {
+                pointerRef.current = { x: e.clientX, y: e.clientY };
+            }}
+            onPointerLeave={() => {
+                pointerRef.current = null;
+            }}
         >
             <div className="what-i-bring__backdrop" aria-hidden="true">
-                <WhatIBringParticles pointer={pointer} count={particleCount} />
+                <WhatIBringParticles pointerRef={pointerRef} count={particleCount} />
             </div>
 
             <div className="what-i-bring__intro">

@@ -1,26 +1,19 @@
-import { createContext, useContext } from "react";
+import { useSyncExternalStore } from "react";
 import useScrollTransition from "../hooks/useScrollTransition";
-
-type ScrollTransitionValue = ReturnType<typeof useScrollTransition>;
-
-const ScrollTransitionContext = createContext<ScrollTransitionValue | null>(null);
+import {
+  getScrollTransitionSnapshot,
+  subscribeScrollTransition,
+} from "../lib/scrollTransitionState";
 
 export function ScrollTransitionProvider({ children }: { children: React.ReactNode }) {
-  const value = useScrollTransition();
-
-  return (
-    <ScrollTransitionContext.Provider value={value}>
-      {children}
-    </ScrollTransitionContext.Provider>
-  );
+  useScrollTransition();
+  return children;
 }
 
 export function useScrollTransitionContext() {
-  const ctx = useContext(ScrollTransitionContext);
-
-  if (!ctx) {
-    throw new Error("useScrollTransitionContext debe usarse dentro de ScrollTransitionProvider");
-  }
-
-  return ctx;
+  return useSyncExternalStore(
+    subscribeScrollTransition,
+    getScrollTransitionSnapshot,
+    getScrollTransitionSnapshot
+  );
 }

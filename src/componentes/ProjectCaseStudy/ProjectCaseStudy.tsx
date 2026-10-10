@@ -18,6 +18,7 @@ import {
     projectLink,
     type ProjectCaseKey,
 } from "../../data/projectsCatalog";
+import { getProjectMedia } from "../../data/projectMedia";
 
 type CaseSection = {
     title: string;
@@ -192,6 +193,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
     const { t, i18n } = useTranslation();
     const prefersReducedMotion = useReducedMotion();
     const project = getProjectByKey(projectKey);
+    const media = getProjectMedia(projectKey);
     const { prev, next } = getProjectNeighbors(project?.slug ?? "");
 
     const pagePrefix = `projectCaseStudy.pages.${projectKey}`;
@@ -214,9 +216,9 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
         return Array.isArray(items) ? items : [];
     }, [t, pagePrefix]);
 
-    const imageSources = project?.images ?? [];
-    const heroMedia = project?.hero;
-    const opportunityImage = project?.opportunityImage ?? null;
+    const imageSources = media.images;
+    const heroMedia = media.hero;
+    const opportunityImage = media.opportunityImage;
 
     const catalogPath = getProjectCatalogPath(projectKey);
     const projectTitle = t(`${catalogPath}.title`);
