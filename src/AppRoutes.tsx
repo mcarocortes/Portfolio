@@ -4,7 +4,7 @@ import LandingPage from "./componentes/LandingPage/LandingPage";
 import ProjectCaseStudy from "./componentes/ProjectCaseStudy/ProjectCaseStudy";
 import NotFound from "./componentes/NotFound/NotFound";
 import UnderConstruction from "./componentes/UnderConstruction/UnderConstruction";
-import { PROJECTS } from "./data/projectsCatalog";
+import { VISIBLE_PROJECTS } from "./data/projectsCatalog";
 
 export default function AppRoutes() {
   return (
@@ -13,7 +13,7 @@ export default function AppRoutes() {
 
       <Route element={<PortfolioLayout />}>
         <Route index element={<LandingPage />} />
-        {PROJECTS.map((project) => (
+        {VISIBLE_PROJECTS.map((project) => (
           <Route
             key={project.key}
             path={project.slug}

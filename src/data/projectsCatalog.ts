@@ -191,11 +191,16 @@ export const PROJECTS: ProjectDefinition[] = [
     },
 ];
 
-export const PROJECTS_ITEMS = PROJECTS.filter((project) => project.section === "items");
-export const PROJECTS_BEYOND = PROJECTS.filter((project) => project.section === "beyond");
+/** Ocultos por ahora. Quitar la clave para volver a publicarlos. */
+const HIDDEN_PROJECTS = new Set<ProjectCaseKey>(["vinos"]);
+
+export const VISIBLE_PROJECTS = PROJECTS.filter((project) => !HIDDEN_PROJECTS.has(project.key));
+
+export const PROJECTS_ITEMS = VISIBLE_PROJECTS.filter((project) => project.section === "items");
+export const PROJECTS_BEYOND = VISIBLE_PROJECTS.filter((project) => project.section === "beyond");
 
 /** Orden de navegación prev/next (el del catálogo). */
-export const PROJECT_CASE_ORDER: ProjectCaseRoute[] = PROJECTS.map(({ key, slug }) => ({
+export const PROJECT_CASE_ORDER: ProjectCaseRoute[] = VISIBLE_PROJECTS.map(({ key, slug }) => ({
     key,
     slug,
 }));
@@ -210,7 +215,7 @@ export function getProjectCatalogPath(key: ProjectCaseKey) {
 }
 
 export function getProjectNeighbors(slug: string) {
-    const index = PROJECTS.findIndex((project) => project.slug === slug);
+    const index = VISIBLE_PROJECTS.findIndex((project) => project.slug === slug);
 
     if (index === -1) {
         return { prev: null, next: null, index: -1 };
@@ -222,8 +227,8 @@ export function getProjectNeighbors(slug: string) {
     });
 
     return {
-        prev: index > 0 ? toRoute(PROJECTS[index - 1]) : null,
-        next: index < PROJECTS.length - 1 ? toRoute(PROJECTS[index + 1]) : null,
+        prev: index > 0 ? toRoute(VISIBLE_PROJECTS[index - 1]) : null,
+        next: index < VISIBLE_PROJECTS.length - 1 ? toRoute(VISIBLE_PROJECTS[index + 1]) : null,
         index,
     };
 }
