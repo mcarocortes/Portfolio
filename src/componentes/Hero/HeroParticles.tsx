@@ -36,11 +36,11 @@ function FaceParticles() {
   const pivotRef = useRef<THREE.Group>(null!)
   const materialRef = useRef<THREE.PointsMaterial>(null!)
 
-  const { scene } = useGLTF("/Portfolio/face.glb")
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}face.glb`)
 
   const particleTexture = useMemo(() => {
     const loader = new THREE.TextureLoader()
-    const texture = loader.load("/Portfolio/particle-glow5.png")
+    const texture = loader.load(`${import.meta.env.BASE_URL}particle-glow5.png`)
     texture.colorSpace = THREE.SRGBColorSpace
     texture.magFilter = THREE.NearestFilter
     texture.minFilter = THREE.NearestFilter

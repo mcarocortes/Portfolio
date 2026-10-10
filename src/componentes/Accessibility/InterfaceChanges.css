@@ -13,7 +13,7 @@
 
 /****** CURSOR ******/
 .dark-mode .custom-cursor-inner{
-  background: url("/public/cursor_darkmode.svg") center/contain no-repeat;
+  background: url("/cursor_darkmode.svg") center/contain no-repeat;
 }
 
 /****** NAVBAR ******/

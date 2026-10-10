@@ -4,7 +4,6 @@ import Evolution from "../Evolution/Evolution";
 import Projects from "../Projects/Projects";
 import TechStack from "../TechStack/TechStack";
 import WhatIBring from "../WhatIBring/WhatIBring";
-import Webs from "../Webs/Webs";
 
 export default function LandingPage() {
   return (

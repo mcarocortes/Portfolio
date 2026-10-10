@@ -19,6 +19,13 @@ import profileDarkmode from "./assets/img/About/ProfilePicture_darkmode.png";
 
 const isConstructionMode = import.meta.env.VITE_UNDER_CONSTRUCTION === "true";
 
+/** Vacío en macarenacaro.es. En local coincide con la base /Portfolio. */
+const routerBasename = (() => {
+  const base = import.meta.env.BASE_URL;
+  if (!base || base === "/") return undefined;
+  return base.endsWith("/") ? base.slice(0, -1) : base;
+})();
+
 const STANDALONE_PATHS = ["/en-construccion"];
 
 function AppContent() {
@@ -116,7 +123,7 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter basename="/Portfolio">
+    <BrowserRouter basename={routerBasename}>
       <AppContent />
     </BrowserRouter>
   );
