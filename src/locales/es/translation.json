@@ -79,12 +79,12 @@
         "packaging": {
           "title": "Colección de Packaging",
           "subtitle": "Diseño de packaging comercial para productos alimentarios, creando identidades visuales cohesionadas orientadas al impacto en estantería y reconocimiento de marca.",
-          "tags": ["Packaging", "Diseño Print", "Illustrator"]
+          "tags": ["Packaging", "Diseño Gráfico", "Illustrator"]
         },
         "catamaran": {
           "title": "Catamarán Biomimético",
-          "subtitle": "Proyecto fin de grado en diseño industrial: catamarán a pedales inspirado en biomímesis y diseño centrado en las personas.",
-          "tags": ["Modelado 3D", "Diseño de Producto", "Prototipado"]
+          "subtitle": "Proyecto de tesis diseño industrial: Catamarán a pedales inspirado en biomímesis — desde investigación y modelado 3D, prototipado y construcción centrado en la persona usuaria.",
+          "tags": ["Modelado 3D", "Diseño de Producto", "Prototipado", "Construcción"]
         }
       }
     },
@@ -398,11 +398,11 @@
           ]
         },
         "catamaran": {
-          "headline": "Biomímesis aplicada a la movilidad acuática a pedales.",
+          "headline": "Movilidad acuática con pedales",
           "role": "Diseñadora industrial",
-          "company": "Beyond Code",
-          "companyDescription": "Proyecto fin de grado en diseño industrial: un catamarán a pedales inspirado en biomímesis y diseño centrado en las personas.",
-          "roleDescription": "Mi TFG de diseño industrial se centró en un catamarán a pedales inspirado en biomímesis — desde investigación y modelado 3D hasta prototipado y validación centrada en la persona usuaria.",
+          "company": "Título Universitario",
+          "companyDescription": "Crear desde cero el desplazamiento de un catamarán, inspirado en aleteo de las ballenas.",
+          "roleDescription": "Mi Tesis de diseño industrial se centró en un catamarán a pedales inspirado en biomímesis — desde investigación y modelado 3D, prototipado y construcción centrado en la persona usuaria.",
           "linkLabel": "Ver PDF",
           "sections": [
             {
@@ -415,19 +415,19 @@
             },
             {
               "title": "Resultado",
-              "body": "Un concepto de producto biomimético que conecta mis raíces en diseño industrial con la mirada user-centered que aplico hoy en producto digital."
+              "body": "Creación de un producto biomimético que conecta mis raíces en diseño industrial con la mirada user-centered que aplico hoy en producto digital."
             }
           ],
           "impact": [
             { "title": "Movilidad sostenible", "body": "Un concepto de ocio acuático a pedales, sin motor, pensado para uso real." },
-            { "title": "Ergonomía validada", "body": "Postura y pedaleo iterados con modelado 3D y criterios de uso humano." },
-            { "title": "Concepto biomimético", "body": "La geometría del doble casco nace de formas naturales y eficiencia de movimiento." }
+            { "title": "Ergonomía validada", "body": "Postura y pedaleo con criterios de uso humano." },
+            { "title": "Concepto biomimético", "body": "La propulsión nace de formas naturales y eficiencia de movimiento." }
           ],
           "images": [
-            { "caption": "Vista general del concepto", "alt": "Concepto catamarán biomimético", "layout": "wide" },
-            { "caption": "Desarrollo del casco", "alt": "Modelado del casco" },
+            { "caption": "Concepto general del origen y desarrollo del proyecto", "alt": "Concepto catamarán biomimético", "layout": "wide" },
+            { "caption": "Estudio de la propulsión de la ballena", "alt": "Propulsión de la ballena" },
             { "caption": "Ergonomía y pedaleo", "alt": "Estudio ergonómico a pedales" },
-            { "caption": "Snapshot del prototipo", "alt": "Prototipo del catamarán" }
+            { "caption": "Propulsión del catamarán", "alt": "Propulsión del catamarán" }
           ]
         }
       }

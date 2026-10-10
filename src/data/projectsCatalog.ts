@@ -29,7 +29,12 @@ import menta4 from "../assets/img/Projects/Menta/menta_4.png";
 import handMimi from "../assets/img/Projects/Mimi/handMimi.mp4";
 import mimiOpportunity from "../assets/img/Projects/Mimi/mimi1.png";
 
-
+import handCatamaran from "../assets/img/Projects/Catamaran/catamaranHand.png";
+import catOpportunity from "../assets/img/Projects/Catamaran/cata_opport.png";
+import cat1 from "../assets/img/Projects/Catamaran/cat1.png";
+import cat2 from "../assets/img/Projects/Catamaran/cat2.png";
+import cat3 from "../assets/img/Projects/Catamaran/cat3.png";
+import cat4 from "../assets/img/Projects/Catamaran/cat4.png";
 export const CASE_ICON_NAMES = [
     "search",
     "layers",
@@ -182,10 +187,10 @@ export const PROJECTS: ProjectDefinition[] = [
         slug: "/Catamaran",
         section: "beyond",
         cardId: "ProyectH",
-        images: [null, null, null, null],
-        hero: { type: "image", src: null },
-        opportunityImage: null,
-        externalUrl: null,
+        images: [cat1, cat2, cat3, cat4],
+        hero: { type: "image", src: handCatamaran },
+        opportunityImage: catOpportunity,
+        externalUrl: "https://wiki-ead.b-cdn.net/images/7/78/UCD6134_01.pdf",
         opportunityIcons: ["waves", "search", "check"],
         impactIcons: ["waves", "users", "spark"],
     },

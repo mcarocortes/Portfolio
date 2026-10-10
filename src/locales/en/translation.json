@@ -83,8 +83,8 @@
         },
         "catamaran": {
           "title": "Biomimetic Catamaran",
-          "subtitle": "Industrial design thesis focused on creating a pedal-powered catamaran inspired by biomimicry principles and user-centered design.",
-          "tags": ["3D Modeling", "Product Design", "Prototyping"]
+          "subtitle": "Industrial design thesis: a pedal-powered catamaran inspired by biomimicry — from research and 3D modeling to prototyping and construction, centered on the user.",
+          "tags": ["3D Modeling", "Product Design", "Prototyping", "Construction"]
         }
       }
     },
@@ -397,36 +397,36 @@
           ]
         },
         "catamaran": {
-          "headline": "Biomimicry applied to human-powered water mobility.",
+          "headline": "Pedal-powered mobility on the water.",
           "role": "Industrial Designer",
-          "company": "Beyond Code",
-          "companyDescription": "Industrial design thesis: a pedal-powered catamaran inspired by biomimicry and human-centered design.",
-          "roleDescription": "My industrial design thesis focused on a pedal-powered catamaran inspired by biomimicry principles — from research and 3D modeling to prototyping and user-centered validation.",
+          "company": "University Degree",
+          "companyDescription": "Creating a catamaran's propulsion from scratch, inspired by the fluke motion of whales.",
+          "roleDescription": "My industrial design thesis focused on a pedal-powered catamaran inspired by biomimicry — from research and 3D modeling to prototyping and construction, centered on the user.",
           "linkLabel": "View PDF",
           "sections": [
             {
               "title": "Context",
-              "body": "The project explored sustainable leisure mobility on water, combining ergonomic pedaling with a stable twin-hull platform inspired by natural forms and efficient movement."
+              "body": "The project explored sustainable leisure mobility on the water, combining ergonomic pedaling with a stable twin-hull platform inspired by natural forms."
             },
             {
               "title": "Approach",
-              "body": "Research, sketching, and iterative 3D modeling guided decisions around hull geometry, materials, and user posture — always testing against real usability constraints."
+              "body": "Research, sketches, and 3D iteration guided decisions on hull geometry, materials, and posture — always weighed against real-use constraints."
             },
             {
               "title": "Outcome",
-              "body": "A biomimetic product concept that connects my industrial design roots with the user-centered mindset I bring to digital products today."
+              "body": "A biomimetic product that connects my industrial design roots with the user-centered mindset I apply to digital products today."
             }
           ],
           "impact": [
-            { "title": "Sustainable mobility", "body": "A human-powered leisure craft concept, designed for real use on water." },
-            { "title": "Validated ergonomics", "body": "Posture and pedaling iterated through 3D modeling and human-use criteria." },
-            { "title": "Biomimetic concept", "body": "Twin-hull geometry draws from natural forms and efficient movement." }
+            { "title": "Sustainable mobility", "body": "A pedal-powered water-leisure concept, with no engine, designed for real use." },
+            { "title": "Validated ergonomics", "body": "Posture and pedaling defined by human-use criteria." },
+            { "title": "Biomimetic concept", "body": "Propulsion comes from natural forms and efficient movement." }
           ],
           "images": [
-            { "caption": "Concept overview", "alt": "Biomimetic catamaran concept", "layout": "wide" },
-            { "caption": "Hull development", "alt": "Catamaran hull modeling" },
-            { "caption": "Ergonomics & pedaling", "alt": "Pedal-powered ergonomics study" },
-            { "caption": "Prototype snapshot", "alt": "Catamaran prototype" }
+            { "caption": "Overall concept of the project's origin and development", "alt": "Biomimetic catamaran concept", "layout": "wide" },
+            { "caption": "Study of whale propulsion", "alt": "Whale propulsion" },
+            { "caption": "Ergonomics and pedaling", "alt": "Pedal-powered ergonomics study" },
+            { "caption": "Catamaran propulsion", "alt": "Catamaran propulsion" }
           ]
         }
       }

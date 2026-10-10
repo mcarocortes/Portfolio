@@ -354,11 +354,11 @@
 }
 
 .figureMedia.ProyectG {
-    background-image: url(/src/assets/img/Projects/modulAR/modular_Fin.jpg);
+    background-image: url(/src/assets/img/Projects/Catamaran/Catamaran.png);
 }
 
 .figureMedia.ProyectH {
-    background-image: url(/src/assets/img/Projects/Vinos/1.VinosNew.jpg);
+    background-image: url(/src/assets/img/Projects/Catamaran/Catamaran.png);
 }
 
 .figure:nth-child(1) .ProjectNameLink, .figure:nth-child(1):hover .descriptionSection,
