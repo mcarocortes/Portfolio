@@ -78,7 +78,7 @@
       "beyond": {
         "packaging": {
           "title": "Colección de Packaging",
-          "subtitle": "Diseño de packaging comercial para productos alimentarios, creando identidades visuales cohesionadas orientadas al impacto en estantería y reconocimiento de marca.",
+          "subtitle": "Colección de soluciones visuales y packaging comercial orientadas al posicionamiento de marca y optimizadas para impresión gráfica.",
           "tags": ["Packaging", "Diseño Gráfico", "Illustrator"]
         },
         "catamaran": {
@@ -364,37 +364,37 @@
           ]
         },
         "packaging": {
-          "headline": "Impacto en estantería con sistemas de packaging cohesionados.",
+          "headline": "Proyectos de diseño gráfico y packaging",
           "subtitle": "Identidades visuales orientadas al impacto en estantería",
-          "role": "Diseñadora de packaging",
-          "company": "Beyond Code",
-          "companyDescription": "Colección de packaging comercial para productos alimentarios, con identidades visuales cohesionadas orientadas al reconocimiento de marca y a la producción lista para impresión.",
-          "roleDescription": "Diseñé packaging comercial para productos alimentarios, creando identidades visuales cohesionadas orientadas al impacto en estantería, reconocimiento de marca y producción print-ready.",
+          "role": "Diseñado de Logos, Packaging, Identidad de marca",
+          "company": "Diseño Gráfico",
+          "companyDescription": "Colección de soluciones visuales y packaging comercial orientadas al posicionamiento de marca y optimizadas para impresión gráfica.",
+          "roleDescription": "Interpreté los requerimientos del cliente para transformarlos en conceptos de diseño funcionales, gestionando el desarrollo de empaques desde la fase creativa hasta el arte final listo para producción.",
           "linkLabel": "Ver PDF",
           "sections": [
             {
               "title": "Contexto",
-              "body": "Las marcas alimentarias compiten en el lineal y necesitan un packaging que comunique calidad al instante — equilibrando normativa, producción y una identidad visual diferenciada."
+              "body": "Las marcas necesitan diferenciarse en múltiples soportes físicos — desde el punto de venta fino hasta gráficos de gran formato —, manteniendo una identidad visual sólida y técnicamente viable para producción."
             },
             {
               "title": "Enfoque",
-              "body": "Desarrollé sistemas modulares de etiquetas, jerarquías tipográficas y paletas de color que escalan entre referencias manteniendo legibilidad en el punto de venta."
+              "body": "Desarrollé identidades de marca, empaques y piezas gráficas aplicadas (branding comercial e industrial), estructurando sistemas visuales versátiles que adaptan tipografía, color y legibilidad a cada material y escala."
             },
             {
               "title": "Resultado",
-              "body": "Una colección de packaging que refuerza la presencia de marca en retail y muestra pensamiento de diseño más allá de lo digital."
+              "body": "Una colección diversa de piezas impresas y aplicadas que consolidan el reconocimiento de marca, demostrando flexibilidad funcional más allá del entorno digital."
             }
           ],
           "impact": [
-            { "title": "Impacto en lineal", "body": "Cada referencia se reconoce al instante en estantería, incluso a distancia." },
-            { "title": "Sistema de etiquetas", "body": "Un lenguaje visual que escala entre SKUs sin perder coherencia de familia." },
-            { "title": "Identidad reconocible", "body": "Color, tipografía y composición construyen marca más allá del producto suelto." }
+            { "title": "Impacto en lineal", "body": "Sistemas de identidad que garantizan visibilidad e impacto en cualquier escala o soporte." },
+            { "title": "Sistema de etiquetas", "body": "Adaptación precisa del diseño a piezas complejas, empaques de consumo y gráficos industriales." },
+            { "title": "Identidad reconocible", "body": "Lenguaje gráfico unificado que conecta la marca a través de distintos productos y aplicaciones físicas." }
           ],
           "images": [
-            { "caption": "Vista general de la colección", "alt": "Colección de packaging", "layout": "wide" },
-            { "caption": "Sistema principal de etiquetas", "alt": "Etiqueta principal de packaging" },
-            { "caption": "Mockup en estantería", "alt": "Mockup de estantería" },
-            { "caption": "Detalle de impresión", "alt": "Detalle print packaging" }
+            { "caption": "Coficafe: Diseño de etiqueta para bolsas de café", "alt": "Coficafe: Diseño de etiqueta", "layout": "wide" },
+            { "caption": "NattyLife: Diseño de etiqueta para harinas de avena", "alt": "NattyLife: Diseño de etiqueta" },
+            { "caption": "Gameforce: Diseño de logo e identidad de marca ", "alt": "Diseño de logo e identidad de marca" },
+            { "caption": "Conosur: Instructivo de armado y gráfica de payloader", "alt": "Instructivo de armado" }
           ]
         },
         "catamaran": {

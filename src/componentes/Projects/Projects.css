@@ -321,7 +321,9 @@
 .ProyectC,
 .ProyectD,
 .ProyectE,
-.ProyectF  {
+.ProyectF,
+.ProyectG,
+.ProyectH {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -354,7 +356,7 @@
 }
 
 .figureMedia.ProyectG {
-    background-image: url(/src/assets/img/Projects/Catamaran/Catamaran.png);
+    background-image: url(/src/assets/img/Projects/Packaging/Packaging.png);
 }
 
 .figureMedia.ProyectH {

@@ -36,6 +36,13 @@ import cat2 from "../assets/img/Projects/Catamaran/cat2.png";
 import cat3 from "../assets/img/Projects/Catamaran/cat3.png";
 import cat4 from "../assets/img/Projects/Catamaran/cat4.png";
 
+import handPackaging from "../assets/img/Projects/Packaging/handPack.png";
+import packOpportunity from "../assets/img/Projects/Packaging/packOppor.png";
+import pack1 from "../assets/img/Projects/Packaging/pack1.png";
+import pack2 from "../assets/img/Projects/Packaging/pack2.png";
+import pack3 from "../assets/img/Projects/Packaging/pack3.png";
+import pack4 from "../assets/img/Projects/Packaging/pack4.png";
+
 import type { ProjectCaseKey } from "./projectsCatalog";
 
 /** Hero del case study: mockup Hand + vídeo, o imagen estática (Beyond Code). */
@@ -81,9 +88,9 @@ const PROJECT_MEDIA: Record<ProjectCaseKey, ProjectMedia> = {
     opportunityImage: null,
   },
   packaging: {
-    images: [null, null, null, null],
-    hero: { type: "image", src: null },
-    opportunityImage: null,
+    images: [pack1, pack2, pack3, pack4],
+    hero: { type: "image", src: handPackaging },
+    opportunityImage: packOpportunity,
   },
   catamaran: {
     images: [cat1, cat2, cat3, cat4],
