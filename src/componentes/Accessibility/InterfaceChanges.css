@@ -455,9 +455,7 @@ border-bottom: 1px solid var(--shadows);
 
 /************************** CONTACT ***********************/
 .dark-mode #Contact {
-  background:
-    url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,
-    linear-gradient(to bottom, var(--black) 40%, var(--purpura) 95%);
+  background: linear-gradient(to bottom, var(--black) 40%, var(--purpura) 95%);
 }
 
 .dark-mode #Contact .message .title span {

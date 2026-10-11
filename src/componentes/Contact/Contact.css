@@ -8,9 +8,16 @@
   position: relative;
   overflow: hidden;
   z-index: 2;
-  background:
-    url("../../assets/img/Hero/DotsHero.svg") center/cover no-repeat,
-    linear-gradient(to bottom, var(--purpura3) 0%, var(--white) 95%);
+  background: linear-gradient(to bottom, var(--purpura3) 0%, var(--white) 95%);
+}
+
+.contact-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 #Contact .content {
@@ -223,6 +230,7 @@
   #Contact .back {
     transition: none;
   }
+
 }
 
 @media screen and (max-width: 991px) {
