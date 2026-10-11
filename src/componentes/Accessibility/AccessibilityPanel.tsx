@@ -64,7 +64,24 @@ export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
         <Switch
 
           options={[
-            { label: `☀ ${t("bright")}`, value: "light" },
+            {
+              label: (
+                <>
+                  <svg className="switch-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      d="M12 2.2v2.2M12 19.6v2.2M2.2 12h2.2M19.6 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"
+                    />
+                  </svg>
+                  {t("bright")}
+                </>
+              ),
+              value: "light",
+            },
             { label: `☾ ${t("dark")}`, value: "dark" }
           ]}
           value={darkMode ? "dark" : "light"}

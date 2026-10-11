@@ -1,7 +1,8 @@
+import type { ReactNode } from "react";
 import "./Switch.css";
 
 interface Option {
-    label: string;
+    label: ReactNode;
     value: string;
 }
 

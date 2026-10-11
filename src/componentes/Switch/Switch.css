@@ -8,6 +8,13 @@
   backdrop-filter: blur(12px);
 }
 
+.switch-icon {
+  width: 1.35em;
+  height: 1.35em;
+  margin-right: 0.28em;
+  vertical-align: -0.28em;
+}
+
 .switch {
   flex: 1 1 0;
   border: 0;
