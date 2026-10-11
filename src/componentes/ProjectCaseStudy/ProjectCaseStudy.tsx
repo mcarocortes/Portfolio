@@ -7,7 +7,7 @@ import {
     useTransform,
     type Variants,
 } from "framer-motion";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import CaseStudyIcon from "./CaseStudyIcon";
@@ -42,6 +42,23 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const HIDE_RESULTS_GALLERY = new Set<ProjectCaseKey>(["mimi"]);
 
 const viewport = { once: true, amount: 0.22 };
+const NARROW_GALLERY_QUERY = "(max-width: 991px)";
+
+function useNarrowGallery() {
+    const [narrow, setNarrow] = useState(() =>
+        typeof window !== "undefined" && window.matchMedia(NARROW_GALLERY_QUERY).matches,
+    );
+
+    useEffect(() => {
+        const media = window.matchMedia(NARROW_GALLERY_QUERY);
+        const onChange = () => setNarrow(media.matches);
+        onChange();
+        media.addEventListener("change", onChange);
+        return () => media.removeEventListener("change", onChange);
+    }, []);
+
+    return narrow;
+}
 
 const fadeReveal: Variants = {
     hidden: { opacity: 0, y: 32, filter: "blur(10px)" },
@@ -104,7 +121,50 @@ type GalleryFigureProps = {
     settleEarly?: boolean;
 };
 
-function GalleryFigure({
+function GalleryMedia({
+    src,
+    alt,
+    placeholderLabel,
+    index,
+}: Pick<GalleryFigureProps, "src" | "alt" | "placeholderLabel" | "index">) {
+    if (src) {
+        return <img src={src} alt={alt} loading="lazy" />;
+    }
+
+    return (
+        <div className="project-case__placeholder" aria-hidden="true">
+            <span className="project-case__placeholder-label">{placeholderLabel}</span>
+            <span className="project-case__placeholder-index">
+                {String(index + 1).padStart(2, "0")}
+            </span>
+        </div>
+    );
+}
+
+function GalleryFigureStatic({
+    layout,
+    src,
+    caption,
+    alt,
+    placeholderLabel,
+    index,
+}: GalleryFigureProps) {
+    return (
+        <figure className={`project-case__figure project-case__figure--${layout}`}>
+            <div className="project-case__media">
+                <GalleryMedia
+                    src={src}
+                    alt={alt}
+                    placeholderLabel={placeholderLabel}
+                    index={index}
+                />
+            </div>
+            <figcaption className="project-case__caption">{caption}</figcaption>
+        </figure>
+    );
+}
+
+function GalleryFigureMotion({
     layout,
     src,
     caption,
@@ -138,16 +198,12 @@ function GalleryFigure({
                 variants={cardFlipReduced}
             >
                 <div className="project-case__media">
-                    {src ? (
-                        <img src={src} alt={alt} loading="lazy" />
-                    ) : (
-                        <div className="project-case__placeholder" aria-hidden="true">
-                            <span className="project-case__placeholder-label">{placeholderLabel}</span>
-                            <span className="project-case__placeholder-index">
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
-                        </div>
-                    )}
+                    <GalleryMedia
+                        src={src}
+                        alt={alt}
+                        placeholderLabel={placeholderLabel}
+                        index={index}
+                    />
                 </div>
                 <figcaption className="project-case__caption">{caption}</figcaption>
             </motion.figure>
@@ -167,22 +223,24 @@ function GalleryFigure({
             }}
         >
             <motion.div className="project-case__media">
-                {src ? (
-                    <img src={src} alt={alt} loading="lazy" />
-                ) : (
-                    <div className="project-case__placeholder" aria-hidden="true">
-                        <span className="project-case__placeholder-label">{placeholderLabel}</span>
-                        <span className="project-case__placeholder-index">
-                            {String(index + 1).padStart(2, "0")}
-                        </span>
-                    </div>
-                )}
+                <GalleryMedia
+                    src={src}
+                    alt={alt}
+                    placeholderLabel={placeholderLabel}
+                    index={index}
+                />
             </motion.div>
             <motion.figcaption className="project-case__caption" style={{ opacity: captionOpacity }}>
                 {caption}
             </motion.figcaption>
         </motion.figure>
     );
+}
+
+function GalleryFigure(props: GalleryFigureProps) {
+    const narrowGallery = useNarrowGallery();
+    if (narrowGallery) return <GalleryFigureStatic {...props} />;
+    return <GalleryFigureMotion {...props} />;
 }
 
 type ProjectCaseStudyProps = {
