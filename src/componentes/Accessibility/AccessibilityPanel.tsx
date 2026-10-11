@@ -35,15 +35,13 @@ export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
       onClick={(e) => e.stopPropagation()}
     >
 
-      <div className="d-flex justify-content-between mb-1">
-        <p className="uppercase">{t("accessibility")}</p>
-
-        {(
-          <button
-            className="btn-close"
-            onClick={() => setOpen(false)}
-          />
-        )}
+      <div className="accessibility-panel__head">
+        <p className="accessibility-panel__title">{t("accessibility")}</p>
+        <button
+          className="btn-close"
+          aria-label={t("accessibility")}
+          onClick={() => setOpen(false)}
+        />
       </div>
 
       <div>

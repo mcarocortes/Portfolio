@@ -1,15 +1,18 @@
 /* ************************************************************* NAVBAR ************************************************************** */
 .navbar {
-  padding: 0;
+  padding: 0 16px;
   position: fixed !important;
   z-index: 1100;
-  top: 30px;
+  top: 22px;
+  left: 0;
+  display: flex;
+  justify-content: center !important;
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
-  width: 100vw;
+  width: 100% !important;
   height: auto;
-  /* NUEVO MOSTRAR Y OCULTAR NAVBAR */
-  transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+  pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* HIDE NAVBAR ON SCROLL */
@@ -24,21 +27,24 @@
   place-items: center;
   flex-flow: row;
 
-  background-color: var(--white-transparent);
-  border: 1px solid var(--white-transparent);
-  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(28px) saturate(1.7);
+  -webkit-backdrop-filter: blur(28px) saturate(1.7);
   mix-blend-mode: normal;
   background-clip: border-box;
-  border-radius: 6px;
-  box-shadow: 1px 1px 3px var(--shadows);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 12px 32px rgba(18, 19, 22, 0.08);
 
-  margin-left: var(--margin-left-rigth-general);
-  margin-right: var(--margin-left-rigth-general);
-  padding: 10px;
-  height: 100%;
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin: 0;
+  padding: 7px 10px 7px 12px;
+  height: auto;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  gap: 0.65rem;
+  pointer-events: auto;
 }
 
 .logoNavM {
@@ -47,28 +53,33 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--white-transparent);
-  width: 40px;
-  height: 35px;
-  transition: color 0.2s ease, transform 0.2s ease;
-  border-radius: 6px;
+  width: 38px;
+  height: 38px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  border-radius: 8px;
   overflow: hidden;
-  border: solid 1px var(--purpura);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   flex-shrink: 0;
 }
 
 .logoNavM:hover {
   background-image: url("/src/assets/img/Navbar/mLogoPurple.svg");
-  transform: scale(1.05);
-  box-shadow: 1px 1px 3px var(--shadows);
+  transform: translateY(-1px);
+  border-color: rgba(90, 18, 250, 0.55);
+  box-shadow: 0 8px 18px rgba(90, 18, 250, 0.18);
+}
 
+.logoNavM:active {
+  transform: scale(0.96);
 }
 
 .nav-menu-wrapper-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-width: 0;
+  gap: 1.35rem;
 }
 
 .nav-menu.new {
@@ -96,28 +107,27 @@
   width: auto;
   max-width: 100%;
   position: static;
-  grid-column-gap: 1.2rem;
-  grid-row-gap: 1.2rem;
+  gap: 1.2rem;
 }
 
 
 /* *********************************** NAVBAR TEXTO *******************************/
 .navbartext {
   color: var(--text);
-
   display: flex;
   align-items: center;
   text-transform: uppercase;
-
-  padding-top: 5px;
   height: auto;
   width: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 6px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 10px;
+  letter-spacing: 0.04em;
+  font-size: var(--font-size-base);
   text-decoration: none;
-
-  transition: color 0.1s ease, transform 0.1s ease;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
   outline: none;
 }
 
@@ -129,37 +139,57 @@
   flex: 0 1 auto;
   min-width: 0;
   line-height: 1.4;
-  padding-top: 5px;
-}
-
-.accessibility-button {
-  flex-shrink: 0;
 }
 
 .btnContact {
   background: var(--gradient-purple);
   color: var(--white) !important;
+  box-shadow: 0 8px 18px rgba(90, 18, 250, 0.22);
 }
 
-.navbartext:hover, .navbartext.active  {
+.navbartext:hover,
+.navbartext.active {
   color: var(--purpura);
   text-decoration: none;
-  background-color: var(--white-transparent);
-  box-shadow: 1px 1px 3px var(--shadows);
-  transform: scale(1.05);
+  background-color: rgba(90, 18, 250, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  transform: none;
+}
+
+.navbartext:active {
+  transform: scale(0.97);
+}
+
+.navbartext.btnContact,
+.navbartext.btnContact.active {
+  color: var(--white) !important;
+  background: var(--gradient-purple);
+  box-shadow: 0 8px 18px rgba(90, 18, 250, 0.22);
+}
+
+.navbartext.btnContact:hover {
+  color: var(--white) !important;
+  background: var(--gradient-purple);
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.navbartext.btnContact:active {
+  transform: translateY(0) scale(0.98);
+  filter: brightness(0.96);
 }
 
 
 /* Desktop intermedio: el texto en español no cabe y no debe subir de altura */
 @media screen and (min-width: 992px) and (max-width: 1400px) {
   .nav-buttons-wrapper .navbartext {
-    font-size: clamp(0.72rem, 0.04rem + 1.37vw, 1rem);
-    padding-left: clamp(6px, 0.4vw + 4px, 15px);
-    padding-right: clamp(6px, 0.4vw + 4px, 15px);
+    font-size: var(--font-size-base);
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
   }
 
   .nav-buttons-wrapper.new {
-    grid-column-gap: clamp(0.3rem, 0.7vw, 1.2rem);
+    gap: 1rem;
   }
 }
 
@@ -177,8 +207,23 @@
 
 @media screen and (max-width: 991px) {
 
-  .bg-navbar{
-    padding: 5px 20px;
+  .navbar {
+    top: 30px;
+    padding-left: var(--margin-left-rigth-general) !important;
+    padding-right: var(--margin-left-rigth-general) !important;
+    justify-content: stretch !important;
+  }
+
+  .bg-navbar {
+    width: 100%;
+    max-width: none;
+    justify-content: space-between;
+    padding: 6px 8px 6px 10px;
+  }
+
+  .nav-menu-wrapper-right {
+    margin-left: auto;
+    gap: 0.2rem;
   }
   /******************BOTON TOGGLER******************/
   /*Boton*/
@@ -274,18 +319,27 @@
   .collapsado {
     display: flex;
     position: fixed;
-    top: 110px;
+    top: 98px;
+    left: auto;
     right: var(--margin-left-rigth-general);
-    padding: 10px 20px;
-    z-index: auto;
-    min-width: 252px;
-    background-color: var(--white-transparent);
-    backdrop-filter: blur(12px) !important;
-    border-radius: 6px;
-      font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
-    box-shadow: 1px 1px 3px var(--shadows);
+    transform: none;
+    padding: 8px;
+    z-index: 1100;
+    min-width: 240px;
+    background-color: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(28px) saturate(1.7) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(1.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    border-radius: 18px;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      0 16px 36px rgba(18, 19, 22, 0.12);
+  }
 
+  .collapsado.navbar-hidden {
+    transform: translateY(-220%);
   }
 
   .collapse.collapsado {
@@ -311,14 +365,17 @@
 }
 
   .menuLinktext {
+    display: block;
     text-transform: uppercase;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 999px;
     color: var(--text);
-    transition: color 0.2s ease, transform 0.2s ease;
+    letter-spacing: 0.04em;
+    font-size: var(--font-size-base);
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.18s ease;
     outline: none;
     text-decoration: none;
-    padding: 10px 30px;
+    padding: 0.7rem 1.25rem;
     line-height: 1.2rem;
   }
 
@@ -328,14 +385,14 @@
 
 
   .menuLinktext:hover {
-    transform: scale(1.05);
+    transform: none;
     text-decoration: none;
     color: var(--purpura);
-    background-color: var(--white-transparent);
-    box-shadow: 1px 1px 3px var(--shadows);
+    background-color: rgba(90, 18, 250, 0.14);
+    box-shadow: none;
   }
 
-  .menuLinktext:active { 
+  .menuLinktext:active {
     color: var(--purpura);
     transform: scale(0.98);
     text-decoration: none;
@@ -399,18 +456,18 @@
   }
 
   .bg-navbar {
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
+    max-width: none;
+    height: auto;
     margin-top: 0;
-    padding-left: 40px;
-    box-shadow: 1px 1px 3px #797979b3;
+    padding: 6px 8px 6px 10px;
+    border-radius: 10px;
   }
 
   .collapsado {
-    margin-top: -5px;
+    top: 98px;
+    margin-top: 0;
   }
 }
 
@@ -437,15 +494,16 @@
   }
 
   .bg-navbar {
-    grid-column-gap: 6vw;
-    grid-row-gap: 6vw;
-    height: 100%;
+    width: 100%;
+    max-width: none;
+    height: auto;
     margin-top: 0;
   }
 
 
   .collapsado {
-    margin-top: -10px;
+    top: 98px;
+    margin-top: 0;
   }
 }
 

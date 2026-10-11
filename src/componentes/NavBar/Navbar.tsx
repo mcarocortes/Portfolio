@@ -121,7 +121,7 @@ export default function Navbar() {
               </div>
             </button>
             <button
-              className="navbartext accessibility-button"
+              className={`navbartext accessibility-button${accessibilityOpen ? " is-open" : ""}`}
               onMouseDown={(e) => {
                 e.stopPropagation();
               }}
