@@ -359,6 +359,35 @@ div .exterior .icon {
 .icon--focus    { animation-delay: 0.5s, 0.4s; }
 .icon--dev      { animation-delay: 1s, 0.8s; }
 
+@media screen and (min-aspect-ratio: 8/5) and (max-height: 560px) {
+.underAbout{
+  display: none;
+}
+
+  .signature {
+    margin-top: 5px;
+  }
+
+.signatureText span{
+  display: none;
+}
+
+.about-content .pa{
+  width: 50% !important;
+  margin-top: -20px;
+
+}
+
+.about-intro {
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: auto 75%;
+}
+
+.signature {
+  display: none;
+}
+}
 
 
 
