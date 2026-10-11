@@ -455,34 +455,49 @@ border-bottom: 1px solid var(--shadows);
 
 /************************** CONTACT ***********************/
 .dark-mode #Contact {
-  background: url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,
-  linear-gradient(to bottom, var(--black) 40%, var(--purpura) 95%);
-}
-.dark-mode .btnAContacto{
-  background: var(--gradientWhite);
-  color: var(--black);
-  box-shadow: 2px 2px 8px var(--purpura3);
+  background:
+    url("../../assets/img/Hero/DotsHero_darkmode.svg") center/cover no-repeat,
+    linear-gradient(to bottom, var(--black) 40%, var(--purpura) 95%);
 }
 
-.dark-mode .madeWith span {
-    color: var(--purpura3);
+.dark-mode #Contact .message .title span {
+  background: linear-gradient(115deg, #ffffff 0%, var(--purpura4) 42%, var(--purpura3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.dark-mode .items ul li {
-  border-top: 1px solid var(--purpura3);
-  border-bottom: 1px solid var(--purpura3);
-}
-
-.dark-mode .list:hover{
-  color: var(--purpura3);
-}
-
-.dark-mode .back{
-  background-color: var(--black-transparent);
+.dark-mode #Contact .btnAContacto {
+  background: var(--gradient-purple);
   color: var(--white);
-  border-radius: 99px;
+  box-shadow: 0 16px 34px rgba(90, 18, 250, 0.4);
 }
 
-.dark-mode .back:hover{
-  color: var(--purpura3);
+.dark-mode #Contact .madeWith span {
+  color: var(--purpura4);
+}
+
+.dark-mode #Contact .list {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #f3f1ec;
+}
+
+.dark-mode #Contact .list:hover {
+  background: var(--purpura);
+  border-color: transparent;
+  color: var(--white);
+}
+
+.dark-mode #Contact .back {
+  background: rgba(8, 8, 14, 0.45);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f3f1ec;
+  border-radius: 50%;
+}
+
+.dark-mode #Contact .back:hover {
+  background: var(--purpura);
+  border-color: transparent;
+  color: var(--white);
 }
