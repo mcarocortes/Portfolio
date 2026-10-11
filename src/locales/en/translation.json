@@ -66,9 +66,9 @@
           "tags": ["React", "TypeScript", "PWA", "Clinical UX/UI"]
         },
         "mimi": {
-          "title": "AI Assistant",
-          "subtitle": "An AI-powered assistant interface that demonstrates practical integration of modern APIs, conversational UX, and cloud-ready front-end development.",
-          "tags": ["Web Design", "API Development", "React", "Azure"]
+          "title": "MIMI AI",
+          "subtitle": "MIMI AI turns vague requests into clearer instructions, so people get more useful answers from AI. It is a PWA that combines chat, guided help, and personalization in an intuitive, cross-platform experience.",
+          "tags": ["PWA", "Vite", "React 19", "Tailwind"]
         },
         "vinos": {
           "title": "Vinos y Sabores",
@@ -299,36 +299,36 @@
           ]
         },
         "mimi": {
-          "headline": "Conversational UX powered by AI.",
-          "role": "Front-End Developer",
+          "headline": "MIMI AI",
+          "role": "Front-end Developer",
           "company": "Personal project",
-          "companyDescription": "An AI assistant interface that demonstrates practical integration of modern APIs, conversational UX, and cloud-ready front-end development.",
-          "roleDescription": "I built an AI assistant interface that combines conversational interaction, API integration, and cloud-ready front-end patterns in a polished product shell.",
+          "companyDescription": "MIMI AI is a PWA that helps users get better answers from artificial intelligence through a guided experience for writing instructions. Instead of only answering questions, it includes an assistant that turns vague requests into clearer instructions, explains the improvements, and lets the user choose which one to send.",
+          "roleDescription": "I designed and developed the product from start to finish, from defining the experience to the Front-end build. I built the chat interface, navigation, settings, and analytics, with its own visual system and a responsive experience for mobile and desktop.",
           "linkLabel": "View prototype",
           "sections": [
             {
-              "title": "Context",
-              "body": "The project explores how AI can feel useful rather than gimmicky — with clear interaction states, predictable feedback, and a UI that supports real tasks."
+              "title": "Working with AI",
+              "body": "How can we help the user write better instructions before asking the AI for an answer?"
             },
             {
-              "title": "Approach",
-              "body": "I focused on conversation layout, loading and error states, and a component structure that can evolve as models and APIs change."
+              "title": "Product experience",
+              "body": "How can we add help in context without interrupting the natural flow of a conversation?"
             },
             {
-              "title": "Outcome",
-              "body": "A demonstrator that shows practical AI integration, strong UX fundamentals, and production-minded front-end development."
+              "title": "Access and availability",
+              "body": "How can we offer an experience close to a native app, available on different devices, without asking for an account to try it?"
             }
           ],
           "impact": [
-            { "title": "Useful AI, not a gimmick", "body": "Conversation serves a real task, with predictable feedback at every step." },
-            { "title": "Clear interaction states", "body": "Loading, error, and response are obvious; there is no black box." },
-            { "title": "Conversational UX", "body": "Chat layout and components are built to evolve with the API." }
+            { "title": "User-focused intelligent assistance", "body": "Design and implementation of an assistant that compares the original request with an improved version, explains the changes, and lets the user choose which instruction to send." },
+            { "title": "A working, customizable product", "body": "A chat with real-time replies, templates for different uses, history, and preferences for model, tone, language, and theme, plus a rating system to collect opinions on the answers." },
+            { "title": "Cross-platform PWA", "body": "An installable, responsive app, with a demo mode that works without setting up the backend, and an architecture ready for sign-in, remote saving, and AI services." }
           ],
           "images": [
-            { "caption": "Assistant home screen", "alt": "AI assistant home", "layout": "wide" },
-            { "caption": "Conversation flow", "alt": "Chat conversation UI" },
-            { "caption": "API-driven states", "alt": "Loading and response states" },
-            { "caption": "Settings & integrations", "alt": "Settings panel" }
+            { "caption": "MIMI AI visual identity", "alt": "Assistant home page", "layout": "wide" },
+            { "caption": "Assistant flow: original request, improved suggestion, and the user's choice", "alt": "Chat interface" },
+            { "caption": "Chat interface and real-time replies", "alt": "Loading and response states" },
+            { "caption": "History, settings, and analytics views", "alt": "Settings panel" }
           ]
         },
         "vinos": {

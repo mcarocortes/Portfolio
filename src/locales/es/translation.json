@@ -67,8 +67,8 @@
         },
         "mimi": {
           "title": "MIMI AI",
-          "subtitle": "Interfaz de asistente con IA que demuestra integración práctica de APIs modernas, UX conversacional y desarrollo front-end preparado para la nube.",
-          "tags": ["Diseño Web", "Desarrollo API", "React", "Tailwind"]
+          "subtitle": "MIMI AI convierte peticiones imprecisas en instrucciones más claras para conseguir respuestas más útiles de la inteligencia artificial. Es una PWA que combina chat, asistencia guiada y personalización en una experiencia intuitiva y multiplataforma.",
+          "tags": ["PWA", "Vite", "React 19", "Tailwind"]
         },
         "vinos": {
           "title": "Vinos y Sabores",
@@ -299,36 +299,36 @@
           ]
         },
         "mimi": {
-          "headline": "UX conversacional impulsada por IA.",
-          "role": "Desarrolladora Front-End",
+          "headline": "MIMI AI",
+          "role": "Desarrolladora Front-end",
           "company": "Proyecto personal",
-          "companyDescription": "Interfaz de asistente con IA que demuestra integración práctica de APIs modernas, UX conversacional y desarrollo front-end preparado para la nube.",
-          "roleDescription": "Construí una interfaz de asistente con IA que combina interacción conversacional, integración API y patrones front-end preparados para la nube.",
+          "companyDescription": "MIMI AI es una PWA que ayuda a los usuarios a obtener mejores respuestas de la inteligencia artificial mediante una experiencia guiada para redactar instrucciones. En lugar de limitarse a responder preguntas, incluye un asistente que convierte peticiones imprecisas en instrucciones más claras, explica las mejoras y permite elegir cuál enviar.",
+          "roleDescription": "Diseñé y desarrollé el producto de principio a fin, desde la definición de la experiencia hasta la implementación Front-end. Construí la interfaz del chat, la navegación, los ajustes y la analítica, con un sistema visual propio y una experiencia responsive para móvil y escritorio.",
           "linkLabel": "Ver prototipo",
           "sections": [
             {
-              "title": "Contexto",
-              "body": "El proyecto explora cómo la IA puede ser útil y no un gimmick: estados claros, feedback predecible y UI orientada a tareas reales."
+              "title": "Interacción con la IA",
+              "body": "¿Cómo ayudar al usuario a formular mejores instrucciones antes de pedir una respuesta a la inteligencia artificial?"
             },
             {
-              "title": "Enfoque",
-              "body": "Me centré en layout conversacional, estados de carga/error y una estructura de componentes que evoluciona con modelos y APIs."
+              "title": "Experiencia de producto",
+              "body": "¿Cómo integrar la ayuda en contexto sin interrumpir el flujo natural de una conversación?"
             },
             {
-              "title": "Resultado",
-              "body": "Un demostrador de integración práctica de IA, fundamentos UX sólidos y desarrollo front-end con mentalidad de producción."
+              "title": "Acceso y disponibilidad",
+              "body": "¿Cómo ofrecer una experiencia parecida a la de una aplicación nativa, disponible en distintos dispositivos y sin pedir una cuenta para probarla?"
             }
           ],
           "impact": [
-            { "title": "IA útil, no gimmick", "body": "La conversación sirve a una tarea real, con feedback predecible en cada paso." },
-            { "title": "Estados claros", "body": "Carga, error y respuesta se entienden al instante; no hay “caja negra”." },
-            { "title": "UX conversacional", "body": "El layout de chat y los componentes están pensados para evolucionar con la API." }
+            { "title": "Asistencia inteligente orientada al usuario", "body": "Diseño e implementación de un asistente que compara la petición original con una versión mejorada, explica los cambios y permite elegir qué instrucción enviar." },
+            { "title": "Producto funcional y personalizable", "body": "Chat con respuestas en tiempo real, plantillas para distintos usos, historial y preferencias de modelo, tono, idioma y tema, junto con un sistema de valoraciones para recoger opiniones sobre las respuestas." },
+            { "title": "PWA multiplataforma", "body": "Aplicación instalable y responsive, con un modo de demostración que funciona sin configurar el backend y una arquitectura preparada para el inicio de sesión, el guardado remoto y los servicios de IA." }
           ],
           "images": [
-            { "caption": "Pantalla inicial del asistente", "alt": "Home asistente IA", "layout": "wide" },
-            { "caption": "Flujo conversacional", "alt": "UI de chat" },
-            { "caption": "Estados con API", "alt": "Estados carga y respuesta" },
-            { "caption": "Ajustes e integraciones", "alt": "Panel de ajustes" }
+            { "caption": "Identidad visual de MIMI AI", "alt": "Página de inicio del asistente", "layout": "wide" },
+            { "caption": "Flujo del asistente: petición original, propuesta mejorada y elección del usuario", "alt": "Interfaz del chat" },
+            { "caption": "Interfaz del chat y respuestas en tiempo real", "alt": "Estados de carga y respuesta" },
+            { "caption": "Vistas de historial, ajustes y panel de analítica", "alt": "Panel de ajustes" }
           ]
         },
         "vinos": {
