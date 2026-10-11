@@ -76,7 +76,7 @@ export default function Projects() {
 
     useEffect(() => {
         const container = document.querySelector('.containers') as HTMLElement;
-        const isDesktop = () => window.innerWidth > 479;
+        const isDesktop = () => window.innerWidth > 991;
 
         const initPaths = () => {
             if (!isDesktop()) return;
@@ -87,7 +87,10 @@ export default function Projects() {
         window.addEventListener("resize", initPaths);
 
         const onScroll = () => {
-            if (!isDesktop() || !wrapperRef.current || !container) return;
+            if (!isDesktop() || !wrapperRef.current || !container) {
+                if (wrapperRef.current) wrapperRef.current.style.transform = "none";
+                return;
+            }
 
             const rect = container.getBoundingClientRect();
             const scrollable = container.offsetHeight - window.innerHeight;

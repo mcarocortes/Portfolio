@@ -446,30 +446,176 @@
 
 @media screen and (max-width: 991px) {
 
-    .figure {
-        width: 75vw;
-
+    .containers {
+        height: auto;
+        margin-top: 0;
     }
 
-    .beyondProjects{
+    .wrapperA {
+        position: static;
+        height: auto;
+        overflow: visible;
+        justify-content: flex-start;
+    }
+
+    .wrapperB {
         flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        transform: none !important;
+        gap: 1.75rem;
+    }
+
+    .figure,
+    .beyondProjects .figure {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    .figureMedia {
+        position: relative;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        border-radius: 0;
+    }
+
+    .ProjectNameLink,
+    .beyondCode .ProjectNameLink {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        left: auto;
+        align-self: auto;
+        max-width: calc(100% - 2rem);
+        font-size: var(--font-size-h4);
+        line-height: 1.25;
+    }
+
+    .descriptionSection,
+    .beyondSection .descriptionSection,
+    .figure .descriptionSection {
+        position: relative;
+        z-index: 2;
+        bottom: auto;
+        left: auto;
+        display: flex;
+        height: auto;
+        min-height: 0;
+        margin-top: 0;
+        padding: 1.2rem 1.15rem 1.15rem;
+        border-radius: 0;
+        align-items: stretch;
+        text-align: left;
+        background: var(--white);
+        border: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .figure .projectDetails,
+    .beyondSection .figure .projectDetails,
+    .descriptionSection .projectDetails {
+        opacity: 1;
+        color: var(--text);
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.45;
+        padding: 0.15rem 0 0;
+    }
+
+    .buildList {
+        display: flex;
+        align-items: flex-end;
+        margin-top: 0.85rem;
+    }
+
+    .buildList-tags {
+        justify-content: flex-start;
+    }
+
+    .beyondProjects {
+        flex-direction: column;
+        gap: 1.75rem;
     }
 
     .beyondCode {
         height: auto;
     }
-    .beyondCode .ProjectNameLink{
-    font-size: var(--font-size-h2);
-}
 
-    .beyondProjects .figure{
-        height: 70vh;
+    .beyondSection p {
         width: 100%;
-        margin-bottom: 40px;    }
+    }
 
+    .figure:nth-child(n):hover .descriptionSection,
+    .beyondProjects .figure:nth-child(n):hover .descriptionSection {
+        background: var(--white);
+        background-color: var(--white);
+        box-shadow: none;
+        border: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 
-    .beyondSection p{
-    width: 70vw;
+    .figure .buildList .buildItem,
+    .figure:hover .buildList .buildItem {
+        background-color: transparent;
+        color: var(--text);
+        border: 1px solid rgba(31, 34, 31, 0.28);
+        box-shadow: none;
+    }
+
+    .figure .descriptionSection .btnArrow,
+    .figure .descriptionSection:hover .btnArrow {
+        background-color: transparent;
+        color: var(--text);
+        border: 1px solid rgba(31, 34, 31, 0.28);
+        box-shadow: none;
+    }
+
+    .figure .descriptionSection .btnArrow:hover {
+        background-color: var(--purpura);
+        color: var(--white);
+        border-color: var(--purpura);
+    }
+
+    .dark-mode .figure .descriptionSection,
+    .dark-mode .beyondSection .descriptionSection,
+    .dark-mode .figure:nth-child(n):hover .descriptionSection,
+    .dark-mode .beyondProjects .figure:nth-child(n):hover .descriptionSection {
+        background: var(--black);
+        background-color: var(--black);
+        border: 0;
+        box-shadow: none;
+    }
+
+    .dark-mode .figure .projectDetails,
+    .dark-mode .beyondSection .figure .projectDetails {
+        color: rgba(244, 244, 244, 0.92);
+    }
+
+    .dark-mode .figure .buildList .buildItem,
+    .dark-mode .figure:hover .buildList .buildItem {
+        background-color: transparent;
+        color: rgba(244, 244, 244, 0.92);
+        border-color: rgba(244, 244, 244, 0.35);
+    }
+
+    .dark-mode .figure .descriptionSection .btnArrow,
+    .dark-mode .figure .descriptionSection:hover .btnArrow {
+        background-color: transparent;
+        color: var(--white);
+        border-color: rgba(244, 244, 244, 0.35);
+    }
+
+    .dark-mode .figure .descriptionSection .btnArrow:hover {
+        background-color: var(--purpura);
+        color: var(--white);
+        border-color: var(--purpura);
     }
 
 }
@@ -483,88 +629,26 @@
         justify-content: flex-start;
     }
 
-    .wrapperB {
-        height: 50vh;
-    }
-
-    .figure {
-        width: 70vw;
-        overflow: visible;
-    }
-
-    .figureMedia{
-        border-radius: 25px;
-    }
-
     .figure:hover .figureMedia {
         transform: none;
     }
-    .ProjectNameLink {
-        font-size: var(--font-size-h2);
-    }
 
-    .descriptionSection {
-        bottom: -110px;        
-        padding: 15px;
-        height: 140px;
-    }
-
-    .btnArrow{
-        height: 35px;
-        width: 35px;
-        font-size: 30px;
-        bottom:15px;
-        right:15px;
-    }
-
-
-    .figure .projectDetails,.beyondSection .figure .projectDetails {
-        opacity: 1;
-        color: var(--black);
-        font-size: var(--font-size-underBase);
-        line-height: 20px;
-    }
-
-
-
-    .buildList {
+    .buildList-tags {
         display: none;
     }
 
-
-    .figure .descriptionSection {
-        box-shadow: 5px 0 5px var(--black-transparent);
-        border: solid 1px var(--blancotrans);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+    .buildList {
+        justify-content: flex-end;
+        margin-top: 0.45rem;
     }
 
-    .figure:nth-child(1) .descriptionSection {
-        background-color: rgba(255, 255, 255, 0.733);
+    .btnArrow {
+        height: 40px;
+        width: 40px;
+        font-size: 26px;
     }
 
-.figure:nth-child(1) .descriptionSection, 
-.figure:nth-child(2) .descriptionSection,
-.figure:nth-child(3) .descriptionSection,
-.figure:nth-child(4) .descriptionSection,
-.figure:nth-child(5) .descriptionSection,
-.figure:nth-child(6) .descriptionSection,
-.beyondProjects .figure:nth-child(1) .descriptionSection,
-.beyondProjects .figure:nth-child(2) .descriptionSection{
-        background-color:  rgba(255, 255, 255, 0.733);
-}
-
-     .beyondSection .descriptionSection {
-        bottom: -10px;        
-        min-height: 70px;
-        padding: 10px;
-    }
-
-    .beyondSection .figure{
-        height: 450px;
-        margin-bottom: 50px;
-    }
-    .beyondSection p{
+    .beyondSection p {
         width: 100%;
     }
 }
@@ -605,22 +689,9 @@
 
     }
 
-    .figure {
-        width: 100%;
-        height: 250px;
-        overflow: visible;
-        margin-bottom: 0;
-    }
-
-    .ProjectNameLink, .beyondCode .ProjectNameLink {
-        font-size: var(--font-size-h3);
-    }
-
-
-    .descriptionSection {
-        display: none;
-        /*padding: 18px;
-        bottom: -120px;*/
+    .ProjectNameLink,
+    .beyondCode .ProjectNameLink {
+        font-size: var(--font-size-base);
     }
 
     .containers {
