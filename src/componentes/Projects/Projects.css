@@ -446,6 +446,10 @@
 
 @media screen and (max-width: 991px) {
 
+    .main-wrapper {
+        will-change: auto;
+    }
+
     .containers {
         height: auto;
         margin-top: 0;

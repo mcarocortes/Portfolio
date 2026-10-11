@@ -1,6 +1,6 @@
 import './Projects.css'
 import { Link } from 'react-router-dom'
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import useProjectsEntranceFade from "../../hooks/useProjectsEntranceFade";
 import { ProjectsPathBeyond } from './ProjectsPath';
@@ -36,7 +36,10 @@ export default function Projects() {
 
     const { t, i18n } = useTranslation();
     const projectsFade = useProjectsEntranceFade();
-    const enterY = (1 - projectsFade) * 48;
+    const [isStackedLayout, setIsStackedLayout] = useState(
+        () => window.matchMedia("(max-width: 991px)").matches
+    );
+    const enterY = isStackedLayout ? 0 : (1 - projectsFade) * 48;
 
     const projectsData = useMemo(
         () => mapProjects(PROJECTS_ITEMS, t),
@@ -75,6 +78,11 @@ export default function Projects() {
     };
 
     useEffect(() => {
+        const stackedQuery = window.matchMedia("(max-width: 991px)");
+        const onStackedChange = () => setIsStackedLayout(stackedQuery.matches);
+        onStackedChange();
+        stackedQuery.addEventListener("change", onStackedChange);
+
         const container = document.querySelector('.containers') as HTMLElement;
         const isDesktop = () => window.innerWidth > 991;
 
@@ -136,6 +144,7 @@ export default function Projects() {
         onScroll();
 
         return () => {
+            stackedQuery.removeEventListener("change", onStackedChange);
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("resize", initPaths);
         };
@@ -148,7 +157,7 @@ export default function Projects() {
                 <div
                     className="main-wrapper projects-enter"
                     style={{
-                        transform: `translateY(${enterY}px)`,
+                        transform: isStackedLayout ? undefined : `translateY(${enterY}px)`,
                         opacity: 1,
                         visibility:  "visible",
                         pointerEvents: projectsFade < 0.02 ? "none" : "auto",
