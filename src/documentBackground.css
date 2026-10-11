@@ -1,0 +1,11 @@
+/* Después de Bootstrap, para que el fondo de la página coincida con las secciones. */
+html,
+body {
+  background-color: var(--white);
+}
+
+html.dark-mode,
+html.dark-mode body,
+body.dark-mode {
+  background-color: var(--black);
+}

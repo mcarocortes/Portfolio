@@ -13,11 +13,12 @@ export default function About() {
     const projectsFade = useProjectsEntranceFade();
 
 
-    /* Intro: visible durante act3, se desvanece al entrar el bloque About */
-    const { act3 } = useScrollTransitionContext(); // act4 y progress ya no hacen falta aquí
-    const introOpacity = Math.min(1, act3 * 1.3);
+    /* About queda sólido antes de que el hero se retire, para no dejar un panel blanco en medio. */
+    const { act2, act3 } = useScrollTransitionContext();
+    const reveal = Math.min(1, Math.max(0, act2 / 0.2));
+    const introOpacity = Math.max(reveal, Math.min(1, act3 * 1.3));
     const finalOpacity = introOpacity * (1 - projectsFade);
-    const introEnterY = (1 - act3) * 48;
+    const introEnterY = (1 - Math.max(reveal, act3)) * 48;
 
     const containerVariants = {
         hidden: { opacity: 0, y: 40 },

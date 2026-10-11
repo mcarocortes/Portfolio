@@ -12,8 +12,8 @@
 
 .about-anchor {
   display: block;
-  /* About se lee aquí antes de que Evolution suba y lo tape */
-  height: 170vh !important;
+  /* Margen para leer About antes de que Evolution lo cubra. */
+  height: 135vh !important;
   width: 100%;
   pointer-events: none;
   scroll-margin-top: 100px;
@@ -36,8 +36,7 @@
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: auto 75%;
-  transition: transform 0.35s ease;  
-/*background-color: var(--white);*/
+  background-color: var(--white);
 }
 
 .w-col {
@@ -218,9 +217,10 @@ div .exterior .icon img {
 }
 
 .about-scroll-runway {
-  height: 80vh;      
+  height: 80vh;
   width: 100%;
   pointer-events: none;
+  background-color: var(--white);
 }
 
 

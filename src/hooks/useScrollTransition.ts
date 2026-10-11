@@ -5,7 +5,7 @@ import {
 } from "../lib/scrollTransitionState";
 
 /** Cuántas pantallas de scroll dura la transición completa (0 → 1) */
-export const SCROLL_VIEWPORTS = 1.35;
+export const SCROLL_VIEWPORTS = 2.35;
 
 function clamp(value: number, min = 0, max = 1) {
   return Math.min(Math.max(value, min), max);
@@ -23,10 +23,10 @@ export default function useScrollTransition() {
     const update = () => {
       const viewport = window.innerHeight || 1;
       const progress = clamp(window.scrollY / (viewport * SCROLL_VIEWPORTS));
-      const act1 = smoothstep(clamp(progress / 0.28));
-      const act2 = smoothstep(clamp((progress - 0.18) / 0.28));
-      const act3 = smoothstep(clamp((progress - 0.42) / 0.32));
-      const act4 = smoothstep(clamp((progress - 0.68) / 0.32));
+      const act1 = smoothstep(clamp((progress - 0.08) / 0.32));
+      const act2 = smoothstep(clamp((progress - 0.18) / 0.46));
+      const act3 = smoothstep(clamp((progress - 0.58) / 0.26));
+      const act4 = smoothstep(clamp((progress - 0.8) / 0.2));
 
       scrollTransition.act1 = act1;
       scrollTransition.act2 = act2;

@@ -35,7 +35,9 @@ export default function Hero() {
   const { act1, act2 } = useScrollTransitionContext();
   const heroSectionRef = useRef<HTMLDivElement>(null);
 
-  const heroFadeOut = act2 > 0.92 ? Math.min((act2 - 0.92) / 0.08, 1) : 0;
+  // Desvanecido largo: entra y sale despacio, sin corte.
+  const fadeT = Math.min(1, Math.max(0, (act2 - 0.2) / 0.8));
+  const heroFadeOut = fadeT * fadeT * (3 - 2 * fadeT);
 
 
 
@@ -89,7 +91,7 @@ export default function Hero() {
 
         opacity: 1 - heroFadeOut,
 
-        pointerEvents: heroFadeOut > 0.95 ? "none" : "auto",
+        pointerEvents: heroFadeOut > 0.92 ? "none" : "auto",
 
       } as React.CSSProperties}
 
