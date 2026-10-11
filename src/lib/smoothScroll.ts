@@ -12,6 +12,10 @@ export function setLenisInstance(instance: Lenis | null) {
     lenisInstance = instance;
 }
 
+export function getLenisInstance() {
+    return lenisInstance;
+}
+
 export function shouldSuppressActiveSectionUpdate() {
     return performance.now() < suppressActiveSectionUntil;
 }

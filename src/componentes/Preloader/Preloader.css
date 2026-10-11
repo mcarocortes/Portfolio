@@ -1,28 +1,374 @@
 .preloader {
-  display: flex;
-  flex-flow: column;
-  justify-content:center;
-  align-items:center;
-  overflow: hidden;
+  --loader-ink: #5a12fa;
+  --loader-ink-soft: rgba(90, 18, 250, 0.16);
+  --loader-text: #5a12fa;
+  --loader-muted: #4a4a4d;
+  --loader-bead: #ffffff;
+
   position: fixed;
   inset: 0;
-  z-index: 999;
-  pointer-events: all;
-  transition: opacity 0.5s ease-out; 
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 70% at 50% 42%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 58%),
+    radial-gradient(120% 90% at 50% 38%, #f7f4ff 0%, #e4dffc 46%, #f4f4f4 100%);
   opacity: 1;
-  height: 100vh; 
-  width: 100vw;
+  pointer-events: all;
+  transition: opacity 1.05s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.preloader.hidden {
+.preloader.is-dark {
+  --loader-ink: #d5d2ff;
+  --loader-ink-soft: rgba(255, 255, 255, 0.16);
+  --loader-text: #eceaff;
+  --loader-muted: rgba(244, 244, 244, 0.66);
+  --loader-bead: #ffffff;
+
+  background:
+    radial-gradient(80% 60% at 50% 40%, rgba(90, 18, 250, 0.45) 0%, rgba(90, 18, 250, 0) 62%),
+    radial-gradient(120% 90% at 50% 38%, #2a2158 0%, #141218 55%, #0e0e10 100%);
+}
+
+.preloader.is-leaving {
+  opacity: 0;
   pointer-events: none;
-  opacity: 0; 
 }
 
-.preloader.bg-visible {
-  background-color: #c0b6fc;
+.preloader.is-leaving .preloader__content {
+  opacity: 0;
+  transform: translateY(-18px) scale(1.045);
+  filter: blur(8px);
 }
 
-.preloader.bg-hidden {
-  background-color: transparent;
+.preloader.is-leaving .preloader__logo,
+.preloader.is-leaving .spin,
+.preloader.is-leaving .ring-dashes,
+.preloader.is-leaving .preloader__orb,
+.preloader.is-leaving .preloader__fill::after {
+  animation-play-state: paused;
+}
+
+html.is-preloading,
+html.is-preloading body {
+  overflow: hidden;
+}
+
+.preloader__field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.preloader__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.75;
+}
+
+.preloader__orb-a {
+  width: 42vw;
+  height: 42vw;
+  left: -8vw;
+  top: 8vh;
+  background: radial-gradient(circle, rgba(140, 142, 242, 0.85), rgba(140, 142, 242, 0) 68%);
+  animation: orbDriftA 9s ease-in-out infinite;
+}
+
+.preloader__orb-b {
+  width: 34vw;
+  height: 34vw;
+  right: -6vw;
+  bottom: 6vh;
+  background: radial-gradient(circle, rgba(191, 193, 252, 0.9), rgba(191, 193, 252, 0) 70%);
+  animation: orbDriftB 11s ease-in-out infinite;
+}
+
+.preloader__orb-c {
+  width: 18vw;
+  height: 18vw;
+  left: 58%;
+  top: 12%;
+  background: radial-gradient(circle, rgba(90, 18, 250, 0.35), rgba(90, 18, 250, 0) 70%);
+  animation: orbDriftC 7.5s ease-in-out infinite;
+}
+
+.preloader.is-dark .preloader__orb-a {
+  background: radial-gradient(circle, rgba(90, 18, 250, 0.7), rgba(90, 18, 250, 0) 68%);
+}
+
+.preloader.is-dark .preloader__orb-b {
+  background: radial-gradient(circle, rgba(103, 105, 245, 0.45), rgba(103, 105, 245, 0) 70%);
+}
+
+.preloader__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    opacity 0.85s ease,
+    transform 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease;
+}
+
+.preloader__logo {
+  display: block;
+  width: min(420px, 78vw);
+  height: auto;
+  margin-bottom: 8px;
+  animation: logoFloat 4.8s ease-in-out infinite;
+  filter: drop-shadow(0 12px 22px rgba(90, 18, 250, 0.18));
+}
+
+.preloader__stage {
+  position: relative;
+  width: min(280px, 72vw, 42vh);
+  height: min(280px, 72vw, 42vh);
+}
+
+.preloader__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ring-dashes,
+.ring-track,
+.ring-progress {
+  fill: none;
+}
+
+.ring-dashes {
+  stroke: var(--loader-ink-soft);
+  stroke-width: 1.25;
+  stroke-dasharray: 1.5 9;
+  animation: dashShift 2.8s linear infinite;
+}
+
+.ring-track {
+  stroke: var(--loader-ink-soft);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.ring-progress {
+  stroke: var(--loader-ink);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(90, 18, 250, 0.65));
+}
+
+.spin {
+  position: absolute;
+  inset: 0;
+  animation: spin linear infinite;
+}
+
+.spin-a { animation-duration: 7.5s; }
+.spin-b { animation-duration: 12s; animation-direction: reverse; }
+.spin-c { animation-duration: 18s; }
+
+.sat {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--loader-ink);
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(140, 142, 242, 0.95);
+}
+
+.sat-b {
+  top: 9%;
+  width: 5px;
+  height: 5px;
+  background: #bfc1fc;
+}
+
+.sat-c {
+  top: 0;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+}
+
+.preloader__head-rotor {
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+}
+
+.preloader__head {
+  position: absolute;
+  top: 50%;
+  left: 93%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--loader-bead);
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 0 5px rgba(90, 18, 250, 0.16),
+    0 0 18px var(--loader-ink);
+}
+
+.preloader__meter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(168px, 58%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preloader__count {
+  margin: 0;
+  font-family: var(--font-family-bold);
+  font-size: clamp(34px, 4.6vw, 48px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: var(--loader-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.preloader__pct {
+  margin-left: 2px;
+  font-size: 0.42em;
+  letter-spacing: 0;
+  vertical-align: super;
+}
+
+.preloader__track {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: var(--loader-ink-soft);
+  overflow: visible;
+}
+
+.preloader__fill {
+  position: relative;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8c8ef2 0%, var(--loader-ink) 100%);
+  box-shadow: 0 0 14px rgba(90, 18, 250, 0.45);
+  overflow: hidden;
+}
+
+.preloader__fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  transform: translateX(-120%);
+  animation: filament 1.7s ease-in-out infinite;
+}
+
+.preloader__bead {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--loader-bead);
+  transform: translate(50%, -50%);
+  box-shadow:
+    0 0 0 4px rgba(90, 18, 250, 0.18),
+    0 0 14px var(--loader-ink);
+}
+
+.preloader__label {
+  margin: 22px 0 0;
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--loader-muted);
+}
+
+.preloader__live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dashShift {
+  to { stroke-dashoffset: -84; }
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes filament {
+  to { transform: translateX(220%); }
+}
+
+@keyframes orbDriftA {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(6vw, 4vh, 0) scale(1.08); }
+}
+
+@keyframes orbDriftB {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-5vw, -6vh, 0) scale(1.12); }
+}
+
+@keyframes orbDriftC {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-4vw, 5vh, 0); }
+}
+
+@media (max-width: 520px) {
+  .preloader__label {
+    letter-spacing: 0.18em;
+    font-size: 10px;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .preloader__meter {
+    bottom: 8%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__orb,
+  .ring-dashes,
+  .spin,
+  .preloader__logo,
+  .preloader__fill::after {
+    animation: none;
+  }
+
+  .preloader,
+  .preloader__content {
+    transition-duration: 0.2s;
+  }
 }

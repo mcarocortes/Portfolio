@@ -10,9 +10,21 @@
     html,
     body {
       margin: 0;
-      background: linear-gradient(180deg, #f4f4f4 0%, #ece9ff 100%);
+      background: #efeaff;
+    }
+
+    html.dark-mode,
+    html.dark-mode body {
+      background: #141218;
     }
   </style>
+  <script>
+    try {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    } catch (e) {}
+  </script>
 </head>
 
 <body>

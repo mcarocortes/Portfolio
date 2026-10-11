@@ -7,8 +7,9 @@ import ScrollToTopOnNavigate from "./ScrollToTopOnNavigate";
 import UnderConstruction from "./componentes/UnderConstruction/UnderConstruction";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setLenisInstance } from "./lib/smoothScroll";
+import Preloader from "./componentes/Preloader/Preloader";
 
 // Importa las imágenes dark mode (Vite resuelve la URL correcta)
 import logoDarkmode from "./assets/img/Hero/MacarenaCaroLogo_darkmode.svg";
@@ -31,6 +32,9 @@ const STANDALONE_PATHS = ["/en-construccion"];
 function AppContent() {
   const location = useLocation();
   const isStandalonePage = STANDALONE_PATHS.includes(location.pathname);
+  const [openedAtHome] = useState(() => location.pathname === "/");
+  const [introDone, setIntroDone] = useState(!openedAtHome);
+  const showIntro = openedAtHome && location.pathname === "/" && !introDone;
 
   // 1) Lenis (scroll suave) — igual que ahora
   useEffect(() => {
@@ -53,6 +57,10 @@ function AppContent() {
       window.dispatchEvent(new Event("lenis-scroll"));
     });
 
+    if (document.documentElement.classList.contains("is-preloading")) {
+      lenis.stop();
+    }
+
     setLenisInstance(lenis);
 
     let cancelled = false;
@@ -72,6 +80,12 @@ function AppContent() {
       setLenisInstance(null);
     };
   }, [isStandalonePage]);
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      document.documentElement.classList.add("scene-ready");
+    }
+  }, [location.pathname]);
 
   // 2) Precarga diferida de imágenes dark mode
   useEffect(() => {
@@ -108,11 +122,14 @@ function AppContent() {
 
   return (
     <>
+      {showIntro && <Preloader onDone={() => setIntroDone(true)} />}
       <Cursor />
-      <ScrollToTopOnNavigate />
-      <ScrollToHash />
-      <Navbar />
-      <AppRoutes />
+      <div inert={showIntro ? true : undefined}>
+        <ScrollToTopOnNavigate />
+        <ScrollToHash />
+        <Navbar />
+        <AppRoutes />
+      </div>
     </>
   );
 }

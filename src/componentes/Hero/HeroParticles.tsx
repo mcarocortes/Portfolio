@@ -1,9 +1,32 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { useGLTF } from "@react-three/drei"
+import { useGLTF, useProgress } from "@react-three/drei"
 import * as THREE from "three"
 import { memo, useMemo, useRef, type RefObject } from "react"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
 import { scrollTransition } from "../../lib/scrollTransitionState"
+import { markSceneReady, publishAssetProgress } from "../../lib/sceneLoad"
+
+const publicBase = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`
+
+const faceModelUrl = `${publicBase}face.glb`
+const particleTextureUrl = `${publicBase}particle-glow5.png`
+
+const syncAssetProgress = () => {
+  const snapshot = useProgress.getState()
+  publishAssetProgress(snapshot.progress, snapshot.active, snapshot.errors.length > 0)
+}
+
+syncAssetProgress()
+useProgress.subscribe(syncAssetProgress)
+
+const particleTexture = new THREE.TextureLoader().load(particleTextureUrl)
+particleTexture.colorSpace = THREE.SRGBColorSpace
+particleTexture.magFilter = THREE.NearestFilter
+particleTexture.minFilter = THREE.NearestFilter
+
+useGLTF.preload(faceModelUrl)
 
 /**VARIABLE GLOBAL**/
 const cursorWorldPosition = new THREE.Vector3()
@@ -36,16 +59,7 @@ function FaceParticles() {
   const pivotRef = useRef<THREE.Group>(null!)
   const materialRef = useRef<THREE.PointsMaterial>(null!)
 
-  const { scene } = useGLTF(`${import.meta.env.BASE_URL}face.glb`)
-
-  const particleTexture = useMemo(() => {
-    const loader = new THREE.TextureLoader()
-    const texture = loader.load(`${import.meta.env.BASE_URL}particle-glow5.png`)
-    texture.colorSpace = THREE.SRGBColorSpace
-    texture.magFilter = THREE.NearestFilter
-    texture.minFilter = THREE.NearestFilter
-    return texture
-  }, [])
+  const { scene } = useGLTF(faceModelUrl)
 
   const { size } = useThree()
 
@@ -209,23 +223,63 @@ function FaceParticles() {
   })
 
   return (
-    <group ref={pivotRef} position={modelPosition}>
-      <points geometry={particlesGeometry} position={[0, FACE_Y_OFFSET, 0]}>
-        <pointsMaterial
-          ref={materialRef}
-          map={particleTexture}
-          vertexColors
-          size={0.013}
-          transparent
-          opacity={0.95}
-          blending={THREE.AdditiveBlending}
-          depthWrite={false}
-          depthTest={true}
-          alphaTest={0.001}
-        />
-      </points>
-    </group>
+    <>
+      <group ref={pivotRef} position={modelPosition}>
+        <points geometry={particlesGeometry} position={[0, FACE_Y_OFFSET, 0]}>
+          <pointsMaterial
+            ref={materialRef}
+            map={particleTexture}
+            vertexColors
+            size={0.013}
+            transparent
+            opacity={0.95}
+            blending={THREE.AdditiveBlending}
+            depthWrite={false}
+            depthTest={true}
+            alphaTest={0.001}
+          />
+        </points>
+      </group>
+      <SceneReadySignal />
+    </>
   )
+}
+
+function SceneReadySignal() {
+  const { gl, scene, camera } = useThree()
+  const signal = useRef({ frames: 0, seen: 0, compiled: false, done: false })
+
+  useFrame(() => {
+    const local = signal.current
+    if (local.done) return
+
+    local.seen += 1
+    const snapshot = useProgress.getState()
+    const assetsDone = !snapshot.active && (snapshot.progress >= 100 || snapshot.errors.length > 0)
+    const giveUp = local.seen > 180
+
+    if (!assetsDone && !giveUp) {
+      local.frames = 0
+      return
+    }
+
+    if (!local.compiled) {
+      try {
+        gl.compile(scene, camera)
+      } catch {
+        /* El primer frame igual puede pintarse si el contexto aún no acepta compile. */
+      }
+      local.compiled = true
+    }
+
+    local.frames += 1
+    if (local.frames < 4 && !giveUp) return
+
+    local.done = true
+    markSceneReady()
+  })
+
+  return null
 }
 
 function HeroParticles({

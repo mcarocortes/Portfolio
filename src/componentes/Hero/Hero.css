@@ -116,7 +116,9 @@
 
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
+}
 
+html.scene-ready .arc-line {
   animation: drawArc 2s ease forwards;
 }
 
