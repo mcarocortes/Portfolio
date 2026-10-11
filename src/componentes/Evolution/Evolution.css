@@ -472,3 +472,12 @@
         flex-shrink: 0;
     }
 }
+
+@media screen and (min-aspect-ratio: 8/5) and (max-height: 560px) {
+.experience-visual-fg{
+    display: none;
+}
+.experience-year-bar{
+    bottom: 30px !important;
+}
+}
