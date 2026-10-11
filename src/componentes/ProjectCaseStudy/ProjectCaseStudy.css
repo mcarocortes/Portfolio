@@ -155,11 +155,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
-    margin: 10px;
+    margin: 0 0 10px;
 }
 
 .block-boxes--impact {
-    margin: 10px 10px 2.25rem;
+    margin: 0 0 2.25rem;
 }
 
 .project-case__block {
@@ -215,9 +215,19 @@
 
 
 
+.header-description:has(.project-case__heroImage--image) {
+    align-items: center;
+    gap: clamp(3rem, 5vw, 4.5rem);
+}
+
+.project-case__hero:has(.project-case__hero-photo) {
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
 .project-case__heroImage--image {
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
 }
 
 .project-case__hero-photo {
@@ -225,7 +235,7 @@
     width: 100%;
     max-height: 645px;
     object-fit: contain;
-    object-position: bottom right;
+    object-position: center center;
     border-radius: 20px;
 }
 
@@ -256,6 +266,11 @@
     object-position: center;
     background-repeat: no-repeat;
     border-radius: 20px;
+    margin-bottom: 2.25rem;
+}
+
+.project-case--healthcare .img_oportunities {
+    margin-bottom: 0;
 }
 
 .img_oportunities--placeholder {

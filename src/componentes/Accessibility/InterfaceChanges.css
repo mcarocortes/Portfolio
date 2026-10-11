@@ -399,8 +399,8 @@ border-bottom: 1px solid var(--shadows);
 }
 
 .dark-mode .project-case__external {
-  background: var(--white-transparent2);
-  border-color: var(--shadows);
+  background: var(--purpura3);
+  border-color: var(--purpura3);
   color: var(--black);
 }
 
@@ -444,11 +444,18 @@ border-bottom: 1px solid var(--shadows);
   color: var(--white);
 }
 
-.dark-mode .project-case__nav-back:hover,
-.dark-mode .project-case__external:hover {
+.dark-mode .project-case__nav-back:hover {
     background: var(--purpura);
     border-color: var(--purpura);
     color: var(--white);
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.dark-mode .project-case__external:hover {
+    background: var(--purpura);
+    border-color: var(--purpura);
+    color: var(--black);
     transform: translateY(-1px);
     text-decoration: none;
 }

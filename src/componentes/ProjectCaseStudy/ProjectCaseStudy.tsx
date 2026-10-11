@@ -290,7 +290,7 @@ export default function ProjectCaseStudy({ projectKey }: ProjectCaseStudyProps) 
     }
 
     return (
-        <article className="project-case">
+        <article className={`project-case project-case--${projectKey}`}>
             <header className="project-case__hero">
                 <div className="project-case__hero-inner">
                     <motion.h1
