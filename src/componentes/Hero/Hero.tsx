@@ -102,7 +102,13 @@ export default function Hero() {
         <div className='hero-particles'>
 
           <Suspense fallback={null}>
-            <HeroParticles eventSource={heroSectionRef} active={act2 < 0.98} />
+            <HeroParticles
+              eventSource={heroSectionRef}
+              active={
+                act2 < 0.98 ||
+                document.documentElement.classList.contains("is-preloading")
+              }
+            />
           </Suspense>
 
         </div>

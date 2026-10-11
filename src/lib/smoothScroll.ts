@@ -20,8 +20,8 @@ export function shouldSuppressActiveSectionUpdate() {
     return performance.now() < suppressActiveSectionUntil;
 }
 
-function markProgrammaticScroll() {
-    suppressActiveSectionUntil = performance.now() + SCROLL_DURATION * 1000 + 500;
+function markProgrammaticScroll(durationMs = SCROLL_DURATION * 1000 + 500) {
+    suppressActiveSectionUntil = performance.now() + durationMs;
 }
 
 /** Como un refresh: salta al top sin animación (cambios de ruta). */
@@ -54,13 +54,18 @@ export function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-export function scrollToHash(hash: string) {
+export function scrollToHash(hash: string, options?: { immediate?: boolean }) {
     if (!hash || hash === "#" || hash === "#Home") {
+        if (options?.immediate) {
+            resetScrollInstant();
+            return;
+        }
         scrollToTop();
         return;
     }
 
-    markProgrammaticScroll();
+    const immediate = options?.immediate === true;
+    markProgrammaticScroll(immediate ? 80 : SCROLL_DURATION * 1000 + 500);
     const startedAt = performance.now();
 
     const attempt = () => {
@@ -69,9 +74,20 @@ export function scrollToHash(hash: string) {
         if (target) {
             if (lenisInstance) {
                 lenisInstance.resize();
-                lenisInstance.scrollTo(target as HTMLElement, { duration: SCROLL_DURATION });
+                lenisInstance.scrollTo(target as HTMLElement, {
+                    duration: immediate ? 0 : SCROLL_DURATION,
+                    immediate,
+                    force: true,
+                });
             } else {
-                target.scrollIntoView({ behavior: "smooth" });
+                target.scrollIntoView({ behavior: immediate ? "auto" : "smooth", block: "start" });
+            }
+
+            if (immediate) {
+                requestAnimationFrame(() => {
+                    suppressActiveSectionUntil = 0;
+                    window.dispatchEvent(new Event("lenis-scroll"));
+                });
             }
             return;
         }

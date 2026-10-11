@@ -1,3 +1,8 @@
+html.is-preloading,
+html.is-preloading body {
+  overflow: hidden;
+}
+
 .preloader {
   --loader-ink: #5a12fa;
   --loader-ink-soft: rgba(90, 18, 250, 0.16);

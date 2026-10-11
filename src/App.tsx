@@ -126,7 +126,7 @@ function AppContent() {
       <Cursor />
       <div inert={showIntro ? true : undefined}>
         <ScrollToTopOnNavigate />
-        <ScrollToHash />
+        <ScrollToHash enabled={!showIntro} />
         <Navbar />
         <AppRoutes />
       </div>

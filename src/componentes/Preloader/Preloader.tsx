@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import logoLight from "../../assets/img/Hero/MacarenaCaroLogo.svg";
 import logoDark from "../../assets/img/Hero/MacarenaCaroLogo_darkmode.svg";
 import { getSceneLoad, subscribeSceneLoad } from "../../lib/sceneLoad";
-import { getLenisInstance, resetScrollInstant } from "../../lib/smoothScroll";
+import { getLenisInstance, resetScrollInstant, scrollToHash } from "../../lib/smoothScroll";
 import "./Preloader.css";
 
 const RING_RADIUS = 86;
@@ -30,11 +30,26 @@ export default function Preloader({ onDone }: PreloaderProps) {
   loadRef.current = load;
   onDoneRef.current = onDone;
 
+  const pinScrollRef = useRef(true);
+
   useLayoutEffect(() => {
     document.documentElement.classList.add("is-preloading");
+    resetScrollInstant();
     getLenisInstance()?.stop();
 
+    let pinning = false;
+    const pin = () => {
+      if (!pinScrollRef.current || pinning) return;
+      if ((window.scrollY || document.documentElement.scrollTop || 0) < 1) return;
+      pinning = true;
+      resetScrollInstant();
+      pinning = false;
+    };
+
+    window.addEventListener("scroll", pin, { passive: true });
+
     return () => {
+      window.removeEventListener("scroll", pin);
       document.documentElement.classList.remove("is-preloading");
       getLenisInstance()?.start();
     };
@@ -81,8 +96,18 @@ export default function Preloader({ onDone }: PreloaderProps) {
   useEffect(() => {
     if (phase !== "leave") return;
 
+    pinScrollRef.current = false;
+    document.documentElement.classList.remove("is-preloading");
+    getLenisInstance()?.start();
+
+    const hash = window.location.hash;
+    if (hash && hash !== "#" && hash !== "#Home") {
+      scrollToHash(hash, { immediate: true });
+    } else {
+      resetScrollInstant();
+    }
+
     document.documentElement.classList.add("scene-ready");
-    resetScrollInstant();
 
     const timer = window.setTimeout(() => onDoneRef.current(), 1100);
     return () => window.clearTimeout(timer);
