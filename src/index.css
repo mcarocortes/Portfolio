@@ -203,9 +203,9 @@ label {
   :root {
     --margin-left-rigth-general: 2.5rem;
     --font-size-heading: calc(55px * var(--font-scale));
-    --font-size-h1: calc(36px * var(--font-scale));
+    --font-size-h1: calc(32px * var(--font-scale));
     --font-size-h2: calc(25px * var(--font-scale));
-    --font-size-h3: calc(22px * var(--font-scale));
+    --font-size-h3: calc(20px * var(--font-scale));
     --font-size-h4: calc(18px * var(--font-scale));
     --font-size-base: calc(18px * var(--font-scale));
     --font-size-maximus:calc(65px * var(--font-scale));

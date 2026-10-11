@@ -64,10 +64,20 @@ function FaceParticles() {
   const { size } = useThree()
 
   const viewportWidth = size.width > 100 ? size.width : window.innerWidth
+  const viewportHeight = size.height > 100 ? size.height : window.innerHeight
+  const aspect = viewportWidth / Math.max(viewportHeight, 1)
+  /* Texto a la izquierda y cara a la derecha solo si cabe el titular. */
+  const isWideShort = viewportWidth >= 768 && aspect >= 1.6 && viewportHeight <= 560
 
   const modelPosition = useMemo<[number, number, number]>(() => {
     if (viewportWidth < 768) {
       return [0.02, 0, 0]
+    } else if (isWideShort) {
+      /* Más grande y más abajo: el busto se recorta por el borde inferior. */
+      const halfWidth = Math.tan((32 * Math.PI) / 360) * 3.2 * aspect
+      const radius = Math.min(1.08, Math.max(0.94, halfWidth * 0.5))
+      const x = Math.min(halfWidth - radius * 0.52, Math.max(1.08, halfWidth * 0.58))
+      return [x, -0.02, 0]
     } else if (viewportWidth < 991) {
       return [0.5, 0, 0]
     } else if (viewportWidth < 1024) {
@@ -78,7 +88,7 @@ function FaceParticles() {
       return [1.0, 0, 0]
     }
     return [0.9, 0, 0]
-  }, [viewportWidth])
+  }, [viewportWidth, isWideShort, aspect])
 
   const modelPositionRef = useRef(modelPosition)
   modelPositionRef.current = modelPosition
@@ -139,7 +149,10 @@ function FaceParticles() {
 
     let scaleFactor = 1.3 / radius
 
-    if (viewportWidth < 479) {
+    if (isWideShort) {
+      const halfWidth = Math.tan((32 * Math.PI) / 360) * 3.2 * aspect
+      scaleFactor = Math.min(1.08, Math.max(0.94, halfWidth * 0.5)) / radius
+    } else if (viewportWidth < 479) {
       scaleFactor = 0.91 / radius
     } else if (viewportWidth < 768) {
       scaleFactor = 0.97 / radius
@@ -156,7 +169,7 @@ function FaceParticles() {
     geometry.scale(scaleFactor, scaleFactor, scaleFactor)
 
     return geometry
-  }, [scene, viewportWidth])
+  }, [scene, viewportWidth, isWideShort, aspect])
 
   useFrame((state) => {
     if (!pivotRef.current) return
