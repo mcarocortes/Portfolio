@@ -44,78 +44,68 @@ export default function AccessibilityPanel({ open, setOpen, hidden }: Props) {
         />
       </div>
 
-      <div>
-        <label className="mt-2" >{t("language")}</label>
-        <Switch
+      <div className="accessibility-panel__grid">
+        <div className="accessibility-panel__field">
+          <label>{t("language")}</label>
+          <Switch
+            options={[
+              { label: "ES", value: "es" },
+              { label: "EN", value: "en" }
+            ]}
+            value={language}
+            onChange={(value) => setLanguage(value as "es" | "en")}
+          />
+        </div>
 
-          options={[
-            { label: "ES", value: "es" },
-            { label: "EN", value: "en" }
-          ]}
+        <div className="accessibility-panel__field">
+          <label>{t("interface")}</label>
+          <Switch
+            options={[
+              {
+                label: (
+                  <>
+                    <svg className="switch-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="5" fill="currentColor" />
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        d="M12 2.2v2.2M12 19.6v2.2M2.2 12h2.2M19.6 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"
+                      />
+                    </svg>
+                    {t("bright")}
+                  </>
+                ),
+                value: "light",
+              },
+              { label: `☾ ${t("dark")}`, value: "dark" }
+            ]}
+            value={darkMode ? "dark" : "light"}
+            onChange={(value) => {
+              if (
+                value === "dark" && !darkMode ||
+                value === "light" && darkMode
+              ) {
+                toggleDarkMode();
+              }
+            }}
+          />
+        </div>
 
-          value={language}
-
-          onChange={(value) => setLanguage(value as "es" | "en")}
-
-        />
-
-        <label className=" mt-2" >{t("interface")}</label>
-
-        <Switch
-
-          options={[
-            {
-              label: (
-                <>
-                  <svg className="switch-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="5" fill="currentColor" />
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      d="M12 2.2v2.2M12 19.6v2.2M2.2 12h2.2M19.6 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"
-                    />
-                  </svg>
-                  {t("bright")}
-                </>
-              ),
-              value: "light",
-            },
-            { label: `☾ ${t("dark")}`, value: "dark" }
-          ]}
-          value={darkMode ? "dark" : "light"}
-
-          onChange={(value) => {
-
-            if (
-              value === "dark" && !darkMode ||
-              value === "light" && darkMode
-            ) {
-              toggleDarkMode();
-            }
-
-          }}
-
-        />
-
+        <div className="accessibility-panel__field accessibility-panel__field--wide">
+          <label>{t("fontSize")}</label>
+          <Switch
+            options={[
+              { label: "A-", value: "small" },
+              { label: "A", value: "normal" },
+              { label: "A+", value: "large" }
+            ]}
+            value={fontScale}
+            onChange={(value) => setFontScale(value as FontScale)}
+          />
+        </div>
       </div>
-      <label className="mt-2" >{t("fontSize")}</label>
-
-
-      <Switch
-
-        options={[
-          { label: "A-", value: "small" },
-          { label: "A", value: "normal" },
-          { label: "A+", value: "large" }
-        ]}
-
-        value={fontScale}
-
-        onChange={(value) => setFontScale(value as FontScale)}
-
-      />
 
     </div>
   );
