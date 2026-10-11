@@ -134,7 +134,8 @@ export default function Contact() {
                     <Link
                         to="#Home"
                         className="back"
-                        onClick={() => {
+                        onClick={(event) => {
+                            event.preventDefault();
                             scrollToTop();
                             window.history.replaceState(null, "", "#Home");
                         }}

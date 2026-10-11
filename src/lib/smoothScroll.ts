@@ -42,7 +42,12 @@ export function scrollToTop() {
     markProgrammaticScroll();
 
     if (lenisInstance) {
-        lenisInstance.scrollTo(0, { duration: SCROLL_DURATION });
+        lenisInstance.resize();
+        const nativeTop = window.scrollY || document.documentElement.scrollTop || 0;
+        if (Math.abs(lenisInstance.animatedScroll - nativeTop) > 1) {
+            lenisInstance.scrollTo(nativeTop, { immediate: true, force: true });
+        }
+        lenisInstance.scrollTo(0, { duration: SCROLL_DURATION, force: true });
         return;
     }
 
