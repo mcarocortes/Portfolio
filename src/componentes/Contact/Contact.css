@@ -50,10 +50,11 @@
 
 #Contact .message .title span {
   display: inline-block;
-  background: linear-gradient(115deg, var(--purpura) 10%, #8a4dff 48%, var(--purpura3) 100%);
+  background: linear-gradient(115deg, var(--purpura) 10%, #8a4dff 80%, var(--purpura3) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  display: inline; /* Fuerza a que el span se comporte como elemento en línea */
 }
 
 #Contact .madeWith {
@@ -319,4 +320,24 @@
     font-size: 0.82rem;
   }
 
+}
+
+@media screen and (min-aspect-ratio: 8/5) and (max-height: 560px) {
+  #Contact .message .title{
+        max-width: 50vw;
+  }
+.title{
+  width: 100% !important;
+    font-size: 2.5rem !important;
+}
+#Contact .content {
+  padding-top: 50px;
+}
+
+.madeWith{
+  display: none;
+}
+#Contact .items {
+  margin-top: 0px;
+}
 }

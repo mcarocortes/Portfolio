@@ -174,13 +174,10 @@ export default function Contact() {
             <div className="content">
                 <div className="message">
                     <p className="title">
-                        {t("contactSection.titleBefore")}
-                        <span>
-                            {t("contactSection.titleHighlightLine1")}
-                            <br className="title-break" />{" "}
-                            {t("contactSection.titleHighlightLine2")}
-                        </span>
-                        {t("contactSection.titleAfter")}
+                        {t("contactSection.titleBefore")}{" "}
+                        <span>{t("contactSection.titleHighlightLine1")}{" "}
+                        {t("contactSection.titleHighlightLine2")}</span>
+                       {t("contactSection.titleAfter")}
                     </p>
 
                     <button
